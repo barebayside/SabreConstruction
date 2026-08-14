@@ -139,58 +139,8 @@ body.qm-lock{overflow:hidden}
 }
 .lp-medium b{color:#FF6B6B;font-weight:400}
 
-/* ---------- REAL GOOGLE RATING ----------
-   4.5 from 11 reviews, from Sabre's own Google Business Profile.
-   The half star is a clipped gold layer over a grey one — no SVG gradient ids
-   to collide, and the fill is exactly 90% because the score is exactly 4.5.
-   ⚠️ If the score ever changes, change --gfill with it. Never round up. */
-.grev{
-  --gfill:90%;
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px 11px;
-  text-decoration:none;
-}
-.grev .g-score{
-  font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;
-  color:var(--ink);letter-spacing:.02em;
-}
-.gstars{position:relative;display:inline-block;line-height:0;color:rgba(11,11,12,.17)}
-.gstars svg{width:104px;height:21px;display:block}
-.gstars .fill{
-  position:absolute;top:0;left:0;width:var(--gfill);
-  overflow:hidden;line-height:0;color:#F5B301;
-}
-.grev .g-count{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink2);
-}
-.grev .g-count b{color:var(--ink);font-weight:600}
-.grev:hover .g-count b{color:var(--red)}
-
-/* on a dark panel */
-.on-black .grev .g-score{color:#fff}
-.on-black .grev .g-count{color:#A9A7A3}
-.on-black .grev .g-count b{color:#fff}
-.on-black .gstars{color:rgba(255,255,255,.22)}
-
-/* ---------- REAL REVIEW QUOTES ---------- */
-.rquotes{display:grid;gap:10px;margin:0;padding:0}
-@media(min-width:760px){.rquotes.two{grid-template-columns:1fr 1fr}}
-.rq{
-  margin:0;background:var(--white);border:1px solid var(--line);
-  border-left:3px solid #F5B301;border-radius:12px;padding:14px 16px;
-}
-/* the strip is a 120x24 viewBox holding five stars — size it on the width, or
-   it squashes all five into one square */
-.rq .rq-s{display:block;color:#F5B301;line-height:0;margin-bottom:8px}
-.rq .rq-s svg{width:66px;height:13.2px;display:block}
-.rq blockquote{
-  margin:0 0 9px;font-size:14.5px;line-height:1.58;color:var(--ink);
-}
-.rq figcaption{
-  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);
-}
-.rq figcaption b{color:var(--ink2);font-weight:500}
+/* The Google rating strip and review cards now live in sabre.css — they are
+   used on index.html too, and one definition beats two. */
 
 .lp-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .lp-facts .f{
@@ -268,9 +218,14 @@ body.qm-lock{overflow:hidden}
 .lpb-hero h1{font-size:clamp(32px,8vw,50px);line-height:.96;margin:13px 0 10px;color:#fff}
 .lpb-hero h1 .red{color:var(--red)}
 .lpb-hero .sub{color:#A9A7A3;font-size:clamp(15px,3.8vw,17px);line-height:1.55;margin-bottom:20px}
-/* 9:16 video — width is capped so nothing ever runs past it */
+/* 9:16 video.
+   It used to be a flat 220px, which on a desktop screen left a thin sliver of
+   video floating in a big black band with a much wider strip of credentials
+   underneath it — the two elements read as belonging to different pages. It
+   scales with the viewport now, and .lp-one below is capped to a width close
+   enough that the pair reads as one centred column. Keep them in step. */
 .lpb-vid{
-  width:min(220px,54vw);margin:0 auto;border-radius:14px;overflow:hidden;
+  width:min(380px,58vw);margin:0 auto;border-radius:16px;overflow:hidden;
   border:3px solid rgba(255,255,255,.15);
 }
 .lpb-vid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
@@ -282,7 +237,7 @@ body.qm-lock{overflow:hidden}
    instead of stacking. */
 .lp-one{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
-  gap:8px 14px;margin:16px auto 0;max-width:440px;
+  gap:8px 14px;margin:18px auto 0;max-width:min(430px,74vw);
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
   border-radius:100px;padding:10px 18px;
 }

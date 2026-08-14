@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sabre.css?v=5">
+<link rel="stylesheet" href="css/sabre.css?v=6">
 <link rel="icon" href="assets/img/sabre-logo.png">
 
 <script type="application/ld+json">
@@ -66,10 +66,14 @@
 </header>
 
 <!-- ============ 1 · HERO — Notice + Fit ============
-     Still image, not video. The transformation plays once, in section 3. -->
+     The knockdown rebuild plays here, behind the headline. It used to be a
+     still, with the video in its own section below — that section is gone now,
+     because playing the same clip twice on one page bought nothing. -->
 <section class="hero" id="top">
   <div class="hero-media">
-    <img src="assets/img/home-slide011607.jpg" alt="A completed Sabre Constructions family home on the Bayside">
+    <video id="heroVid" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+      <source src="assets/video/rebuild-hero.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="hero-inner wide">
@@ -92,8 +96,8 @@
     <p class="hero-note" style="margin-top:16px">Free · About an hour · No obligation</p>
   </div>
 
-  <a class="scrollcue" href="#reveal">
-    <span>See the reveal</span>
+  <a class="scrollcue" href="#voices">
+    <span>Hear from families</span>
     <i><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></i>
   </a>
 </section>
@@ -106,25 +110,10 @@
   </div>
 </div>
 
-<!-- ============ 3 · THE TRANSFORMATION — Notice + Proof ============ -->
-<section class="sec" id="reveal">
-  <div class="wide">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">A knockdown rebuild, sped up</span>
-      <h2 class="h2">Old house in.<br><span class="strike-red">New home out.</span></h2>
-    </div>
-
-    <div class="reveal-stage zoom">
-      <span class="stage-tag">Knockdown → rebuild</span>
-      <video id="revealVid" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
-        <source src="assets/video/rebuild-hero.mp4" type="video/mp4">
-      </video>
-      <button class="stage-replay" id="replayBtn" type="button">↻ Play it again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4 · TESTIMONIALS — Proof ============ -->
+<!-- ============ 3 · TESTIMONIALS — Proof ============
+     Sits directly under the hero. The old "Old house in / New home out"
+     section that used to be here has been deleted — its video is now the
+     hero itself, and running it twice on one page proved nothing twice. -->
 <section class="sec" id="voices" style="background:var(--white);border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="sec-head center reveal">
@@ -202,10 +191,63 @@
       <div class="car-dots"></div>
     </div>
 
-    <div class="quote reveal" style="margin-top:clamp(52px,6vw,80px)">
-      <span class="mark">&ldquo;</span>
-      <blockquote>Stewart and the entire Sabre Team made this a smooth and hassle free experience. During the building of this project there were some design changes we required and Sabre to their credit made these changes without fuss or missing a beat. The build was completed <b>on time and on budget</b>.</blockquote>
-      <cite><b>Katrina Field</b> — first-time builder, Brisbane</cite>
+    <!-- ---- THE REAL ONES ----
+         Everything below this line is genuine and checkable, which is the
+         point of it sitting directly under three clips that aren't. Verbatim
+         from Sabre's Google Business Profile; cleared list is in
+         docs/reference/client-facts.md. Trim, never reword.
+         ⚠️ 4.5 from 11, NOT 5 — there is a real 1-star on the listing. -->
+    <div class="sec-head center reveal" style="margin-top:clamp(52px,6vw,80px)">
+      <span class="eyebrow">Verified on Google</span>
+      <h2 class="h2">And the real ones.</h2>
+      <a class="grev big" style="justify-content:center;margin:6px 0 14px" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&amp;query=Sabre%20Constructions&amp;query_place_id=ChIJBSdvy4ldkWsRML7s7-J9F2c">
+        <span class="g-score">4.5</span>
+        <span class="gstars">
+          <svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
+          <span class="fill"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        </span>
+        <span class="g-count"><b>11</b> Google reviews</span>
+      </a>
+      <p class="rev-note">Not a perfect score, and we've left it that way. One of the eleven is a one-star from a build that ran long in 2021, and it's still sitting on the listing where anyone can read it.</p>
+    </div>
+
+    <div class="rquotes grid3 reveal">
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"Sabre and their amazing team did not just build us a house they built us a beautiful Family Home. This is a family company that made us feel like part of their family team."</blockquote>
+        <figcaption><b>Matthew Campbell</b> · Google review</figcaption>
+      </figure>
+
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"Any house construction is fraught with dangers, stress and hidden costs. None of this happened and I very highly recommend Stewart and Sabre Constructions and his team."</blockquote>
+        <figcaption><b>Roselia Finlay</b> · Google review</figcaption>
+      </figure>
+
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"The first thing Stewart pointed out was the plans could be changed to build it cheaper, this helped us enormously."</blockquote>
+        <figcaption><b>Lesley W</b> · Google review · extension</figcaption>
+      </figure>
+
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"Nathan and the gang were excellent during the build. Always around to help or offer suggestions. Would definitely recommend them."</blockquote>
+        <figcaption><b>Jason Turner</b> · Google review · 2025</figcaption>
+      </figure>
+
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"Frank our supervisor was great, kept us informed all the way through &amp; was fantastic to deal with. Thanks Stewart, Cathy &amp; the team couldn't recommend more highly!"</blockquote>
+        <figcaption><b>Leasa Butcher</b> · Google review · renovation</figcaption>
+      </figure>
+
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"The build was completed on time and on budget. We would not have any hesitation in recommending Sabre Constructions to any future clients."</blockquote>
+        <figcaption><b>Katrina Field</b> · Google review · first-time builder</figcaption>
+      </figure>
     </div>
   </div>
 </section>

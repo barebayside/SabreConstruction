@@ -233,62 +233,26 @@
     draw(h, 0);
   });
 
-  /* ---------- modal (fallback) ---------- */
-  function buildModal() {
-    var root = document.createElement('div');
-    root.className = 'qm';
-    root.innerHTML = shell(true);
-    document.body.appendChild(root);
-    var h = wire(root, true);
-    root.addEventListener('click', function (e) { if (e.target === root) closeModal(); });
-    root.querySelector('.qm-close').addEventListener('click', closeModal);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && root.classList.contains('open')) closeModal();
-    });
-    modal = h;
-    return h;
-  }
-
-  function openModal() {
-    var h = modal || buildModal();
-    draw(h, finished ? STEPS.length - 1 : (h.at || 0));
-    if (finished) done(h);
-    h.root.classList.add('open');
-    document.body.classList.add('qm-lock');
-  }
-
-  function closeModal() {
-    if (!modal) return;
-    modal.root.classList.remove('open');
-    document.body.classList.remove('qm-lock');
-  }
-
+  /* ---------- [data-qualify] buttons ----------
+     Always scroll to the form that's already on the page. Never stack a popup
+     on top of the identical thing. */
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-qualify]');
     if (!t) return;
-    e.preventDefault();
-    // if the form is already on the page, scroll to it rather than stacking a
-    // modal on top of the identical thing
     var inline = document.querySelector('.qm-inline');
-    if (inline) {
-      inline.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      inline.classList.add('flash');
-      setTimeout(function () { inline.classList.remove('flash'); }, 1400);
-      return;
-    }
-    openModal();
+    if (!inline) return;
+    e.preventDefault();
+    inline.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    inline.classList.add('flash');
+    setTimeout(function () { inline.classList.remove('flash'); }, 1400);
   });
 
-  /* ---------- bottom-of-page catch ----------
-     Only fires if they got all the way down without touching the form. */
-  var caught = false;
-  window.addEventListener('scroll', function () {
-    if (caught || started || finished) return;
-    var bottom = document.documentElement.scrollHeight - window.innerHeight - 120;
-    if (window.scrollY < bottom) return;
-    caught = true;
-    openModal();
-  }, { passive: true });
+  /* ---------- NO POPUP ----------
+     There used to be a bottom-of-page catch here that threw the form up as a
+     modal once you scrolled far enough without filling it in. It's gone, and
+     the modal machinery with it.
 
-  window.SabreQualify = { open: openModal, close: closeModal };
+     The form is embedded and open on question one on every landing page. A
+     popup of the same five questions interrupts someone who is already looking
+     at them, which is the opposite of helping. Do not put it back. */
 })();

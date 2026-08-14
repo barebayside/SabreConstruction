@@ -534,3 +534,76 @@ textarea.fld{min-height:92px;resize:vertical}
   color:var(--red);
 }
 @media(max-width:860px){.worries{grid-template-columns:1fr;gap:12px}}
+
+/* ============================================================
+   REAL GOOGLE REVIEWS — shared by index.html and all three LPs
+   ============================================================ */
+/* ---------- REAL GOOGLE RATING ----------
+   4.5 from 11 reviews, from Sabre's own Google Business Profile.
+   The half star is a clipped gold layer over a grey one — no SVG gradient ids
+   to collide, and the fill is exactly 90% because the score is exactly 4.5.
+   ⚠️ If the score ever changes, change --gfill with it. Never round up. */
+.grev{
+  --gfill:90%;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px 11px;
+  text-decoration:none;
+}
+.grev .g-score{
+  font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;
+  color:var(--ink);letter-spacing:.02em;
+}
+.gstars{position:relative;display:inline-block;line-height:0;color:rgba(11,11,12,.17)}
+.gstars svg{width:104px;height:21px;display:block}
+.gstars .fill{
+  position:absolute;top:0;left:0;width:var(--gfill);
+  overflow:hidden;line-height:0;color:#F5B301;
+}
+.grev .g-count{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink2);
+}
+.grev .g-count b{color:var(--ink);font-weight:600}
+.grev:hover .g-count b{color:var(--red)}
+
+/* on a dark panel */
+.on-black .grev .g-score{color:#fff}
+.on-black .grev .g-count{color:#A9A7A3}
+.on-black .grev .g-count b{color:#fff}
+.on-black .gstars{color:rgba(255,255,255,.22)}
+
+/* ---------- REAL REVIEW QUOTES ---------- */
+.rquotes{display:grid;gap:10px;margin:0;padding:0}
+@media(min-width:760px){.rquotes.two{grid-template-columns:1fr 1fr}}
+.rq{
+  margin:0;background:var(--white);border:1px solid var(--line);
+  border-left:3px solid #F5B301;border-radius:12px;padding:14px 16px;
+}
+/* the strip is a 120x24 viewBox holding five stars — size it on the width, or
+   it squashes all five into one square */
+.rq .rq-s{display:block;color:#F5B301;line-height:0;margin-bottom:8px}
+.rq .rq-s svg{width:66px;height:13.2px;display:block}
+.rq blockquote{
+  margin:0 0 9px;font-size:14.5px;line-height:1.58;color:var(--ink);
+}
+.rq figcaption{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);
+}
+.rq figcaption b{color:var(--ink2);font-weight:500}
+/* The rating strip, blown up — this is a section header on index.html, not a
+   footnote under a form like it is on the landing pages. */
+.grev.big{gap:10px 16px}
+.grev.big .g-score{font-size:44px}
+.grev.big .gstars svg{width:140px;height:28px}
+.grev.big .g-count{font-size:11px}
+
+.rquotes.grid3{grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px}
+.rquotes.grid3 .rq{padding:18px 20px}
+.rquotes.grid3 .rq blockquote{font-size:15px}
+
+/* the honest note about the rating not being a perfect 5 */
+.rev-note{
+  text-align:center;font-size:14px;color:var(--ink2);line-height:1.6;
+  max-width:60ch;margin:0 auto;
+}
+.rev-note a{color:var(--red);font-weight:600}
