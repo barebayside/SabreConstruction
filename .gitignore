@@ -1,0 +1,8 @@
+# 25 MB raw Kling output — the web-encoded 1 MB version is what ships
+assets/video/hero-transform-source.mp4
+
+# local QA screenshots
+shots/
+
+__pycache__/
+*.pyc
