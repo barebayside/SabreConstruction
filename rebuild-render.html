@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rebuild render — Sabre Constructions</title>
-<meta name="description" content="A knockdown-rebuild transformation video built from a client's own site photo and their architect's drawings — old house, cleared block, finished home, one locked camera.">
+<meta name="description" content="A knockdown-rebuild transformation video: old house down, new home up, one locked camera.">
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/sabre.css?v=7">
-<link rel="stylesheet" href="css/ads.css?v=6">
+<link rel="stylesheet" href="css/ads.css?v=7">
 <link rel="icon" href="assets/img/sabre-logo.png">
 </head>
 <body>
@@ -41,9 +41,8 @@
 <!-- ============ PAGE HEAD ============ -->
 <header class="page-head">
   <div class="wrap inner">
-    <span class="eyebrow on-dark">Knockdown rebuild · One locked camera</span>
+    <span class="eyebrow on-dark">Knockdown rebuild</span>
     <h1 class="h1">Their street. Their new home.</h1>
-    <p class="lede">One photograph taken from the footpath, one set of the architect's drawings, and a video that takes the old house down and puts the new one up without the camera ever moving. Nothing here was filmed and nothing here is a stock house.</p>
     <p class="demo-flag" style="margin-left:0">
       <span>⚠</span>
       <span><b>Concept visualisation.</b> The cleared block and the finished home are generated images, built from the owner's photo and their architect's elevation. They are an artist's impression of an approved design, not a photograph of a completed build.</span>
@@ -52,83 +51,16 @@
 </header>
 
 <!-- ============ THE VIDEO ============ -->
+<!-- Deliberately the only thing on this page. Edward stripped the build-steps
+     and use-case sections out on 2026-08-14: the clip is the pitch. -->
 <section class="sec" id="film">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">The film</span>
-      <h2 class="h2">Sixteen seconds, start to finish.</h2>
-      <p class="lede">The old house comes down, the slab goes in, the frames stand up, the trusses and roof follow, and the finished home lands on the last frame. Because the camera never moves, the eye stays locked on the one thing that changes — which is the whole point of a rebuild ad.</p>
-    </div>
-
-    <!-- .vwrap + .vplay is the click-to-play handler in js/sabre.js.
-         Swap the placeholder poster for the real clip once it renders. -->
+    <!-- .vwrap + .vplay is the click-to-play handler in js/sabre.js. -->
     <div class="vwrap" id="filmwrap">
       <video src="assets/video/rebuild-render.mp4" poster="assets/img/render/poster.jpg" playsinline preload="metadata" muted loop></video>
       <button class="vplay" type="button" aria-label="Play the rebuild transformation">
         <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>
       </button>
-    </div>
-    <p class="cap">16 seconds · 16:9 · silent · loops. A 9:16 cut for Reels and Stories comes off the same master.</p>
-  </div>
-</section>
-
-<!-- ============ THE THREE FRAMES ============ -->
-<section class="sec sec-alt" id="frames">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">How it's built</span>
-      <h2 class="h2">Three frames, then the motion.</h2>
-      <p class="lede">Every frame is derived from the owner's own photograph, so the footpath, the power pole, the neighbours and the frangipani tree sit in exactly the same place in all three. That's what stops the finished house from looking like it was pasted onto a different street.</p>
-    </div>
-
-    <ol class="fsteps">
-      <li>
-        <figure>
-          <img src="assets/img/render/before.jpg" alt="The existing highset house photographed from the footpath">
-          <figcaption><b>01 · The photograph</b> The only real image in the sequence. Taken on a phone from the footpath on an overcast day.</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <img src="assets/img/render/cleared.jpg" alt="The same view with the house removed and the block scraped flat">
-          <figcaption><b>02 · The cleared block</b> The house is removed and the block scraped back. Fence, letterbox, driveway strips and hedge all stay put.</figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure>
-          <img src="assets/img/render/after.jpg" alt="The same view with the approved new home built on the block">
-          <figcaption><b>03 · The approved design</b> Built from the architect's street elevation — white brick, sandstone base, arched portico. It's a corner block, so the driveway and garage sit off the side street, out of shot.</figcaption>
-        </figure>
-      </li>
-    </ol>
-
-    <p class="demo-flag" style="margin-top:34px;margin-left:0">
-      <span>⚠</span>
-      <span><b>The design isn't ours and neither are the drawings.</b> The finished home is another practice's design. Written permission from the designer, and from the owners, is needed before this runs anywhere public — and the address and the owners' names stay off it either way.</span>
-    </p>
-  </div>
-</section>
-
-<!-- ============ WHAT IT'S FOR ============ -->
-<section class="sec" id="use">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Where it runs</span>
-      <h2 class="h2">What this is actually for.</h2>
-    </div>
-    <div class="ucards">
-      <div class="ucard">
-        <h3>Selling the idea, not the house</h3>
-        <p>Most people can't picture their own street without their own house on it. This shows them, using their street. It's the single hardest objection in a knockdown rebuild and it's answered in ten seconds.</p>
-      </div>
-      <div class="ucard">
-        <h3>One per job, at almost no cost</h3>
-        <p>Every rebuild Sabre quotes already has the two ingredients: a site photo and a set of drawings. Turning them into a clip like this costs a couple of dollars and about an hour.</p>
-      </div>
-      <div class="ucard">
-        <h3>Feeds three places at once</h3>
-        <p>The 16:9 master for the website and Google, a 9:16 cut for Reels and Stories, and the three stills for a carousel or a proposal PDF.</p>
-      </div>
     </div>
   </div>
 </section>
