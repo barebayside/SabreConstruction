@@ -36,29 +36,53 @@ All of it collapses under `prefers-reduced-motion`.
 the hero collapses — for full-page screenshots. Inert for real visitors.
 Same trick as the BBL site.
 
-## The hero video
+## Pages
 
-Not stock. Built in two steps from the client's own photo:
+| Page | What it is |
+|---|---|
+| `index.html` | The landing page |
+| `ads.html` | Instagram/Facebook ad concepts — video formats, Meta ad mock-ups, copy bank |
 
-1. `tools/gen_before.py` — takes their real finished home
-   (`home-slide011607.jpg`) and ages it back into a run-down version with the
-   same camera angle, via `fal-ai/nano-banana-2/edit`. Output: `hero-before.jpg`.
-2. `tools/gen_video.py` — `fal-ai/kling-video/v3/pro/image-to-video` with
-   `start_image_url` = the run-down frame and `end_image_url` = the real
-   finished photo, so the payoff shot is genuinely their build, not an
-   AI invention.
+Both share `css/sabre.css` and `js/sabre.js`; the ads page adds `css/ads.css`.
+The nav lives in the sticky top bar. On the landing page the bar slides in
+after the hero; on the ads page `.topbar.always` pins it open.
 
-Then encoded down from 25 MB to ~1 MB:
+## The hero video — knockdown rebuild
+
+Not stock, and not one generation. Built as two segments so each story beat
+has a fixed start and end frame:
 
 ```
-ffmpeg -i hero-transform-source.mp4 \
-  -vf "scale=1600:-2,tpad=stop_mode=clone:stop_duration=1.6,fps=25" \
-  -c:v libx264 -pix_fmt yuv420p -crf 27 -preset slow -an -movflags +faststart \
-  hero-transform.mp4
+A (old lowset brick-and-tile)  ->  B (cleared block)       segment 1, demolition
+B (cleared block)              ->  C (their REAL photo)    segment 2, assembly
 ```
 
-The 1.6s freeze on the last frame is deliberate — it holds on the finished
-house before the loop restarts.
+1. `tools/gen_rebuild_frames.py` — derives **A** and **B** from their real
+   photo via `fal-ai/nano-banana-2/edit`. A replaces the two-storey home with a
+   small 1970s lowset; B clears the block to bare earth and a slab. Because
+   both come from photo C, the camera position, street, neighbouring house and
+   driveway stay locked across all three frames.
+2. `tools/gen_rebuild_video.py` — two `fal-ai/kling-video/v3/pro/image-to-video`
+   calls with `start_image_url` / `end_image_url` pinned to those frames.
+   Segment 2's end frame is their actual photograph, so the assembly is forced
+   to converge on a house they really built.
+3. Stitched with a 0.4s crossfade and a 1.8s hold on the final frame:
+
+```
+ffmpeg -i rb-seg1-demo.mp4 -i rb-seg2-build.mp4 -filter_complex \
+  "[0:v]scale=1600:-2,fps=25,setpts=PTS-STARTPTS[a];\
+   [1:v]scale=1600:-2,fps=25,setpts=PTS-STARTPTS[b];\
+   [a][b]xfade=transition=fade:duration=0.4:offset=4.6,\
+   tpad=stop_mode=clone:stop_duration=1.8[v]" \
+  -map "[v]" -c:v libx264 -pix_fmt yuv420p -crf 29 -preset slow -an \
+  -movflags +faststart rebuild-hero.mp4
+```
+
+56 MB of raw segments down to 1.7 MB. `rebuild-9x16.mp4` is the same master
+letterboxed onto a 1080x1920 canvas for Reels.
+
+The hold on the last frame is deliberate — the payoff needs a beat before the
+loop restarts.
 
 `tools/upscale_gallery.py` crisp-upscales their 376x251 gallery thumbnails
 to ~1500px (`fal-ai/recraft/upscale/crisp` — resolution only, no generative
@@ -105,6 +129,28 @@ Everything factual is from Sabre's own site. Nothing invented.
 | 3/73-75 Steel St, Capalaba QLD 4157 · Mon–Fri 8am–4pm | their contact page |
 | Katrina Field testimonial (verbatim) | their testimonials page |
 | Project names: Brighton, Clarence, Alexandra, Killarney, Clapton, Marcoola | their gallery page |
+
+## ⚠️ The testimonial carousel is AI — it cannot go live
+
+The three clips in the "People who've built with us" carousel are
+**AI-generated people reading a script** (`fal-ai/veo3.1`, see
+`tools/gen_testimonials.py`). They are a proof of concept for the format only.
+
+Three separate safeguards, all of which must stay until real footage replaces
+them:
+
+- a yellow warning panel above the carousel
+- an "AI demo" chip on every slide
+- a burned-in `AI DEMO - NOT A REAL CUSTOMER` bar across the top of each video
+  file, so a clip can't be mistaken for real if it ever leaves this page
+
+Publishing AI-generated customer testimonials as genuine is misleading conduct
+under Australian Consumer Law and breaches Meta and Google ad policy. Replace
+them with real clients filmed on a phone — fifteen minutes each — before this
+page is shown to the public as a live site.
+
+The written Katrina Field quote further down the page **is** real, taken
+verbatim from Sabre's own testimonials page.
 
 **Still needed from the client:**
 

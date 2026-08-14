@@ -84,46 +84,77 @@
     }
   }
 
-  /* ---------- before / after drag slider ---------- */
-  var ba = document.getElementById('ba');
-  if (ba) {
-    var dragging = false;
+  /* ---------- click-to-play videos (testimonials, concept clips) ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.vwrap'), function (wrap) {
+    var vid = wrap.querySelector('video');
+    var btn = wrap.querySelector('.vplay');
+    if (!vid || !btn) return;
 
-    function setPos(clientX) {
-      var r = ba.getBoundingClientRect();
-      var pct = ((clientX - r.left) / r.width) * 100;
-      pct = Math.max(2, Math.min(98, pct));
-      ba.style.setProperty('--pos', pct + '%');
+    btn.addEventListener('click', function () {
+      // only one testimonial talking at a time
+      Array.prototype.forEach.call(document.querySelectorAll('.vwrap video'), function (other) {
+        if (other !== vid) { other.pause(); other.parentNode.classList.remove('playing'); }
+      });
+      wrap.classList.add('playing');
+      vid.controls = true;
+      var p = vid.play();
+      if (p && p.catch) p.catch(function () { wrap.classList.remove('playing'); });
+    });
+
+    vid.addEventListener('pause', function () { wrap.classList.remove('playing'); });
+    vid.addEventListener('ended', function () {
+      wrap.classList.remove('playing');
+      vid.controls = false;
+      vid.currentTime = 0;
+    });
+  });
+
+  /* ---------- testimonial carousel ---------- */
+  var carousel = document.getElementById('carousel');
+  if (carousel) {
+    var track = carousel.querySelector('.car-track');
+    var slides = carousel.querySelectorAll('.car-slide');
+    var dotWrap = carousel.querySelector('.car-dots');
+    var index = 0;
+
+    function pauseAll() {
+      Array.prototype.forEach.call(carousel.querySelectorAll('video'), function (v) {
+        v.pause();
+        v.parentNode.classList.remove('playing');
+      });
     }
 
-    ba.addEventListener('pointerdown', function (e) {
-      dragging = true;
-      ba.setPointerCapture(e.pointerId);
-      setPos(e.clientX);
-    });
-    ba.addEventListener('pointermove', function (e) {
-      if (dragging) setPos(e.clientX);
-    });
-    ['pointerup', 'pointercancel'].forEach(function (ev) {
-      ba.addEventListener(ev, function () { dragging = false; });
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      pauseAll();                                   // don't leave audio playing off-screen
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+      Array.prototype.forEach.call(dotWrap.children, function (d, n) {
+        d.classList.toggle('on', n === index);
+      });
+    }
+
+    Array.prototype.forEach.call(slides, function (s, n) {
+      var d = document.createElement('button');
+      d.type = 'button';
+      d.setAttribute('aria-label', 'Testimonial ' + (n + 1));
+      d.addEventListener('click', function () { go(n); });
+      dotWrap.appendChild(d);
     });
 
-    // nudge it open once it scrolls into view, so people see it's draggable
-    if (!STILL && !REDUCED && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (es, obs) {
-        if (!es[0].isIntersecting) return;
-        obs.disconnect();
-        var from = 50, to = 22, t0 = null;
-        function sweep(ts) {
-          if (t0 === null) t0 = ts;
-          var p = Math.min((ts - t0) / 900, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          ba.style.setProperty('--pos', (from + (to - from) * eased) + '%');
-          if (p < 1) requestAnimationFrame(sweep);
-        }
-        setTimeout(function () { requestAnimationFrame(sweep); }, 350);
-      }, { threshold: 0.45 }).observe(ba);
-    }
+    carousel.querySelector('.prev').addEventListener('click', function () { go(index - 1); });
+    carousel.querySelector('.next').addEventListener('click', function () { go(index + 1); });
+
+    // swipe
+    var x0 = null;
+    carousel.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 45) go(index + (dx < 0 ? 1 : -1));
+      x0 = null;
+    });
+
+    go(0);
   }
 
   /* ---------- replay the reveal video ---------- */

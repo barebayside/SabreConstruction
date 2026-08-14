@@ -1,5 +1,8 @@
-# 25 MB raw Kling output — the web-encoded 1 MB version is what ships
-assets/video/hero-transform-source.mp4
+# raw model output — only the web-encoded cuts ship
+assets/video/*-source.mp4
+assets/video/rb-seg1-demo.mp4
+assets/video/rb-seg2-build.mp4
+assets/video/rebuild-hero-hq.mp4
 
 # local QA screenshots
 shots/

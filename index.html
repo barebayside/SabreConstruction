@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sabre.css?v=1">
+<link rel="stylesheet" href="css/sabre.css?v=2">
 <link rel="icon" href="assets/img/sabre-logo.png">
 
 <script type="application/ld+json">
@@ -45,7 +45,13 @@
 
 <!-- ============ STICKY BAR ============ -->
 <header class="topbar" id="topbar">
-  <a href="#top"><img src="assets/img/sabre-logo.png" alt="Sabre Constructions"></a>
+  <div class="tb-left">
+    <a href="#top"><img src="assets/img/sabre-logo.png" alt="Sabre Constructions"></a>
+    <nav class="tb-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="ads.html">Ad concepts</a>
+    </nav>
+  </div>
   <div class="tb-right">
     <a class="tb-phone" href="tel:0738233200">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
@@ -59,7 +65,7 @@
 <section class="hero" id="top">
   <div class="hero-media">
     <video autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
-      <source src="assets/video/hero-transform.mp4" type="video/mp4">
+      <source src="assets/video/rebuild-hero.mp4" type="video/mp4">
     </video>
   </div>
 
@@ -102,36 +108,98 @@
 <section class="sec" id="reveal">
   <div class="wide">
     <div class="sec-head center reveal">
-      <span class="eyebrow">The six-second version</span>
+      <span class="eyebrow">A knockdown rebuild, sped up</span>
       <h2 class="h2">This is the bit everyone<br><span class="strike-red">scrolls back for.</span></h2>
-      <p class="lede">Tired weatherboard, rusted roof, fence on the lean — and then the house it was always meant to be. The finish on the right is a real Sabre build.</p>
+      <p class="lede">Tired old lowset brick and tile comes down. A brand new home goes up in its place, piece by piece. The house it lands on is a real Sabre build — one you can drive past.</p>
     </div>
 
     <div class="reveal-stage zoom">
-      <span class="stage-tag">Before → After</span>
+      <span class="stage-tag">Knockdown → rebuild</span>
       <video id="revealVid" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
-        <source src="assets/video/hero-transform.mp4" type="video/mp4">
+        <source src="assets/video/rebuild-hero.mp4" type="video/mp4">
       </video>
       <button class="stage-replay" id="replayBtn" type="button">↻ Play it again</button>
     </div>
 
-    <div style="height:22px"></div>
+  </div>
+</section>
 
-    <div class="sec-head center reveal" style="margin-bottom:26px;margin-top:40px">
-      <span class="eyebrow">Drag it yourself</span>
-      <h3 class="h3">Grab the handle. Push it across.</h3>
+<!-- ============ TESTIMONIAL CAROUSEL ============ -->
+<section class="sec" id="voices" style="background:var(--white);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">In their words</span>
+      <h2 class="h2">People who've<br>built with us.</h2>
+      <p class="demo-flag">
+        <span>⚠</span>
+        <span><b>Demo placeholder.</b> These three clips are AI-generated people reading a script — they are not real Sabre customers and must be replaced with genuine filmed testimonials before this page goes live.</span>
+      </p>
     </div>
 
-    <div class="ba reveal" id="ba">
-      <img class="before" src="assets/img/hero-before.jpg" alt="The same home before renovation — faded cladding, rusted roof, broken fence">
-      <img class="after" src="assets/img/home-slide011607.jpg" alt="A completed Sabre Constructions home — white weatherboard, new roof, picket fence">
-      <span class="ba-label l">Before</span>
-      <span class="ba-label r">Sabre</span>
-      <div class="ba-handle">
-        <div class="ba-knob">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+    <div class="carousel reveal" id="carousel">
+      <button class="car-nav prev" type="button" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="car-window">
+        <div class="car-track">
+
+          <article class="car-slide">
+            <div class="vwrap">
+              <video preload="metadata" playsinline poster="assets/img/testimonial-1.jpg">
+                <source src="assets/video/testimonial-1.mp4" type="video/mp4">
+              </video>
+              <button class="vplay" type="button" aria-label="Play testimonial">
+                <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>
+              </button>
+            </div>
+            <div class="car-meta">
+              <h3>Rachel &amp; Tom</h3>
+              <span class="role">Custom home · Thornlands</span>
+              <span class="aitag">AI demo</span>
+            </div>
+          </article>
+
+          <article class="car-slide">
+            <div class="vwrap">
+              <video preload="none" playsinline poster="assets/img/testimonial-2.jpg">
+                <source src="assets/video/testimonial-2.mp4" type="video/mp4">
+              </video>
+              <button class="vplay" type="button" aria-label="Play testimonial">
+                <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>
+              </button>
+            </div>
+            <div class="car-meta">
+              <h3>Dave M.</h3>
+              <span class="role">Knockdown rebuild · Wellington Point</span>
+              <span class="aitag">AI demo</span>
+            </div>
+          </article>
+
+          <article class="car-slide">
+            <div class="vwrap">
+              <video preload="none" playsinline poster="assets/img/testimonial-3.jpg">
+                <source src="assets/video/testimonial-3.mp4" type="video/mp4">
+              </video>
+              <button class="vplay" type="button" aria-label="Play testimonial">
+                <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></i>
+              </button>
+            </div>
+            <div class="car-meta">
+              <h3>Julie H.</h3>
+              <span class="role">Renovation &amp; extension · Capalaba</span>
+              <span class="aitag">AI demo</span>
+            </div>
+          </article>
+
         </div>
       </div>
+
+      <button class="car-nav next" type="button" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+
+      <div class="car-dots"></div>
     </div>
   </div>
 </section>
@@ -430,6 +498,6 @@
   </div>
 </footer>
 
-<script src="js/sabre.js?v=1"></script>
+<script src="js/sabre.js?v=2"></script>
 </body>
 </html>
