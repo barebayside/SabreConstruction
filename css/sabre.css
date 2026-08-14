@@ -53,9 +53,12 @@ h1,h2,h3,.h1,.h2,.h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-
 .h3{font-size:clamp(22px,2.6vw,30px);line-height:1}
 .lede{font-size:clamp(17px,2vw,21px);color:var(--ink2);line-height:1.55;max-width:60ch}
 .red{color:var(--red)}
+/* underline, not a strike-through — a line through the payoff line reads as
+   crossing it out */
 .strike-red{position:relative;display:inline-block}
 .strike-red::after{
-  content:'';position:absolute;left:-2%;right:-2%;top:52%;height:.1em;background:var(--red);
+  content:'';position:absolute;left:-1%;right:-1%;bottom:-.06em;height:.075em;background:var(--red);
+  border-radius:100px;
   transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease) .3s;
 }
 .in .strike-red::after{transform:scaleX(1)}

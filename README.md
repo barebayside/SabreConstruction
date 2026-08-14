@@ -77,28 +77,43 @@ Two rules that came out of that pass and should survive future edits:
 | `lp-raise.html` | Ad LP **B — "Up and Under"**. Video-led, ~3 screens. House-raise angle |
 | `lp-story.html` | Ad LP **C — "The Whole Story"**. Long form. Retargeting / warm traffic |
 
+### One landing page per ad medium
+
+| Page | Medium | Shape |
+|---|---|---|
+| `lp-rebuild.html` | Meta Reels & Stories | 9:16 — photo, headline, form. Nothing else above the fold |
+| `lp-raise.html` | Meta Feed | 1:1 / 4:5 — video, numbers, form, what happens next |
+| `lp-story.html` | Google Ads | desktop 16:9 — two columns, form sticky in the right rail |
+
+The medium is printed on each page as a pill under the header, so a reviewer
+can see at a glance what the page is a destination for.
+
+### The form is embedded, not a popup
+
+Every LP has `<div data-qualify-inline></div>` where the form goes. It renders
+open on question one — no button to press first. `js/qualify.js` drives both
+that and a modal off one state machine with shared answers, so someone who
+starts inline and later hits the modal picks up where they left off.
+
+The modal is a **fallback only**. It fires when someone scrolls to the bottom
+without having touched the form, and never if they've already started. A
+`[data-qualify]` button scrolls to the inline form and flashes it rather than
+stacking a modal over the identical thing.
+
+### ⚠️ The star ratings are placeholders
+
+Each LP has a five-star strip with an amber `Needs Sabre's real rating` chip
+next to it. **There is no verifiable public Google rating for Sabre** — I
+checked, and the only public review I could find is a critical 2014 Yelp
+entry. Get their real Google Business rating and review count before this
+runs, or cut the strip. Do not invent a number.
+
 ### Two things to strip before real ads run
 
 1. **The preview switcher.** Each LP has a `<nav class="prev-bar">` block at the
-   top letting you flick between the three. It's a review tool — delete the
-   block and the `previewing` class on `<body>`.
+   top letting you flick between the three. Delete the block and the
+   `previewing` class on `<body>`.
 2. **`LP 1 / LP 2 / LP 3` in the main nav** — same reason.
-
-### The form opens on arrival
-
-Ad traffic already opted in by tapping the ad, so the popup opens itself 700ms
-after load rather than asking for a second click. Controlled per page:
-
-```html
-<body class="has-sticky" data-autoqualify="700">
-```
-
-Remove the attribute and it goes back to click-to-open. Worth considering on
-`lp-story.html` — that page is for retargeted visitors who came back to *read*,
-and a form over the top of it fights that.
-
-The preview switcher sits at `z-index:400`, above the modal, so you can move
-between pages without closing the form.
 
 ## ⚠️ Where the leads go
 

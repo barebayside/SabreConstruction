@@ -1,10 +1,14 @@
 /* ============================================================
-   QUALIFYING POPUP — five questions, one per screen.
-   Shared by all three ad landing pages.
+   QUALIFYING FLOW — five questions, one per screen.
 
-   Five fields in one screen would cost 10–25% of completions, so this is a
-   multi-step with a progress bar instead: easy first, phone number last,
-   and only two of the five need typing. Everything else is a tap target.
+   Renders in two places off one state machine:
+     · INLINE  — <div data-qualify-inline></div> sits on the page, visible
+                 and startable with no click. This is the primary.
+     · MODAL   — fallback only. Fires once if they reach the bottom without
+                 having started, or from any [data-qualify] button.
+
+   Answers are shared, so someone who starts inline and then hits the modal
+   picks up where they left off.
 
    Leads go out through a form relay (no server on GitHub Pages).
    Change LEAD_EMAIL and nothing else.
@@ -42,7 +46,7 @@
     {
       key: 'budget',
       q: 'Roughly what budget are you working to?',
-      hint: "A ballpark is fine. It stops us wasting your time.",
+      hint: 'A ballpark is fine. It stops us wasting your time.',
       type: 'choice',
       // ⚠️ PLACEHOLDER BANDS — confirm against Sabre's actual job sizes
       options: ['Under $300k', '$300k – $450k', '$450k – $650k', '$650k+', 'Still working it out']
@@ -61,46 +65,52 @@
   ];
 
   var answers = {};
-  var at = 0;
-  var openedAt = 0;
-  var modal, body, bar, backBtn, root;
+  var started = false;
+  var finished = false;
+  var openedAt = Date.now();
+  var hosts = [];          // {root, bar, body, back, isModal}
+  var modal = null;
 
-  function build() {
-    root = document.createElement('div');
-    root.className = 'qm';
-    root.innerHTML =
-      '<div class="qm-sheet" role="dialog" aria-modal="true" aria-label="Book a site visit">' +
-        '<div class="qm-top">' +
-          '<button class="qm-back" type="button" aria-label="Back">' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>' +
-          '</button>' +
-          '<div class="qm-bar"><i></i></div>' +
+  /* ---------- shell markup, shared by inline and modal ---------- */
+  function shell(isModal) {
+    return (isModal ? '<div class="qm-sheet" role="dialog" aria-modal="true" aria-label="Book a site visit">' : '') +
+      '<div class="qm-top">' +
+        '<button class="qm-back" type="button" aria-label="Back">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>' +
+        '</button>' +
+        '<div class="qm-bar"><i></i></div>' +
+        (isModal ?
           '<button class="qm-close" type="button" aria-label="Close">' +
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>' +
-          '</button>' +
-        '</div>' +
-        '<div class="qm-body"></div>' +
-      '</div>';
-    document.body.appendChild(root);
-
-    modal = root.querySelector('.qm-sheet');
-    body = root.querySelector('.qm-body');
-    bar = root.querySelector('.qm-bar i');
-    backBtn = root.querySelector('.qm-back');
-
-    root.addEventListener('click', function (e) { if (e.target === root) close(); });
-    root.querySelector('.qm-close').addEventListener('click', close);
-    backBtn.addEventListener('click', function () { if (at > 0) render(at - 1); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && root.classList.contains('open')) close();
-    });
+          '</button>' : '') +
+      '</div>' +
+      '<div class="qm-body"></div>' +
+      (isModal ? '</div>' : '');
   }
 
-  function render(i) {
-    at = i;
+  function wire(root, isModal) {
+    var scope = isModal ? root.querySelector('.qm-sheet') : root;
+    var h = {
+      root: root,
+      scope: scope,
+      body: scope.querySelector('.qm-body'),
+      bar: scope.querySelector('.qm-bar i'),
+      back: scope.querySelector('.qm-back'),
+      isModal: isModal
+    };
+    h.back.addEventListener('click', function () {
+      if (h.at > 0) draw(h, h.at - 1);
+    });
+    hosts.push(h);
+    return h;
+  }
+
+  /* ---------- the step machine ---------- */
+  function draw(h, i) {
+    h.at = i;
     var s = STEPS[i];
-    bar.style.width = ((i) / STEPS.length * 100) + '%';
-    backBtn.style.visibility = i === 0 ? 'hidden' : 'visible';
+    h.bar.style.width = (i / STEPS.length * 100) + '%';
+    h.back.style.visibility = i === 0 ? 'hidden' : 'visible';
 
     var html =
       '<span class="qm-step">Question ' + (i + 1) + ' of ' + STEPS.length + '</span>' +
@@ -110,8 +120,8 @@
     if (s.type === 'choice') {
       html += '<div class="qm-opts">';
       s.options.forEach(function (o) {
-        var on = answers[s.key] === o ? ' on' : '';
-        html += '<button class="qm-opt' + on + '" type="button" data-v="' + o + '">' + o + '</button>';
+        html += '<button class="qm-opt' + (answers[s.key] === o ? ' on' : '') +
+                '" type="button" data-v="' + o + '">' + o + '</button>';
       });
       html += '</div>';
     } else {
@@ -124,45 +134,47 @@
         (i === STEPS.length - 1 ? 'Book my site visit' : 'Next') + '</button>';
     }
 
-    body.innerHTML = html;
-    body.scrollTop = 0;
+    h.body.innerHTML = html;
 
     if (s.type === 'choice') {
-      body.querySelectorAll('.qm-opt').forEach(function (b) {
+      h.body.querySelectorAll('.qm-opt').forEach(function (b) {
         b.addEventListener('click', function () {
+          started = true;
           answers[s.key] = b.dataset.v;
-          advance();
+          step(h);
         });
       });
     } else {
-      var input = body.querySelector('.qm-in');
-      var next = body.querySelector('.qm-next');
-      var err = body.querySelector('.qm-err');
-
+      var input = h.body.querySelector('.qm-in');
+      var err = h.body.querySelector('.qm-err');
       function go() {
         var v = input.value.trim();
         if (!v) { err.textContent = 'Just need this one.'; input.focus(); return; }
         if (s.validate && !s.validate(v)) { err.textContent = s.error; input.focus(); return; }
+        started = true;
         answers[s.key] = v;
-        advance();
+        step(h);
       }
-      next.addEventListener('click', go);
+      h.body.querySelector('.qm-next').addEventListener('click', go);
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
-      // don't autofocus on the first paint — it yanks the mobile keyboard up
-      // before they've read the question
-      if (i > 0) setTimeout(function () { input.focus(); }, 320);
+      input.addEventListener('input', function () { started = true; });
+      // only pull the keyboard up mid-flow, never on first paint
+      if (i > 0 && (h.isModal || h.userDriven)) {
+        setTimeout(function () { input.focus({ preventScroll: true }); }, 300);
+      }
     }
+    h.userDriven = true;
   }
 
-  function advance() {
-    if (at < STEPS.length - 1) { render(at + 1); return; }
-    submit();
+  function step(h) {
+    if (h.at < STEPS.length - 1) { draw(h, h.at + 1); return; }
+    submit(h);
   }
 
-  function submit() {
-    bar.style.width = '100%';
-    body.innerHTML =
-      '<div class="qm-sending"><span class="qm-spin"></span><p>Sending…</p></div>';
+  function submit(h) {
+    finished = true;
+    h.bar.style.width = '100%';
+    h.body.innerHTML = '<div class="qm-sending"><span class="qm-spin"></span><p>Sending…</p></div>';
 
     var payload = {
       _subject: 'Site visit request — ' + (answers.suburb || '') + ' — ' + (answers.project_type || ''),
@@ -177,10 +189,8 @@
       referrer: document.referrer || '(direct)',
       fill_seconds: Math.round((Date.now() - openedAt) / 1000)
     };
-
-    // carry ad tracking through if it's on the URL
     var url = new URL(window.location.href);
-    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function (k) {
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function (k) {
       var v = url.searchParams.get(k);
       if (v) payload[k] = v;
     });
@@ -191,64 +201,94 @@
       body: JSON.stringify(payload)
     })
       .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && (d.success === true || d.success === 'true')) done();
-        else fail();
-      })
-      .catch(fail);
+      .then(function (d) { (d && (d.success === true || d.success === 'true')) ? done(h) : fail(h); })
+      .catch(function () { fail(h); });
   }
 
-  function done() {
-    body.innerHTML =
+  function done(h) {
+    h.body.innerHTML =
       '<div class="qm-done">' +
         '<div class="qm-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>' +
         '<h3 class="qm-q">Got it — thanks.</h3>' +
         '<p class="qm-hint">Stewart will give you a ring within one business day. If you\'d rather talk now, we\'re on <a href="tel:0738233200">07 3823 3200</a>.</p>' +
       '</div>';
+    h.back.style.visibility = 'hidden';
   }
 
-  function fail() {
-    body.innerHTML =
+  function fail(h) {
+    h.body.innerHTML =
       '<div class="qm-done">' +
         '<h3 class="qm-q">That didn\'t send.</h3>' +
         '<p class="qm-hint">Sorry — please ring us on <a href="tel:0738233200">07 3823 3200</a> and we\'ll sort it out.</p>' +
       '</div>';
+    h.back.style.visibility = 'hidden';
   }
 
-  function open() {
-    if (!root) build();
-    openedAt = Date.now();
-    answers = {};
-    render(0);
-    root.classList.add('open');
+  /* ---------- inline ---------- */
+  document.querySelectorAll('[data-qualify-inline]').forEach(function (el) {
+    el.classList.add('qm-inline');
+    el.innerHTML = shell(false);
+    var h = wire(el, false);
+    h.userDriven = false;
+    draw(h, 0);
+  });
+
+  /* ---------- modal (fallback) ---------- */
+  function buildModal() {
+    var root = document.createElement('div');
+    root.className = 'qm';
+    root.innerHTML = shell(true);
+    document.body.appendChild(root);
+    var h = wire(root, true);
+    root.addEventListener('click', function (e) { if (e.target === root) closeModal(); });
+    root.querySelector('.qm-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && root.classList.contains('open')) closeModal();
+    });
+    modal = h;
+    return h;
+  }
+
+  function openModal() {
+    var h = modal || buildModal();
+    draw(h, finished ? STEPS.length - 1 : (h.at || 0));
+    if (finished) done(h);
+    h.root.classList.add('open');
     document.body.classList.add('qm-lock');
   }
 
-  function close() {
-    root.classList.remove('open');
+  function closeModal() {
+    if (!modal) return;
+    modal.root.classList.remove('open');
     document.body.classList.remove('qm-lock');
   }
 
-  // any [data-qualify] element opens it
   document.addEventListener('click', function (e) {
     var t = e.target.closest('[data-qualify]');
     if (!t) return;
     e.preventDefault();
-    open();
+    // if the form is already on the page, scroll to it rather than stacking a
+    // modal on top of the identical thing
+    var inline = document.querySelector('.qm-inline');
+    if (inline) {
+      inline.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      inline.classList.add('flash');
+      setTimeout(function () { inline.classList.remove('flash'); }, 1400);
+      return;
+    }
+    openModal();
   });
 
-  // Ad traffic has already opted in by tapping the ad — don't make them click
-  // again. <body data-autoqualify="700"> opens it that many ms after load.
-  // The short delay lets the page paint first, so the sheet slides up over
-  // something rather than appearing on a blank screen.
-  var auto = document.body.getAttribute('data-autoqualify');
-  if (auto !== null) {
-    var delay = parseInt(auto, 10);
-    if (isNaN(delay)) delay = 700;
-    window.addEventListener('load', function () {
-      setTimeout(open, delay);
-    });
-  }
+  /* ---------- bottom-of-page catch ----------
+     Only fires if they got all the way down without touching the form. */
+  var caught = false;
+  window.addEventListener('scroll', function () {
+    if (caught || started || finished) return;
+    var bottom = document.documentElement.scrollHeight - window.innerHeight - 120;
+    if (window.scrollY < bottom) return;
+    caught = true;
+    openModal();
+  }, { passive: true });
 
-  window.SabreQualify = { open: open, close: close };
+  window.SabreQualify = { open: openModal, close: closeModal };
 })();

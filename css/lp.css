@@ -1,71 +1,48 @@
 /* ============================================================
-   AD LANDING PAGES + QUALIFYING POPUP
-   Loads on top of sabre.css. Same palette, different structures.
-   Mobile-first: these pages are read on a phone, from a Reel.
+   AD LANDING PAGES + QUALIFYING FLOW
+   Loads on top of sabre.css. Same palette, three structures, one per
+   ad medium.
+
+   The form is EMBEDDED on every page — visible, startable, no click.
+   The modal is a fallback only.
    ============================================================ */
 
-/* ---------- QUALIFYING POPUP ---------- */
-.qm{
-  position:fixed;inset:0;z-index:300;display:none;
-  align-items:flex-end;justify-content:center;
-  background:rgba(6,6,7,.72);backdrop-filter:blur(5px);
-}
-.qm.open{display:flex;animation:qmfade .25s var(--ease)}
-@keyframes qmfade{from{opacity:0}to{opacity:1}}
-body.qm-lock{overflow:hidden}
-
-.qm-sheet{
-  width:100%;max-width:520px;background:var(--paper);
-  border-radius:22px 22px 0 0;overflow:hidden;
-  box-shadow:0 -20px 60px rgba(0,0,0,.5);
-  animation:qmup .38s var(--ease);
-  display:flex;flex-direction:column;max-height:92vh;
-}
-@keyframes qmup{from{transform:translateY(100%)}to{transform:none}}
-@media(min-width:640px){
-  .qm{align-items:center}
-  .qm-sheet{border-radius:22px;animation:qmpop .34s var(--pop)}
-  @keyframes qmpop{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:none}}
-}
-@media(prefers-reduced-motion:reduce){
-  .qm.open,.qm-sheet{animation:none}
-}
-
-.qm-top{display:flex;align-items:center;gap:14px;padding:16px 18px 12px}
+/* ---------- THE FLOW (shared by inline + modal) ---------- */
+.qm-top{display:flex;align-items:center;gap:12px;padding:16px 18px 10px}
 .qm-back,.qm-close{
-  flex-shrink:0;width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;border:0;cursor:pointer;
   background:rgba(11,11,12,.06);color:var(--ink);
   display:flex;align-items:center;justify-content:center;transition:background .2s;
 }
 .qm-back:hover,.qm-close:hover{background:rgba(11,11,12,.12)}
-.qm-back svg,.qm-close svg{width:16px;height:16px}
+.qm-back svg,.qm-close svg{width:15px;height:15px}
 .qm-bar{flex:1;height:5px;border-radius:100px;background:rgba(11,11,12,.1);overflow:hidden}
 .qm-bar i{display:block;height:100%;width:0;background:var(--red);border-radius:100px;
   transition:width .4s var(--ease)}
 
-.qm-body{padding:6px 22px 26px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.qm-body{padding:4px 20px 22px}
 .qm-step{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--red);display:block;margin-bottom:10px;
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--red);display:block;margin-bottom:8px;
 }
 .qm-q{
   font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.02em;text-transform:uppercase;
-  font-size:clamp(28px,6vw,38px);line-height:.98;color:var(--ink);margin-bottom:8px;
+  font-size:clamp(26px,5.4vw,34px);line-height:.98;color:var(--ink);margin-bottom:6px;
 }
-.qm-hint{font-size:14.5px;color:var(--ink2);line-height:1.5;margin-bottom:22px}
+.qm-hint{font-size:14px;color:var(--ink2);line-height:1.5;margin-bottom:18px}
 .qm-hint a{color:var(--red);font-weight:600}
 
-.qm-opts{display:grid;gap:10px}
+.qm-opts{display:grid;gap:9px}
 .qm-opt{
   width:100%;text-align:left;cursor:pointer;
-  background:var(--white);border:2px solid var(--line);border-radius:13px;
-  padding:17px 18px;min-height:58px;                     /* thumb-sized */
-  font-family:inherit;font-size:16.5px;font-weight:600;color:var(--ink);
+  background:var(--white);border:2px solid var(--line);border-radius:12px;
+  padding:15px 17px;min-height:56px;                      /* thumb-sized */
+  font-family:inherit;font-size:16px;font-weight:600;color:var(--ink);
   display:flex;align-items:center;justify-content:space-between;gap:12px;
   transition:border-color .18s,background .18s,transform .12s var(--pop);
 }
 .qm-opt::after{
-  content:'';width:20px;height:20px;border-radius:50%;flex-shrink:0;
+  content:'';width:19px;height:19px;border-radius:50%;flex-shrink:0;
   border:2px solid var(--line);transition:border-color .18s,background .18s,box-shadow .18s;
 }
 .qm-opt:hover{border-color:var(--red-line)}
@@ -75,190 +52,242 @@ body.qm-lock{overflow:hidden}
 
 .qm-in{
   width:100%;box-sizing:border-box;background:var(--white);
-  border:2px solid var(--line);border-radius:13px;padding:17px 18px;min-height:58px;
+  border:2px solid var(--line);border-radius:12px;padding:15px 17px;min-height:56px;
   font-family:inherit;font-size:17px;color:var(--ink);transition:border-color .2s,box-shadow .2s;
 }
 .qm-in:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px var(--red-tint)}
-.qm-err{color:var(--red-d);font-size:13.5px;min-height:20px;padding:6px 2px 0}
+.qm-err{color:var(--red-d);font-size:13px;min-height:18px;padding:5px 2px 0}
 .qm-next{
-  width:100%;margin-top:8px;cursor:pointer;border:0;border-radius:13px;
-  background:var(--red);color:#fff;padding:18px;min-height:58px;
-  font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:.05em;text-transform:uppercase;
+  width:100%;margin-top:6px;cursor:pointer;border:0;border-radius:12px;
+  background:var(--red);color:#fff;padding:17px;min-height:56px;
+  font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.05em;text-transform:uppercase;
   box-shadow:0 14px 30px -14px rgba(255,26,26,.85);
   transition:transform .16s var(--pop),box-shadow .16s;
 }
 .qm-next:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px rgba(255,26,26,.95)}
 
-.qm-sending,.qm-done{text-align:center;padding:34px 0 22px}
+.qm-sending,.qm-done{text-align:center;padding:28px 0 18px}
 .qm-done .qm-hint{margin-bottom:0}
 .qm-spin{
-  display:block;width:38px;height:38px;margin:0 auto 16px;border-radius:50%;
+  display:block;width:36px;height:36px;margin:0 auto 14px;border-radius:50%;
   border:3px solid var(--line);border-top-color:var(--red);animation:qmspin .8s linear infinite;
 }
 @keyframes qmspin{to{transform:rotate(360deg)}}
 .qm-sending p{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--muted)}
 .qm-tick{
-  width:62px;height:62px;border-radius:50%;background:var(--red);color:#fff;
-  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+  width:58px;height:58px;border-radius:50%;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 16px;
 }
-.qm-tick svg{width:30px;height:30px}
+.qm-tick svg{width:28px;height:28px}
 
-/* ---------- SHARED LP CHROME ---------- */
+/* ---------- INLINE CARD ---------- */
+.qm-inline{
+  background:var(--paper);border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 30px 70px -40px rgba(0,0,0,.5);
+  transition:box-shadow .4s var(--ease);
+}
+.qm-inline.flash{box-shadow:0 0 0 4px var(--red),0 30px 70px -40px rgba(0,0,0,.5)}
+
+/* ---------- MODAL (fallback only) ---------- */
+.qm{
+  position:fixed;inset:0;z-index:300;display:none;
+  align-items:flex-end;justify-content:center;
+  background:rgba(6,6,7,.72);backdrop-filter:blur(5px);
+}
+.qm.open{display:flex;animation:qmfade .25s var(--ease)}
+@keyframes qmfade{from{opacity:0}to{opacity:1}}
+body.qm-lock{overflow:hidden}
+.qm-sheet{
+  width:100%;max-width:500px;background:var(--paper);
+  border-radius:22px 22px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.5);
+  animation:qmup .38s var(--ease);max-height:92vh;overflow-y:auto;
+}
+@keyframes qmup{from{transform:translateY(100%)}to{transform:none}}
+@media(min-width:640px){.qm{align-items:center}.qm-sheet{border-radius:22px}}
+@media(prefers-reduced-motion:reduce){.qm.open,.qm-sheet{animation:none}}
+
+/* ============================================================
+   SHARED LP CHROME
+   ============================================================ */
 .lp-bar{
   position:fixed;top:0;left:0;right:0;z-index:60;
   display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:12px 18px;background:rgba(11,11,12,.72);backdrop-filter:blur(14px);
+  padding:11px 16px;background:rgba(11,11,12,.82);backdrop-filter:blur(14px);
 }
-.lp-bar img{height:26px;width:auto}
+.lp-bar img{height:24px;width:auto}
 .lp-bar .ph{
-  font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.04em;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;
   color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:7px;
 }
-.lp-bar .ph svg{width:15px;height:15px;color:var(--red)}
+.lp-bar .ph svg{width:14px;height:14px;color:var(--red)}
 
-/* sticky thumb-reach CTA — these pages are read one-handed */
-.lp-sticky{
-  position:fixed;left:0;right:0;bottom:0;z-index:55;
-  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-  background:linear-gradient(to top,rgba(11,11,12,.96),rgba(11,11,12,.82) 70%,transparent);
-  display:flex;gap:10px;
+/* which ad format this page is the destination for */
+.lp-medium{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);
+  color:#fff;border-radius:100px;padding:6px 13px;
 }
-.lp-sticky .btn{flex:1;justify-content:center;min-height:56px}
-.lp-sticky .call{
-  flex:0 0 auto;display:flex;align-items:center;justify-content:center;
-  width:56px;min-height:56px;border-radius:10px;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;
-}
-.lp-sticky .call svg{width:21px;height:21px}
-@media(min-width:900px){.lp-sticky{display:none}}
-body.has-sticky{padding-bottom:0}
-@media(max-width:899px){body.has-sticky{padding-bottom:88px}}
+.lp-medium b{color:#FF6B6B;font-weight:400}
 
-.lp-trust{
-  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
-}
-.lp-trust span{
-  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.26);
-  border-radius:100px;padding:6px 12px;backdrop-filter:blur(6px);
-}
-.lp-trust span.hot{background:var(--red);border-color:var(--red)}
-
-/* ============ LP A — "SAME STREET" · one screen, no scroll ============ */
-.snap{
-  position:relative;min-height:100svh;display:flex;flex-direction:column;
-  justify-content:flex-end;overflow:hidden;background:var(--black);
-}
-.snap-bg{position:absolute;inset:0}
-.snap-bg img{width:100%;height:100%;object-fit:cover}
-.snap-bg::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(11,11,12,.7) 0%,rgba(11,11,12,.15) 30%,rgba(11,11,12,.82) 74%,rgba(11,11,12,.96) 100%);
-}
-.snap-in{position:relative;z-index:2;padding:0 22px clamp(96px,14vh,120px);text-align:center;max-width:640px;margin:0 auto}
-.snap-in .lp-trust{margin-bottom:20px}
-.snap h1{color:#fff;font-size:clamp(44px,11vw,74px);line-height:.94;margin-bottom:16px}
-.snap h1 .red{color:var(--red)}
-.snap p{color:#D8D6D2;font-size:clamp(16px,4vw,19px);line-height:1.5;margin-bottom:26px}
-.snap .btn{width:100%;justify-content:center;min-height:60px;font-size:24px}
-.snap .under{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:#9C9A96;margin-top:14px;
+/* trust strip */
+.stars{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px}
+.stars .set{display:flex;gap:2px;color:#F5B301}
+.stars .set svg{width:16px;height:16px}
+.stars .txt{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink2)}
+.stars .needs{
+  font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:#FFF3C4;color:#8A6A00;border:1px solid #E4C65A;border-radius:100px;padding:3px 8px;
 }
 
-/* ============ LP B — "UP AND UNDER" · video-led, medium ============ */
-.lpb-hero{background:var(--black);color:#fff;padding:88px 0 0;text-align:center}
-.lpb-hero .wrap{max-width:640px}
-.lpb-hero h1{font-size:clamp(38px,9vw,62px);line-height:.96;margin:16px 0 14px;color:#fff}
-.lpb-hero h1 .red{color:var(--red)}
-.lpb-hero p{color:#A9A7A3;font-size:clamp(16px,4vw,18px);line-height:1.55;margin-bottom:24px}
-.lpb-vid{
-  max-width:400px;margin:0 auto;border-radius:18px 18px 0 0;overflow:hidden;
-  border:3px solid var(--ink);border-bottom:0;box-shadow:0 -20px 60px -30px rgba(0,0,0,.9);
+.lp-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.lp-facts .f{
+  flex:1 1 120px;max-width:190px;text-align:center;
+  background:var(--white);border:1px solid var(--line);border-top:3px solid var(--red);
+  border-radius:12px;padding:15px 10px;
 }
-.lpb-vid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+.lp-facts .f b{
+  display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;
+  font-size:clamp(24px,5.5vw,32px);line-height:1;color:var(--ink);margin-bottom:4px;
+}
+.lp-facts .f span{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);line-height:1.4;display:block}
 
-.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.tri .t{
-  background:var(--white);border:1px solid var(--line);border-top:4px solid var(--red);
-  border-radius:14px;padding:24px 20px;text-align:center;
+.next3{display:grid;gap:11px;list-style:none;margin:0;padding:0}
+.next3 li{
+  display:flex;gap:13px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--line);border-radius:12px;padding:15px 17px;
 }
-.tri .t b{
-  display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(30px,5vw,42px);
-  letter-spacing:.02em;color:var(--ink);line-height:1;margin-bottom:8px;
+.next3 .n{
+  flex-shrink:0;width:27px;height:27px;border-radius:50%;background:var(--red);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:15px;line-height:1;padding-top:2px;
 }
-.tri .t span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted)}
-@media(max-width:700px){.tri{grid-template-columns:1fr;gap:12px}
-  .tri .t{display:flex;align-items:baseline;gap:14px;text-align:left;padding:18px 20px}
-  .tri .t b{margin-bottom:0}}
+.next3 b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:19px;
+  letter-spacing:.02em;text-transform:uppercase;color:var(--ink);margin-bottom:2px}
+.next3 p{font-size:14px;color:var(--ink2);line-height:1.5;margin:0}
 
-/* ============ LP C — "THE WHOLE STORY" · long form ============ */
-.story{max-width:680px;margin:0 auto;padding:0 22px}
-.story h2{font-size:clamp(30px,6.5vw,46px);line-height:1;margin:clamp(44px,7vw,68px) 0 16px}
-.story p{font-size:17px;line-height:1.68;color:var(--ink2);margin-bottom:16px}
-.story p.big{font-size:clamp(19px,4.6vw,23px);line-height:1.5;color:var(--ink);font-weight:500}
-.story .pull{
-  border-left:4px solid var(--red);background:var(--white);border-radius:0 12px 12px 0;
-  padding:20px 22px;margin:26px 0;font-size:17px;line-height:1.6;color:var(--ink);
-}
-.story .pull b{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:400}
-.story figure{margin:28px 0}
-.story figure img{width:100%;border-radius:14px;display:block}
-.story figcaption{
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);margin-top:10px;text-align:center;
-}
-.story-cta{
-  background:var(--red);color:#fff;border-radius:18px;padding:clamp(26px,5vw,40px);
-  text-align:center;margin:clamp(40px,7vw,64px) 0;
-}
-.story-cta h3{font-size:clamp(28px,6vw,40px);line-height:1;margin-bottom:12px;color:#fff}
-.story-cta p{color:rgba(255,255,255,.94);font-size:16px;margin-bottom:22px}
-.story-cta .btn{background:#fff;color:var(--ink);box-shadow:0 14px 30px -14px rgba(0,0,0,.6);
-  width:100%;justify-content:center;min-height:58px}
-
-/* ---------- SHARED FOOT ---------- */
 .lp-foot{
-  background:var(--black);color:#8E8C88;padding:36px 22px 30px;text-align:center;
+  background:var(--black);color:#8E8C88;padding:32px 22px 28px;text-align:center;
   font-size:13.5px;line-height:1.7;
 }
-.lp-foot img{height:30px;width:auto;margin:0 auto 16px;filter:brightness(0) invert(1)}
+.lp-foot img{height:28px;width:auto;margin:0 auto 14px;filter:brightness(0) invert(1)}
 .lp-foot a{color:#8E8C88}
 .lp-foot .fine{
   font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
-  color:#5E5C59;margin-top:16px;
+  color:#5E5C59;margin-top:14px;
+}
+
+.lp-sec{padding:clamp(30px,6vw,52px) 0}
+.lp-sec.tint{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.lp-sec .wrap{max-width:560px}
+.lp-h{
+  font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.02em;text-transform:uppercase;
+  font-size:clamp(25px,5.6vw,36px);line-height:1;color:var(--ink);text-align:center;margin-bottom:18px;
+}
+
+/* ============================================================
+   LP 1 — "SAME STREET" · Meta Reels & Stories (9:16)
+   Succinct. Image, headline, form. That's the whole first screen.
+   ============================================================ */
+.snap{
+  position:relative;min-height:54svh;display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;background:var(--black);padding-top:58px;
+}
+.snap-bg{position:absolute;inset:0}
+.snap-bg img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.snap-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,11,12,.74) 0%,rgba(11,11,12,.1) 34%,rgba(11,11,12,.88) 86%,var(--paper) 100%);
+}
+.snap-in{position:relative;z-index:2;padding:0 20px 24px;text-align:center;max-width:600px;margin:0 auto;width:100%}
+.snap-in .lp-medium{margin-bottom:14px}
+.snap h1{color:#fff;font-size:clamp(34px,9vw,54px);line-height:.94;margin-bottom:10px}
+.snap h1 .red{color:var(--red)}
+.snap .sub{color:#D8D6D2;font-size:clamp(15px,3.8vw,17px);line-height:1.5;margin:0}
+.snap-form{background:var(--paper);padding:0 16px 24px;margin-top:-1px}
+.snap-form .inner{max-width:520px;margin:0 auto}
+
+/* ============================================================
+   LP 2 — "UP AND UNDER" · Meta Feed (1:1 / 4:5)
+   ============================================================ */
+.lpb-hero{background:var(--black);color:#fff;padding:72px 0 clamp(26px,5vw,40px);text-align:center}
+.lpb-hero .wrap{max-width:600px}
+.lpb-hero h1{font-size:clamp(32px,8vw,50px);line-height:.96;margin:13px 0 10px;color:#fff}
+.lpb-hero h1 .red{color:var(--red)}
+.lpb-hero .sub{color:#A9A7A3;font-size:clamp(15px,3.8vw,17px);line-height:1.55;margin-bottom:20px}
+/* 9:16 video — width is capped so nothing ever runs past it */
+.lpb-vid{
+  width:min(220px,54vw);margin:0 auto;border-radius:14px;overflow:hidden;
+  border:3px solid rgba(255,255,255,.15);
+}
+.lpb-vid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
+
+/* ============================================================
+   LP 3 — "THE WHOLE STORY" · Google Ads (desktop 16:9)
+   Two columns: content left, form sticky right.
+   ============================================================ */
+.g-hero{background:var(--black);color:#fff;padding:78px 0 clamp(28px,5vw,46px)}
+.g-hero .wrap{max-width:1100px}
+.g-hero h1{font-size:clamp(30px,5.4vw,58px);line-height:.98;margin:13px 0 12px;color:#fff;max-width:18ch}
+.g-hero h1 .red{color:var(--red)}
+.g-hero .sub{color:#A9A7A3;font-size:clamp(16px,2vw,19px);line-height:1.55;max-width:56ch}
+
+.g-wrap{
+  max-width:1100px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr minmax(330px,400px);gap:clamp(26px,4vw,54px);
+  align-items:start;
+}
+@media(max-width:940px){.g-wrap{grid-template-columns:1fr;max-width:600px}}
+.g-main{padding:clamp(30px,5vw,54px) 0}
+.g-main h2{
+  font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.02em;text-transform:uppercase;
+  font-size:clamp(25px,3.2vw,36px);line-height:1;color:var(--ink);margin:0 0 12px;
+}
+.g-main p{font-size:16.5px;line-height:1.65;color:var(--ink2);margin-bottom:13px}
+.g-main p:last-child{margin-bottom:0}
+.g-block{margin-bottom:clamp(28px,4vw,42px)}
+.g-block:last-child{margin-bottom:0}
+.g-figure{margin:0 0 clamp(28px,4vw,42px)}
+.g-figure img{width:100%;border-radius:14px;display:block}
+.g-figure figcaption{
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-top:9px;text-align:center;
+}
+.g-side{position:sticky;top:74px;padding:clamp(30px,5vw,54px) 0}
+@media(max-width:940px){.g-side{position:static;padding-top:0;padding-bottom:clamp(30px,5vw,54px)}}
+.g-side .cap{
+  text-align:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:11px;
 }
 
 /* ---------- PREVIEW SWITCHER ----------
-   Review-only strip so the three landing pages aren't dead ends.
-   Deliberately looks like a tool, not part of the page.
-   DELETE the .prev-bar block from each LP before running real ads. */
+   Review-only. DELETE the .prev-bar block + `previewing` class before ads run. */
 .prev-bar{
-  /* above the modal (z 300) so you can switch pages without closing the form */
-  position:fixed;top:0;left:0;right:0;z-index:400;height:40px;
-  display:flex;align-items:center;gap:4px;padding:0 10px;
+  position:fixed;top:0;left:0;right:0;z-index:400;height:38px;
+  display:flex;align-items:center;gap:3px;padding:0 8px;
   background:#17171B;border-bottom:1px solid rgba(255,255,255,.12);
   overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
 }
 .prev-bar::-webkit-scrollbar{display:none}
 .prev-bar .pb-tag{
-  flex-shrink:0;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.18em;
+  flex-shrink:0;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.16em;
   text-transform:uppercase;color:#0B0B0C;background:#F2C94C;border-radius:4px;
-  padding:4px 8px;margin-right:6px;
+  padding:4px 7px;margin-right:4px;
 }
 .prev-bar a{
-  flex-shrink:0;text-decoration:none;border-radius:6px;padding:6px 11px;
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  flex-shrink:0;text-decoration:none;border-radius:6px;padding:5px 9px;
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
   color:#A9A7A3;transition:background .2s,color .2s;white-space:nowrap;
 }
 .prev-bar a:hover{background:rgba(255,255,255,.1);color:#fff}
 .prev-bar a.on{background:var(--red);color:#fff}
 .prev-bar .pb-back{margin-left:auto;color:#6E6C69}
 
-/* everything shifts down to make room */
-body.previewing .lp-bar{top:40px}
-body.previewing .snap{min-height:calc(100svh - 40px);margin-top:40px}
-body.previewing .lpb-hero{padding-top:128px}
+body.previewing .lp-bar{top:38px}
+body.previewing .snap{padding-top:96px}
+body.previewing .lpb-hero{padding-top:110px}
+body.previewing .g-hero{padding-top:116px}
+body.previewing .g-side{top:112px}

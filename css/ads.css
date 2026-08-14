@@ -229,8 +229,17 @@
 }
 .ad-sec.alt .lpcard{background:var(--paper)}
 .lpcard:hover{transform:translateY(-6px);box-shadow:0 34px 64px -36px rgba(0,0,0,.45);border-color:var(--red)}
-.lpcard .shot{position:relative;background:var(--black);aspect-ratio:4/3;overflow:hidden}
-.lpcard .shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
+/* the three shots are different shapes — a phone page and a desktop page.
+   Letterbox them on a dark pad rather than cropping, so each one reads as
+   the device it's actually for. */
+.lpcard .shot{
+  position:relative;background:#0B0B0C;aspect-ratio:16/11;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:14px;
+}
+.lpcard .shot img{
+  max-height:100%;max-width:100%;width:auto;height:auto;
+  object-fit:contain;border-radius:5px;box-shadow:0 10px 30px -12px rgba(0,0,0,.9);
+}
 .lpcard .len{
   position:absolute;top:12px;left:12px;z-index:2;
   font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
