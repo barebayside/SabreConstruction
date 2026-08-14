@@ -10,10 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/sabre.css?v=5">
-<link rel="stylesheet" href="css/lp.css?v=4">
+<link rel="stylesheet" href="css/lp.css?v=5">
 <link rel="icon" href="assets/img/sabre-logo.png">
 </head>
-<body class="previewing">
+<body class="previewing lp">
 
 <!-- LP 3 · GOOGLE ADS (desktop 16:9)
      Search traffic arrives mid-decision and on a big screen, so this one is
@@ -29,12 +29,25 @@
   <a href="index.html" class="pb-back">Main site ↗</a>
 </nav>
 
-<header class="lp-bar">
-  <img src="assets/img/sabre-logo-white.png" alt="Sabre Constructions">
-  <a class="ph" href="tel:0738233200">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-    07 3823 3200
-  </a>
+<!-- Same header as index.html and ads.html — see the note on lp-rebuild.html. -->
+<header class="topbar always">
+  <div class="tb-left">
+    <a href="index.html"><img src="assets/img/sabre-logo.png" alt="Sabre Constructions"></a>
+    <nav class="tb-nav">
+      <a href="index.html">Home</a>
+      <a href="ads.html">Ad concepts</a>
+      <a href="lp-rebuild.html">LP 1</a>
+      <a href="lp-raise.html">LP 2</a>
+      <a href="lp-story.html" class="active">LP 3</a>
+    </nav>
+  </div>
+  <div class="tb-right">
+    <a class="tb-phone" href="tel:0738233200">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <span>07 3823 3200</span>
+    </a>
+    <a class="btn btn-sm" href="#start">Book a site visit</a>
+  </div>
 </header>
 
 <section class="g-hero">
@@ -82,30 +95,52 @@
       <p>They built the company and raised a family at the same time. That's the reason it's set up the way it is.</p>
     </div>
 
+    <!-- All four quotes are verbatim from Sabre's Google Business Profile.
+         Cleared list is in docs/reference/client-facts.md. Trim, never reword. -->
     <div class="g-block">
-      <h2>"On time and on budget."</h2>
-      <p>"Stewart and the entire Sabre Team made this a smooth and hassle free experience. There were some design changes we required and Sabre made these changes without fuss or missing a beat. The build was completed on time and on budget."</p>
-      <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Katrina Field · first-time builder</p>
+      <h2>What eleven people said.</h2>
+      <p>Sabre's Google rating is <strong>4.5 out of 5 from 11 reviews</strong>. Not a perfect score — there's a bad one in there from a build that ran long in 2021, and it's still on the listing. These are the rest, in their own words.</p>
+      <div class="rquotes two" style="margin-top:16px">
+        <figure class="rq">
+          <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+          <blockquote>"Any house construction is fraught with dangers, stress and hidden costs. None of this happened and I very highly recommend Stewart and Sabre Constructions and his team."</blockquote>
+          <figcaption><b>Roselia Finlay</b> · Google review</figcaption>
+        </figure>
+        <figure class="rq">
+          <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+          <blockquote>"Nathan and the gang were excellent during the build. Always around to help or offer suggestions. Would definitely recommend them."</blockquote>
+          <figcaption><b>Jason Turner</b> · Google review · 2025</figcaption>
+        </figure>
+        <figure class="rq">
+          <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+          <blockquote>"Sabre and their amazing team did not just build us a house they built us a beautiful Family Home."</blockquote>
+          <figcaption><b>Matthew Campbell</b> · Google review</figcaption>
+        </figure>
+        <figure class="rq">
+          <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+          <blockquote>"The build was completed on time and on budget. We would not have any hesitation in recommending Sabre Constructions to any future clients."</blockquote>
+          <figcaption><b>Katrina Field</b> · Google review · first-time builder</figcaption>
+        </figure>
+      </div>
     </div>
 
   </main>
 
   <!-- RIGHT — the form, sticky, never scrolls away -->
-  <aside class="g-side">
+  <aside class="g-side" id="start">
     <p class="cap">Free site visit · About an hour</p>
     <div data-qualify-inline></div>
 
-    <div class="stars" style="margin-top:16px">
-      <span class="set">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
+    <!-- REAL rating: 4.5 from 11. Never round to 5. -->
+    <a class="grev" style="margin-top:16px" target="_blank" rel="noopener"
+       href="https://www.google.com/maps/search/?api=1&amp;query=Sabre%20Constructions&amp;query_place_id=ChIJBSdvy4ldkWsRML7s7-J9F2c">
+      <span class="g-score">4.5</span>
+      <span class="gstars">
+        <svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
+        <span class="fill"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
       </span>
-      <span class="txt">Google reviews</span>
-      <span class="needs">Needs Sabre's real rating</span>
-    </div>
+      <span class="g-count"><b>11</b> Google reviews</span>
+    </a>
 
     <div class="lp-facts" style="margin-top:14px">
       <div class="f"><b>1990</b><span>Building since</span></div>

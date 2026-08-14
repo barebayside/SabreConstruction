@@ -79,12 +79,42 @@ stay: the warning panel above the carousel, the per-slide chip, and a burned-in
 `AI DEMO - NOT A REAL CUSTOMER` bar in the video files themselves — so a clip
 can't be mistaken for real if it ever leaves the page.
 
+## Concept 03 vertical (`testimonial-vertical.mp4`)
+
+The clip on `ads.html` used to be one of the 16:9 carousel testimonials, which
+was the wrong shape for the placement Concept 03 actually runs in.
+
+1. `tools/gen_testimonial_vertical.py` — Veo 3.1 at **`aspect_ratio: "9:16"`**,
+   8s with audio. Generated vertical, not cropped from a landscape frame.
+2. `tools/finish_testimonial_vertical.sh` — burns in the AI label, builds the
+   Sabre end card, and joins them with an `xfade=slideleft` so the ad pans off
+   the person and onto the brand. 11.3s total, 1.2 MB.
+
+The end card sits on Sabre's own photograph (`rb-c-real.jpg`) and every line on
+it — 1990, the phone number, QBCC 328475 — is from `client-facts.md`.
+
+**⚠️ Still an AI-generated person.** Same rule as the carousel clips. The label
+is at the *bottom* of the frame deliberately: `ads.html` puts its own format
+badge in the top-left corner and the two collided.
+
+**The scripted line is deliberately not one of Sabre's real Google reviews.**
+Putting a real customer's words in an actor's mouth is worse than a generic
+script, not better.
+
 ## Screenshots
 
 ```
-py -3 tools/shoot.py          # full-page desktop + mobile (uses ?still)
-py -3 tools/shoot.py --live   # viewport only, animations running
+py -3 tools/shoot.py                    # index.html, desktop + mobile (uses ?still)
+py -3 tools/shoot.py --all              # every page
+py -3 tools/shoot.py --mobile lp-raise  # one page, one viewport
+py -3 tools/shoot.py --live             # viewport only, animations running
+
+py -3 tools/shoot_lp_cards.py           # the three LP thumbnails used by ads.html
 ```
+
+**Run `shoot_lp_cards.py` whenever an LP changes visibly.** The "Ad destinations"
+cards keep serving the old thumbnail otherwise, which is worse than showing
+nothing because it looks current.
 
 ## Encoding rules of thumb
 

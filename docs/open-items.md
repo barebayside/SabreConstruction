@@ -11,8 +11,15 @@
 | 2 | **The lead form goes nowhere.** `LEAD_EMAIL` points at Edward and the relay has never been confirmed — nothing arrives until someone clicks the confirmation email | `js/qualify.js` | Edward, then switch to Sabre's address |
 | 3 | **The raise reels are an artist's impression** sitting on footage of a real, identifiable Sabre site with their signage on the fence | `assets/video/reel-*.mp4` | Caption "concept visualisation", or re-cut to land on a genuinely finished home |
 | 4 | **Budget bands are invented.** Under $300k / $300–450k / $450–650k / $650k+ | `js/qualify.js` | Sabre confirms against real job sizes |
-| 5 | **Star ratings are empty slots** with an amber "needs real rating" chip. There is no verifiable public Google rating | all three `lp-*.html` | Get their Google Business rating + count, or cut the strip |
-| 6 | **Claims Sabre has not confirmed** — "fixed price before you commit", "one point of contact", "we'll tell you if it's not your year", the free site visit itself | `index.html`, all LPs | Sabre confirms these match how they actually operate |
+| 5 | **Claims Sabre has not confirmed** — "fixed price before you commit", "one point of contact", "we'll tell you if it's not your year", the free site visit itself | `index.html`, all LPs | Sabre confirms these match how they actually operate |
+
+## ✅ Resolved
+
+| Item | What happened |
+|---|---|
+| **Star ratings were empty slots** with a "needs real rating" chip | 2026-08-14. Sabre's Google Business Profile does exist: **4.5 from 11 reviews**. Real rating and real quotes are now on all three LPs, and the cleared quote list is in `reference/client-facts.md`. ⚠️ It is **4.5, not 5** — there's a genuine 1-star on the listing. Never round it up |
+| **Concept 03 was 16:9** in a 9:16 placement | 2026-08-14. Regenerated natively vertical and ends on a Sabre card. Still an AI stand-in, still labelled — item 1 above still applies to it |
+| **The LPs had their own header** | 2026-08-14. All three now use the same `.topbar` as `index.html` and `ads.html`, so there's always a way back to the main site |
 
 ## 🟡 Review scaffolding to strip before real ads run
 
@@ -29,7 +36,7 @@
 |---|---|
 | **Real photos of Stewart, Cathy and Nathan** — on site, hard hat, on the tools | Current shots are cut-outs on white and read as ID photos. No better ones exist publicly: their judo club site is down (HTTP 508) and Facebook is behind a login |
 | Their real email address for leads | Have it — `admin@sabreconstructions.com.au` — deliberately not wired |
-| More testimonials | Exactly one is published |
+| More **filmed** testimonials | Ten written ones now exist — their Google reviews, quoted on the LPs. What's still missing is footage. See item 1 |
 | Vertical footage of Stewart or Nathan talking to camera, 8s | The only thing standing between ad Concept 03 and a live campaign |
 | The year they'd like stated | 1990 founding is on their own team page; their homepage rounds to "25+ years" |
 

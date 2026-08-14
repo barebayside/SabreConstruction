@@ -10,10 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/sabre.css?v=5">
-<link rel="stylesheet" href="css/lp.css?v=4">
+<link rel="stylesheet" href="css/lp.css?v=5">
 <link rel="icon" href="assets/img/sabre-logo.png">
 </head>
-<body class="previewing">
+<body class="previewing lp">
 
 <!-- LP 2 · META FEED (1:1 / 4:5)
      Feed traffic gives you a bit more patience than Reels. Video, numbers,
@@ -28,12 +28,25 @@
   <a href="index.html" class="pb-back">Main site ↗</a>
 </nav>
 
-<header class="lp-bar">
-  <img src="assets/img/sabre-logo-white.png" alt="Sabre Constructions">
-  <a class="ph" href="tel:0738233200">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
-    07 3823 3200
-  </a>
+<!-- Same header as index.html and ads.html — see the note on lp-rebuild.html. -->
+<header class="topbar always">
+  <div class="tb-left">
+    <a href="index.html"><img src="assets/img/sabre-logo.png" alt="Sabre Constructions"></a>
+    <nav class="tb-nav">
+      <a href="index.html">Home</a>
+      <a href="ads.html">Ad concepts</a>
+      <a href="lp-rebuild.html">LP 1</a>
+      <a href="lp-raise.html" class="active">LP 2</a>
+      <a href="lp-story.html">LP 3</a>
+    </nav>
+  </div>
+  <div class="tb-right">
+    <a class="tb-phone" href="tel:0738233200">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      <span>07 3823 3200</span>
+    </a>
+    <a class="btn btn-sm" href="#start">Book a site visit</a>
+  </div>
 </header>
 
 <!-- 1 · hero -->
@@ -48,34 +61,50 @@
       <source src="assets/video/reel-1.mp4" type="video/mp4">
     </video>
   </div>
-</section>
 
-<!-- 2 · quick numbers -->
-<section class="lp-sec">
+  <!-- 2 · credentials, ONE strip.
+       This used to be three stacked fact cards in their own section. Under a
+       220px-wide video on a phone that became three tall boxes and a long dead
+       scroll between the hook and the form. One line, wraps, done. -->
   <div class="wrap">
-    <div class="lp-facts">
-      <div class="f"><b>1990</b><span>Building since</span></div>
-      <div class="f"><b>36</b><span>Years on the Bayside</span></div>
-      <div class="f"><b>328475</b><span>QBCC licence</span></div>
+    <div class="lp-one">
+      <span><b>1990</b> Building since</span>
+      <span><b>36</b> Years on the Bayside</span>
+      <span><b>328475</b> QBCC licence</span>
     </div>
   </div>
 </section>
 
 <!-- 3 · the form, embedded -->
-<section class="lp-sec tint" id="book">
+<section class="lp-sec tint" id="start">
   <div class="wrap">
     <h2 class="lp-h">Can your house<br>be raised?</h2>
     <div data-qualify-inline></div>
-    <div class="stars" style="margin-top:18px">
-      <span class="set">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
+
+    <!-- REAL rating: 4.5 from 11. Never round to 5. -->
+    <a class="grev" style="margin-top:18px" target="_blank" rel="noopener"
+       href="https://www.google.com/maps/search/?api=1&amp;query=Sabre%20Constructions&amp;query_place_id=ChIJBSdvy4ldkWsRML7s7-J9F2c">
+      <span class="g-score">4.5</span>
+      <span class="gstars">
+        <svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg>
+        <span class="fill"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
       </span>
-      <span class="txt">Google reviews</span>
-      <span class="needs">Needs Sabre's real rating</span>
+      <span class="g-count"><b>11</b> Google reviews</span>
+    </a>
+
+    <!-- Both of these are extension/renovation jobs — the same kind of work as
+         a raise-and-build-under, which is what this page sells. -->
+    <div class="rquotes two" style="margin-top:14px">
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"The first thing Stewart pointed out was the plans could be changed to build it cheaper, this helped us enormously."</blockquote>
+        <figcaption><b>Lesley W</b> · Google review · extension</figcaption>
+      </figure>
+      <figure class="rq">
+        <span class="rq-s"><svg viewBox="0 0 120 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(24)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(48)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(72)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/><path transform="translate(96)" d="M12 2l3 6.5 7 1-5 4.9 1.2 7L12 18l-6.2 3.4L7 14.4l-5-4.9 7-1z"/></svg></span>
+        <blockquote>"Frank our supervisor was great, kept us informed all the way through &amp; was fantastic to deal with."</blockquote>
+        <figcaption><b>Leasa Butcher</b> · Google review · renovation</figcaption>
+      </figure>
     </div>
   </div>
 </section>

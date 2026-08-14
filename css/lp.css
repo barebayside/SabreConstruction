@@ -110,17 +110,25 @@ body.qm-lock{overflow:hidden}
 /* ============================================================
    SHARED LP CHROME
    ============================================================ */
-.lp-bar{
-  position:fixed;top:0;left:0;right:0;z-index:60;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:11px 16px;background:rgba(11,11,12,.82);backdrop-filter:blur(14px);
+/* ---------- HEADER ----------
+   The landing pages use the SAME .topbar as index.html and ads.html — same
+   logo, same nav, same phone — so moving between the main site and an LP never
+   changes the furniture. .always pins it open (there's no scroll trigger here).
+   The nav is hidden under 520px on the main site; on an LP that's the only way
+   back, so we keep it and just tighten it. */
+.topbar.always .tb-nav a[href$="lp-rebuild.html"],
+.topbar.always .tb-nav a[href$="lp-raise.html"],
+.topbar.always .tb-nav a[href$="lp-story.html"]{white-space:nowrap}
+@media(max-width:520px){
+  body.lp .tb-nav{display:flex;gap:11px;margin-left:11px}
+  body.lp .tb-nav a{font-size:9px;letter-spacing:.06em}
+  body.lp .topbar{padding:9px 12px;gap:8px}
+  body.lp .topbar img{height:24px}
+  body.lp .topbar .btn-sm{display:none}
 }
-.lp-bar img{height:24px;width:auto}
-.lp-bar .ph{
-  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;
-  color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:7px;
+@media(max-width:400px){
+  body.lp .tb-nav a[href$="ads.html"]{display:none}
 }
-.lp-bar .ph svg{width:14px;height:14px;color:var(--red)}
 
 /* which ad format this page is the destination for */
 .lp-medium{
@@ -131,16 +139,58 @@ body.qm-lock{overflow:hidden}
 }
 .lp-medium b{color:#FF6B6B;font-weight:400}
 
-/* trust strip */
-.stars{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px}
-.stars .set{display:flex;gap:2px;color:#F5B301}
-.stars .set svg{width:16px;height:16px}
-.stars .txt{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink2)}
-.stars .needs{
-  font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;
-  background:#FFF3C4;color:#8A6A00;border:1px solid #E4C65A;border-radius:100px;padding:3px 8px;
+/* ---------- REAL GOOGLE RATING ----------
+   4.5 from 11 reviews, from Sabre's own Google Business Profile.
+   The half star is a clipped gold layer over a grey one — no SVG gradient ids
+   to collide, and the fill is exactly 90% because the score is exactly 4.5.
+   ⚠️ If the score ever changes, change --gfill with it. Never round up. */
+.grev{
+  --gfill:90%;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px 11px;
+  text-decoration:none;
 }
+.grev .g-score{
+  font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;
+  color:var(--ink);letter-spacing:.02em;
+}
+.gstars{position:relative;display:inline-block;line-height:0;color:rgba(11,11,12,.17)}
+.gstars svg{width:104px;height:21px;display:block}
+.gstars .fill{
+  position:absolute;top:0;left:0;width:var(--gfill);
+  overflow:hidden;line-height:0;color:#F5B301;
+}
+.grev .g-count{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink2);
+}
+.grev .g-count b{color:var(--ink);font-weight:600}
+.grev:hover .g-count b{color:var(--red)}
+
+/* on a dark panel */
+.on-black .grev .g-score{color:#fff}
+.on-black .grev .g-count{color:#A9A7A3}
+.on-black .grev .g-count b{color:#fff}
+.on-black .gstars{color:rgba(255,255,255,.22)}
+
+/* ---------- REAL REVIEW QUOTES ---------- */
+.rquotes{display:grid;gap:10px;margin:0;padding:0}
+@media(min-width:760px){.rquotes.two{grid-template-columns:1fr 1fr}}
+.rq{
+  margin:0;background:var(--white);border:1px solid var(--line);
+  border-left:3px solid #F5B301;border-radius:12px;padding:14px 16px;
+}
+/* the strip is a 120x24 viewBox holding five stars — size it on the width, or
+   it squashes all five into one square */
+.rq .rq-s{display:block;color:#F5B301;line-height:0;margin-bottom:8px}
+.rq .rq-s svg{width:66px;height:13.2px;display:block}
+.rq blockquote{
+  margin:0 0 9px;font-size:14.5px;line-height:1.58;color:var(--ink);
+}
+.rq figcaption{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);
+}
+.rq figcaption b{color:var(--ink2);font-weight:500}
 
 .lp-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
 .lp-facts .f{
@@ -194,7 +244,7 @@ body.qm-lock{overflow:hidden}
    ============================================================ */
 .snap{
   position:relative;min-height:54svh;display:flex;flex-direction:column;justify-content:flex-end;
-  overflow:hidden;background:var(--black);padding-top:58px;
+  overflow:hidden;background:var(--black);padding-top:66px;
 }
 .snap-bg{position:absolute;inset:0}
 .snap-bg img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
@@ -213,7 +263,7 @@ body.qm-lock{overflow:hidden}
 /* ============================================================
    LP 2 — "UP AND UNDER" · Meta Feed (1:1 / 4:5)
    ============================================================ */
-.lpb-hero{background:var(--black);color:#fff;padding:72px 0 clamp(26px,5vw,40px);text-align:center}
+.lpb-hero{background:var(--black);color:#fff;padding:80px 0 clamp(26px,5vw,40px);text-align:center}
 .lpb-hero .wrap{max-width:600px}
 .lpb-hero h1{font-size:clamp(32px,8vw,50px);line-height:.96;margin:13px 0 10px;color:#fff}
 .lpb-hero h1 .red{color:var(--red)}
@@ -225,11 +275,30 @@ body.qm-lock{overflow:hidden}
 }
 .lpb-vid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block}
 
+/* ---------- ONE-LINE CREDENTIALS ----------
+   This sits directly under the narrow 9:16 video. Three stacked fact cards
+   turned into three tall boxes under a skinny video on a phone — a long dead
+   scroll between the hook and the form. It's one strip now, and it wraps
+   instead of stacking. */
+.lp-one{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:8px 14px;margin:16px auto 0;max-width:440px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:100px;padding:10px 18px;
+}
+.lp-one span{
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:#A9A7A3;white-space:nowrap;
+}
+.lp-one span b{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.03em;
+  color:#fff;font-weight:400;margin-right:4px}
+@media(max-width:380px){.lp-one{border-radius:14px;padding:11px 14px}}
+
 /* ============================================================
    LP 3 — "THE WHOLE STORY" · Google Ads (desktop 16:9)
    Two columns: content left, form sticky right.
    ============================================================ */
-.g-hero{background:var(--black);color:#fff;padding:78px 0 clamp(28px,5vw,46px)}
+.g-hero{background:var(--black);color:#fff;padding:86px 0 clamp(28px,5vw,46px)}
 .g-hero .wrap{max-width:1100px}
 .g-hero h1{font-size:clamp(30px,5.4vw,58px);line-height:.98;margin:13px 0 12px;color:#fff;max-width:18ch}
 .g-hero h1 .red{color:var(--red)}
@@ -256,7 +325,7 @@ body.qm-lock{overflow:hidden}
   font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-top:9px;text-align:center;
 }
-.g-side{position:sticky;top:74px;padding:clamp(30px,5vw,54px) 0}
+.g-side{position:sticky;top:82px;padding:clamp(30px,5vw,54px) 0}
 @media(max-width:940px){.g-side{position:static;padding-top:0;padding-bottom:clamp(30px,5vw,54px)}}
 .g-side .cap{
   text-align:center;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.15em;
@@ -286,8 +355,8 @@ body.qm-lock{overflow:hidden}
 .prev-bar a.on{background:var(--red);color:#fff}
 .prev-bar .pb-back{margin-left:auto;color:#6E6C69}
 
-body.previewing .lp-bar{top:38px}
-body.previewing .snap{padding-top:96px}
-body.previewing .lpb-hero{padding-top:110px}
-body.previewing .g-hero{padding-top:116px}
-body.previewing .g-side{top:112px}
+body.previewing .topbar{top:38px}
+body.previewing .snap{padding-top:104px}
+body.previewing .lpb-hero{padding-top:118px}
+body.previewing .g-hero{padding-top:124px}
+body.previewing .g-side{top:120px}

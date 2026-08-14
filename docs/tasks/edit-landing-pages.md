@@ -38,7 +38,9 @@ changing a shared token.
 | Mobile fit | No horizontal overflow at 390px. Nothing runs past the video |
 | Tap targets | 56px minimum on every option and input |
 | Five questions intact | Order unchanged: type → plans → suburb → budget → mobile |
-| Placeholders still flagged | Budget bands and star strip still carry their warning chips |
+| Star rating is honest | Reads **4.5** and **11**, never rounded to 5. `--gfill` on `.grev` is 90% |
+| Review quotes are verbatim | Every quote matches a row in `../reference/client-facts.md`. Trim, never reword |
+| Budget bands still flagged | Still placeholders — see `../open-items.md` |
 | Preview chrome | Switcher and medium pill present for review, listed in `../open-items.md` for removal |
 
 ## Outputs
