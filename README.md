@@ -77,6 +77,29 @@ Two rules that came out of that pass and should survive future edits:
 | `lp-raise.html` | Ad LP **B — "Up and Under"**. Video-led, ~3 screens. House-raise angle |
 | `lp-story.html` | Ad LP **C — "The Whole Story"**. Long form. Retargeting / warm traffic |
 
+### Two things to strip before real ads run
+
+1. **The preview switcher.** Each LP has a `<nav class="prev-bar">` block at the
+   top letting you flick between the three. It's a review tool — delete the
+   block and the `previewing` class on `<body>`.
+2. **`LP 1 / LP 2 / LP 3` in the main nav** — same reason.
+
+### The form opens on arrival
+
+Ad traffic already opted in by tapping the ad, so the popup opens itself 700ms
+after load rather than asking for a second click. Controlled per page:
+
+```html
+<body class="has-sticky" data-autoqualify="700">
+```
+
+Remove the attribute and it goes back to click-to-open. Worth considering on
+`lp-story.html` — that page is for retargeted visitors who came back to *read*,
+and a form over the top of it fights that.
+
+The preview switcher sits at `z-index:400`, above the modal, so you can move
+between pages without closing the form.
+
 ## ⚠️ Where the leads go
 
 The three ad LPs use a five-question popup (`js/qualify.js`). GitHub Pages has

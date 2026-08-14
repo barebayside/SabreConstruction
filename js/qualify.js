@@ -237,5 +237,18 @@
     open();
   });
 
+  // Ad traffic has already opted in by tapping the ad — don't make them click
+  // again. <body data-autoqualify="700"> opens it that many ms after load.
+  // The short delay lets the page paint first, so the sheet slides up over
+  // something rather than appearing on a blank screen.
+  var auto = document.body.getAttribute('data-autoqualify');
+  if (auto !== null) {
+    var delay = parseInt(auto, 10);
+    if (isNaN(delay)) delay = 700;
+    window.addEventListener('load', function () {
+      setTimeout(open, delay);
+    });
+  }
+
   window.SabreQualify = { open: open, close: close };
 })();

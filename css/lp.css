@@ -231,3 +231,34 @@ body.has-sticky{padding-bottom:0}
   font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
   color:#5E5C59;margin-top:16px;
 }
+
+/* ---------- PREVIEW SWITCHER ----------
+   Review-only strip so the three landing pages aren't dead ends.
+   Deliberately looks like a tool, not part of the page.
+   DELETE the .prev-bar block from each LP before running real ads. */
+.prev-bar{
+  /* above the modal (z 300) so you can switch pages without closing the form */
+  position:fixed;top:0;left:0;right:0;z-index:400;height:40px;
+  display:flex;align-items:center;gap:4px;padding:0 10px;
+  background:#17171B;border-bottom:1px solid rgba(255,255,255,.12);
+  overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.prev-bar::-webkit-scrollbar{display:none}
+.prev-bar .pb-tag{
+  flex-shrink:0;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:#0B0B0C;background:#F2C94C;border-radius:4px;
+  padding:4px 8px;margin-right:6px;
+}
+.prev-bar a{
+  flex-shrink:0;text-decoration:none;border-radius:6px;padding:6px 11px;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:#A9A7A3;transition:background .2s,color .2s;white-space:nowrap;
+}
+.prev-bar a:hover{background:rgba(255,255,255,.1);color:#fff}
+.prev-bar a.on{background:var(--red);color:#fff}
+.prev-bar .pb-back{margin-left:auto;color:#6E6C69}
+
+/* everything shifts down to make room */
+body.previewing .lp-bar{top:40px}
+body.previewing .snap{min-height:calc(100svh - 40px);margin-top:40px}
+body.previewing .lpb-hero{padding-top:128px}
