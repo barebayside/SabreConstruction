@@ -123,3 +123,32 @@ nothing because it looks current.
 - Always `tpad=stop_mode=clone` a beat on the last frame so the payoff lands
   before the loop restarts.
 - Raw model output is gitignored; only the encoded cut ships.
+
+## Rebuild render — a client's real job (`rebuild-render.mp4`)
+
+The first time this pipeline was pointed at a **real Sabre job** rather than the
+demo site. Source material lives with the client's files, deliberately outside
+this repo: `Y:\My Folders\Nathan\ai-video\` (photo, plans, scripts, raw output).
+
+```
+A (owner's phone photo)  ->  B (cleared block)   segment 1, demolition
+B (cleared block)        ->  C (approved design) segment 2, construction
+```
+
+- `tools/gen_frames.py` (in the client folder) — B is a nano-banana-2 edit of the
+  photo; **C is derived from B, not from A**, so the construction segment is
+  pixel-locked and any camera drift is confined to the demolition half.
+- C is built from the designer's street elevation and 3D perspective passed in
+  as extra reference images alongside the site photo.
+- `tools/gen_video.py` — two Kling v3 Pro calls, 5s each, audio off, both ends
+  pinned. `tools/stitch.sh` joins them: 0.4s crossfade, 1.8s hold, 1440 wide.
+- 11.5s finished, 1.4 MB. Total spend: **4 images + 2 clips ≈ $1.60.**
+
+**⚠️ The design belongs to another practice.** The drawings are stamped NOT FOR
+CONSTRUCTION and say in terms that visualisations are indicative only. The page
+carries a concept-visualisation panel, and the owners' names and the street
+address appear nowhere. Written permission is still required — see
+`../open-items.md`.
+
+**⚠️ Kling returns the two segments at different pixel sizes** (1920x1080 and
+1928x1072). Both must be normalised before `xfade` or the filter graph fails.

@@ -12,6 +12,7 @@
 | 3 | **The raise reels are an artist's impression** sitting on footage of a real, identifiable Sabre site with their signage on the fence | `assets/video/reel-*.mp4` | Caption "concept visualisation", or re-cut to land on a genuinely finished home |
 | 4 | **Budget bands are invented.** Under $300k / $300–450k / $450–650k / $650k+ | `js/qualify.js` | Sabre confirms against real job sizes |
 | 5 | **Claims Sabre has not confirmed** — "fixed price before you commit", "one point of contact", "we'll tell you if it's not your year", the free site visit itself | `index.html`, all LPs | Sabre confirms these match how they actually operate |
+| 6 | **The rebuild render uses another practice's design.** The drawings are stamped NOT FOR CONSTRUCTION and their own note says visualisations are indicative only. The finished house on that page is an AI image derived from their elevation | `rebuild-render.html`, `assets/img/render/*`, `assets/video/rebuild-render.mp4` | Written OK from the designer **and** the owners. Address and owners' names stay off the page either way |
 
 ## ✅ Resolved
 

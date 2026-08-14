@@ -16,7 +16,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 SHOTS = ROOT / "shots"
 SHOTS.mkdir(exist_ok=True)
 
-ALL_PAGES = ["index", "ads", "lp-rebuild", "lp-raise", "lp-story"]
+ALL_PAGES = ["index", "ads", "lp-rebuild", "lp-raise", "lp-story", "rebuild-render"]
 VIEWPORTS = {"desktop": (1440, 900), "mobile": (390, 844)}
 
 args = sys.argv[1:]
