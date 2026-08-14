@@ -149,3 +149,14 @@
   text-transform:uppercase;color:var(--red);font-weight:400}
 .spectable td{color:var(--ink2)}
 .spectable td:first-child{color:var(--ink);font-weight:600}
+
+/* ---------- THREE-UP REEL ROW ---------- */
+.reelrow{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.reelcard{margin:0}
+.reelcard .concept-media{border-radius:16px}
+.reelcard figcaption{padding:16px 4px 0;font-size:14.5px;color:var(--ink2);line-height:1.55}
+.reelcard figcaption b{
+  display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:23px;
+  letter-spacing:.03em;text-transform:uppercase;color:var(--ink);margin-bottom:5px;
+}
+@media(max-width:860px){.reelrow{grid-template-columns:1fr;max-width:420px;margin:0 auto}}

@@ -203,7 +203,7 @@
     function close() {
       lb.classList.remove('open');
       document.body.classList.remove('lb-lock');
-      lbImg.src = '';
+      lbImg.removeAttribute('src');   // '' would resolve to the page URL
     }
 
     Array.prototype.forEach.call(tiles, function (t, i) {

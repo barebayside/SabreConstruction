@@ -36,12 +36,43 @@ All of it collapses under `prefers-reduced-motion`.
 the hero collapses — for full-page screenshots. Inert for real visitors.
 Same trick as the BBL site.
 
+## Who it's aimed at
+
+**Bayside families weighing up moving against rebuilding.** The page was
+originally aimed at nobody in particular; it was rebuilt against Workflow C of
+`playbook/foundations.md` in the BBL repo, whose headline finding was that it
+never passed **Fit** — it named a service and a postcode but never a person.
+
+Section order now maps to the five tests:
+
+```
+1   Hero                    Notice + Fit
+2   Suburb strip            Fit / Unity
+3   The reveal video        Notice + Proof
+4   The problem             Fit + loss framing
+5   Four steps              Effort
+6   Meet the family         Liking + Unity + Proof
+7   Testimonials + quote    Proof
+8   Gallery + lightbox      Proof
+9   Credentials strip       Proof
+10  FAQ                     Effort
+11  CTA + form              Effort + Now
+```
+
+Two rules that came out of that pass and should survive future edits:
+
+- **No fabricated scarcity.** The "Now" test is carried by honest loss framing
+  (the school term you're losing), never a countdown or a fake cap.
+- **Concrete over rounded.** Their old site said "25+ years"; they were founded
+  in 1990, which is 36. Cut "100% family owned" and "1 point of contact" —
+  slogans wearing a number's clothes.
+
 ## Pages
 
 | Page | What it is |
 |---|---|
 | `index.html` | The landing page |
-| `ads.html` | Instagram/Facebook ad concepts — video formats, Meta ad mock-ups, copy bank |
+| `ads.html` | Instagram/Facebook ad concepts — 9:16 reels, Meta ad mock-ups, copy bank |
 
 Both share `css/sabre.css` and `js/sabre.js`; the ads page adds `css/ads.css`.
 The nav lives in the sticky top bar. On the landing page the bar slides in
@@ -83,6 +114,31 @@ letterboxed onto a 1080x1920 canvas for Reels.
 
 The hold on the last frame is deliberate — the payoff needs a beat before the
 loop restarts.
+
+## The three raise reels — ⚠️ artist's impression
+
+`assets/video/reel-1..3.mp4` are Edward's own phone footage of a real Sabre
+raise-and-build-under, continued by an AI transformation into a finished
+Hamptons Queenslander with a family walking in.
+
+**The source clips are natively 1080x1920.** `ffprobe` reports 1920x1080 because
+of a rotation flag — the decoded frames are portrait. Don't crop them.
+
+Pipeline: `tools/gen_raise_after.py` derives the finished-house frame from the
+**last frame** of each real clip (so camera, street and trees carry through),
+`tools/gen_raise_reels.py` generates the transformation between the two, and
+`tools/stitch_reels.sh` joins them with a 0.35s crossfade. The real audio fades
+out across the join; the AI half is silent.
+
+**There is no design or render for that job.** The finished half is therefore a
+visualisation sitting on top of a real, identifiable site with Sabre's signage
+on the fence. Before these run they need "concept visualisation" on screen, or
+a re-cut landing on one of Sabre's genuinely finished homes. This is flagged on
+`ads.html` in the concept's *How it's made* box and in the status table.
+
+`tools/brand_reel.sh` wraps the wide knockdown-rebuild master into a branded
+9:16 Reel — logo, headline, CTA button — rather than cropping away three
+quarters of the frame. Needs `tools/fonts/BebasNeue-Regular.ttf`.
 
 `tools/upscale_gallery.py` crisp-upscales their 376x251 gallery thumbnails
 to ~1500px (`fal-ai/recraft/upscale/crisp` — resolution only, no generative

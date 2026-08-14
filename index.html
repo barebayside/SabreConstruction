@@ -564,7 +564,8 @@
   <button class="lb-btn lb-prev" type="button" aria-label="Previous image">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
   </button>
-  <img class="lb-img" id="lbImg" src="" alt="">
+  <!-- no src until it opens — an empty src resolves to the page URL and fires a bogus request -->
+  <img class="lb-img" id="lbImg" alt="">
   <button class="lb-btn lb-next" type="button" aria-label="Next image">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
   </button>
