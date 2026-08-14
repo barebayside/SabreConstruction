@@ -140,9 +140,18 @@ B (cleared block)        ->  C (approved design) segment 2, construction
   pixel-locked and any camera drift is confined to the demolition half.
 - C is built from the designer's street elevation and 3D perspective passed in
   as extra reference images alongside the site photo.
-- `tools/gen_video.py` — two Kling v3 Pro calls, 5s each, audio off, both ends
-  pinned. `tools/stitch.sh` joins them: 0.4s crossfade, 1.8s hold, 1440 wide.
-- 11.5s finished, 1.4 MB. Total spend: **4 images + 2 clips ≈ $1.60.**
+- `tools/gen_video.py` — two Kling v3 Pro calls, audio off, both ends pinned.
+  Demolition is 5s; **the build is 10s and has to be.** At 5s the model skipped
+  the stages and cut straight to a finished house. At 10s, with the stages
+  numbered in the prompt, it actually shows footings, slab, wall frames,
+  trusses, roof sheeting, then brickwork.
+- `tools/stitch.sh` joins them: 0.4s crossfade, 1.8s hold, 1440 wide.
+- 16.5s finished, 1.5 MB. Total spend: **6 images + 3 clips ≈ $3.00.**
+
+**⚠️ The garage is NOT on the street face.** 48 Osterley Road is a corner block
+— Anita Street is the frontage in the photo, Osterley Road runs down the left,
+and the site plan puts the garage at the far corner off that side street. The
+first render invented a garage door on the front and had to be redone.
 
 **⚠️ The design belongs to another practice.** The drawings are stamped NOT FOR
 CONSTRUCTION and say in terms that visualisations are indicative only. The page
