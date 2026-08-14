@@ -607,3 +607,71 @@ textarea.fld{min-height:92px;resize:vertical}
   max-width:60ch;margin:0 auto;
 }
 .rev-note a{color:var(--red);font-weight:600}
+
+/* ============================================================
+   MOBILE NAV — burger + drawer. Markup is built by js/nav.js.
+   Below 520px the desktop .tb-nav is hidden and this takes over; there was
+   previously no way at all to reach Ad concepts or the LPs on a phone.
+   ============================================================ */
+.tb-burger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;padding:0 10px;      /* thumb-sized */
+  background:none;border:0;cursor:pointer;flex-shrink:0;
+}
+.tb-burger i{
+  display:block;height:2px;width:100%;background:var(--ink);border-radius:2px;
+  transition:transform .28s var(--ease),opacity .2s;
+}
+.topbar.menu-open .tb-burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.topbar.menu-open .tb-burger i:nth-child(2){opacity:0}
+.topbar.menu-open .tb-burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.navdrawer{
+  display:none;position:absolute;top:100%;left:0;right:0;
+  background:var(--paper);border-bottom:1px solid var(--line);
+  box-shadow:0 24px 44px -22px rgba(0,0,0,.45);
+  padding:6px 16px 16px;
+}
+.topbar.menu-open .navdrawer{display:block;animation:ndrop .22s var(--ease)}
+@keyframes ndrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.topbar.menu-open .navdrawer{animation:none}}
+
+.nd-links{display:flex;flex-direction:column}
+.nd-links a{
+  display:flex;align-items:center;min-height:54px;      /* thumb-sized */
+  padding:0 4px;text-decoration:none;
+  font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:.03em;
+  text-transform:uppercase;color:var(--ink);
+  border-bottom:1px solid var(--line);
+}
+.nd-links a:last-child{border-bottom:0}
+.nd-links a.on{color:var(--red)}
+.nd-links a.on::before{
+  content:'';width:3px;height:19px;background:var(--red);
+  border-radius:2px;margin-right:11px;
+}
+
+.nd-foot{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.nd-phone{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;
+  border:1px solid var(--line);border-radius:10px;text-decoration:none;
+  font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:.04em;color:var(--ink);
+}
+.nd-phone svg{width:17px;height:17px;color:var(--red)}
+.nd-cta{text-align:center;min-height:52px;display:flex;align-items:center;justify-content:center}
+body.nav-lock{overflow:hidden}
+
+@media(max-width:520px){
+  .tb-burger{display:flex}
+  /* the drawer is the nav below this width — on the LPs too, where we used to
+     cram five shrunken links into the bar itself */
+  body.lp .tb-nav{display:none}
+  body.lp .topbar .btn-sm{display:none}
+  .topbar .tb-right .btn-sm{display:none}
+
+  /* On index.html the bar slides in only once you scroll past the hero. On a
+     phone that put the burger off-screen for the whole first screen, so there
+     was no menu at all where people actually land. Pinned here. The hero is
+     bottom-aligned with 120px of top padding, so nothing is covered. */
+  .topbar{transform:none;border-bottom-color:var(--line)}
+}

@@ -119,15 +119,14 @@ body.qm-lock{overflow:hidden}
 .topbar.always .tb-nav a[href$="lp-rebuild.html"],
 .topbar.always .tb-nav a[href$="lp-raise.html"],
 .topbar.always .tb-nav a[href$="lp-story.html"]{white-space:nowrap}
+
+/* Below 520px the burger drawer in sabre.css is the nav — on these pages too.
+   There used to be an override here that kept the desktop links in the bar at
+   9px, which after the drawer landed meant BOTH were on screen at once.
+   Don't reintroduce it; the drawer is built from .tb-nav so nothing is lost. */
 @media(max-width:520px){
-  body.lp .tb-nav{display:flex;gap:11px;margin-left:11px}
-  body.lp .tb-nav a{font-size:9px;letter-spacing:.06em}
   body.lp .topbar{padding:9px 12px;gap:8px}
   body.lp .topbar img{height:24px}
-  body.lp .topbar .btn-sm{display:none}
-}
-@media(max-width:400px){
-  body.lp .tb-nav a[href$="ads.html"]{display:none}
 }
 
 /* which ad format this page is the destination for */
