@@ -71,8 +71,43 @@ Two rules that came out of that pass and should survive future edits:
 
 | Page | What it is |
 |---|---|
-| `index.html` | The landing page |
-| `ads.html` | Instagram/Facebook ad concepts — 9:16 reels, Meta ad mock-ups, copy bank |
+| `index.html` | The main site page |
+| `ads.html` | Ad concepts — 9:16 reels, Meta mock-ups, copy bank, where the questions go |
+| `lp-rebuild.html` | Ad LP **A — "Same Street"**. One screen, no scroll. Cold Reels traffic |
+| `lp-raise.html` | Ad LP **B — "Up and Under"**. Video-led, ~3 screens. House-raise angle |
+| `lp-story.html` | Ad LP **C — "The Whole Story"**. Long form. Retargeting / warm traffic |
+
+## ⚠️ Where the leads go
+
+The three ad LPs use a five-question popup (`js/qualify.js`). GitHub Pages has
+no server, so it posts to a form relay which emails the lead on.
+
+**One line controls the destination:**
+
+```js
+var LEAD_EMAIL = 'edasturner@gmail.com';   // → admin@sabreconstructions.com.au when live
+```
+
+Sabre's real address is `admin@sabreconstructions.com.au` (decoded from the
+JavaScript obfuscation on their contact page). It is deliberately **not** wired
+up — real leads shouldn't land in their office inbox before they've agreed to
+any of this.
+
+The relay sends one confirmation email on the first submission; click the link
+in it and leads flow from then on. If this goes live for Sabre properly, Zoho
+Forms is the better home for it.
+
+**The budget bands in `qualify.js` are placeholders** — Under $300k / $300–450k /
+$450–650k / $650k+ / Still working it out. Confirm against Sabre's real job
+sizes before this runs; a bathroom reno and a knockdown rebuild aren't the same
+range.
+
+### Why the popup is five screens, not one form
+
+Five fields on a single screen costs 10–25% of completions at this field count,
+so it's a multi-step: one question per screen, progress bar, easy questions
+first, phone number last. Only two of the five need typing — the rest are
+58px-minimum tap targets. `inputmode="tel"` brings up the numeric keypad.
 
 Both share `css/sabre.css` and `js/sabre.js`; the ads page adds `css/ads.css`.
 The nav lives in the sticky top bar. On the landing page the bar slides in
