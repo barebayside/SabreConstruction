@@ -1,14 +1,11 @@
 /* ============================================================
    QUALIFYING FLOW — five questions, one per screen.
 
-   Renders in two places off one state machine:
-     · INLINE  — <div data-qualify-inline></div> sits on the page, visible
-                 and startable with no click. This is the primary.
-     · MODAL   — fallback only. Fires once if they reach the bottom without
-                 having started, or from any [data-qualify] button.
+   <div data-qualify-inline></div> sits on the page, visible and startable with
+   no click. That is the ONLY way this form appears.
 
-   Answers are shared, so someone who starts inline and then hits the modal
-   picks up where they left off.
+   There is NO modal and NO popup. One existed and was removed deliberately —
+   see the note at the bottom of this file. Do not add one back.
 
    Leads go out through a form relay (no server on GitHub Pages).
    Change LEAD_EMAIL and nothing else.
@@ -68,35 +65,27 @@
   var started = false;
   var finished = false;
   var openedAt = Date.now();
-  var hosts = [];          // {root, bar, body, back, isModal}
-  var modal = null;
+  var hosts = [];          // {root, bar, body, back}
 
-  /* ---------- shell markup, shared by inline and modal ---------- */
-  function shell(isModal) {
-    return (isModal ? '<div class="qm-sheet" role="dialog" aria-modal="true" aria-label="Book a site visit">' : '') +
-      '<div class="qm-top">' +
+  /* ---------- shell markup ---------- */
+  function shell() {
+    return '<div class="qm-top">' +
         '<button class="qm-back" type="button" aria-label="Back">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>' +
         '</button>' +
         '<div class="qm-bar"><i></i></div>' +
-        (isModal ?
-          '<button class="qm-close" type="button" aria-label="Close">' +
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>' +
-          '</button>' : '') +
       '</div>' +
-      '<div class="qm-body"></div>' +
-      (isModal ? '</div>' : '');
+      '<div class="qm-body"></div>';
   }
 
-  function wire(root, isModal) {
-    var scope = isModal ? root.querySelector('.qm-sheet') : root;
+  function wire(root) {
+    var scope = root;
     var h = {
       root: root,
       scope: scope,
       body: scope.querySelector('.qm-body'),
       bar: scope.querySelector('.qm-bar i'),
-      back: scope.querySelector('.qm-back'),
-      isModal: isModal
+      back: scope.querySelector('.qm-back')
     };
     h.back.addEventListener('click', function () {
       if (h.at > 0) draw(h, h.at - 1);
@@ -159,7 +148,7 @@
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
       input.addEventListener('input', function () { started = true; });
       // only pull the keyboard up mid-flow, never on first paint
-      if (i > 0 && (h.isModal || h.userDriven)) {
+      if (i > 0 && h.userDriven) {
         setTimeout(function () { input.focus({ preventScroll: true }); }, 300);
       }
     }
@@ -227,8 +216,8 @@
   /* ---------- inline ---------- */
   document.querySelectorAll('[data-qualify-inline]').forEach(function (el) {
     el.classList.add('qm-inline');
-    el.innerHTML = shell(false);
-    var h = wire(el, false);
+    el.innerHTML = shell();
+    var h = wire(el);
     h.userDriven = false;
     draw(h, 0);
   });
