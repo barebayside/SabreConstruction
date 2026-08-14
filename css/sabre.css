@@ -191,9 +191,13 @@ h1,h2,h3,.h1,.h2,.h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-
   border-radius:20px;padding:clamp(24px,3.5vw,42px);margin-bottom:clamp(26px,4vw,44px);
 }
 .team-lead .pair{display:flex;flex-shrink:0}
+/* the source shots are cut-outs with the background knocked out — sit them on
+   a dark field so they read as portraits rather than ID photos */
 .team-lead .pair img{
   width:clamp(96px,13vw,148px);height:clamp(96px,13vw,148px);border-radius:50%;
-  object-fit:cover;background:var(--paper);border:4px solid var(--white);
+  object-fit:cover;object-position:top center;
+  background:radial-gradient(circle at 50% 30%,#2A2A30,#0B0B0C 78%);
+  border:4px solid var(--white);
   box-shadow:0 14px 30px -16px rgba(0,0,0,.45);
 }
 .team-lead .pair img:last-child{margin-left:-26px}
@@ -215,8 +219,10 @@ h1,h2,h3,.h1,.h2,.h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-
 }
 .tcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(0,0,0,.4);border-color:var(--red-line)}
 .tcard img{
-  width:104px;height:104px;border-radius:50%;object-fit:cover;margin:0 auto 16px;
-  background:var(--paper);border:3px solid var(--paper);
+  width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top center;
+  margin:0 auto 16px;
+  background:radial-gradient(circle at 50% 30%,#2A2A30,#0B0B0C 78%);
+  border:3px solid var(--white);box-shadow:0 8px 18px -10px rgba(0,0,0,.5);
 }
 .tcard h4{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:23px;letter-spacing:.02em;
   text-transform:uppercase;margin-bottom:3px}
@@ -508,3 +514,20 @@ textarea.fld{min-height:92px;resize:vertical}
   .scrollcue i{animation:none}
   html{scroll-behavior:auto}
 }
+
+/* ---------- WORRIES STRIP ----------
+   Replaces the old dark problem band. Three lines, no body copy — people
+   glance at this page, they don't read three paragraphs in a dark box. */
+.worries{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:clamp(40px,6vw,72px)}
+.worry{
+  display:flex;align-items:center;gap:14px;
+  background:var(--white);border:1px solid var(--line);border-left:4px solid var(--red);
+  border-radius:12px;padding:20px 22px;
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,2.3vw,26px);
+  letter-spacing:.02em;text-transform:uppercase;line-height:1.02;color:var(--ink);
+}
+.worry span{
+  flex-shrink:0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;
+  color:var(--red);
+}
+@media(max-width:860px){.worries{grid-template-columns:1fr;gap:12px}}
