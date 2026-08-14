@@ -31,6 +31,7 @@ the sections its Inputs table names.
 | `reference/copy-rules.md` | Voice and claim rules |
 | `reference/lead-capture.md` | The five questions, the relay, the config |
 | `reference/media-pipeline.md` | How every asset was made |
+| `reference/fal-video-capabilities.md` | What fal.ai can do on length, sequencing and cost |
 | `reference/bbl-links.md` | Where this plugs into Bare Bayside Labs |
 
 ## Rules for this folder

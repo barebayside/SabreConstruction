@@ -9,6 +9,7 @@
 |---|---|---|
 | Blockers | `../open-items.md` | Full file |
 | How every existing asset was made | `../reference/media-pipeline.md` | Full file |
+| Model limits — length, sequencing, cost | `../reference/fal-video-capabilities.md` | Full file |
 | API key + model rationale + cost | see `../reference/bbl-links.md` | § *Media generation* |
 | Existing scripts | `../../tools/` | The one closest to your job — copy its shape |
 
