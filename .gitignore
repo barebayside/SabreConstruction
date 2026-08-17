@@ -11,3 +11,6 @@ shots/
 __pycache__/
 *.pyc
 assets/video/raise-ai-*.mp4
+
+# raw team-photo variants — only the encoded team-photo.jpg ships
+assets/img/team-photo-[0-9].jpg

@@ -101,6 +101,29 @@ badge in the top-left corner and the two collided.
 Putting a real customer's words in an actor's mouth is worse than a generic
 script, not better.
 
+## Team photo (`team-photo.jpg`)
+
+`tools/gen_team_photo.py`, `fal-ai/nano-banana-2`, 16:9, two variants at ~$0.05 each.
+
+The one place in this repo where the governing principle is deliberately
+inverted: the image is **not** derived from a client photo, because the only
+honest source would be the faces of six real, named employees.
+
+**⚠️ These are AI-generated people and they are generic ON PURPOSE.** Sabre's
+team is Stewart, Cathy, Nathan, Celene, Frank and Jacob — real, identifiable,
+with cut-out photos already in `assets/img/team/`. Generating a photoreal group
+shot that resembles them would be a fake photograph of real people on their own
+company's website. The prompt therefore asks for an anonymous crew and the page
+says in terms that nobody in it works there.
+
+- Variant 2 was rejected: legible garbled logos on the polo shirts. Variant 1's
+  chest marks are small enough to read as generic embroidery. Check this on any
+  regeneration — the model wants to invent branding.
+- 476 KB raw → 197 KB shipped (`scale=1600:-2`, `-q:v 5`), under the 200 KB gate.
+- Raw variants `team-photo-[12].jpg` are gitignored; only `team-photo.jpg` ships.
+
+Replaced by a real photo the moment one exists. See `../open-items.md` item 7.
+
 ## Screenshots
 
 ```
