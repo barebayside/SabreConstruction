@@ -24,6 +24,7 @@ the sections its Inputs table names.
 
 | File | Canonical source for |
 |---|---|
+| `engagement.md` | The deal, the scope, the sequence, the to-do list. **Read every session** |
 | `open-items.md` | What's blocked, fake, or waiting. **Read every session** |
 | `reference/client-facts.md` | Every verified fact about Sabre + its source |
 | `reference/design-system.md` | Palette, type, motion, components |

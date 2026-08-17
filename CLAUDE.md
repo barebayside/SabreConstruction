@@ -5,8 +5,14 @@
 
 ## What this is
 
-A pitch/demo build for **Sabre Constructions**, a family-owned builder in
+A client build for **Sabre Constructions**, a family-owned builder in
 Capalaba QLD. Static site on GitHub Pages. No build step, no dependencies.
+
+**As of 2026-08-17 this is a live engagement, not a pitch** — website, Meta ads
+and Google ads, paid in kind. Everything here was built speculatively to win the
+job; it has won it. Read `docs/engagement.md` before planning any work, because
+the AI stand-ins that were acceptable in a demo are not acceptable on a real
+commercial site.
 
 - **Live:** https://barebayside.github.io/SabreConstruction/
 - **Repo:** github.com/barebayside/SabreConstruction (main → root)
@@ -40,6 +46,7 @@ in `docs/`.
 
 | You want to... | Open first |
 |---|---|
+| **Know what we agreed, what we're waiting on, what's next** | `docs/engagement.md` |
 | Change the main site page | `docs/tasks/edit-main-site.md` |
 | Change a landing page or the lead form | `docs/tasks/edit-landing-pages.md` |
 | Change the ad concepts page | `docs/tasks/edit-ad-concepts.md` |

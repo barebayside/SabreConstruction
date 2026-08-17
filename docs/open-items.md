@@ -2,6 +2,10 @@
 
 > **Layer 4.** Read this at the start of any session. Say `status` to get it
 > summarised. Everything here is a real blocker or a real risk, not a wishlist.
+>
+> ⚠️ **Since 2026-08-17 this is a live paid engagement, not a demo** — see
+> `engagement.md`. The 🔴 items below are no longer caveats on a pitch. They are
+> things that must be fixed before a real commercial site carries them.
 
 ## 🔴 Must be resolved before ANY of this goes public
 
@@ -36,6 +40,11 @@
 
 | Item | Why it matters |
 |---|---|
+| **Google Ads account** — created, or access granted | Asked 2026-08-17. No campaign structure is real until it exists |
+| **Access to their existing website** — host, CMS, logins | Asked 2026-08-17. Needed to see what's there and what's worth keeping |
+| **DNS access** | Asked 2026-08-17. The piece that turns a `github.io` demo into their actual site |
+| **Reference sites** — the other websites and styles he likes | He has them in mind. Get URLs, not adjectives, before designing templates |
+| **Footage of a real build** — before / during / after, filmed by a pro | Sabre arranges this on big builds. It replaces the AI testimonials AND the AI team photo, and it's the process demo the whole site is built around |
 | **Real photos of Stewart, Cathy and Nathan** — on site, hard hat, on the tools | Current shots are cut-outs on white and read as ID photos. No better ones exist publicly: their judo club site is down (HTTP 508) and Facebook is behind a login |
 | Their real email address for leads | Have it — `admin@sabreconstructions.com.au` — deliberately not wired |
 | More **filmed** testimonials | Ten written ones now exist — their Google reviews, quoted on the LPs. What's still missing is footage. See item 1 |
