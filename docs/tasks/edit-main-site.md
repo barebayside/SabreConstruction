@@ -8,10 +8,11 @@
 | Source | File | Section / Scope |
 |---|---|---|
 | Blockers | `../open-items.md` | Full file |
-| Facts | `../reference/client-facts.md` | Only the rows you're about to state |
+| Facts | `../../site/docs/client-facts.md` | Only the rows you're about to state |
 | Voice | `../reference/copy-rules.md` | Full file — it's short |
 | Why sections sit where they do | `../reference/page-structure.md` | § *`index.html` — the main site page* |
-| Visual tokens | `../reference/design-system.md` | § *Palette*, § *Type*, § *Rules that keep getting broken* |
+| Visual tokens (colours, type) | **`../../site/docs/design-system.md`** | canonical since 2026-08-24 |
+| Demo components, motion, gotchas | `../reference/design-system.md` | § *Components*, § *Rules that keep getting broken* |
 | The page | `../../index.html` | The section you're changing |
 | Shared styles | `../../css/sabre.css` | The component block only |
 
@@ -23,7 +24,7 @@ anything in `tools/`.
 1. Read the blockers. If your change touches a 🔴 item, say so before editing.
 2. Find the section in `index.html` — they're numbered in HTML comments
    (`<!-- ============ 4 · TESTIMONIALS — Proof ============ -->`).
-3. Check any fact you're about to state against `../reference/client-facts.md`.
+3. Check any fact you're about to state against `../../site/docs/client-facts.md`.
 4. Make the edit.
 5. **If you touched `css/sabre.css` or `js/sabre.js`, bump `?v=N`** in every
    page that links it: `index.html`, `ads.html`, `lp-*.html`.
@@ -34,7 +35,7 @@ anything in `tools/`.
 
 | Check | Pass condition |
 |---|---|
-| No invented facts | Every number and claim traces to `../reference/client-facts.md` |
+| No invented facts | Every number and claim traces to `../../site/docs/client-facts.md` |
 | Cache-buster | `?v=N` bumped on every page linking the edited asset |
 | Console | `shoot.py` run reports no console errors |
 | Broken images | Zero, excluding the lightbox `<img>` which has no `src` until opened |

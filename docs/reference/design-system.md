@@ -1,34 +1,34 @@
-# Design system
+# Design system — the workshop (demo + ad landing pages)
 
-> **Layer 4.** Canonical source for anything visual.
+> **Layer 4.** Covers `css/sabre.css` and `css/lp.css` — the demo site, the ad
+> concepts and the three landing pages. **This is not the real website.**
 
-## Palette
+## ⛔ Palette and type live somewhere else now
 
-Both sampled from `assets/img/sabre-logo.png`. Nothing else was invented.
+The colours and the type stack are **shared with the real website**, so there is
+only one source for them:
 
-| Token | Value | Use |
-|---|---|---|
-| `--red` | `#FF1A1A` | The shout colour. Buttons, bands, accents |
-| `--red-d` | `#D10E0E` | Error text, hovers |
-| `--ink` / `--black` | `#0B0B0C` | Text, dark bands |
-| `--ink2` | `#4C4C52` | Body copy |
-| `--muted` | `#86868E` | Labels, captions |
-| `--paper` | `#F6F4F1` | Page background |
-| `--white` | `#FFFFFF` | Cards, tinted sections |
-| `--line` | `#E3DFD9` | Hairlines |
+```
+site/docs/design-system.md
+```
 
-## Type
+Read it there. Do not restate the hex codes in this file — two copies of a
+palette is how a brand drifts.
 
-| Face | Role |
-|---|---|
-| **Bebas Neue** | All headings, buttons, numbers. Uppercase, tight leading |
-| **Plus Jakarta Sans** | Body copy |
-| **DM Mono** | Eyebrows, labels, metadata, anything in small caps |
+Short version so you know what you are dealing with: Sabre red `#FF1A1A` on
+near-black `#0B0B0C` over warm off-white `#F6F4F1`, both reds sampled from their
+own logo. Bebas Neue for headings, Plus Jakarta Sans for body, DM Mono for
+labels.
 
-Scale lives in `css/sabre.css` as `.h1` / `.h2` / `.h3` / `.lede`.
+⚠️ Same gotcha applies here: **heading elements get no size by default.** `h1`
+alone renders at browser default. You must add `class="h1"`. The scale lives in
+`css/sabre.css` as `.h1` / `.h2` / `.h3` / `.lede`.
 
-⚠️ Heading elements get **no size by default** — `h1` alone renders at browser
-default. You must add `class="h1"`.
+## What this file IS still the source for
+
+Everything below — the motion engine, the demo components and the landing-page
+components. **None of it exists in `site/`**, which has its own much simpler
+stylesheet. Do not copy these classes across.
 
 ## Motion
 

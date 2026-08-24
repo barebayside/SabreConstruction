@@ -1,7 +1,7 @@
 # Engagement — what we agreed, what we're waiting on, what's next
 
 > **Layer 4.** The commercial and scope state of the Sabre relationship.
-> Facts about *Sabre the business* live in `reference/client-facts.md`.
+> Facts about *Sabre the business* live in `../site/docs/client-facts.md`.
 > Things that are broken or fake live in `open-items.md`.
 > This file is about **the deal and the sequence of work**.
 >
@@ -139,3 +139,74 @@ minutes of his time and they unblock the copy.
 - Does the existing site stay up during the rebuild, or do we cut over in one go?
 - Is there a budget for the ad spend itself? The in-kind deal covers our work,
   not Google's and Meta's invoices
+
+---
+
+## ⭐ 2026-08-24 — DECISION: the real site is a FRESH repo
+
+The website gets **rebuilt from scratch in a new repository**, not evolved out of
+this one.
+
+**Why.** This repo is a speculative pitch artefact. It carries three ad landing
+pages, an ad-concepts showcase, a blocked render page, AI testimonial videos and
+an AI team photo, all wired into one long single-page `index.html`. None of that
+belongs in a real builder's commercial website. Carrying it forward means
+inheriting every open item in `open-items.md`.
+
+**What each repo is for from now on:**
+
+| Repo | Purpose | Status |
+|---|---|---|
+| `barebayside/SabreConstruction` (this one) | the demo, the ad concepts, the three LPs, the asset pipeline in `tools/` | stays as-is, stays `noindex` |
+| **new repo, not yet created** | the real multi-page website that `sabreconstructions.com.au` will point at | ⛔ blocked — see below |
+
+The **ad landing pages stay here.** They serve a different job (paid traffic, one
+per medium) and they do not need to live on the client's domain.
+
+### Blocked on
+
+- [ ] **Nathan's reference sites.** He is sending examples of what he likes.
+      Nothing gets designed until they arrive — see the standing note above:
+      get URLs, not adjectives.
+- [ ] Decision on which of the six existing URLs survive (below).
+
+### Scope question raised 2026-08-24 — NOT yet settled
+
+Edward: Nathan "doesn't really care about having the gallery. Maybe not even
+have meet the team."
+
+⚠️ **Dropping a page drops its Google URL.** `/meet-the-team` is their deepest
+page at ~734 words and holds the entire family story — Stewart on the tools at
+17, the Olympic judo careers, Frank's 17 years. `/gallery` carries the seven
+named projects.
+
+**Recommendation: keep both URLs, slim the content.** A thin page preserves the
+address for near-zero effort. Deleting later is easy; recovering a dropped URL is
+not. Confirm with Nathan rather than assuming — it is a five-second question in
+the same conversation as the reference sites.
+
+Full URL and software mapping: `docs/tasks/site-migration-map.md`.
+
+### Why two repos and not one — the technical reason
+
+Asked and settled 2026-08-24.
+
+**One repo = one GitHub Pages site = one custom domain.** Subfolders are possible
+(`/lp/rebuild/`), two separate sites from one repo are not.
+
+⛔ **The real reason is publication, not tidiness. GitHub Pages serves every file
+in the repo.** If the AI testimonial videos and AI team photo live in the same
+repo the domain points at, they are reachable at
+`sabreconstructions.com.au/assets/video/testimonial-1.mp4` whether or not any
+page links to them. **Unlinked is not unpublished.** That alone rules out one
+shared repo while `open-items.md` items 1 and 7 are unresolved.
+
+**Promotion between them is a manual copy**, not a link or a submodule. When a
+landing page earns its place on the real site, copy the finished page across.
+Manual is the feature — it forces a decision each time instead of letting demo
+content drift onto the client's domain.
+
+**Future option, not needed yet:** a second custom domain such as
+`ads.sabreconstructions.com.au` can point at this repo, putting the ad landing
+pages on Sabre's own domain. Better for ad quality scores, since ad and landing
+page would share a domain. Revisit only if ad performance argues for it.

@@ -8,7 +8,7 @@
 | Source | File | Section / Scope |
 |---|---|---|
 | Blockers | `../open-items.md` | Full file |
-| Facts | `../reference/client-facts.md` | Only the rows you're about to state |
+| Facts | `../../site/docs/client-facts.md` | Only the rows you're about to state |
 | Voice | `../reference/copy-rules.md` | Full file |
 | The three Meta routes | `../reference/lead-capture.md` | § *The three Meta routes* |
 | How each asset was made | `../reference/media-pipeline.md` | The relevant asset's section |

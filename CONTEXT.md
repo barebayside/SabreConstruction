@@ -35,7 +35,8 @@ you need.
 
 | File | Holds |
 |---|---|
-| `docs/reference/client-facts.md` | Every verified fact about Sabre + its source |
+| **`site/docs/client-facts.md`** | ⭐ CANONICAL — every verified fact about Sabre + its source |
+| `docs/reference/client-facts.md` | pointer only, moved 2026-08-24 |
 | `docs/reference/design-system.md` | Palette, type, motion, components |
 | `docs/reference/page-structure.md` | Section order and the reasoning behind it |
 | `docs/reference/copy-rules.md` | Voice, what may and may not be claimed |

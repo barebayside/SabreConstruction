@@ -10,9 +10,10 @@
 | Blockers | `../open-items.md` | Full file |
 | The form: questions, relay, config, why it's five screens | `../reference/lead-capture.md` | Full file |
 | Which page is for which medium | `../reference/page-structure.md` | § *The three landing pages* |
-| Facts | `../reference/client-facts.md` | Only the rows you're about to state |
+| Facts | `../../site/docs/client-facts.md` | Only the rows you're about to state |
 | Voice | `../reference/copy-rules.md` | Full file |
-| Visual tokens | `../reference/design-system.md` | § *Palette*, § *Type* |
+| Visual tokens (colours, type) | **`../../site/docs/design-system.md`** | canonical since 2026-08-24 |
+| Demo/LP components + motion | `../reference/design-system.md` | § *Components*, § *Motion* |
 | The page | `../../lp-{angle}.html` | Full file — they're 80–130 lines |
 | LP styles | `../../css/lp.css` | The component block only |
 | Form logic | `../../js/qualify.js` | Only if changing behaviour |
@@ -39,7 +40,7 @@ changing a shared token.
 | Tap targets | 56px minimum on every option and input |
 | Five questions intact | Order unchanged: type → plans → suburb → budget → mobile |
 | Star rating is honest | Reads **4.5** and **11**, never rounded to 5. `--gfill` on `.grev` is 90% |
-| Review quotes are verbatim | Every quote matches a row in `../reference/client-facts.md`. Trim, never reword |
+| Review quotes are verbatim | Every quote matches a row in `../../site/docs/client-facts.md`. Trim, never reword |
 | Budget bands still flagged | Still placeholders — see `../open-items.md` |
 | Preview chrome | Switcher and medium pill present for review, listed in `../open-items.md` for removal |
 

@@ -26,7 +26,8 @@ the sections its Inputs table names.
 |---|---|
 | `engagement.md` | The deal, the scope, the sequence, the to-do list. **Read every session** |
 | `open-items.md` | What's blocked, fake, or waiting. **Read every session** |
-| `reference/client-facts.md` | Every verified fact about Sabre + its source |
+| **`../site/docs/client-facts.md`** | ⭐ CANONICAL — every verified fact about Sabre + its source |
+| `reference/client-facts.md` | pointer only, moved 2026-08-24 |
 | `reference/design-system.md` | Palette, type, motion, components |
 | `reference/page-structure.md` | Section order and the reasoning |
 | `reference/copy-rules.md` | Voice and claim rules |

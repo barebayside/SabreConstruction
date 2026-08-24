@@ -52,10 +52,13 @@ in `docs/`.
 | Change the ad concepts page | `docs/tasks/edit-ad-concepts.md` |
 | Make a video, image or reel | `docs/tasks/generate-media.md` |
 | Push changes live / check the deploy | `docs/tasks/deploy.md` |
+| **Point the domain at GitHub / change DNS** | `docs/tasks/dns-cutover.md` |
+| **Know what replaces what / which URLs must exist** | `docs/tasks/site-migration-map.md` |
 | Know what's blocked or fake | `docs/open-items.md` |
-| Check a fact about Sabre before writing it | `docs/reference/client-facts.md` |
+| Check a fact about Sabre before writing it | **`site/docs/client-facts.md`** (canonical) |
 | Know why a section is where it is | `docs/reference/page-structure.md` |
-| Match colours, type or motion | `docs/reference/design-system.md` |
+| Match colours or type | **`site/docs/design-system.md`** (canonical) |
+| Match the demo's motion / components | `docs/reference/design-system.md` |
 | **Find the method, a skill, pricing, or the FAL key** | `docs/reference/bbl-links.md` |
 | See what happened last session | newest file in `handoffs/` |
 | Anything else | `docs/CONTEXT.md` |
@@ -82,7 +85,7 @@ tooling — never its data, CRM or mailing list.
 These have all been broken at least once. Read them before editing anything.
 
 1. **Never invent a number.** No star ratings, review counts, job counts, years
-   or prices unless they're in `docs/reference/client-facts.md` with a source.
+   or prices unless they're in `site/docs/client-facts.md` with a source.
 2. **The three testimonial videos are AI-generated people, not customers.** The
    warning panel, the per-slide chip and the burned-in label all stay until real
    footage replaces them.

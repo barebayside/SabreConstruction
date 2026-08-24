@@ -23,7 +23,7 @@
 
 | Item | What happened |
 |---|---|
-| **Star ratings were empty slots** with a "needs real rating" chip | 2026-08-14. Sabre's Google Business Profile does exist: **4.5 from 11 reviews**. Real rating and real quotes are now on all three LPs, and the cleared quote list is in `reference/client-facts.md`. ⚠️ It is **4.5, not 5** — there's a genuine 1-star on the listing. Never round it up |
+| **Star ratings were empty slots** with a "needs real rating" chip | 2026-08-14. Sabre's Google Business Profile does exist: **4.5 from 11 reviews**. Real rating and real quotes are now on all three LPs, and the cleared quote list is in `../site/docs/client-facts.md`. ⚠️ It is **4.5, not 5** — there's a genuine 1-star on the listing. Never round it up |
 | **Concept 03 was 16:9** in a 9:16 placement | 2026-08-14. Regenerated natively vertical and ends on a Sabre card. Still an AI stand-in, still labelled — item 1 above still applies to it |
 | **The LPs had their own header** | 2026-08-14. All three now use the same `.topbar` as `index.html` and `ads.html`, so there's always a way back to the main site |
 
