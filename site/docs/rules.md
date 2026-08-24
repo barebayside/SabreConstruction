@@ -65,7 +65,31 @@ any ranking attached to it.
 **If a page is no longer wanted:** keep the address and make the page shorter, or
 point it somewhere sensible. Do not just delete the folder.
 
-## 7. Never start a path with a slash
+## 7. Never show a house that isn't yours
+
+AI image tools can produce a photo-real "finished home" from almost nothing. On a
+builder's website, every house on the page reads as **a house you built**.
+
+**Allowed:**
+
+- Upscaling or cleaning up a real photo of a real Sabre job. Non-generative
+  tools only — they sharpen what is there, they do not invent architecture
+- A before-and-after visualisation built from **your own photo of the actual
+  block**, using **your own design**, clearly labelled as a visualisation
+
+**Not allowed:**
+
+- A generated "after" of a design Sabre does not own. The rebuild visualisation
+  made earlier was derived from another practice's elevation, and it is blocked
+  from publication until that designer gives written permission
+- Any generated home presented as a completed Sabre build
+- A street address or an owner's name on any visualisation, ever
+
+**Why:** showing someone else's design as your work is a copyright problem and a
+professional one. Showing a generated house as a real build is the same
+misleading conduct as rule 3, just with bricks instead of faces.
+
+## 8. Never start a path with a slash
 
 Write `../css/site.css`. Never `/css/site.css`.
 

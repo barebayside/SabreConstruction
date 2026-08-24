@@ -43,7 +43,7 @@ docs/                everything you need to know — see below
 | Understand how the site gets published | `docs/how-it-works.md` |
 | Change something without breaking it | `docs/making-changes.md` |
 
-## The five rules — read `docs/rules.md` before editing
+## The six rules — read `docs/rules.md` before editing
 
 1. **Never invent a number.** No years, job counts, prices, star ratings or
    review counts unless they are in `docs/client-facts.md` with a source.
@@ -53,7 +53,10 @@ docs/                everything you need to know — see below
 4. **Never remove the enquiry form's endpoint** without testing that enquiries
    still arrive. A form that looks like it works but sends nothing loses jobs
    silently.
-5. **Never add `noindex`** to a page unless you intend to remove it from Google.
+5. **Never show a house Sabre didn't design or build.** A generated "after" of
+   someone else's design is a copyright problem; a generated home shown as a
+   finished build is the same as rule 3 with bricks instead of faces.
+6. **Never add `noindex`** to a page unless you intend to remove it from Google.
 
 ## Two things that will catch you out
 

@@ -210,3 +210,34 @@ content drift onto the client's domain.
 `ads.sabreconstructions.com.au` can point at this repo, putting the ad landing
 pages on Sabre's own domain. Better for ad quality scores, since ad and landing
 page would share a domain. Revisit only if ad performance argues for it.
+
+### 2026-08-24 — Sabre to get their own fal.ai account
+
+Edward will ask Nathan to open a **fal.ai account and put credit on it**, so
+image and video generation runs on Sabre's billing, not BBL's.
+
+**Why it matters beyond cost.** `reference/bbl-links.md` currently sources
+`FAL_KEY` from `BBL/products/image-pipeline/.env`. That is a hard dependency on
+Edward's infrastructure — fine now, worthless after handover. Their own account
+removes it, same principle as putting the form service in their name.
+
+**Cost anchor for the conversation:** the 16.5s knockdown-rebuild clip cost
+**$2.97** end to end. A hundred dollars of credit goes a long way. Use the real
+number — it stops the ask feeling open-ended.
+
+⚠️ **A fal 403 means the balance is exhausted, not that the key is wrong.** Tell
+Nathan up front. See [[fal-access]].
+
+⛔ **The key never enters this repo — it is public.** Environment file only.
+
+**What their account is legitimately for:**
+
+- `recraft/upscale/crisp` on their real photos — non-generative, so it cannot
+  invent architecture. Their gallery thumbs are 376px and need it
+- Before/after visualisations built from their own photo of a real block, camera
+  locked, using a design they own
+
+**What it must never do**, now that nobody is supervising the account: invent a
+finished house from a design Sabre does not own (open item 6), or put a person on
+a page. Both are written into `site/docs/rules.md` as rules 3 and 7 so the rule
+travels with the repo instead of living in Edward's head.
