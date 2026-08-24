@@ -44,8 +44,11 @@ capture without Zoho). Both added to the routing table.
 
 **Collapsed duplicate docs to one source** — see Decisions 6.
 
-**Zoho drafts** — four written, three deleted, one left standing:
-*"One thing to find out for me"* to `nathan@sabreconstructions.com.au`. Not sent.
+**Zoho drafts** — four written, three deleted, one refined down to a single
+question. ✅ **SENT 2026-08-24**, delivery confirmed:
+*"One thing to find out for me"* to `nathan@sabreconstructions.com.au`.
+Asks only who to contact about the domain. The fal.ai and Formspree asks were
+deliberately held back so this email asks one thing.
 
 ## Files Changed / Created
 
@@ -118,8 +121,8 @@ worth repeating that sweep after any future move.
 ## What's NOT Done — TODO
 
 ### Blocked on Sabre
-- [ ] **Who to contact about the domain — iSonic or Melbourne IT.** The standing
-      draft asks this. Everything DNS waits on it
+- [x] ~~Who to contact about the domain — iSonic or Melbourne IT.~~ **ASKED
+      2026-08-24.** ⏳ Awaiting reply. Everything DNS waits on it
 - [ ] **Does Sabre own their own domain?** Registrant is redacted. Only a
       Melbourne IT login answers it. Ask early — easier while relations are good
 - [ ] **Reference sites — actual URLs, not adjectives.** All design work blocked

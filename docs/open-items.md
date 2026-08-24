@@ -40,6 +40,10 @@
 
 | Item | Why it matters |
 |---|---|
+| ⭐ **Who to contact about the domain — iSonic or Melbourne IT** | **Asked 2026-08-24, awaiting reply.** Everything DNS waits on this. See `../handoffs/` and `tasks/dns-cutover.md` |
+| **Does Sabre own their own domain?** | `.com.au` registrant is redacted from public lookup. Only a Melbourne IT login answers it. Ask while relations are good |
+| **fal.ai account + credit** | Not asked yet. Cost anchor: the rebuild clip cost $2.97 |
+| **Formspree account in Sabre's name** | Not asked yet. Must be theirs, not Edward's, to survive handover |
 | **Google Ads account** — created, or access granted | Asked 2026-08-17. No campaign structure is real until it exists |
 | **Access to their existing website** — host, CMS, logins | Asked 2026-08-17. Needed to see what's there and what's worth keeping |
 | **DNS access** | Asked 2026-08-17. The piece that turns a `github.io` demo into their actual site |

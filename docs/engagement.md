@@ -241,3 +241,23 @@ Nathan up front. See [[fal-access]].
 finished house from a design Sabre does not own (open item 6), or put a person on
 a page. Both are written into `site/docs/rules.md` as rules 3 and 7 so the rule
 travels with the repo instead of living in Edward's head.
+
+### ✅ 2026-08-24 — SENT: "One thing to find out for me"
+
+Emailed **nathan@sabreconstructions.com.au**, delivery confirmed. Asks **one
+question only**: who does Sabre contact about the domain — **iSonic** or
+**Melbourne IT** — and send the login if he has one.
+
+Everything DNS now waits on that reply. This supersedes the 2026-08-17 "To do"
+email, which asked for the same access alongside Meta and Google Ads and got no
+response.
+
+**Deliberately NOT asked yet, will follow separately:**
+
+- [ ] **fal.ai account + credit.** Cost anchor for the ask: the 16.5s rebuild
+      clip cost **$2.97**. A fal 403 = exhausted balance, not a bad key
+- [ ] **Formspree account in Sabre's name**, for the enquiry form. Must be their
+      account so it survives handover — see `site-migration-map.md`
+
+Both were held back on purpose. The sent email asks one thing, which is why it
+has a chance of being answered.
