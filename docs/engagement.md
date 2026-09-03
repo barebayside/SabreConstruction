@@ -136,7 +136,7 @@ minutes of his time and they unblock the copy.
 ## Open questions
 
 - Who owns the Google Ads account and who pays the media spend? Not yet agreed
-- Does the existing site stay up during the rebuild, or do we cut over in one go?
+- ✅ **Decided 2026-09-03: the existing site STAYS UP until the new build is accepted**, then cut over in one go.
 - Is there a budget for the ad spend itself? The in-kind deal covers our work,
   not Google's and Meta's invoices
 

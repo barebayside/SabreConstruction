@@ -18,3 +18,10 @@ assets/img/team-photo-[0-9].jpg
 # client correspondence — contains staff email addresses and login context.
 # This repo is PUBLIC. Drafts stay local.
 docs/emails/
+
+# working agreement drafts — real names, terms and dollar figures.
+# This repo is PUBLIC. Agreements stay local.
+docs/agreement/
+
+# on-site session run sheets — contain account and access steps.
+docs/sessions/
