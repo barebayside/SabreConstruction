@@ -148,3 +148,34 @@ the search terms in campaign plan §6 are the seed.
 - Prose is the coded writer's draft (writer 1). Hand-authored pass (`scripts/analyst_offline.py`)
   NOT run — note its `BASE` is hardcoded to Development; this report is on Production.
 - Sabre's 12th review is dated 14 Aug 2026. Breakdown now 9 five-star, 1 one-or-two-star.
+
+## Addendum 2 — the REAL report: build 2, audited, hand-written, published
+
+Edward: "this is a real client. it needs to be real." So build 1 was audited against the spec
+(`BBL/docs/audits/2026-09-05-competitor-intel-process-audit-sabre.md`), the process was then
+followed properly on build 2, and the result was published.
+
+- **Build 2 = report row `795000000099330`** (Production), with every competitor's Facebook /
+  Instagram / YouTube / LinkedIn handles resolved by hand from their own sites. 53 lanes ran.
+- **Gates FIRST** this time: fill gate PASS (15 DATA, 1 EMPTY = Sabre's own services list, 1
+  PARTIAL); claims guard clean after one fix (a rival's quoted post caption is not our claim).
+- **Writer 3 done** — all 13 units hand-authored (`BBL/scripts/.analyst/795000000099330/write_prose.py`
+  → `prose.json`), applied through the real `enrich()` path, anchored by `_for` so nothing lands
+  a row off, pushed with `POST /report-v4/795000000099330` → 202 → published.
+- **Customer link (the bucket file, the real door):**
+  `https://barebayside-reports.zohostratus.com.au/r/f9Vmproivc-gxGiIztJHgEWVcSCM9elf/report.html`
+  QA route: `…/competitor_intel_pipeline/report-html/795000000099330`. Both verified to carry
+  the authored text; local copies in `docs/sessions/2026-09-05-competitor-report-795000000099330-*`.
+- **Six code fixes in BBL** landed on the way (chain false positive, reach line, `[your service]`
+  fill, reach dial from geography, script env switch, claims-guard quote handling) — all tested,
+  committed, **NOT deployed to Catalyst**. They reached this report via the local render path.
+- **What the report says, in numbers Sabre can act on:** not in Google's results for any of 5
+  suburbs (Fiteni holds Capalaba at #8; Wynnum/Manly/Lota/Wakerley have NO builder); 0 ads vs 78
+  (Fiteni ≥40, Tide 26 Meta-only, Blueneer 10, Nest 2, Lindon 0); 0/4 assistants, 0/7 questions,
+  4 questions with no winner incl. Wynnum + Manly; no readable Sabre social vs IG followers Tide
+  10,249 / Lindon 5,275 / Nest 4,074 / Fiteni 2,254 / Blueneer 588; reviews 4.5 from 12 (lowest
+  rating, freshest review 14 Aug 2026). **Tide already runs the "you love your street but have
+  outgrown the house" Meta ad — Sabre's own positioning.**
+- Still honest gaps in it: Sabre's services not itemised (Joomla banners), Sabre's own review
+  text not reaching the §07 theme derivation, Fiteni's site not crawled (Apify 402). Logged in
+  `BBL/products/competitor-intel/spec/10-fixing-issues.md`.

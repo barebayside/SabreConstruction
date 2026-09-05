@@ -22,8 +22,10 @@ Nathan came to Edward's for the run-sheet day. Result:
 | **DNS / Melbourne IT / iSonic / HeyGen / GBP / shared folder / reference sites / the two numbers** | still outstanding |
 
 Sequence is now: **2 · Website build + campaign structures + content ← WE ARE HERE.**
-Next process agreed: a BBL competitor-intel report on Sabre's competitors before the
-design build. See `../handoffs/handoff-2026-09-05-saturday-setup-nathan.md`.
+**Competitor-intel report DONE the same day** — row `795000000099330`, hand-authored, published:
+`https://barebayside-reports.zohostratus.com.au/r/f9Vmproivc-gxGiIztJHgEWVcSCM9elf/report.html`.
+It sets the SEO and campaign targets (Wynnum + Manly pages first; search ads on suburb terms;
+Tide already owns the "you're not moving" Meta angle). See the handoff addenda.
 
 ## Status — this is no longer a pitch
 
