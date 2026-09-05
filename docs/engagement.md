@@ -5,7 +5,25 @@
 > Things that are broken or fake live in `open-items.md`.
 > This file is about **the deal and the sequence of work**.
 >
-> Last updated: **2026-08-17**.
+> Last updated: **2026-09-05**.
+
+## ⭐ 2026-09-05 — the real site exists, in Sabre's own repo
+
+Nathan came to Edward's for the run-sheet day. Result:
+
+| Item | State |
+|---|---|
+| **Agreement** | Nathan AGREED. Day counts and Schedule A removed. PDF ready for Zoho Sign, not yet sent. Entity still unconfirmed |
+| **Real repo** | `github.com/Sabre-Constructions/sabre-constructions-web-site-` — org owned by Nathan, Edward is a pusher. Skeleton in, **Pages LIVE** at `sabre-constructions.github.io/sabre-constructions-web-site-/`, still `noindex` |
+| **Enquiry form** | LIVE via Formspree in Sabre's name, notifies admin@. Radio-first §8 design. Test accepted |
+| **fal.ai** | Sabre's account + key (`~/.keys/sabre-fal.key`). Killarney 78 upscaled on their billing |
+| **Meta** | access confirmed |
+| **Google Ads** | NOT confirmed — "a bit funny". Link request still to do |
+| **DNS / Melbourne IT / iSonic / HeyGen / GBP / shared folder / reference sites / the two numbers** | still outstanding |
+
+Sequence is now: **2 · Website build + campaign structures + content ← WE ARE HERE.**
+Next process agreed: a BBL competitor-intel report on Sabre's competitors before the
+design build. See `../handoffs/handoff-2026-09-05-saturday-setup-nathan.md`.
 
 ## Status — this is no longer a pitch
 

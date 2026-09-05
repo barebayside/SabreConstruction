@@ -12,7 +12,7 @@
 | # | Item | Where | Who resolves |
 |---|---|---|---|
 | 1 | **The three testimonial videos are AI-generated people.** Not customers. Publishing them as real is misleading conduct under Australian Consumer Law and breaches Meta and Google ad policy | `assets/video/testimonial-*.mp4`, carousel in `index.html` | Film 2–3 real families on a phone, 15 min each |
-| 2 | **The lead form goes nowhere.** `LEAD_EMAIL` points at Edward and the relay has never been confirmed — nothing arrives until someone clicks the confirmation email | `js/qualify.js` | Edward, then switch to Sabre's address |
+| 2 | **The lead form goes nowhere** — *on THIS demo repo's LPs only.* ✅ **The real site's form is LIVE (2026-09-05)** via Formspree `mwlkqyqn` → admin@sabreconstructions.com.au. `js/qualify.js` here still points at Edward and stays that way | `js/qualify.js` | Done for the real site. Demo LPs: leave |
 | 3 | **The raise reels are an artist's impression** sitting on footage of a real, identifiable Sabre site with their signage on the fence | `assets/video/reel-*.mp4` | Caption "concept visualisation", or re-cut to land on a genuinely finished home |
 | 4 | **Budget bands are invented.** Under $300k / $300–450k / $450–650k / $650k+ | `js/qualify.js` | Sabre confirms against real job sizes |
 | 5 | **Claims Sabre has not confirmed** — "fixed price before you commit", "one point of contact", "we'll tell you if it's not your year", the free site visit itself | `index.html`, all LPs | Sabre confirms these match how they actually operate |
@@ -42,9 +42,9 @@
 |---|---|
 | ⭐ **Who to contact about the domain — iSonic or Melbourne IT** | **Asked 2026-08-24, awaiting reply.** Everything DNS waits on this. See `../handoffs/` and `tasks/dns-cutover.md` |
 | **Does Sabre own their own domain?** | `.com.au` registrant is redacted from public lookup. Only a Melbourne IT login answers it. Ask while relations are good |
-| **fal.ai account + credit** | Not asked yet. Cost anchor: the rebuild clip cost $2.97 |
-| **Formspree account in Sabre's name** | Not asked yet. Must be theirs, not Edward's, to survive handover |
-| **Google Ads account** — created, or access granted | Asked 2026-08-17. No campaign structure is real until it exists |
+| ✅ **fal.ai account + credit** | Done 2026-09-05. Sabre's key at `~/.keys/sabre-fal.key` |
+| ✅ **Formspree account in Sabre's name** | Done 2026-09-05. Endpoint `mwlkqyqn` |
+| **Google Ads account** — created, or access granted | Attempted 2026-09-05, "a bit funny". Manager-link request still to complete |
 | **Access to their existing website** — host, CMS, logins | Asked 2026-08-17. Needed to see what's there and what's worth keeping |
 | **DNS access** | Asked 2026-08-17. The piece that turns a `github.io` demo into their actual site |
 | **Reference sites** — the other websites and styles he likes | He has them in mind. Get URLs, not adjectives, before designing templates |
