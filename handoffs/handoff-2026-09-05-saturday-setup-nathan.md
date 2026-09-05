@@ -179,3 +179,23 @@ followed properly on build 2, and the result was published.
 - Still honest gaps in it: Sabre's services not itemised (Joomla banners), Sabre's own review
   text not reaching the §07 theme derivation, Fiteni's site not crawled (Apify 402). Logged in
   `BBL/products/competitor-intel/spec/10-fixing-issues.md`.
+
+## Addendum 3 — Edward read it and it was shallow. Root cause found; report REPUBLISHED.
+
+Edward: "you even say in reputation reviews we have no reviews we could read… I can't see that high
+level of detail we had in the last report." He was right. The reviews (85 rival + 12 Sabre, with
+text) were scraped; the three enrichment readers (`BBL_REVIEW_THEMES`, `BBL_AD_COPY_READ`,
+`BBL_CONTENT_CLASSIFY`) are **OFF in Production** and the last example was built with them on.
+Rebuilt locally with all three on (a few dollars of Sonnet), re-authored, re-published — same link.
+
+What the republished report now has that the first publish did not:
+- §07: themes with counts + verbatim quotes both sides. Sabre reviewers name a person in 8 of 11,
+  praise the finished build in 6 of 11; rivals 34/85 and 12/85. The wedge is code-computed.
+- §03: Google ad copy READ. **Blueneer's 10 ads are roof-and-gutter ads** (its roofing arm) —
+  not builder ads; **Fiteni's 20 Google ads sell house-and-land estates**; only Tide + Fiteni
+  advertise the rebuild, on Meta. The Wynnum/Manly rebuild search terms are unbought.
+- §03: Tide's 10 Meta VIDEO ads now show their published frame (extractor never read `videos[]`).
+- The "0 reviews of your own to read" tile can no longer occur (extract fix + test).
+Both gates pass on the live page. Fix log rows + memory `bbl-production-enrichment-flags-off`.
+**Decision for Edward: flip the three flags to 1 in Production.** Until then, every client build
+must be rebuilt locally with them on.
