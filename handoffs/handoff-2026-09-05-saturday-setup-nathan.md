@@ -219,3 +219,11 @@ pipeline take Cleveland as the CITY anchor, and the map-pack lane (no location p
   customer's one-liner, and §01 must print the exact queries.
 **Intake rule from now on: geography = "<served suburbs…>, <METRO>, <STATE>, <COUNTRY>" — the
 metro named explicitly, e.g. "…, Brisbane, QLD, Australia".**
+
+## Addendum 5 — the search table is now part of the product (Edward's ask)
+
+"That whole table is super important… built into the final report and any future reports." Built:
+`normalize._one_search_table` → §01 `extras.search_table`; a table under the rank map listing every
+query run (both lanes), depth read, Sabre's position, each rival's, and who holds the top 3 — named
+whether or not they are in the report. Local-service only (Law 9). Template synced to all three
+copies; 4 unit tests; spec block catalogue + fix log updated. Sabre report republished with it.
