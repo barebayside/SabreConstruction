@@ -199,3 +199,23 @@ What the republished report now has that the first publish did not:
 Both gates pass on the live page. Fix log rows + memory `bbl-production-enrichment-flags-off`.
 **Decision for Edward: flip the three flags to 1 in Production.** Until then, every client build
 must be rebuilt locally with them on.
+
+## Addendum 4 — §01 was measured in the wrong hemisphere; re-checked and republished
+
+Edward: "I don't understand Getting found… I'd like to see where you'd even rank." Digging in: the
+intake geography "Wynnum, Manly, Lota, Wakerley, Capalaba, **Cleveland**, QLD, Australia" made the
+pipeline take Cleveland as the CITY anchor, and the map-pack lane (no location parameter) returned
+**Cleveland, Ohio**. The terms were also too narrow ("knockdown rebuild builder <suburb>" only).
+- Re-checked by hand 2026-09-05 (Google AU, top 30 + Maps pinned to QLD): **Sabre absent from all
+  13 searches and all 5 map boxes.** "builders Wakerley": Tide #1. "builders Capalaba" map box:
+  Fiteni #3, Tide #15, Dixon #1. "custom home builders Brisbane bayside": Nest #7, Lindon #26.
+  KDR terms: Tide #3 Manly, Fiteni #9 Lota / #27 Capalaba, Blueneer #1 in the Wynnum map box.
+  "builders Wynnum" page one = Baybuilt, hipages, Pro Builder, Johnston, Oceanview, Symcorp.
+- Corrected datasets substituted into the report cache (originals kept), §01 rebuilt and
+  re-authored, republished (same link). Raw checks saved beside the report in `docs/sessions/`.
+- BBL fixes committed (`c923172`): a trailing served suburb is never the city anchor (per-country
+  metro list); the map lane now carries `locationQuery`. Fix log has the OPEN rule: rank terms
+  should be the trade's head terms ("builders", "home builders", "knockdown rebuild"), not the
+  customer's one-liner, and §01 must print the exact queries.
+**Intake rule from now on: geography = "<served suburbs…>, <METRO>, <STATE>, <COUNTRY>" — the
+metro named explicitly, e.g. "…, Brisbane, QLD, Australia".**
