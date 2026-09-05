@@ -22,7 +22,7 @@ Nathan came to Edward's for the run-sheet day. Result:
 | **DNS / Melbourne IT / iSonic / HeyGen / GBP / shared folder / reference sites / the two numbers** | still outstanding |
 
 Sequence is now: **2 · Website build + campaign structures + content ← WE ARE HERE.**
-**Competitor-intel report DONE the same day** — row `795000000099330`, hand-authored, published:
+**Competitor-intel report DONE the same day** (rebuilt twice more that evening: review themes, read ad copy, §01 on Bayside data; the §01 search table appears once the Catalyst promote is done — TO DO) — row `795000000099330`, hand-authored, published:
 `https://barebayside-reports.zohostratus.com.au/r/f9Vmproivc-gxGiIztJHgEWVcSCM9elf/report.html`.
 It sets the SEO and campaign targets (Wynnum + Manly pages first; search ads on suburb terms;
 Tide already owns the "you're not moving" Meta angle). See the handoff addenda.

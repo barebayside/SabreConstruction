@@ -227,3 +227,23 @@ metro named explicitly, e.g. "…, Brisbane, QLD, Australia".**
 query run (both lanes), depth read, Sabre's position, each rival's, and who holds the top 3 — named
 whether or not they are in the report. Local-service only (Law 9). Template synced to all three
 copies; 4 unit tests; spec block catalogue + fix log updated. Sabre report republished with it.
+
+## STATE AT CLOSE (end of day, Edward stopped here)
+
+**Live for Sabre (customer door, same link throughout):**
+`https://barebayside-reports.zohostratus.com.au/r/f9Vmproivc-gxGiIztJHgEWVcSCM9elf/report.html`
+Carries: hand-authored prose, review themes + quotes, read ad copy (Blueneer = roofing ads,
+Fiteni Google = house-and-land), Meta video frames, §01 rebuilt on Bayside data with the exact
+queries in prose. **Does NOT yet carry the §01 search table** — needs the Production promote.
+
+**TO DO**
+1. [ ] Edward: Catalyst Console promote Development → Production (Serverless only, Generate Diff first).
+2. [ ] Claude, after promote: Production flags → 1; re-push `docs/sessions/2026-09-05-competitor-report-795000000099330-authored.v4.json`
+       to `/report-v4/795000000099330`; confirm the search table live; guard on the live page.
+3. [ ] Tell Nathan the report link only after step 2 (so he sees the table).
+4. [ ] Still owed from the run sheet: Zoho Sign for the agreement (entity check first), Google Ads
+       manager link, Formspree inbox check, Melbourne IT / iSonic / HeyGen / GBP / shared folder,
+       reference sites, the two numbers, the three questions, gallery/team keep-or-slim, 1990.
+5. [ ] Website build proper: Wynnum + Manly pages first (§01 finding), homepage title, Services
+       field, block-check page — per the campaign plan and this report.
+6. [ ] Push this demo repo (now 9+ commits ahead).
