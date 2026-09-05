@@ -132,3 +132,19 @@ in that terminal only. Never set it globally.
 
 **Most likely next task:** the competitor-intel report. Start by naming the competitors —
 the search terms in campaign plan §6 are the seed.
+
+## Addendum — competitor-intel report BUILT (same day, later)
+
+- Ran `POST /test-run` on **Production** Catalyst. Report row **795000000104191**, deal
+  `TESTRUN260905051316`. Scraping → Analysing → **Ready_For_QA** in 24 min. No pipeline error.
+  First report built under the 22 Aug code — the STATE.md "not yet proven" gap is now closed.
+- QA link: `https://bbl-pipeline-7006497428.catalystserverless.com.au/server/competitor_intel_pipeline/report-html/795000000104191`
+- Local copy: `docs/sessions/2026-09-05-competitor-report-795000000104191.html` (gitignored).
+- Competitor set (Edward's choice, local knockdown-rebuild only, no franchises): Tide
+  Constructions, Nest Bespoke Homes, Lindon Homes, Fiteni Homes, Blueneer Custom Homes.
+- Scrape cost ≈ $3.00 (AI-visibility lane $2.25 of it) + $0.35 competitor-finding Places scrape.
+- Gaps: competitor Facebook/Instagram lanes SKIPPED (no handles given; profile finder returned
+  nothing). Lindon website crawl `failed_to_start`. Both show as honest not-captured.
+- Prose is the coded writer's draft (writer 1). Hand-authored pass (`scripts/analyst_offline.py`)
+  NOT run — note its `BASE` is hardcoded to Development; this report is on Production.
+- Sabre's 12th review is dated 14 Aug 2026. Breakdown now 9 five-star, 1 one-or-two-star.
