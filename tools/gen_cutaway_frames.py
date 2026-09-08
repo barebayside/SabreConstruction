@@ -158,3 +158,39 @@ def derive(src: pathlib.Path, prompt: str, name: str) -> pathlib.Path:
 if __name__ == "__main__" and os.environ.get("CUTAWAY_STAGES"):
     derive(OUT / "new-home-same-block.jpg", BUILD_PROMPT, "build-same-block.jpg")
     derive(OUT / "new-home-same-block.jpg", FAMILY_PROMPT, "family-running-in.jpg")
+
+
+# ---- "Your design" page scenes: the walk-through and the table, both from behind (no faces) ----
+WALK_PROMPT = (
+    "Photorealistic, 16:9. Inside a modest 1960s Australian family home, a hallway opening into a small "
+    "living room, warm morning light through the windows. Seen from BEHIND: a builder in a plain dark "
+    "polo shirt and work shorts with a notebook, walking slowly through the house alongside a mum and "
+    "dad, all three with their backs to the camera, looking into a small bedroom with bunk beds. Kids' "
+    "shoes by the door, school bags on hooks. No faces visible, no text, no logos."
+)
+TABLE_PROMPT = (
+    "Photorealistic, 16:9. A kitchen table in an Australian family home, late afternoon light. "
+    "Architectural floor plans and elevation drawings spread across the table with a coffee mug and a "
+    "pencil. Seen from above and slightly behind: the hands and forearms of three adults pointing at "
+    "the plans, one sleeve a plain dark polo. A child's drawing of a house sits at the corner of the "
+    "table. No faces visible, no readable text on the plans, no logos."
+)
+
+
+def scene(prompt: str, name: str) -> pathlib.Path:
+    out = OUT / name
+    if out.exists():
+        print("exists:", out.name); return out
+    res = fal_client.subscribe(
+        "fal-ai/nano-banana-2",
+        arguments={"prompt": prompt, "negative_prompt": "faces, text, watermark, logo, signage, cartoon",
+                   "aspect_ratio": "16:9", "num_images": 1, "output_format": "jpeg", "seed": 21},
+        with_logs=False,
+    )
+    urllib.request.urlretrieve(res["images"][0]["url"], out)
+    print("saved:", out.name); return out
+
+
+if __name__ == "__main__" and os.environ.get("DESIGN_SCENES"):
+    scene(WALK_PROMPT, "design-1-walk.jpg")
+    scene(TABLE_PROMPT, "design-2-table.jpg")
