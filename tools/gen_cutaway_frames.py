@@ -63,3 +63,31 @@ if __name__ == "__main__":
     for style, lead in STYLES.items():
         gen(style, lead + SCENE, seed=11)
     print("stage 01 done — show Edward before any video.")
+
+
+# ---- state 2: the drawings, derived from the chosen state-1 frame so the camera holds ----
+DRAW_PROMPT = (
+    "Keep this exact photograph unchanged. Over the house, add translucent white architectural line "
+    "drawings, like a blueprint sketch, of a larger two-storey family home that would replace it: "
+    "clean thin white lines showing the new outline, the upper storey, larger windows, a covered "
+    "entry, drawn in perspective to sit on the same block. The old house stays visible beneath the "
+    "lines. Subtle, elegant, no text, no labels, no dimensions, no logos."
+)
+
+
+def state2(src: pathlib.Path) -> pathlib.Path:
+    out = OUT / "drawings-over-old-house.jpg"
+    if out.exists():
+        print("exists:", out.name); return out
+    res = fal_client.subscribe(
+        "fal-ai/nano-banana-2/edit",
+        arguments={"prompt": DRAW_PROMPT, "image_urls": [fal_client.upload_file(str(src))],
+                   "num_images": 1, "output_format": "jpeg"},
+        with_logs=False,
+    )
+    urllib.request.urlretrieve(res["images"][0]["url"], out)
+    print("saved:", out.name); return out
+
+
+if __name__ == "__main__" and os.environ.get("CUTAWAY_STATE2"):
+    state2(OUT / "old-house-photoreal-11.jpg")
