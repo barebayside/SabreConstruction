@@ -54,3 +54,15 @@ that doesn't fit. That's loss framing on something true.
 People glance. Three paragraphs in a dark box gets read by nobody. If a section
 can be three lines instead of three hundred words, make it three lines — that
 was the single biggest improvement to the main page.
+
+## The tone, set 2026-09-08 — "the LJ Hooker front lawn"
+
+Edward's reference: the old LJ Hooker TV ad. A little girl on the front lawn, mum and dad behind
+her, the house in the background, "LJ Hooker, you're the best." It worked because it wasn't about
+the agent. It was a family, at home, happy.
+
+**That is the tone and the imagery for every Sabre line from now on.** A small story in one
+breath, warm, second person, never bullet-pointy. Saturday morning, the kids on the lawn, the
+neighbours waving, the kitchen window. The family is "you" — never an invented couple with names.
+The canonical example is the story section on the home page (`positioning.md` has the path it
+tells). Judge every new line against it: would it sit inside that ad?

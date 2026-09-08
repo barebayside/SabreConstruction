@@ -25,6 +25,24 @@ about it? The answer is three steps, and nothing else on that page:
    Keep it that simple.
 3. **Then we build it.** Your new family home. And we're with you every step of the way.
 
+## The words, as approved 2026-09-08 (home page story section)
+
+> **Same street. Same school. A whole new house.**
+> Saturday morning. The kids are on the front lawn, the neighbours wave on the way past, and you're
+> standing at the kitchen window thinking the same thing you've thought for two years. We love it
+> here. The house just doesn't fit us anymore. / That's where most families start with Sabre. Nathan
+> comes out and walks through the house with you, the actual house, room by room. Where the kids
+> sleep. Where dinner happens. What's stopped working, and what your family needs from the next
+> one. / From there an architect Sabre works with draws your new home around your family and your
+> block. Then Sabre builds it. Nathan takes on a handful of homes at a time, so the builder who
+> walked your old house is the one who answers the phone right through to the day he hands you the
+> keys. / Thirty-six years on the Bayside, and the reputation comes down to one thing. They stay
+> with you. / **Book your walk-through with Nathan.** No obligation. He'll ring to set a time that
+> suits the family.
+
+Tone reference: the LJ Hooker front-lawn ad — see `copy-rules.md`. The button on every page is now
+the walk-through; the block check lives on the contact page only.
+
 ## What this changes
 
 - **The front door is a conversation, not a block check.** The primary button becomes the
