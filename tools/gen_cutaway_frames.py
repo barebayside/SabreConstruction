@@ -91,3 +91,33 @@ def state2(src: pathlib.Path) -> pathlib.Path:
 
 if __name__ == "__main__" and os.environ.get("CUTAWAY_STATE2"):
     state2(OUT / "old-house-photoreal-11.jpg")
+
+
+# ---- state 3: the new two-storey home on the SAME block, same camera, derived from state 1 ----
+NEW_PROMPT = (
+    "Keep the exact same camera angle, the same block, the same jacaranda tree, the same fence "
+    "line, the same neighbours, the same lawn with the red bike and the football, the same late "
+    "afternoon light. Replace the old single-storey house with a brand new, complete, two-storey "
+    "Hamptons-style family home: crisp white weatherboard cladding, a pale grey Colorbond roof, "
+    "large white-framed windows, a covered front porch with white posts, a white picket fence, a "
+    "new concrete driveway. The house is finished and whole, not cut away. Photorealistic, no "
+    "people, no text, no logos."
+)
+
+
+def state3(src: pathlib.Path) -> pathlib.Path:
+    out = OUT / "new-home-same-block.jpg"
+    if out.exists():
+        print("exists:", out.name); return out
+    res = fal_client.subscribe(
+        "fal-ai/nano-banana-2/edit",
+        arguments={"prompt": NEW_PROMPT, "image_urls": [fal_client.upload_file(str(src))],
+                   "num_images": 1, "output_format": "jpeg"},
+        with_logs=False,
+    )
+    urllib.request.urlretrieve(res["images"][0]["url"], out)
+    print("saved:", out.name); return out
+
+
+if __name__ == "__main__" and os.environ.get("CUTAWAY_STATE3"):
+    state3(OUT / "old-house-photoreal-11.jpg")
