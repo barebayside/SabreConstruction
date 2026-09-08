@@ -23,8 +23,8 @@ VID.mkdir(parents=True, exist_ok=True)
 
 SRC = IMG / "proj2x-clarence.jpg"          # 1336x1004, Sabre's own photo, non-generative upscale
 WIDE_FRAME = IMG / "drone-clarence-frame.jpg"
-RAW = VID / "drone-clarence-source.mp4"    # gitignored (*-source.mp4)
 DURATION = os.environ.get("DRONE_SECONDS", "5")
+RAW = VID / (f"drone-clarence-{DURATION}s-source.mp4" if DURATION != "5" else "drone-clarence-source.mp4")  # gitignored (*-source.mp4)
 
 WIDEN_PROMPT = (
     "Extend this photograph to a wider 16:9 frame by adding more of the same scene on the left "
@@ -44,6 +44,10 @@ DRONE_PROMPT = (
     "clouds. The house stays exactly as it is: same shape, same windows, same roof, same colours. "
     "No people, no cars, no text."
 )
+if DURATION not in ("5",):
+    DRONE_PROMPT = DRONE_PROMPT.replace(
+        "revealing the house, its driveway, the fence and the quiet suburban street from above.",
+        "and keeps climbing, higher and further back, until the whole house, its block, the driveway, the fence and the quiet suburban street are seen from high above, the house becoming small in the frame by the end.")
 
 NEGATIVE = (
     "blur, distortion, low quality, text, watermark, logo, people, cars, camera shake, "

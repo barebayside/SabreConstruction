@@ -200,3 +200,10 @@ Camera move over Sabre's REAL Clarence photo, on **Sabre's fal key** (~$1). `too
 4. **Honesty.** It is a real Sabre build; the camera move is generated. The hero carries a
    caption: "Clarence, a Sabre build. Camera move is a visualisation." Stays until real drone
    footage replaces it (campaign plan §14).
+
+**10 s version (same day).** `DRONE_SECONDS=10 python tools/gen_drone_hero.py` — the prompt gains
+"keeps climbing until the whole house and street are seen from high above". Raw 1924×1076 ×10 s
+(~$1.70). Encoded with a fade: `-vf "scale=1280:-2,fade=t=in:st=0:d=0.5,fade=t=out:st=8.6:d=1.4"`
+(portrait adds the 9:16 centre crop first). The words over the black are HTML (`.hero-words`),
+faded in by a `timeupdate` listener in the last 2.6 s, so they stay crisp and editable. This is
+what the real site uses from v7; the 5 s cut is superseded.

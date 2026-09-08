@@ -94,3 +94,14 @@ How it can be built, honestly:
 **State 2026-09-08 evening: steps 1–4 DONE.** Edward chose **Option A**. `site/docs/design-system.md`
 rewritten from it; `site.css` v4; all nine real pages re-skinned; content unchanged; committed, not
 pushed; noindex. Nathan has not seen it yet. Step 5 (the cutaway) is next, on the design Nathan names.
+
+**State 2026-09-08 night: v7 = the AVATAR skin, supersedes Option A's black/red.** Edward, in order:
+"the black and red are very harsh" → "the styling has to appeal to the avatar" → "no space below the
+hero showing top reviews". v7: warm paper `#F8F7F4`, Figtree 400/500/600 at modest sizes, hairlines,
+ONE charcoal band per page (the closing block check), red = button + stars only. Home order: hero →
+reviews + proof strip → the loop → the four fears answered → four steps → houses → family →
+questions → block check. Hero = 10 s drone climb over the Clarence photo, fade to black, page fades
+in "Build your new family home. On the street you already love." Canonical now:
+`site/docs/design-system.md` (rewritten). The §1 banner tokens remain true for PRINT; on screen the
+red is an accent and the black is not used. Options A/B/C in `design/` are history.
+
