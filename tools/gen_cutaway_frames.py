@@ -194,3 +194,25 @@ def scene(prompt: str, name: str) -> pathlib.Path:
 if __name__ == "__main__" and os.environ.get("DESIGN_SCENES"):
     scene(WALK_PROMPT, "design-1-walk.jpg")
     scene(TABLE_PROMPT, "design-2-table.jpg")
+
+
+# ---- Your design v2: Nathan on site during the build; the family happy in front of the new home ----
+SITE_PROMPT = (
+    "Keep the exact same camera angle, block, tree, fence, and the house frame under construction. Add "
+    "one builder seen from BEHIND in the foreground on the driveway: dark polo shirt, work shorts, "
+    "boots, a white hard hat, pointing up at the roof trusses with one hand, a set of rolled plans "
+    "under the other arm. No face visible, no text, no logos. Photorealistic."
+)
+HAPPY_PROMPT = (
+    "Keep the exact same house, camera, garden and light. In the foreground on the front lawn, closer "
+    "to the camera and larger in frame, a happy family of four seen from BEHIND and slightly from the "
+    "side: dad with a small child lifted up on his shoulders, arms in the air, mum beside him holding "
+    "the older child's hand, a golden retriever jumping, all looking up at their new home. Joyful body "
+    "language, no faces visible to the camera. The house fills the background. No text, no logos. "
+    "Photorealistic."
+)
+
+
+if __name__ == "__main__" and os.environ.get("DESIGN_V2"):
+    derive(OUT / "build-same-block.jpg", SITE_PROMPT, "design-3-site.jpg")
+    derive(OUT / "new-home-same-block.jpg", HAPPY_PROMPT, "design-4-happy.jpg")
