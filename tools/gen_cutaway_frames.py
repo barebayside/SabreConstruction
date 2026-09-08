@@ -216,3 +216,16 @@ HAPPY_PROMPT = (
 if __name__ == "__main__" and os.environ.get("DESIGN_V2"):
     derive(OUT / "build-same-block.jpg", SITE_PROMPT, "design-3-site.jpg")
     derive(OUT / "new-home-same-block.jpg", HAPPY_PROMPT, "design-4-happy.jpg")
+
+
+HAPPY2_PROMPT = (
+    "Keep the exact same house, camera, garden and light. On the front lawn, midway between the fence "
+    "and the porch, add a happy family of four at TRUE HUMAN SCALE: each adult no taller than the front "
+    "door, correctly small against the two-storey house. Dad with a small child up on his shoulders, "
+    "arms in the air; mum beside him holding the older child's hand; a golden retriever bounding on the "
+    "grass. All seen from behind and slightly from the side, looking up at their new home, no faces "
+    "visible to the camera. The house fills the background. No text, no logos. Photorealistic."
+)
+
+if __name__ == "__main__" and os.environ.get("HAPPY2"):
+    derive(OUT / "new-home-same-block.jpg", HAPPY2_PROMPT, "design-4-happy-v2.jpg")
