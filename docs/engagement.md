@@ -5,7 +5,28 @@
 > Things that are broken or fake live in `open-items.md`.
 > This file is about **the deal and the sequence of work**.
 >
-> Last updated: **2026-09-05**.
+> Last updated: **2026-09-08**.
+
+## ⭐ 2026-09-08 — scope set, the measurement system, and the site built
+
+**Scope:** BBL does the ads + the website build + Google (modest search spend, plus how Sabre shows
+up in Google and in AI answers). Leads go to Nathan's inbox via Formspree. **No CRM for Sabre.**
+
+**Measurement:** Sabre is brand `SAB` in the BBL asset registry (`BBL/docs/registry/`), product
+`KDR`. Every page and ad is a record; results are logged weekly on the record (the results block
+was built today). Zoho Analytics will pull Meta + Google automatically once Edward has ad-account
+access in Sabre's portfolio — he is in the portfolio but the ad account is not assigned to him yet,
+and Google Ads is still unlinked. Map: `docs/reference/bbl-links.md`.
+
+**Site:** eight pages written in the real repo (`Desktop/sabre-constructions-website`), all still
+noindex, committed, NOT pushed: home, testimonials, meet the team, gallery, designs, the new
+"Can we knock it down?" explainer, Wynnum, Manly. Contact untouched. Home is option A pending
+Nathan's reference sites. Team photos are their own 200 px originals — a recraft upscale on
+Sabre's fal key would sharpen them for a few cents each.
+
+**Brand files:** `docs/reference/brand/` (mesh-banner proof from Wild Web, job 8574). ⚠️ The
+banner's QBCC number (15486557) differs from the contact page's (328475) — ask Nathan. No vector
+logo has ever been supplied.
 
 ## ⭐ 2026-09-05 — the real site exists, in Sabre's own repo
 
