@@ -20,13 +20,15 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 SCENE = (
     "A modest single-storey 1960s Australian suburban house in Brisbane's Bayside: low-pitched tiled "
-    "roof, pale brick and fibro walls, small aluminium windows, a concrete driveway, a Hills hoist in the "
-    "backyard, a jacaranda tree, a tidy front lawn. The entire front wall of the house has been cut away "
-    "cleanly like a dollhouse so we see inside every room at once: a small kitchen with dated laminate, "
-    "a cramped living room with a boxy TV, three small bedrooms with bunk beds and kids' toys, one tiny "
-    "bathroom, a narrow hallway. The rooms are lived-in and loved but clearly too small and tired: "
-    "worn carpet, a leak stain on a ceiling, a sagging floor under the bathroom. Warm late-afternoon "
-    "light. No people. No text, no labels, no logos."
+    "roof, pale brick walls, aluminium windows, a concrete driveway, a Hills hoist in the backyard, a "
+    "jacaranda tree, a neat green front lawn with a kids' bike and a football on it. The entire front "
+    "wall of the house has been cut away cleanly like a dollhouse so we see inside every room at once: "
+    "a small but clean kitchen, a cosy living room with a normal flat-screen TV and a family couch, "
+    "three small bedrooms with bunk beds and kids' toys, one bathroom, a narrow hallway with school bags "
+    "hung up. The house is well kept, loved and full of family life. It is simply too small for the "
+    "family in it: bunks in every bedroom, toys spilling into the hall, one bathroom for everyone. "
+    "Nothing broken, no stains, no damage, no clutter beyond a busy family. Warm late-afternoon light. "
+    "No people. No text, no labels, no logos."
 )
 
 STYLES = {
@@ -37,7 +39,7 @@ STYLES = {
                     "natural daylight, shallow depth of field, the cut edges of the walls crisp and clean. "),
 }
 
-NEG = "people, faces, text, watermark, logo, signage, cartoonish exaggeration, dark, gloomy, damaged beyond repair, rubbish"
+NEG = "people, faces, text, watermark, logo, signage, cartoonish exaggeration, dark, gloomy, stains, damage, leaks, cracks, old CRT television, rubbish, mess, decay"
 
 
 def gen(style: str, prompt: str, seed: int) -> pathlib.Path:
@@ -59,5 +61,5 @@ if __name__ == "__main__":
     if not os.environ.get("FAL_KEY"):
         sys.exit("FAL_KEY not set — load Sabre's key for this terminal first")
     for style, lead in STYLES.items():
-        gen(style, lead + SCENE, seed=7)
+        gen(style, lead + SCENE, seed=11)
     print("stage 01 done — show Edward before any video.")
