@@ -62,7 +62,7 @@ that's the operator-site skill, not a fresh solve.
 
 | Need | Canonical source |
 |---|---|
-| `FAL_KEY` | `BBL/products/image-pipeline/.env` |
+| `FAL_KEY` | ⛔ **NOT BBL's.** Sabre's own key: `~/.keys/sabre-fal.key`, set per terminal only (`$env:FAL_KEY = (Get-Content "$HOME\.keys\sabre-fal.key" -Raw).Trim()`). BBL's `.env` key never touches Sabre work (2026-09-05) |
 | Image/video pipeline, model choice rationale, cost budgeting | `BBL/docs/pipelines/image-video-creation.md` |
 
 The Sabre-specific pipeline is in `media-pipeline.md` here. The keys, the model
@@ -111,3 +111,25 @@ CRM. Same rule that keeps OOP separate.
 
 Sabre is a **separate repo, separate brand, separate inbox**. What it shares with
 BBL is *method and tooling*, never data, never CRM, never the mailing list.
+
+## The campaign registry — where Sabre's assets and results are logged
+
+Edward's rule (2026-09-08): every Sabre ad, page and creative is a record in the BBL asset registry,
+brand code **`SAB`**, product **`KDR`**, so the engagement can show its change and the method learns
+from it. **Code first, build second** — never build an ad without a code, and the code is the ad's
+name in Meta / Google exactly.
+
+| What | Where |
+|---|---|
+| The registry (records, index, regenerator) | `BBL/docs/registry/marketing-assets/` — open `index.html`, filter to SAB |
+| Sabre's brand row (ad account ids go here the day they land) | `BBL/docs/registry/brands.json` → code `SAB` |
+| Weekly results, every brand, flat | `BBL/docs/registry/results.csv` (generated) |
+| How to get a code / log a week's numbers | `/bbl-asset-code` skill |
+| The philosophy | `BBL/docs/THE-CAMPAIGN-SYSTEM.md`; metrics in `BBL/docs/reference/paid-ads-playbook.md` |
+
+Registered 2026-09-08 (all Draft): `SAB-AWR-KDR-1.0A_WEB_HOMEPAGE` (home), `SAB-SOL-KDR-1.0A_WEB_LP`
+(contact + form, the conversion point), `SAB-AWR-KDR-2.0A_WEB_PAGE` (Wynnum, planned),
+`SAB-AWR-KDR-3.0A_WEB_PAGE` (Manly, planned). Ads get codes when they are built.
+
+**Every Monday:** numbers for each live SAB asset from Ads Manager / Google Ads / Search Console /
+the Formspree inbox → pasted into chat → one `results[]` row per asset → `python _regen.py`.
