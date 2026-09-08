@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Option B — Sabre Constructions</title><meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.eye{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.65;margin:0 0 14px}
+.h1,.h2,.h3{font-weight:700;letter-spacing:-.02em;margin:0 0 .45em;line-height:1.02}
+.h1{font-size:clamp(40px,6vw,76px)}.h2{font-size:clamp(28px,3.6vw,46px)}.h3{font-size:20px;line-height:1.2}
+p{line-height:1.6;margin:0 0 1em}
+.lede{font-size:clamp(17px,1.6vw,20px);max-width:56ch}
+.btn{display:inline-block;font-weight:700;text-decoration:none;padding:15px 26px;border-radius:6px;background:#EB2227;color:#fff;font-size:16px}
+.btn:hover{background:#C9151A}
+.btn-ghost{background:transparent;border:1.5px solid currentColor;color:inherit}
+.btn-ghost:hover{background:rgba(127,127,127,.12)}
+.note{font-size:13px;opacity:.65;margin-top:10px}
+.nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;gap:20px}
+.nav img{height:40px;width:auto}
+.nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.nav ul a{text-decoration:none;opacity:.85}.nav ul a:hover{opacity:1}
+.nav .ph{font-weight:700;text-decoration:none;white-space:nowrap}
+.hero{position:relative;overflow:hidden;height:min(92vh,880px);display:flex;align-items:flex-end;background:#0A0A0A;color:#fff}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .v-wide{display:block}.hero .v-tall{display:none}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.25) 0%,rgba(10,10,10,.05) 40%,rgba(10,10,10,.82) 100%)}
+.hero .in{position:relative;z-index:2;padding:0 28px 64px;width:100%}
+.hero .in .h1{color:#fff}
+.slot{position:absolute;z-index:3;right:16px;bottom:16px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:rgba(235,34,39,.92);color:#fff;padding:6px 10px;border-radius:4px;max-width:300px;line-height:1.4}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.proof .v{font-size:clamp(34px,4vw,54px);font-weight:700;letter-spacing:-.02em;line-height:1;margin:0 0 8px}
+.proof .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.6;margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.steps div{position:relative;padding-top:14px;border-top:2px solid currentColor}
+.steps .n{font-size:12px;letter-spacing:.14em;font-weight:700;opacity:.6;margin:0 0 8px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.quotes blockquote{margin:0;padding:26px;border-left:3px solid #EB2227}
+.quotes p{font-size:17px;margin:0 0 14px}
+.quotes cite{font-style:normal;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;opacity:.6}
+.faq details{border-top:1px solid rgba(127,127,127,.35);padding:16px 0}
+.faq details:last-child{border-bottom:1px solid rgba(127,127,127,.35)}
+.faq summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between}
+.faq summary:after{content:"+";opacity:.6}.faq details[open] summary:after{content:"–"}
+.faq p{max-width:62ch;margin:12px 0 0}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.gal figure{margin:0}.gal figcaption{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.6;padding:8px 2px 0}
+.team{display:flex;gap:14px}.team img{width:88px;height:88px;border-radius:50%;object-fit:cover}
+footer{padding:56px 0;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer .fh{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.6;margin:0 0 10px}
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero .v-wide{display:none}.hero .v-tall{display:block}
+  .proof,.grid3,.grid2,.steps,.quotes,.gal,footer .cols{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr}
+  .hero{height:min(88vh,760px)}
+  .slot{max-width:220px;bottom:auto;top:70px;right:12px}
+}
+
+body{background:#F4F3F0;color:#0A0A0A}
+.nav-b{position:static;background:#F4F3F0;color:#0A0A0A;border-bottom:1px solid rgba(10,10,10,.08)}
+.nav-b img{filter:invert(1)}
+.top{padding:72px 28px 40px;max-width:1180px;margin:0 auto}
+.top .h1{font-size:clamp(34px,4.4vw,58px);max-width:18ch}
+.top .lede{font-size:15px;letter-spacing:.02em;max-width:48ch}
+.hero{height:min(70vh,720px)}
+.sec{padding:110px 0}
+.sec .h2{font-size:clamp(26px,3vw,38px);max-width:24ch}
+.two{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #0A0A0A;border-bottom:1px solid #0A0A0A}
+.stat div{padding:36px 28px;border-left:1px solid #0A0A0A}.stat div:first-child{border-left:0;padding-left:0}
+.stat .v{font-size:56px;font-weight:700;letter-spacing:-.03em;line-height:1;margin:0 0 6px}
+.stat .k{font-size:13px;opacity:.65;margin:0}
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.models img{width:100%;aspect-ratio:5/3;object-fit:cover;background:#fff}
+.models .spec{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.65;font-weight:700}
+.dark{background:#0A0A0A;color:#fff;padding:110px 0}
+.mosaic{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:320px 320px;gap:12px}
+.mosaic figure{margin:0;position:relative;overflow:hidden}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic figcaption{position:absolute;left:18px;bottom:16px;font-weight:700;font-size:20px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6);max-width:14ch;line-height:1.1}
+.wide{position:relative;min-height:60vh;background:#0A0A0A;color:#fff;display:flex;align-items:center}
+.wide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}
+.wide .in{position:relative;padding:0 28px;max-width:1180px;margin:0 auto;width:100%}
+.wide .h2{font-size:clamp(32px,4.4vw,60px);max-width:16ch}
+.quotes blockquote{border-left:0;padding:0;font-size:18px}
+.quotes p{font-size:19px;line-height:1.45}
+.final{padding:110px 0;border-top:1px solid #0A0A0A}
+footer{border-top:1px solid rgba(10,10,10,.12);color:#444}
+@media (max-width:860px){.two,.stat,.models,.mosaic{grid-template-columns:1fr}.mosaic{grid-template-rows:auto}.mosaic figure{height:260px}.stat div{border-left:0;padding-left:0;border-top:1px solid #0A0A0A}.stat div:first-child{border-top:0}.sec,.dark,.final{padding:72px 0}}
+</style></head><body>
+<nav class="nav nav-b"><img src="../assets/img/sabre-logo-white.png" alt="Sabre Constructions"><ul><li><a href="#">Home</a></li><li><a href="#">Can we knock it down?</a></li><li><a href="#">Designs</a></li><li><a href="#">Gallery</a></li><li><a href="#">Meet the team</a></li><li><a href="#">Testimonials</a></li><li><a href="#">Contact</a></li></ul><a class="ph" href="tel:+61738233200">07 3823 3200</a></nav>
+<div class="top"><h1 class="h1">You picked this street.</h1><p class="lede">Don't let the house decide you have to leave it. New homes on the blocks Bayside families already love, from Wynnum to Cleveland. Since 1990.</p><p><a class="btn" href="#check">Check my block, free</a> &nbsp; <span class="note">Two questions. No address needed. No obligation.</span></p></div>
+
+<header class="hero">
+  <video class="v-wide" autoplay muted loop playsinline poster="../assets/img/site-raise-wide-poster.jpg"><source src="../assets/video/site-raise-wide.mp4" type="video/mp4"></video>
+  <video class="v-tall" autoplay muted loop playsinline poster="../assets/img/site-raise-portrait-poster.jpg"><source src="../assets/video/site-raise-portrait.mp4" type="video/mp4"></video>
+  <div class="slot">FLYOVER VIDEO SLOT — the drone flyover of a finished Sabre home goes here when the pro filmer shoots it (campaign plan §14). Playing now: Nathan's own phone clip from a real Sabre site, 14 Aug 2026, a Queenslander being raised. Real, not AI.</div>
+  <div class="in wrap">
+    <p class="eye" style="opacity:.85">A real Sabre site. Bayside, 2026.</p>
+  </div>
+</header>
+<section class="sec"><div class="wrap two"><p class="eye">The loop most families are stuck in</p><div><h2 class="h2">It's not the house. It's the year.</h2><p class="lede">The house stops working. You price a renovation and the number frightens you. So you look at moving, and nothing replaces the street. Round again, for eighteen months. There's a third answer: stay on the block and build the house that fits.</p></div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><p class="eye">The checkable stuff</p><div class="stat"><div><p class="v">1990</p><p class="k">Building on the Bayside since. Family owned, family run.</p></div><div><p class="v">4.5</p><p class="k">Google rating from 12 reviews. One is a one-star. It's still there.</p></div><div><p class="v">6</p><p class="k">Sabre designs to start from, all four bedrooms, all built before.</p></div></div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap"><p class="eye">Start from a plan</p><h2 class="h2">Six starting points. None of them is a catalogue.</h2><div class="models"><div><img src="../assets/img/design-killarney.jpg" alt="Killarney design"><h3 class="h3" style="margin-top:14px">Killarney</h3><p class="spec">4 bed · 3.5 bath · 2 car</p></div><div><img src="../assets/img/design-waderbird.jpg" alt="Waderbird design"><h3 class="h3" style="margin-top:14px">Waderbird</h3><p class="spec">4 bed · 2 bath · 3 car</p></div><div><img src="../assets/img/design-alexander.jpg" alt="Alexander design"><h3 class="h3" style="margin-top:14px">Alexander</h3><p class="spec">4 bed · 3.5 bath · 2 car · highset</p></div><div><img src="../assets/img/design-belmont.jpg" alt="Belmont design"><h3 class="h3" style="margin-top:14px">Belmont</h3><p class="spec">4 bed · 2 bath · 2 car</p></div><div><img src="../assets/img/design-chelsea.jpg" alt="Chelsea design"><h3 class="h3" style="margin-top:14px">Chelsea</h3><p class="spec">4 bed · 3 bath · 2 car</p></div><div><img src="../assets/img/design-clarence.jpg" alt="Clarence design"><h3 class="h3" style="margin-top:14px">Clarence</h3><p class="spec">4 bed · 4 bath · 2 car</p></div></div></div></section>
+<section class="dark"><div class="wrap"><p class="eye">Why families stay</p><h2 class="h2" style="max-width:18ch">Same street. Same school. A whole new house.</h2><div class="mosaic">
+  <figure><img src="../assets/img/proj2x-clarence.jpg" alt="Clarence"><figcaption>Same street. Same school.</figcaption></figure>
+  <figure><img src="../assets/img/proj2x-alexandra.jpg" alt="Alexandra"><figcaption>A real answer before you spend anything.</figcaption></figure>
+  <figure><img src="../assets/img/proj2x-killarney79.jpg" alt="Killarney 79"><figcaption>The people who quote it, build it.</figcaption></figure>
+  <figure><img src="../assets/img/proj2x-marcoola.jpg" alt="Marcoola"><figcaption>Real houses, on real streets.</figcaption></figure>
+</div></div></section>
+<section class="sec"><div class="wrap two"><p class="eye">How it works</p><div><h2 class="h2">Four steps. The first is free.</h2><div class="steps"><div><p class="n">01</p><h3 class="h3">Check the block</h3><p>Two questions about the house and we'll tell you whether a rebuild is realistic on your block.</p></div><div><p class="n">02</p><h3 class="h3">Walk it with Stewart</h3><p>He looks at the slope, the width, the access, and what the land will take. He's been reading Bayside blocks since 1990.</p></div><div><p class="n">03</p><h3 class="h3">Design it around your family</h3><p>Start from one of six Sabre designs or bring your architect's drawings. Where the kids' rooms sit. Where dinner happens.</p></div><div><p class="n">04</p><h3 class="h3">Build it</h3><p>Frank runs the site. Nathan is on the tools. You always know what's happening this week.</p></div></div></div></div></section>
+<section class="wide"><img src="../assets/img/proj2x-brighton.jpg" alt=""><div class="in"><h2 class="h2">The house changes. Nothing else has to.</h2><p class="lede">Stewart, Cathy, Nathan, Frank, Celene and Jacob. The people who quote it, build it.</p></div></section>
+<section class="sec"><div class="wrap two"><p class="eye">From Sabre's clients</p><div><div class="quotes"><blockquote><p>&ldquo;Any house construction is fraught with dangers, stress and hidden costs. None of this happened.&rdquo;</p><cite>Roselia Finlay &middot; Google review, January 2022</cite></blockquote><blockquote><p>&ldquo;The first thing Stewart pointed out was the plans could be changed to build it cheaper, this helped us enormously.&rdquo;</p><cite>Lesley W &middot; Google review, April 2020</cite></blockquote><blockquote><p>&ldquo;Nathan and the gang were excellent during the build. Always around to help or offer suggestions.&rdquo;</p><cite>Jason Turner &middot; Google review, June 2025</cite></blockquote></div><p class="note">Word for word from Sabre's public Google listing.</p></div></div></section>
+<section class="sec" style="padding-top:0"><div class="wrap two"><p class="eye">Fair questions</p><div><div class="faq"><details><summary>Is my house allowed to come down?</summary><p>If it was built after 1946, Brisbane's character rules almost certainly don't stop you. If it's older and your street is in the character overlay, council decides on an application. We check the map with you first.</p></details><details><summary>Where do we live while you build?</summary><p>Most families rent nearby to stay in the school catchment. It's the biggest cost people forget, so it's on the table at the first conversation, not after you've signed.</p></details><details><summary>Do we need our own plans?</summary><p>No. Start from one of six Sabre designs and change what you like, or bring your own architect's drawings. Sabre builds both ways.</p></details><details><summary>Where do you build?</summary><p>Capalaba is home. Wynnum, Manly, Lota, Wakerley, Birkdale, Wellington Point, Cleveland and across the Bayside and Redlands.</p></details></div></div></div></section>
+
+<section id="check" class="final"><div class="wrap">
+  <p class="eye">Free block check</p>
+  <h2 class="h2">Can we knock it down?</h2>
+  <p class="lede">Two questions about your house. We'll tell you whether a rebuild is realistic on your block before you spend a dollar. No address unless you want your own street checked.</p>
+  <p><a class="btn" href="#">Check my block, free</a> <a class="btn btn-ghost" href="tel:+61738233200">Call 07 3823 3200</a></p>
+  <p class="note">Or ring Monday to Friday, 8am to 4pm. Capalaba QLD.</p>
+</div></section>
+<footer><div class="wrap cols">
+  <div><p class="fh">Sabre Constructions</p><p>Family owned and family run in Capalaba since 1990. Custom homes, knockdown rebuilds, renovations and extensions across Brisbane's Bayside and the Redlands.</p><p>QBCC Builders Licence 328475 · Master Builders Queensland member No. 00352</p></div>
+  <div><p class="fh">Get in touch</p><p>07 3823 3200<br>admin@sabreconstructions.com.au<br>3/73–75 Steel St, Capalaba QLD 4157<br>Monday to Friday, 8am–4pm</p></div>
+  <div><p class="fh">Where we build</p><p>Wynnum · Manly · Lota · Wakerley · Capalaba · Birkdale · Wellington Point · Cleveland and across the Bayside and Redlands</p></div>
+</div></footer>
+</body></html>

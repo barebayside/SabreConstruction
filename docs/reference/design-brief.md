@@ -50,7 +50,19 @@ Add one row per site. "Steal" means the specific feature, not the whole look.
 
 | URL | What to steal | Which Sabre page it belongs on | Notes |
 |---|---|---|---|
-| | | | |
+| https://hedgerconstructions.com.au/ | The hero: a full-bleed drone flyover, no headline shouting over it. Then calm alternating white/black bands, image one side, words the other, one "learn more" each | Home, and the band rhythm for every page | Edward 2026-09-08: "I love the hero being the flyover video and not having the page so much in your face." Thin white nav on the video |
+| https://www.yamavans.com/ | Zoomed-out scale: small headline top-left, huge air, the video BELOW the headline, a ruled three-number row (5 / 30+ / 100+), model showcase with specs, one dark image mosaic, one wide photo with a single line on it, testimonials as plain text | Home (scale and air), Designs (the showcase) | Edward: "you have to zoom out a bit so you can see the different sections as you work down" |
+
+**Built from these, 2026-09-08 — `design/index.html` in this repo (open it in a browser):**
+`option-a.html` = the Hedger read (dark-first, alternating bands) · `option-b.html` = the Yama read (light,
+editorial, stat row, design showcase) · `option-c.html` = the signage (black, red diagonals, one red word
+per headline). Same content on all three: the BBL conversion spine (hero + one CTA → checkable proof →
+the problem in their words → three benefits → four steps → real reviews → fair questions → the free
+block check), the five tests per section, CTA formula "Check my block, free" with the cost stated
+("two questions, no address needed, no obligation"). Hero video on every option = Nathan's real phone
+clip from a Sabre site (14 Aug 2026, a Queenslander being raised): portrait on phones, a wide crop on
+desktop, in a labelled slot until the drone flyover exists. Generator lived in the session scratchpad;
+the HTML is plain and self-contained.
 
 **Requested feature: the house cutaway.** A view where the house "cuts away" so you see inside:
 rooms, structure, the build under the skin. Edward has seen it done with AI image generation.
