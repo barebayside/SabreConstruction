@@ -37,6 +37,12 @@ want to be seen, and a source for facts. Recorded in `site/docs/client-facts.md`
   **328475**. Two different numbers — one may be the company licence and one the
   nominee's. Do not put either on a page until Nathan says which is which.
 
+## What the banner says about the brand's look (sampled 2026-09-08)
+
+Black ground `#090305`, print red `#EB2227` (not the site's `#FF1A1A`), white text. Headline and
+contact line are **Arial Bold**, sentence case. The wordmark is an extended squared sans
+(Eurostile family) and only ever appears as the logo file. Full reading: `../design-brief.md`.
+
 ## Naming
 
 Print proofs: `YYYY-MM-DD-{item}-proof-{printer}-{job}.pdf`. Lowercase, hyphens,
