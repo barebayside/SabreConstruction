@@ -48,6 +48,7 @@ in `docs/`.
 | You want to... | Open first |
 |---|---|
 | **Know what we agreed, what we're waiting on, what's next** | `docs/engagement.md` |
+| **Write ANY Sabre copy, ad or page — the one difference we sell** | **`docs/reference/positioning.md`** — Nathan on call every step; the three-step path; what Nathan must confirm |
 | Change the main site page | `docs/tasks/edit-main-site.md` |
 | Change a landing page or the lead form | `docs/tasks/edit-landing-pages.md` |
 | Change the ad concepts page | `docs/tasks/edit-ad-concepts.md` |
