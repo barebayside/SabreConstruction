@@ -121,3 +121,40 @@ def state3(src: pathlib.Path) -> pathlib.Path:
 
 if __name__ == "__main__" and os.environ.get("CUTAWAY_STATE3"):
     state3(OUT / "old-house-photoreal-11.jpg")
+
+
+# ---- states 3b and 4: the build going up, and the family running into the finished home ----
+BUILD_PROMPT = (
+    "Keep the exact same camera angle, block, jacaranda tree, fence line, neighbours and late "
+    "afternoon light. Replace the house with the SAME two-storey Hamptons-style family home part "
+    "way through construction: the new concrete slab, the timber wall frames and roof trusses up, "
+    "some white weatherboard cladding started on the ground floor, the roof sheets half on, a neat "
+    "site with a skip bin and a stack of timber, orange safety fencing along the front. No people, "
+    "no text, no logos. Photorealistic."
+)
+FAMILY_PROMPT = (
+    "Keep this exact photograph unchanged: same house, same camera, same garden, same light. Add a "
+    "family of four seen from behind, running up the front path toward the front door of the house "
+    "together: a mum and dad and two young kids, with a golden retriever bounding beside them. They "
+    "are seen from the back, faces not visible, mid-stride, joyful. The red bike and the football "
+    "stay on the lawn. Photorealistic, no text, no logos."
+)
+
+
+def derive(src: pathlib.Path, prompt: str, name: str) -> pathlib.Path:
+    out = OUT / name
+    if out.exists():
+        print("exists:", out.name); return out
+    res = fal_client.subscribe(
+        "fal-ai/nano-banana-2/edit",
+        arguments={"prompt": prompt, "image_urls": [fal_client.upload_file(str(src))],
+                   "num_images": 1, "output_format": "jpeg"},
+        with_logs=False,
+    )
+    urllib.request.urlretrieve(res["images"][0]["url"], out)
+    print("saved:", out.name); return out
+
+
+if __name__ == "__main__" and os.environ.get("CUTAWAY_STAGES"):
+    derive(OUT / "new-home-same-block.jpg", BUILD_PROMPT, "build-same-block.jpg")
+    derive(OUT / "new-home-same-block.jpg", FAMILY_PROMPT, "family-running-in.jpg")
