@@ -34,6 +34,7 @@ assets/img/            photos · team/ · raise/ · lp/
 assets/video/          reels + hero
 tools/                 asset generation scripts (fal.ai + ffmpeg)
 docs/                  all reference material — see docs/CONTEXT.md
+                       (docs/reference/brand/ = logos, signage, print proofs)
 handoffs/              dated session snapshots (NOT context — see below)
 shots/                 QA screenshots (gitignored)
 ```
@@ -59,6 +60,7 @@ in `docs/`.
 | Know why a section is where it is | `docs/reference/page-structure.md` |
 | Match colours or type | **`site/docs/design-system.md`** (canonical) |
 | Match the demo's motion / components | `docs/reference/design-system.md` |
+| **Find a logo, signage proof or other brand file** | `docs/reference/brand/README.md` |
 | **Find the method, a skill, pricing, or the FAL key** | `docs/reference/bbl-links.md` |
 | See what happened last session | newest file in `handoffs/` |
 | Anything else | `docs/CONTEXT.md` |
