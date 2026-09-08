@@ -91,4 +91,6 @@ How it can be built, honestly:
    pages re-skinned. Content does not change in that step.
 5. The cutaway is built after the skin, as its own registry asset, on the design Nathan names.
 
-Nothing in the real repo changes until step 4.
+**State 2026-09-08 evening: steps 1–4 DONE.** Edward chose **Option A**. `site/docs/design-system.md`
+rewritten from it; `site.css` v4; all nine real pages re-skinned; content unchanged; committed, not
+pushed; noindex. Nathan has not seen it yet. Step 5 (the cutaway) is next, on the design Nathan names.
