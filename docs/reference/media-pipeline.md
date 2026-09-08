@@ -184,3 +184,19 @@ address appear nowhere. Written permission is still required — see
 
 **⚠️ Kling returns the two segments at different pixel sizes** (1920x1080 and
 1928x1072). Both must be normalised before `xfade` or the filter graph fails.
+
+## Drone hero — `drone-clarence-*.mp4` (2026-09-08)
+
+Camera move over Sabre's REAL Clarence photo, on **Sabre's fal key** (~$1). `tools/gen_drone_hero.py`.
+
+1. **Frame.** `proj2x-clarence.jpg` (4:3) widened to 16:9 with `nano-banana-2/edit` — sky, lawn
+   and fence extended, house untouched → `assets/img/drone-clarence-frame.jpg` (1376×768).
+2. **Generate.** `kling-video/v3/pro/image-to-video`, start frame only, 5 s, cfg 0.5. Prompt asks
+   for pull-back + rise + gentle arc; the house "stays exactly as it is". An orbit would force
+   the model to invent the sides and roof — don't.
+3. **Encode.** Raw 1924×1076 (gitignored `*-source.mp4`) →
+   `ffmpeg -i src -vf scale=1280:-2 -an -c:v libx264 -crf 25 -preset slow -movflags +faststart` (wide, ~1.1 MB)
+   and `-vf "crop=ih*9/16:ih:(iw-ih*9/16)/2:0,scale=720:-2"` (portrait). Posters = frame 0.
+4. **Honesty.** It is a real Sabre build; the camera move is generated. The hero carries a
+   caption: "Clarence, a Sabre build. Camera move is a visualisation." Stays until real drone
+   footage replaces it (campaign plan §14).
