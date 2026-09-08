@@ -6,7 +6,9 @@ One long Sabre session. Started with assets and the measurement system, ended wi
 website rebuilt around the avatar (a Bayside family at the kitchen table, 9pm, phone) in the
 "LJ Hooker front lawn" tone, with an AI drone hero, a one-block picture story, a visual
 "Your design" journey, a blog, and a form that slides one question at a time. Every page is
-committed in the real repo. **Nothing is pushed. Nathan has not seen any of it.**
+committed in the real repo. **The real repo IS PUSHED (late 09-08) and live at the Pages preview:
+https://sabre-constructions.github.io/sabre-constructions-web-site-/ (noindex). Nathan has the
+link to be sent. This workshop repo is NOT pushed.**
 
 ## What Got Done
 
@@ -73,7 +75,7 @@ committed in the real repo. **Nothing is pushed. Nathan has not seen any of it.*
 
 | Where | What | State |
 |---|---|---|
-| `sabre-constructions-website/` (real repo) | everything above; `css/site.css` v18; `docs/design-system.md` rewritten (v7); `docs/client-facts.md` (designs, banner facts, mobile) | **committed, 20+ ahead, NOT pushed** |
+| `sabre-constructions-website/` (real repo) | everything above; `css/site.css` v18; `docs/design-system.md` rewritten (v7); `docs/client-facts.md` (designs, banner facts, mobile) | **PUSHED 09-08 late; Pages serving v18, verified by curl** |
 | `Sabre Constructions/` (this repo) | `docs/reference/{brand/,positioning.md,design-brief.md,copy-rules.md,media-pipeline.md,bbl-links.md}`, `design/` (3 options + problem-section mock), `tools/gen_drone_hero.py`, `tools/gen_cutaway_frames.py`, `assets/img/cutaway/`, `assets/video/drone-clarence-*` | committed, ~35 ahead, NOT pushed |
 | `BBL/docs/registry/` | brands.json (SAB), `_regen.py` (results + null fix), templates, 11 SAB records, `results.csv`, `zoho-analytics-setup.md` | committed on `feat/report-charts-and-clusters`, no remote |
 | `~/.claude/skills/bbl-asset-code/SKILL.md` | client brands, KDR, weekly results section, where the code goes per platform | edited |
@@ -116,9 +118,10 @@ committed in the real repo. **Nothing is pushed. Nathan has not seen any of it.*
 ## What's NOT Done — TODO
 
 **Before Nathan sees it**
-1. [ ] Edward: send ONE real test enquiry from localhost/the preview (rule 4) — the form's
-       behaviour changed twice today; confirm the green "Thanks" shows and the email lands.
-2. [ ] Push the real repo (say "push"); Nathan reviews at the Pages preview.
+1. [ ] Edward: send ONE real test enquiry from the live preview (rule 4) — the form's behaviour
+       changed twice today; confirm the green "Thanks" shows and the email lands in admin@.
+2. [x] Pushed. Preview: https://sabre-constructions.github.io/sabre-constructions-web-site-/
+       Decide whether the 3 labelled AI placeholder clips stay visible for Nathan's review.
 3. [ ] Nathan to confirm: he walks the house; the architect path; "a handful" → the real number;
        walk-through is no-obligation; which QBCC number; the mobile on the site.
 
@@ -143,4 +146,4 @@ http://127.0.0.1:8765/. The page generator is NOT on disk any more; edit the HTM
 Before any fal job: Sabre's key per terminal. After any HTML/JS change: extract the page scripts
 and `node --check` them, then screenshot with Edge headless at 1400 and 500 wide.
 
-Most likely next task: the test enquiry, the push, and Nathan's review. Then his five confirmations.
+Most likely next task: the test enquiry, then Nathan's review of the live preview. Then his five confirmations.
