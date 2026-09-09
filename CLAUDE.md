@@ -56,6 +56,7 @@ in `docs/`.
 | Push changes live / check the deploy | `docs/tasks/deploy.md` |
 | **Point the domain at GitHub / change DNS** | `docs/tasks/dns-cutover.md` |
 | **Know what replaces what / which URLs must exist** | `docs/tasks/site-migration-map.md` |
+| **Where leads go, the lead ledger, the Meta feedback loop** | `docs/reference/lead-ledger-and-meta-loop.md` |
 | Know what's blocked or fake | `docs/open-items.md` |
 | Check a fact about Sabre before writing it | **`site/docs/client-facts.md`** (canonical) |
 | Know why a section is where it is | `docs/reference/page-structure.md` |
