@@ -1,14 +1,19 @@
 # Lead ledger + Meta closed loop
 
 > **Layer 4.** Agreed 2026-09-09 (Edward, in chat). Why the form feeds a Zoho Flow, what the
-> ledger is for, and how the "won / lost" answer gets back to Meta. Code change lives in
-> `js/qualify.js`; this file explains the shape. Nothing here is built yet.
+> ledger is for, and how the "won / lost" answer gets back to Meta. Nothing here is built yet.
+>
+> ⚠️ **Two repos, two forms.** The LIVE enquiry form is in Sabre's own repo
+> (`Desktop\sabre-constructions-website\`, `index.html` + `contact/index.html`): a plain HTML POST
+> to Formspree `f/mwlkqyqn`, **no JavaScript, no UTM / fbclid capture at all**. The demo landing
+> pages in THIS repo use `js/qualify.js`, which does capture them, via formsubmit.co. The work
+> below targets the LIVE repo; `qualify.js` is the reference for the capture code.
 
 ## Why
 
 Sabre is a BBL client and must **never** be connected to BBL's CRM (BBL `docs/LAUNCH-LIST.md`).
-Today the form posts to a free email relay (`formsubmit.co`, one line in `js/qualify.js`) and the
-lead dies in Edward's Gmail. Two things are missing:
+Today the live form posts to Formspree (free tier, 50/month, no webhooks below the $99 Gold plan)
+and emails admin@sabreconstructions.com.au. That works and stays. Two things are missing:
 
 1. **A record.** Nobody can say what happened to a lead. Edward wants to go back to Nathan with a
    list and ask *won / lost / moving forward* — transparency for both sides.
@@ -18,11 +23,13 @@ lead dies in Edward's Gmail. Two things are missing:
 ## The shape
 
 ```
-qualify.js ──POST──▶ Zoho Flow webhook (BBL's Zoho One)
-                        │
-                        ├─▶ Zoho Sheet "Sabre — Lead Ledger"   (one row per submit)
-                        ├─▶ email to Edward (as today; later Nathan)
-                        └─▶ Meta Conversions API — event "Lead"  → SABRE's dataset
+live form ──POST──▶ Formspree ──▶ email to Nathan  (unchanged)
+    │
+    └─ on submit, sendBeacon ──▶ Zoho Flow webhook (BBL's Zoho One)
+                                    │
+                                    ├─▶ Zoho Sheet "Sabre — Lead Ledger"   (one row per submit)
+                                    ├─▶ email copy to Edward
+                                    └─▶ Meta Conversions API — event "Lead"  → SABRE's dataset
                                                                     (fbclid + hashed mobile)
 
 Nathan / Edward set Outcome = Won  in the Sheet
@@ -30,16 +37,20 @@ Nathan / Edward set Outcome = Won  in the Sheet
                         └─▶ Flow 2 (Sheet row updated) ─▶ Meta CAPI — event "Purchase" → Sabre's dataset
 ```
 
-Two Flows, one Sheet. The relay can stay as a belt-and-braces email (`_webhook` field) or the
-form can post to Flow directly — same pattern as BBL's snapshot form (plain-text body, no CORS
-preflight; see BBL memory `catalyst-answers-cors-preflight-itself`).
+Two Flows, one Sheet. **Formspree keeps doing the email** — it is tested and Nathan already
+receives it. A ~30-line inline script is added to both live pages: fill hidden `utm_*`, `fbclid`,
+`gclid`, `landing_page`, `referrer` fields from the URL (persist in sessionStorage so a click-through
+from another page still carries them — copy from `qualify.js` L182), and on submit fire
+`navigator.sendBeacon(FLOW_URL, JSON)` before the normal POST continues. Beacon = text/plain, no CORS
+preflight, no change to the user's flow (BBL memory `catalyst-answers-cors-preflight-itself`).
+Formspree also receives the hidden fields, so the email carries the asset code too.
 
 ## Ledger columns (Zoho Sheet, shared with Nathan by link)
 
 | Column | Source |
 |---|---|
 | submitted_at | Flow |
-| project_type · has_plans · suburb · budget · mobile | form |
+| describes · built · suburb · name · phone/email (as on the live form) | form |
 | page · landing_page · referrer · fill_seconds | form |
 | utm_source · utm_medium · utm_campaign · utm_content · utm_term | form (asset code lives in `utm_content`) |
 | fbclid · gclid | form — the Meta / Google matching keys |
@@ -70,8 +81,9 @@ The Flows can be built and tested against a test dataset before 1–4 exist.
 ## Order of work
 
 1. Edward: create the Zoho Sheet + Flow 1 (webhook trigger → Sheet row → email). Copy the webhook URL.
-2. Claude: add the URL to `js/qualify.js` (or `_webhook` on the relay), deploy, submit a test, **read
-   the Sheet row back**.
+2. Claude: hidden fields + capture/beacon script on BOTH live pages (`index.html`, `contact/index.html`
+   in the live repo), push, submit a test with `?utm_content=TEST&fbclid=TEST`, **read the Sheet row
+   back** and check Nathan's Formspree email still arrives.
 3. Edward → Nathan: partner access must include the **dataset**; create one if none exists.
 4. Claude: write the CAPI custom function; Edward pastes it into Flow 1 and Flow 2.
 5. Test event → Meta Events Manager → Test Events tab shows it. Then live.
