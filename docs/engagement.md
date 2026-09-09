@@ -173,6 +173,12 @@ minutes of his time and they unblock the copy.
 - [ ] Real site build — needs the domain and hosting picture first
 - [ ] Wire the lead form to a real address (open item 2)
 - [ ] Strip preview chrome and `noindex` before launch
+- [ ] **Lead ledger + Meta loop** (agreed 2026-09-09, plan: `docs/reference/lead-ledger-and-meta-loop.md`)
+  - [ ] Edward: Zoho Flow with a Webhook trigger → Zoho Sheet "Sabre — Lead Ledger" add-row → send Claude the webhook URL
+  - [ ] Claude: hidden UTM/fbclid/gclid fields + capture/beacon script on BOTH live pages (home + contact), push, test row read back, Formspree email still arrives
+  - [ ] Nathan: partner access to include the **dataset**; create one in Sabre's portfolio if none exists; ad account assigned to Edward
+  - [ ] Claude: Meta CAPI custom function (Lead on submit, Purchase on Won); Edward pastes into Flow 1 + Flow 2
+  - [ ] Weekly: share the Sheet link with Nathan; he fills outcome (New / Contacted / Quoting / Won / Lost)
 
 ## Open questions
 
