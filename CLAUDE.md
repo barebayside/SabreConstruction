@@ -70,6 +70,7 @@ in `docs/`.
 | Match the demo's motion / components | `docs/reference/design-system.md` |
 | **Find a logo, signage proof or other brand file** | `docs/reference/brand/README.md` |
 | **Find the method, a skill, pricing, or the FAL key** | `docs/reference/bbl-links.md` |
+| **Link BBL and Sabre to each other / write a BBL article about this job** | **`docs/reference/bbl-cross-linking.md`** — one branded footer credit out, five BBL articles in; ask Nathan first |
 | See what happened last session | newest file in `handoffs/` |
 | Anything else | `docs/CONTEXT.md` |
 
