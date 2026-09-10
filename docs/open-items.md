@@ -25,6 +25,7 @@
 |---|---|
 | **Star ratings were empty slots** with a "needs real rating" chip | 2026-08-14. Sabre's Google Business Profile does exist: **4.5 from 11 reviews**. Real rating and real quotes are now on all three LPs, and the cleared quote list is in `../site/docs/client-facts.md`. ⚠️ It is **4.5, not 5** — there's a genuine 1-star on the listing. Never round it up |
 | **Concept 03 was 16:9** in a 9:16 placement | 2026-08-14. Regenerated natively vertical and ends on a Sabre card. Still an AI stand-in, still labelled — item 1 above still applies to it |
+| **The real site's contact page form could not be submitted** | 2026-09-10. `contact/index.html` had the three-step markup and no script (the home page's was inline), so steps 2–3 stayed hidden by CSS. Live on the preview from 09-08 to 09-10; the floating button on every page pointed at it. Fixed with a shared `js/enquiry.js` + CSS that only hides steps when JS runs. Real repo v19, not pushed |
 | **The LPs had their own header** | 2026-08-14. All three now use the same `.topbar` as `index.html` and `ads.html`, so there's always a way back to the main site |
 
 ## 🟡 Review scaffolding to strip before real ads run

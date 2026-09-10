@@ -1,0 +1,83 @@
+// Zoho Flow custom function — send one event to Meta's Conversions API.
+// Function name: meta_capi_event   Return type: string
+// Inputs (all string, in this order): event_name, event_id, mobile, email, fbclid,
+//   event_source_url, dataset_id, access_token, test_event_code
+// Returns "sent <n>" on success or "error <message>" so the Sheet cell shows what happened.
+// Build guide: docs/tasks/lead-ledger-build.md  ·  Shape: docs/reference/lead-ledger-and-meta-loop.md
+// NOT yet executed against a real dataset (2026-09-10): prove it with test_event_code first.
+
+string meta_capi_event(string event_name, string event_id, string mobile, string email, string fbclid, string event_source_url, string dataset_id, string access_token, string test_event_code)
+{
+	// --- normalise + hash the match keys (Meta wants lowercase, trimmed, SHA-256 hex) ---
+	userData = Map();
+
+	ph = ifnull(mobile, "").replaceAll("[^0-9]", "");
+	if (ph.startsWith("0"))
+	{
+		ph = "61" + ph.subString(1);   // 0422 831 306 -> 61422831306
+	}
+	if (ph.length() >= 10)
+	{
+		userData.put("ph", {zoho.encryption.sha256(ph)});
+	}
+
+	em = ifnull(email, "").trim().toLowerCase();
+	if (em.contains("@"))
+	{
+		userData.put("em", {zoho.encryption.sha256(em)});
+	}
+
+	fb = ifnull(fbclid, "").trim();
+	if (fb != "")
+	{
+		// fbc format: fb.1.<unix ms when the click id was first seen>.<fbclid>
+		userData.put("fbc", "fb.1." + zoho.currenttime.toLong() + "." + fb);
+	}
+
+	if (userData.isEmpty())
+	{
+		return "error no match keys (no mobile, email or fbclid)";
+	}
+
+	// --- the event ---
+	event = Map();
+	event.put("event_name", event_name);
+	event.put("event_time", (zoho.currenttime.toLong() / 1000).toLong());
+	event.put("event_id", event_id);
+	event.put("action_source", "website");
+	if (ifnull(event_source_url, "") != "")
+	{
+		event.put("event_source_url", event_source_url);
+	}
+	event.put("user_data", userData);
+
+	body = Map();
+	body.put("data", {event});
+	if (ifnull(test_event_code, "").trim() != "")
+	{
+		body.put("test_event_code", test_event_code.trim());
+	}
+
+	url = "https://graph.facebook.com/v21.0/" + dataset_id + "/events?access_token=" + access_token;
+	headers = Map();
+	headers.put("Content-Type", "application/json");
+
+	resp = invokeurl
+	[
+		url : url
+		type : POST
+		parameters : body.toString()
+		headers : headers
+	];
+
+	if (resp.get("events_received") != null)
+	{
+		return "sent " + resp.get("events_received");
+	}
+	err = resp.get("error");
+	if (err != null)
+	{
+		return "error " + ifnull(err.get("message"), err.toString());
+	}
+	return "error " + resp.toString();
+}

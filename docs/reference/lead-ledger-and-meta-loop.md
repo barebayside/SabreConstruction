@@ -80,6 +80,10 @@ The Flows can be built and tested against a test dataset before 1–4 exist.
 
 ## Order of work
 
+> **2026-09-10:** step 2's page work and step 4's function are DONE (`js/enquiry.js` in the live repo;
+> `tools/flow/meta_capi_event.dg`). The row goes as **form-encoded data**, not JSON — set the Webhook
+> trigger to "form data". Build steps, click by click: `../tasks/lead-ledger-build.md`.
+
 1. Edward: create the Zoho Sheet + Flow 1 (webhook trigger → Sheet row → email). Copy the webhook URL.
 2. Claude: hidden fields + capture/beacon script on BOTH live pages (`index.html`, `contact/index.html`
    in the live repo), push, submit a test with `?utm_content=TEST&fbclid=TEST`, **read the Sheet row

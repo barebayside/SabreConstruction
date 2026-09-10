@@ -5,7 +5,24 @@
 > Things that are broken or fake live in `open-items.md`.
 > This file is about **the deal and the sequence of work**.
 >
-> Last updated: **2026-09-08**.
+> Last updated: **2026-09-10**.
+
+## ⭐ 2026-09-10 — the form works everywhere, the ledger is half built, the campaign has a structure
+
+- **Found + fixed:** the contact page had the three-step form markup but **no script** — steps two and
+  three were hidden and nobody could reach the name/mobile fields, on the page every "Book a walk-through"
+  button leads to. `js/enquiry.js` (shared, all 11 pages) now runs the slide on both forms, and the form
+  still posts without JavaScript. Tested in headless Edge, 23/23. Real repo v19, committed, **not pushed**.
+- **Ledger, site side DONE:** every page captures `utm_*` / `fbclid` / `gclid` / landing page / referrer
+  for the visit; both forms carry them as hidden fields (so Formspree's email shows the asset code) and
+  send one form-encoded copy to the Zoho Flow webhook on submit (`FLOW_URL`, empty until Flow 1 exists).
+- **Ledger, Zoho side WRITTEN, not built:** `docs/tasks/lead-ledger-build.md` (Sheet columns, Flow 1,
+  Flow 2, the Meta plumbing, proofs) + `tools/flow/meta_capi_event.dg` (Deluge, SHA-256 match keys,
+  test_event_code). Edward builds the Sheet + Flow 1 and sends the webhook URL.
+- **Campaign strategy:** `docs/reference/campaign-strategy.md` — the 09-03 plan reconciled to the
+  walk-through front door, the report's findings (Tide owns the "love your street" Meta line; the
+  Wynnum/Manly rebuild search is unbought), Google/Meta structures with proposed SAB codes, the
+  measurement chain, ten launch gates. **Still owed by Nathan: build value, monthly budget, five claims.**
 
 ## ⭐ 2026-09-08 — scope set, the measurement system, and the site built
 
@@ -175,9 +192,9 @@ minutes of his time and they unblock the copy.
 - [ ] Strip preview chrome and `noindex` before launch
 - [ ] **Lead ledger + Meta loop** (agreed 2026-09-09, plan: `docs/reference/lead-ledger-and-meta-loop.md`)
   - [ ] Edward: Zoho Flow with a Webhook trigger → Zoho Sheet "Sabre — Lead Ledger" add-row → send Claude the webhook URL
-  - [ ] Claude: hidden UTM/fbclid/gclid fields + capture/beacon script on BOTH live pages (home + contact), push, test row read back, Formspree email still arrives
+  - [x] Claude 2026-09-10: hidden UTM/fbclid/gclid fields + capture/beacon script on ALL pages (`js/enquiry.js`); committed. Still to do once the URL exists: paste `FLOW_URL`, push, test row read back, Formspree email still arrives
   - [ ] Nathan: partner access to include the **dataset**; create one in Sabre's portfolio if none exists; ad account assigned to Edward
-  - [ ] Claude: Meta CAPI custom function (Lead on submit, Purchase on Won); Edward pastes into Flow 1 + Flow 2
+  - [x] Claude 2026-09-10: Meta CAPI custom function written (`tools/flow/meta_capi_event.dg`, not yet run against a dataset); Edward pastes into Flow 1 + Flow 2 per `docs/tasks/lead-ledger-build.md`
   - [ ] Weekly: share the Sheet link with Nathan; he fills outcome (New / Contacted / Quoting / Won / Lost)
 
 ## Open questions
