@@ -195,6 +195,9 @@ From the plan §10 (benchmarks, not Sabre's numbers). Fix the earliest weak numb
 
 ## 9 · Search and AI visibility — in scope since 09-08, and mostly free
 
+> **Superseded 2026-09-10 by `search-and-ai-visibility-plan.md`** — the full plan (listing, pages,
+> mentions, measurement, the article bank, the technical appendices). The list below is the short form.
+
 The report's baseline: absent from all 13 searches, all 5 map boxes, and no AI assistant names
 any builder for "best knockdown rebuild builder in Wynnum". In order of payoff per hour:
 

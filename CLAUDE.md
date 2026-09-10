@@ -58,6 +58,7 @@ in `docs/`.
 | **Know what replaces what / which URLs must exist** | `docs/tasks/site-migration-map.md` |
 | **Where leads go, the lead ledger, the Meta feedback loop** | `docs/reference/lead-ledger-and-meta-loop.md` |
 | **Build the ledger: Zoho Sheet, the two Flows, the Meta function (click-by-click)** | `docs/tasks/lead-ledger-build.md` + `tools/flow/meta_capi_event.dg` |
+| **Get found on Google / the map box / AI assistants — SEO, GEO, GBP, the article bank** | **`docs/reference/search-and-ai-visibility-plan.md`** — canonical from 2026-09-10 |
 | **Plan or build any ad, campaign, budget, keyword list or measurement** | **`docs/reference/campaign-strategy.md`** — canonical from 2026-09-10; the 09-03 plan is its figures |
 | Know what's blocked or fake | `docs/open-items.md` |
 | Check a fact about Sabre before writing it | **`site/docs/client-facts.md`** (canonical) |

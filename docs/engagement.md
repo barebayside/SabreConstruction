@@ -23,6 +23,11 @@
   walk-through front door, the report's findings (Tide owns the "love your street" Meta line; the
   Wynnum/Manly rebuild search is unbought), Google/Meta structures with proposed SAB codes, the
   measurement chain, ten launch gates. **Still owed by Nathan: build value, monthly budget, five claims.**
+- **Search + AI visibility plan:** `docs/reference/search-and-ai-visibility-plan.md` — four legs (the Google
+  listing, the pages, brand mentions, monthly measurement), the Project 24 article bank (1 pillar, 4 staples,
+  17 responses), six suburb pages max, robots/llms/schema appendices ready to drop in. Two finds: Google's
+  AI Overview is already live on the rebuild suburb searches and names rivals from their Google listings;
+  Stewart and Cathy each have Wikipedia + Wikidata entries as Olympians — an entity link no rival has.
 
 ## ⭐ 2026-09-08 — scope set, the measurement system, and the site built
 
