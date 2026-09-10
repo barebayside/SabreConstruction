@@ -5,8 +5,9 @@
 
 ## What this is
 
-A client build for **Sabre Constructions**, a family-owned builder in
-Capalaba QLD. Static site on GitHub Pages. No build step, no dependencies.
+A client build for **Sabre Constructions**, a family-owned builder based at
+**Ransome QLD** (moved from Capalaba — confirmed 2026-09-10), building across
+Brisbane's Bayside and the Redlands. Static site on GitHub Pages. No build step.
 
 **As of 2026-08-17 this is a live engagement, not a pitch** — website, Meta ads
 and Google ads, paid in kind. Everything here was built speculatively to win the

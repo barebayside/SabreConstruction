@@ -5,27 +5,53 @@
 > technical side (robots, schema, GBP, measurement); this file owns *what gets written,
 > in what order, and why*.
 >
-> Read `../../site/docs/client-facts.md` before writing a single line of any post.
+> Read `../../../sabre-constructions-website/docs/client-facts.md` (the REAL repo — the only
+> copy) before writing a single line of any post.
 > Rule 1 stands: **never invent a number.** Not a price, not a band, not a timeline.
 
 ---
 
-## 0 · Read this before you use the search volumes
+## 0 · What is measured, and what is estimated
 
-**Every volume in this document is an estimate, not a measurement.**
+Two different kinds of number appear in this document. Do not confuse them.
 
-BBL has no keyword tool on this account. Google Ads is still not linked to manager
-775-584-9139 (launch gate 3), and Keyword Planner will not show real ranges until it is.
-The numbers below come from three things, in this order:
+### ✅ MEASURED — the 2026-09-05 SERP scrape
 
-1. The shape of the query (head term vs long tail vs "near me" vs question).
-2. The size of the population that could plausibly ask it — Wynnum is roughly 12,000
-   people, Manly roughly 3,000, Lota roughly 2,500, Brisbane 2.7 million, Australia 27 million.
-3. What already ranks for it. If page one is four builders and a Domain article, there is
-   money in it. If page one is directories and a council PDF, there is little volume but
-   almost no competition — which for a Project 24 bank is *better*, not worse.
+**39 real Google searches** were run and captured on 2026-09-05, Brisbane-anchored: 18
+knockdown-rebuild-intent (`knockdown rebuild builder <suburb>`) and 21 builder-intent
+(`builders <suburb>`, `custom home builders brisbane bayside`), across Wynnum, Manly, Lota,
+Capalaba, Wakerley and the Bayside. Raw data:
+`docs/sessions/2026-09-05-rank-check-knockdown-rebuild-top30.json` and
+`…-builders-suburb-top30.json`. Google surfaced **104 unique related queries** and
+**16 People Also Ask questions** across them.
 
-They are written as **bands**, and each carries a confidence mark:
+**What it showed, in order of weight:**
+
+| Theme | Queries | Appearances | The headline |
+|---|---|---|---|
+| **Cost and price** | 31 of 104 | **130** | The most-surfaced related query in the entire set is **"knock down rebuild cost calculator" (20)**, then **"knock down rebuild Brisbane cost" (16)**. And **11 of the 16 People Also Ask questions are cost questions** — the top one being *"Can I build a house for $300,000 in Australia?"* (5 SERPs) |
+| **Suburb-anchored** | 62 of 104 | 192 | Every theme below repeats itself per suburb — "… capalaba", "… wynnum", "… manly qld", "… lota qld", "… wakerley". The suburb pages are not optional |
+| **Reviews and "best"** | 15 | 46 | "builders wynnum reviews" (6), "knockdown rebuild builders brisbane bayside reviews" (6), "best custom home builders brisbane bayside" (4). People search a builder's reviews as a *query*, not just on the listing |
+| **Packages and volume builders** | 5 | 38 | "knock down and rebuild packages" (12) and **"Metricon knockdown rebuild" (12)**. A named national competitor is inside the local search |
+| **Small / independent / local** | 7 | 24 | "independent builders capalaba" (6), "small builders manly qld" (4), "small home builders wynnum" (4). Sabre's exact category, actively searched |
+
+⚠️ **What an appearance count is, and is not.** It counts how often Google itself chose to
+surface that query as "related" across the 39 SERPs. It is a **demand signal, not a search
+volume** — it says Google associates the query with this topic strongly, not that N people
+typed it. A high count means the query is central to how Google understands the topic, which
+is what a content bank should be built around. It is not a number to bid against.
+
+⚠️ **The scrape only covered builder-intent searches.** It says nothing about the living
+cluster (Spiral 2) or the national contract cluster (Spiral 3). Every number attached to those
+is an estimate.
+
+### ≈ ESTIMATED — the bands
+
+Everything not backed by the scrape is a band, not a measurement. **BBL has no keyword tool on
+this account.** Google Ads is still not linked to manager 775-584-9139 (launch gate 3), so
+Keyword Planner will not open until it is. The bands come from the shape of the query, the size
+of the population that could ask it (Wynnum ≈ 12,000 people, Manly ≈ 3,000, Lota ≈ 2,500,
+Brisbane 2.7 million, Australia 27 million), and what already holds page one.
 
 | Band | Est. searches/month | What it means for us |
 |---|---|---|
@@ -36,14 +62,25 @@ They are written as **bands**, and each carries a confidence mark:
 | **E** | 10–30 | Local long tail. Low volume, very high intent — a Wynnum family typing this is *months* from a decision |
 | **F** | <10 | Almost no volume. Written only when it answers a real objection, or for the AI assistant that has no other source |
 
-Confidence: **H** = the band is right. **M** = right band or one either side.
-**L** = a guess; verify before it drives any spend.
+Confidence: **H** = the band is right. **M** = right band or one either side. **L** = a guess.
+✅ in the Conf. column means **the 09-05 scrape backs this one** — those are not guesses.
 
-⚠️ **Nothing here justifies an ad budget.** Volume estimates are for deciding *writing
-order*. The moment Keyword Planner opens, re-run this table and replace the bands with
-real ranges — that is a one-hour job and it is worth doing before the pillar is written.
+⚠️ **Nothing here justifies an ad budget.** Bands decide *writing order*, nothing else. The
+moment Keyword Planner opens, re-run this table and replace them with real ranges — a one-hour
+job, worth doing before any pillar is written.
 
----
+### What the measured data changes about the plan
+
+1. **Cost is not one article, it is the spine.** Write S1 first, and make cost the thread that
+   runs through the service page, the suburb pages and the FAQ blocks. Rule 1 still holds — what
+   *decides* the cost, never a number.
+2. **The calculator searchers are the biggest single group, and they are being badly served.**
+   A calculator prices someone else's block. That is the hook, and the draft already carries it.
+3. **"Metricon knockdown rebuild" sits inside the local search.** R15 is not a nice-to-have.
+4. **Reviews are a query.** `/testimonials/` needs dates, names and a review link, and one of
+   the suburb pages should carry a Wynnum review. Not a blog job — but it came out of this data.
+5. **"Small" and "independent" are how the avatar describes what they want.** Use those words
+   on the page. R16 targets them directly.
 
 ## 1 · The method — three spirals, three centrepieces
 
@@ -116,13 +153,13 @@ number for their block.
 
 | Title | Est. | Conf. | Note |
 |---|---|---|---|
-| **Knocking down and rebuilding on Brisbane's Bayside: the whole path, in plain words** | B | M | The hub. Links to all 22 spokes below. Targets "knockdown rebuild brisbane", "knock down rebuild brisbane bayside". Page one today is builders with price ranges and volume-builder package pages — the gap is a builder who explains the path and refuses to guess the price |
+| **Knocking down and rebuilding on Brisbane's Bayside: the whole path, in plain words** | B | ✅ | The hub. Links to all 22 spokes below. Targets "knockdown rebuild brisbane", "knock down rebuild brisbane bayside". Page one today is builders with price ranges and volume-builder package pages — the gap is a builder who explains the path and refuses to guess the price |
 
 ### Staples (1,800–2,500 words, one a month)
 
 | # | Title | Est. | Conf. | Why |
 |---|---|---|---|---|
-| S1 | **What decides the cost of a knockdown rebuild in Brisbane?** | B–A | H | The single most searched question in the whole bank. Demolition and asbestos, the block (slope, access, soil), the overlay, design size, finish level, where you live during the build, the two things that always surprise people. Ends on why Sabre won't publish a number and what the walk-through gives instead |
+| S1 | **What decides the cost of a knockdown rebuild in Brisbane?** | B–A | ✅ | The single most searched question in the whole bank. Demolition and asbestos, the block (slope, access, soil), the overlay, design size, finish level, where you live during the build, the two things that always surprise people. Ends on why Sabre won't publish a number and what the walk-through gives instead |
 | S2 | **Knockdown rebuild or renovate: how to tell which one your house is** | B | H | The "should I" search. High volume, genuinely useful, and the honest answer sometimes sends them away — which is the point |
 | S3 | **Where does the family live while the house is built?** | C | M | The objection nobody else owns. ⛔ Blocked until Nathan gives his real sequence. No "12–18 months" until he says it |
 | S4 | **Buying an old house in Wynnum or Manly to knock down: what to check before you sign** | D | M | Catches the buyer *before* they own the problem. Bridges into Spiral 2 |
@@ -147,12 +184,12 @@ number for their block.
 | R12 | What does "highset" mean on a Bayside block? | E | M | Local vocabulary. Very citable |
 | R13 | Can we build a two-storey house on our block in Manly? | E | M | |
 | R14 | How much of the old house can be reused? | E | M | Honest answer: usually very little. Say so |
-| R15 | What is a "knockdown rebuild package", and why doesn't Sabre sell one? | D | M | Catches the volume-builder searcher (Metricon, Plantation, GJ Gardner). The honest comparison |
-| R16 | Who are the small independent builders on Brisbane's Bayside? | D | M | A fair page that names the category and Sabre's place in it. Wins the "independent builder" and "small builder" searches, and it is exactly the page an AI assistant quotes |
+| R15 | What is a "knockdown rebuild package", and why doesn't Sabre sell one? | C | ✅ | Catches the volume-builder searcher (Metricon, Plantation, GJ Gardner). The honest comparison |
+| R16 | Who are the small independent builders on Brisbane's Bayside? | D | ✅ | A fair page that names the category and Sabre's place in it. Wins the "independent builder" and "small builder" searches, and it is exactly the page an AI assistant quotes |
 | R17 | Do we need to move out before demolition, and when do the services get cut? | E | L | |
 | R18 | What is a soil test and why does it change the price? | D | M | |
 | R19 | Rebuilding on a flood overlay block on the Bayside: what changes? | D | M | ⭐ Bayside-specific, high anxiety, and nobody local has written it properly |
-| R20 | Knockdown rebuild vs buying a new house: which actually costs less? | C | L | The real decision the avatar is making. No numbers — the *factors* |
+| R20 | Knockdown rebuild vs buying a new house: which actually costs less? | C | ✅ | The real decision the avatar is making. No numbers — the *factors* |
 | R21 | What questions should we ask a builder before we sign? | C | M | Bridges to Spiral 3. Extremely citable |
 | R22 | We've outgrown the house but we love the street. What are the options? | E | L | The positioning post. Every option, honestly, including the ones that aren't a rebuild |
 
@@ -256,9 +293,9 @@ Not blog posts, but they earn the same treatment and they come first.
 
 | Page | Target | State |
 |---|---|---|
-| `/knockdown-rebuild/` | "knockdown rebuild brisbane bayside" (**B**) | ⛔ to write, 800+ words. The service page the whole of Spiral 1 links to |
-| `/wynnum/` | "builders wynnum" (**D**), "knockdown rebuild wynnum" (**E**) | live but thin (~300 words) → 600+ |
-| `/manly/` | "builders manly qld" (**E**) | same |
+| `/knockdown-rebuild/` | "knockdown rebuild brisbane bayside" (**B**, ✅) | ⭐ **DRAFTED** — `content/pages/knockdown-rebuild.md`, 1,566 words. Needs building into HTML |
+| `/wynnum/` | "builders wynnum" (**D**, ✅), "knockdown rebuild wynnum" (**E**, ✅) | ⭐ **REWRITE DRAFTED** — `content/pages/wynnum.md`, 1,172 words, replaces the thin live page |
+| `/manly/` | "builders manly qld" (**E**, ✅) | ⭐ **REWRITE DRAFTED** — `content/pages/manly.md`, 1,228 words. Front matter says `status: blocked` — check what on |
 | `/lota/`, `/wakerley/`, `/capalaba/` | "builders lota qld" etc (**E–F**) | to write, one at a time, only where Nathan can say something true |
 
 ⭐ **The move to Ransome changes the local-pack maths, slightly in our favour.** Ransome
@@ -277,34 +314,57 @@ Six suburb pages remains the hard ceiling.
 
 Volume is not the ordering rule. **Blocked-or-not** is the ordering rule, then bridging value.
 
-### Phase 1 — the ten that need nothing from anyone (write now)
+### ⭐ Phase 0 — six pieces are ALREADY WRITTEN and sitting in `content/`
 
-`/knockdown-rebuild/` service page · S1 (what decides the cost) · R1 (extend the existing
-pre-1947 post) · R2 (character overlay method) · R9 (asbestos) · R19 (flood overlay) ·
-S9 (what the houses are made of) · R33 (why so many get knocked down) · S12 (QBCC) ·
-R16 (small independent builders)
+Nobody noticed these were there. `content/` was untracked in git until 2026-09-10.
+**9,508 words of finished copy**, with front matter, sources and internal links:
 
-Those ten are the spine. They cover both commercial spirals, they need no numbers from
-Nathan, and R1/R2/R9/R19 are all defensible from Brisbane City Council's own published
-wording.
+| File | Maps to | Words | State |
+|---|---|---|---|
+| `content/posts/check-if-your-street-is-in-the-character-overlay.md` | **R2** | 1,549 | ✅ `blocked_on: []` — **build it into HTML today** |
+| `content/posts/what-is-a-knockdown-rebuild-package.md` | **R15** | 1,491 | ✅ `blocked_on: []` — **build it into HTML today**. Deliberately names no competitor (ACL on comparative claims) |
+| `content/posts/what-decides-the-cost-of-a-knockdown-rebuild-in-brisbane.md` | **S1** | 2,502 | ⚠️ Two paragraphs marked ⛔ GAP need Nathan. Without one of them it is a good generic article instead of Sabre's |
+| `content/pages/knockdown-rebuild.md` | the service page | 1,566 | ⚠️ Needs Nathan on the walk-through claim and the architect path |
+| `content/pages/wynnum.md` | `/wynnum/` rewrite | 1,172 | ⛔ Needs Nathan's local detail, or it is 300 generic words |
+| `content/pages/manly.md` | `/manly/` rewrite | 1,228 | ⛔ Same |
+
+**So the first job is not writing. It is building two finished posts into HTML, and
+getting ten minutes of Nathan to unblock the other four.** That is the whole of Phase 1
+below, already half done.
+
+### Phase 1 — what needs nothing from anyone (write next)
+
+R9 (asbestos) · R19 (flood overlay) · S9 (what the houses are made of) · R33 (why so many
+get knocked down) · S12 (QBCC) · R16 (small independent builders) · R1 (extend the live
+pre-1947 post to 1,000+ with an answer block and an FAQ block)
+
+All seven are defensible from published sources — Brisbane City Council's own wording, the
+QBCC register, WorkSafe Queensland, AS 2870 — and none needs a number from Nathan. R16 and
+S9 are the two the 09-05 data most supports.
 
 ### Phase 2 — the ten that need one voice note from Nathan (30 minutes of his time)
 
-S2 · S3 · S5 · R5 · R8 · R10 · R11 · R21 · S7 · R27
+S1's two gaps · the three pages' local detail · S2 · S3 · S5 · R5 · R8 · R10 · R11 · R21
+
+**Ask him all of it in one conversation.** One voice note answers three posts. The list of
+what to ask is in §7.
 
 ### Phase 3 — the place cluster, once the suburb pages are fat
 
-S8 · S10 · R23 · R24 · R25 · R28 · R29 · R31 · R35
+S7 · S8 · S10 · R23 · R24 · R25 · R27 · R28 · R29 · R31 · R35
 
-### Phase 4 — the trust cluster and the centrepieces
+### Phase 4 — the trust cluster and the three centrepieces
 
-S13–S15 · R36–R45 · then the three pillars, in the order Spiral 1, Spiral 2, Spiral 3.
+S13–S15 · R36–R45 · then the pillars, in the order Spiral 1, Spiral 2, Spiral 3.
 
-**Cadence:** one response post a fortnight, one staple a month. That is ~38 pieces a year
-and it clears the whole bank in about fourteen months. The centrepieces land at month 6,
-9 and 12 — after their spokes exist, never before.
+**Cadence:** one response post a fortnight, one staple a month. ~38 pieces a year, which
+clears the bank in about fourteen months. The centrepieces land at month 6, 9 and 12 —
+after their spokes exist, never before.
 
----
+⚠️ **`build_blog.py` is a BBL tool and does not apply here** — Sabre's site is plain
+hand-written HTML with no generator ([[bbl-blog-builder-cannot-rebuild-pages]]). Build each
+post by copying an existing post's HTML and replacing the body. After any change to a page's
+scripts, `node --check` it and bump `?v=` on every page that uses the file.
 
 ## 7 · What is still owed before any of this publishes
 
