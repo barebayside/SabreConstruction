@@ -87,3 +87,15 @@ Chrome (TotalAV). **Before any Meta screen:** Hotmail login, Chrome.
 **Most likely next task:** the Google Ads account link and the first SAB ad set, in that order,
 with the report's search findings driving which suburb pages get built first. The Catalyst
 promote (item 1) is independent and can happen any time Edward is in the Console.
+
+## Addendum (later 09-08, from the BBL session) — the report is live; the Google link never completed
+
+- ✅ Catalyst promoted; Sabre's report link now carries the §01 search table and passed both gates.
+  **The link can go to Nathan.**
+- ⛔ **Google Ads: the manager account (775-584-9139) shows NO client accounts.** The 09-05
+  "a bit funny" access was never an accepted manager link. Need Nathan's 10-digit customer ID →
+  link request from the manager → Nathan accepts (Admin → Access and security → Managers → Accept).
+- Meta: check Business settings → Partners on the Hotmail login first; Sabre should still be there
+  (invite accepted 09-07). If not, Nathan re-shares via Partners → Add → BBL business portfolio ID.
+  Instructions were written in the BBL session chat (see BBL handoff 09-08 Part 2).
+- Record the customer ID + `act_` id in BBL `brands.json` SAB row when they arrive.

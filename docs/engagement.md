@@ -7,6 +7,23 @@
 >
 > Last updated: **2026-09-10**.
 
+## ⭐ 2026-09-10 (later) — the three values confirmed, the site pushed, the article bank written
+
+- **Nathan confirmed the licence numbers and the address.** QBCC **15486557** (not the old
+  contact page's 328475 — the 09-08 ambiguity is closed), Master Builders Queensland **00352**,
+  and the address is now **40 Molle Rd, Ransome QLD 4154**. Replaced across all 11 pages and in
+  `client-facts.md`. Location prose that said "Capalaba is home" now says Ransome; Capalaba stays
+  in the service-area lists.
+- **PUSHED.** v19 (the contact-form fix, committed 09-10 but never pushed) and v20 (these values)
+  are both live on the preview. The contact form works again for the first time since 09-08.
+- ⚠️ **The Google Business Profile still carries the Capalaba address.** Until it matches,
+  the mismatch costs more than the move gains. Nathan's login. Top of the list.
+- **`docs/reference/article-bank.md` — new, canonical.** Three content spirals, 45 titles,
+  estimated search bands with confidence marks, and a four-phase writing order. Ten posts in
+  Phase 1 need nothing from anybody. §7 of the search plan now points at it.
+- **The workshop's `site/docs/client-facts.md` was a stale duplicate** and is now a pointer;
+  the real repo's `docs/client-facts.md` is the only copy. Router updated.
+
 ## ⭐ 2026-09-10 — the form works everywhere, the ledger is half built, the campaign has a structure
 
 - **Found + fixed:** the contact page had the three-step form markup but **no script** — steps two and

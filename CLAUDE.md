@@ -58,10 +58,11 @@ in `docs/`.
 | **Know what replaces what / which URLs must exist** | `docs/tasks/site-migration-map.md` |
 | **Where leads go, the lead ledger, the Meta feedback loop** | `docs/reference/lead-ledger-and-meta-loop.md` |
 | **Build the ledger: Zoho Sheet, the two Flows, the Meta function (click-by-click)** | `docs/tasks/lead-ledger-build.md` + `tools/flow/meta_capi_event.dg` |
-| **Get found on Google / the map box / AI assistants — SEO, GEO, GBP, the article bank** | **`docs/reference/search-and-ai-visibility-plan.md`** — canonical from 2026-09-10 |
+| **Get found on Google / the map box / AI assistants — SEO, GEO, GBP, technical** | **`docs/reference/search-and-ai-visibility-plan.md`** — canonical from 2026-09-10 |
+| **Write a blog post / pick the next topic / the article bank + search estimates** | **`docs/reference/article-bank.md`** — canonical from 2026-09-10; three spirals, 45 posts, the order to write them in |
 | **Plan or build any ad, campaign, budget, keyword list or measurement** | **`docs/reference/campaign-strategy.md`** — canonical from 2026-09-10; the 09-03 plan is its figures |
 | Know what's blocked or fake | `docs/open-items.md` |
-| Check a fact about Sabre before writing it | **`site/docs/client-facts.md`** (canonical) |
+| Check a fact about Sabre before writing it | **`../sabre-constructions-website/docs/client-facts.md`** (canonical — in the REAL repo; the `site/docs/` copy is a dead pointer) |
 | Know why a section is where it is | `docs/reference/page-structure.md` |
 | **Design the look / add a reference site / the cutaway** | **`docs/reference/design-brief.md`** — the proper design process, from 2026-09-08 |
 | Match colours or type | **`site/docs/design-system.md`** (canonical, but being replaced by the brief above) |
@@ -93,7 +94,7 @@ tooling — never its data, CRM or mailing list.
 These have all been broken at least once. Read them before editing anything.
 
 1. **Never invent a number.** No star ratings, review counts, job counts, years
-   or prices unless they're in `site/docs/client-facts.md` with a source.
+   or prices unless they're in the real repo's `docs/client-facts.md` with a source.
 2. **The three testimonial videos are AI-generated people, not customers.** The
    warning panel, the per-slide chip and the burned-in label all stay until real
    footage replaces them.

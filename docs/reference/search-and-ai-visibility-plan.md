@@ -132,66 +132,17 @@ For assistants this outranks anything on our own pages. In order of value per ho
 | **Ohori Judo Club** | Its About page already names Stewart and Cathy. A line there ("Stewart and Cathy run Sabre Constructions in Capalaba") is a legitimate, true mention on a site they own | free |
 | Reddit | Never post about Sabre. If a genuine "builders in Wynnum?" thread exists, Nathan can answer as himself, once | — |
 
-## 7 · Content — the article bank, in the Project 24 shape
+## 7 · Content — the article bank
 
-One question per post. Title = the question. Answer in the first 60 words. H2 every 200–300
-words, questions as headings. 1–3 sentence paragraphs, Year 8 reading level, plain Australian,
-"you". A **134–167-word self-contained answer block** near the top of each section (the passage an
-assistant lifts). Two proof points per post, attributed (council's wording, MBQ, ABS, a named
-review). A "Common questions" block of 3–5 Q&As at the end. **One** CTA: the walk-through.
-Byline Nathan, dated. **Written from something Nathan actually said** — every post needs one real
-detail from him (a job, a mistake, a rule of thumb), or it is generic and gets cut.
+➡️ **MOVED 2026-09-10 to `article-bank.md`, which is canonical.** It holds the three
+spirals (building · living on the Bayside · dealing with a builder in Australia), all 45
+titles with estimated search bands, the writing rules, and the four-phase order to write
+them in. What was here was the first 22 titles with no volumes and no place cluster.
 
-Voice test: would it sit inside the LJ Hooker front-lawn ad (`copy-rules.md`)? Not the corporate
-"we pride ourselves"; the builder at the kitchen table.
-
-### Pillar (one, last)
-- **Knocking down and rebuilding on Brisbane's Bayside: the whole path, in plain words** (3,000+) —
-  the service page's long form; links to every post below. Write it after ten spokes exist.
-
-### Staples (1,800–2,500 words, one a month)
-1. **What decides the cost of a knockdown rebuild in Brisbane?** — the #1 searched question. No
-   price, no band (rule 1). The drivers: demolition and asbestos, the block (slope, access, soil),
-   the overlay, the design size, the finish level, where you live during the build, the two things
-   that always surprise people. Ends on why Sabre won't publish a number and what the walk-through
-   gives you instead. Honest, and unique on page one.
-2. **Knockdown rebuild or renovate? How to tell which one your house is.** — "should I" search.
-3. **Where does the family live while the house is built?** — the objection, owned. Needs Nathan's
-   real sequence; no "12–18 months" until he says the number.
-4. **Buying an old house in Wynnum or Manly to knock down: what to check before you sign.**
-
-### Response posts (1,000–1,500 words, one a fortnight)
-- Can I knock down a pre-1947 house in Brisbane? (exists — extend to 1,000+, add the FAQ block)
-- How do I check if my street is in the character overlay? (the five-minute method, screenshots)
-- What is a "small lot" in Brisbane, and does it change what I can build?
-- Does a knockdown rebuild need a development application?
-- Do we need an architect, a designer or a draftsperson? (the path Sabre uses — after Nathan confirms)
-- What happens to the trees on the block?
-- Can we keep the pool / the shed / the front fence?
-- How long does demolition take, and who organises it?
-- What is a Sabre walk-through, and what should we have ready?
-- Fixed price or cost-plus — what do builders mean? (explain the terms; Sabre's own answer only when confirmed)
-- What does "highset" mean on a Bayside block?
-- Can we build a two-storey house on our block in Manly?
-- What is the QBCC, and what should I check on a builder's licence?
-- What does Master Builders membership actually mean for you?
-- How much of the old house can be reused? (honest: usually little; what can)
-- What is a "knock down and rebuild package", and why doesn't Sabre sell one? (the "packages" and
-  "Metricon" searchers — the honest comparison with volume builders)
-- Who are the small, independent builders on the Bayside? (the "small builders / independent
-  builders" searches; a fair page that names the category and Sabre's place in it)
-
-### The pages that are also content
-- **Suburb pages** to 600+ words each: the streets, the overlay pattern there, a house Sabre built
-  nearby (real), the school catchments, the typical block, one review from that suburb if any,
-  the walk-through. Photos with the suburb in the alt text.
-- **`/knockdown-rebuild/`**: the service page, 800+ words, the three steps, the four fears each
-  answered where Sabre can, the FAQ block.
-
-### Cadence
-A response post every second Monday, a staple monthly, the pillar in month six. That is 30-ish
-pieces in a year. Each needs ten minutes of Nathan (one voice note answers three posts). Before
-publishing, the Income School "earn your place" pass and `avoid-ai-writing`.
+The rules that governed this section still stand and are restated there: one question per
+post, the answer in the first 60 words, a 134–167-word self-contained answer block, two
+attributed proof points, a Common questions block, one CTA, Nathan's byline, and one real
+detail from Nathan in every post or it gets cut.
 
 ## 8 · The existing pages — the fixes that make them citable
 
