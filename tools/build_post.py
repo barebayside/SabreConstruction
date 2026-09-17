@@ -161,7 +161,11 @@ if __name__ == "__main__":
         "what-is-a-knockdown-rebuild-package": dict(image="design-2-table.jpg", image_alt="Choosing a design at the table", card_title="What is a knockdown rebuild package, and is it the right way to build?", card_blurb="What an advertised package bundles, who it suits, and six questions worth asking any builder."),
         "rebuilding-in-wynnum-or-manly": dict(image="proj2x-killarney79.jpg", image_alt="Killarney 79, a Sabre build", card_title="Thinking of rebuilding in Wynnum or Manly? Five things to know first", card_blurb="The pre-1947 rule, what the block decides, where you live while it happens, and who's on the phone in month four."),
     }
-    all_posts = {**live, **{p["slug"]: p for p in posts.values()}}
+    # every post in every tools/posts_*.py can be a "Keep reading" card, whichever module is being built
+    all_posts = dict(live)
+    for f in sorted((WORKSHOP / "tools").glob("posts_*.py")):
+        m = importlib.import_module(f.stem)
+        all_posts.update({q["slug"]: q for q in m.POSTS.values()})
     for k in keys:
         p = posts[k]
         w, m, f = build(p, all_posts)
