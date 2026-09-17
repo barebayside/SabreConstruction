@@ -87,16 +87,16 @@ Real project photos on the six new cards; the four older cards keep the story fr
        positioning claims he has never confirmed — carried from 09-08, not introduced today.
 3. [ ] **Every post still lacks "one thing Nathan actually said."** Voice note owed (bank §7 item 6).
 4. [ ] `LocalBusiness` schema on the home page, robots.txt, llms.txt, Google tag — plan §7.
-5. [ ] Phase 1 of the bank (seven posts needing nobody): build with the kit — copy any post's
-       `<main>`, keep the block order, run the splice checks (schema parses, links, anchors, v= bump).
+5. [x] ~~Phase 1 of the bank~~ DONE. Next: Phase 3 place-cluster posts that need nobody (S7, S8,
+       R23, R24, R27) — add a `posts_phase3.py` dict and run `tools/build_post.py posts_phase3`.
 6. [ ] Registry: log v22 on the SAB records (v9–v21 also still unlogged).
 7. [ ] Everything in the 09-10b handoff's Edward/Nathan lists still stands (GBP → Ransome, DNS,
        test enquiry, Google Ads link, the credit question).
 
 ## Quick Context for Next Session
 
-The kit is the pattern now. A new post = one of the four `<main>` blocks with the body swapped,
-plus the `@graph` block (author, publisher, dates, FAQ) — the splice script that built these lived
-in the session scratchpad and is described above; rebuild it in 30 lines if needed rather than
-hand-editing schema. Bump `?v=` on all 13 pages after any CSS change. Preview:
-`python -m http.server 8765` in the real repo.
+The kit is the pattern and **`tools/build_post.py` is the generator** — a new post is a dict in a
+`tools/posts_*.py` module (see `posts_phase1.py` for the shape), then `python tools/build_post.py
+posts_x`. It writes the page, the index card, the sitemap row and the schema, and verifies links.
+The four original posts (R1, R2, R15, Wynnum) are hand-built HTML — edit those in place. Bump
+`?v=` on all 19 pages after any CSS change. Preview: `python -m http.server 8765` in the real repo.
