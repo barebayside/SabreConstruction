@@ -145,6 +145,46 @@ HEROES.update({
         "lawn, a huge jacaranda in flower over the quiet street, the bay at the end of it; no people.",
 })
 
+# ---- Phase 5 Spiral 3 (dealing with a builder, 2026-09-17) ----
+HEROES.update({
+    "what-does-master-builders-membership-actually-mean-for-you":
+        "a temporary site fence in front of a house at frame stage on a bayside street, two blank white plaques fixed to the fence side by "
+        "side with NO lettering, a plain white ute parked at the kerb; warm late light; no people.",
+    "progress-payments-what-you-pay-and-when-on-a-queensland-house-build":
+        "a new house at frame stage seen from the street, the roof trusses just on; in the foreground a single printed page with only blank "
+        "lines and a pen on the bonnet of a plain white ute; no people, no words.",
+    "variations-why-the-price-changed-and-when-it-shouldnt-have":
+        "close on a site table in front of a house frame: two hands from opposite sides, one in a work shirt cuff and one in a plain "
+        "sleeve, each holding a pen over one single-page document with only blank lines; no faces, no words.",
+    "what-insurance-should-a-builder-have-and-what-does-it-cover-you-for":
+        "a half-built house at lock-up stage on a bayside street under a dark grey-green afternoon storm sky, temporary site fencing around "
+        "it, a plastic document folder on the site table in the foreground; dramatic but real; no people, no words.",
+    "what-is-a-defects-liability-period":
+        "close on a hand running a finger along a fine hairline crack in a freshly painted white interior wall beside a new window, a set "
+        "of house keys on the windowsill, morning light; no face, no words.",
+    "whats-in-a-queensland-building-contract-in-plain-english":
+        "a thick bound building contract open on a timber kitchen table, a hand turning to a front page that shows only blank ruled lines "
+        "and empty boxes with NO legible words, reading glasses and a mug beside it; warm light; no face.",
+    "what-happens-if-a-builder-goes-under-mid-build":
+        "a house abandoned at frame stage on a quiet bayside street: the timber frame greying, weeds growing up through the concrete slab, "
+        "the temporary fence gate padlocked with a chain, a faded blank corflute sign; overcast soft light; no people, no words.",
+    "should-we-be-an-owner-builder":
+        "a homeowner in a hi-vis vest seen from behind at true human scale, standing alone in the middle of a fresh concrete slab holding a "
+        "clipboard, a bundle of timber wall frames delivered on the ground beside the slab, no trades in sight, an old house next door; no face.",
+    "how-do-progress-inspections-and-certifiers-work-in-queensland":
+        "a building certifier in a white collared shirt and a white hard hat, seen from behind at true scale, holding a clipboard and "
+        "looking up at the roof trusses inside a new timber house frame, bracing and tie-downs visible; warm light through the frame; no face.",
+    "what-is-a-building-and-pest-inspection-worth-on-a-house-you-plan-to-knock-down":
+        "under an old timber highset house: a torch beam lighting up the timber stumps and bearers and the dry earth, a gloved hand holding a "
+        "moisture meter against a bearer, ant caps on the stumps, daylight at the far edge; no face, no words.",
+    "can-you-get-a-construction-loan-for-a-knockdown-rebuild":
+        "a new house at lock-up stage on a bayside street seen through the windscreen of a parked car from the driver's seat, a clipboard "
+        "with only blank lines on the passenger seat, a lanyard hanging from the mirror with no text; warm light; no people, no words.",
+    "what-should-be-in-a-builders-quote-line-by-line":
+        "close top-down on a site table: a multi-page printed quote fanned out, each page showing only blank ruled lines and empty boxes with "
+        "NO legible words, a finger running down one page, a coffee and a white hard hat at the edge; warm light; no face.",
+})
+
 
 def gen(slug, prompt, n=2):
     res = fal_client.subscribe("fal-ai/nano-banana-2/edit",
