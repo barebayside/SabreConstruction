@@ -1,4 +1,4 @@
-# Handoff — 2026-09-17 — The article kit (v22): all four posts in the Project 24 shape, first schema on the site
+# Handoff — 2026-09-17 — The article kit (v22), ten posts live, Phase 1 of the bank done, the builder frame fixed
 
 ## Session Focus
 
@@ -39,6 +39,34 @@ on any band, screenshots at 1400 and 520 clean top to bottom.
 
 **Committed `4d4d11d`, push started in the background** (this repo's push hangs then lands — check
 `git status -sb` before assuming).
+
+
+## Later the same day — Phase 1 written and built (six new posts), the giant builder fixed
+
+**The image.** Edward: one card image had "the man twice as tall as the building" and asked
+whether an old fal model was used. It was `fal-ai/nano-banana-2` (current); the fault was the
+09-08 edit prompt with no scale anchor. Regenerated `design-3-site.jpg` from the same source
+frame with the door-height anchor (2 variants, ~16c on Sabre's key; one came back ant-sized —
+this model needs the anchor AND a look). Swapped on all six pages with `?v=2`. Prompt fixed in
+`tools/gen_cutaway_frames.py`; giant original kept as `design-3-site-v1-giant.jpg`. Pushed `4c10188`.
+
+**Six posts** (R9, R19, S9, R33, S12, R16) written, built, verified, committed `8b36752`, push
+started (this repo's push hangs — check `git status -sb`). Sources were fetched and quoted
+verbatim on the day: asbestos.qld.gov.au, BCC FloodWise Property Reports, QBCC (About, registers,
+Home Warranty), SLQ *Housing a growing state* 2014. The fetched text sits in the session
+scratchpad only; the quotes are in `tools/posts_phase1.py` with their source lines.
+
+**The builder is now in the repo:** `tools/build_post.py` + `tools/posts_phase1.py`. Content is
+the Python dict; the page shell is copied from the package post; schema, index card and sitemap
+row are generated; links/anchors/JSON verified in a second pass. **Edit the dict and rebuild;
+don't hand-edit the six HTML files** (the reverse of the BBL rule, because here the generator
+IS the source).
+
+**Honest lengths:** S9 1,379 and S12 1,279 words — response length, not the bank's staple
+length. Extending them needs Nathan's material. R16 names no rival builder (ACL, same as R15).
+Real project photos on the six new cards; the four older cards keep the story frames.
+
+**Article bank updated:** Phase 1 marked done, ten rows flagged live, §7 item 8 closed.
 
 ## Decisions Made
 

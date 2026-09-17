@@ -170,25 +170,25 @@ number for their block.
 
 | # | Title | Est. | Conf. | Note |
 |---|---|---|---|---|
-| R1 | Can I knock down a pre-1947 house in Brisbane? | C | H | **Exists** — extend past 1,000 words, add the answer block, the FAQ block, dates and byline |
-| R2 | How do I check if my street is in the character overlay? | D | M | The five-minute method with screen-grabs of the council tool. Screen-record it for the ad too (campaign door 3) |
+| R1 | Can I knock down a pre-1947 house in Brisbane? | C | H | ✅ **Live, in the kit** (09-17): answer block, FAQ, byline, schema. 912 words — past 1,000 needs Nathan |
+| R2 | How do I check if my street is in the character overlay? | D | M | ✅ **Live** (09-10, kit 09-17). The five-minute method with screen-grabs of the council tool. Screen-record it for the ad too (campaign door 3) |
 | R3 | What is a "small lot" in Brisbane, and does it change what I can build? | D | M | |
 | R4 | Does a knockdown rebuild need a development application? | D | H | |
 | R5 | Do we need an architect, a designer or a draftsperson? | C | M | ⛔ Needs Nathan's path confirmed first |
 | R6 | What happens to the trees on the block? | E | M | Vegetation protection orders are a real Bayside surprise |
 | R7 | Can we keep the pool, the shed or the front fence? | E | L | Pure objection-handling. Low volume, high relief |
 | R8 | How long does demolition take, and who organises it? | D | M | |
-| R9 | What is asbestos removal going to mean for our rebuild? | C | M | Every pre-1990 Bayside house. Genuine fear, genuine cost driver, and it is the honest half of S1 |
+| R9 | What is asbestos removal going to mean for our rebuild? | C | M | ✅ **Live 09-17.** Every pre-1990 Bayside house. Genuine fear, genuine cost driver, and it is the honest half of S1 |
 | R10 | What is a Sabre walk-through, and what should we have ready? | F | H | No volume. It is the conversion page for every ad and every post |
 | R11 | Fixed price or cost-plus: what do builders mean? | C | M | Also a Spiral 3 post. Put it here, link from there |
 | R12 | What does "highset" mean on a Bayside block? | E | M | Local vocabulary. Very citable |
 | R13 | Can we build a two-storey house on our block in Manly? | E | M | |
 | R14 | How much of the old house can be reused? | E | M | Honest answer: usually very little. Say so |
-| R15 | What is a "knockdown rebuild package", and why doesn't Sabre sell one? | C | ✅ | Catches the volume-builder searcher (Metricon, Plantation, GJ Gardner). The honest comparison |
-| R16 | Who are the small independent builders on Brisbane's Bayside? | D | ✅ | A fair page that names the category and Sabre's place in it. Wins the "independent builder" and "small builder" searches, and it is exactly the page an AI assistant quotes |
+| R15 | What is a "knockdown rebuild package", and why doesn't Sabre sell one? | C | ✅ | ✅ **Live** (09-10, kit 09-17). Catches the volume-builder searcher (Metricon, Plantation, GJ Gardner). The honest comparison |
+| R16 | Who are the small independent builders on Brisbane's Bayside? | D | ✅ | ✅ **Live 09-17.** A fair page that names the category and Sabre's place in it. Wins the "independent builder" and "small builder" searches, and it is exactly the page an AI assistant quotes |
 | R17 | Do we need to move out before demolition, and when do the services get cut? | E | L | |
 | R18 | What is a soil test and why does it change the price? | D | M | |
-| R19 | Rebuilding on a flood overlay block on the Bayside: what changes? | D | M | ⭐ Bayside-specific, high anxiety, and nobody local has written it properly |
+| R19 | Rebuilding on a flood overlay block on the Bayside: what changes? | D | M | ✅ **Live 09-17.** ⭐ Bayside-specific, high anxiety, and nobody local has written it properly |
 | R20 | Knockdown rebuild vs buying a new house: which actually costs less? | C | ✅ | The real decision the avatar is making. No numbers — the *factors* |
 | R21 | What questions should we ask a builder before we sign? | C | M | Bridges to Spiral 3. Extremely citable |
 | R22 | We've outgrown the house but we love the street. What are the options? | E | L | The positioning post. Every option, honestly, including the ones that aren't a rebuild |
@@ -219,7 +219,7 @@ are only a handful of pages competing: agents, Homely reviews and a council page
 |---|---|---|---|---|
 | S7 | **Is Wynnum a good place to live? An honest look at the good and the annoying** | C | M | The highest-volume living query in the pocket. "Honest" and "the annoying" is the whole differentiator — every other result is written by someone selling a house |
 | S8 | **Wynnum vs Manly vs Lota: which Bayside suburb suits which family?** | D | M | Comparison posts do disproportionately well. Three suburbs, one table, real differences (block sizes, the train line, the esplanade, the schools, what a house costs to hold) |
-| S9 | **What are the houses on the Bayside actually made of?** | E | M | ⭐ The bridge article, and the one only a builder can write. Post-war lowset chamferboard, 1970s brick lowset, the highset with the built-in-under, what each one is like to live in and what each one is like to change. This is the single most Sabre-shaped post in the bank |
+| S9 | **What are the houses on the Bayside actually made of?** | E | M | ✅ **Live 09-17** (1,379 w — extend with Nathan). ⭐ The bridge article, and the one only a builder can write. Post-war lowset chamferboard, 1970s brick lowset, the highset with the built-in-under, what each one is like to live in and what each one is like to change. This is the single most Sabre-shaped post in the bank |
 | S10 | **Schools on the Bayside: the catchments, and what "in catchment" is worth** | D | M | Catchment is the #1 reason a family stays in a street they've outgrown. That is Sabre's entire pitch, arriving from the side |
 | S11 | **Moving to Brisbane's Bayside from interstate: what nobody tells you** | D | L | Broader net. Humidity, the tide, the commute, the storm season, what a Queenslander is |
 
@@ -237,7 +237,7 @@ are only a handful of pages competing: agents, Homely reviews and a council page
 | R30 | What is the Wynnum Manly foreshore actually like to live near? | E | L | Salt, wind, the tide going out a kilometre, what that does to a house |
 | R31 | Bayside storm season: what it means for your roof, your trees and your insurance | D | M | Seasonal, genuinely useful, and it is a builder's subject |
 | R32 | Is the Bayside a good place to retire? | D | L | Second-biggest Bayside life decision after schools. Downsizing on the same street is a Sabre job |
-| R33 | Why are so many Bayside houses being knocked down? | E | M | ⭐ The hinge post. Spiral 2 walks straight into Spiral 1 here |
+| R33 | Why are so many Bayside houses being knocked down? | E | M | ✅ **Live 09-17.** ⭐ The hinge post. Spiral 2 walks straight into Spiral 1 here |
 | R34 | What does a 1950s Bayside cottage cost to keep going? | E | L | ⛔ No numbers without a source. Write the *list* of what fails and when |
 | R35 | Ransome, Tingalpa and Gumdale: the acreage edge of the Bayside | F | M | Home suburb now. Tiny volume, but it is the page that anchors the new address |
 
@@ -265,7 +265,7 @@ not opinion.
 
 | # | Title | Est. | Conf. | Why |
 |---|---|---|---|---|
-| S12 | **What is the QBCC, and what should you check on a builder's licence?** | B | H | Real national volume. Show them how to look Sabre up. Confidence as a tactic |
+| S12 | **What is the QBCC, and what should you check on a builder's licence?** | B | H | ✅ **Live 09-17** (1,279 w — extend with Nathan). Real national volume. Show them how to look Sabre up. Confidence as a tactic |
 | S13 | **What does Master Builders membership actually mean for you?** | C | M | Same move |
 | S14 | **Progress payments: what you pay, and when, on an Australian house build** | B | M | High volume, high anxiety, and almost every existing answer is written by a lawyer |
 | S15 | **Variations: why the price changed, and when it shouldn't have** | C | M | The #1 complaint about builders in Australia. Owning it honestly is worth more than any ad |
@@ -332,15 +332,22 @@ Nobody noticed these were there. `content/` was untracked in git until 2026-09-1
 getting ten minutes of Nathan to unblock the other four.** That is the whole of Phase 1
 below, already half done.
 
-### Phase 1 — what needs nothing from anyone (write next)
+### ✅ Phase 1 — DONE 2026-09-17 (six posts live on the preview, R1 extended as far as it can go)
 
-R9 (asbestos) · R19 (flood overlay) · S9 (what the houses are made of) · R33 (why so many
-get knocked down) · S12 (QBCC) · R16 (small independent builders) · R1 (extend the live
-pre-1947 post to 1,000+ with an answer block and an FAQ block)
+| # | Slug | Words | Proof points |
+|---|---|---|---|
+| R9 | `/blog/what-asbestos-removal-means-for-a-knockdown-rebuild/` | 1,251 | asbestos.qld.gov.au ×2 |
+| R19 | `/blog/rebuilding-on-a-flood-overlay-block-on-the-bayside/` | 1,318 | BCC FloodWise ×2 |
+| S9 | `/blog/what-are-bayside-houses-made-of/` | 1,379 | SLQ 2014 · asbestos.qld.gov.au |
+| R33 | `/blog/why-are-so-many-bayside-houses-being-knocked-down/` | 1,202 | SLQ 2014 · asbestos.qld.gov.au |
+| S12 | `/blog/what-is-the-qbcc-and-what-to-check-on-a-builders-licence/` | 1,279 | QBCC ×2 |
+| R16 | `/blog/who-are-the-small-independent-builders-on-brisbanes-bayside/` | 1,350 | QBCC · Jason Turner review |
 
-All seven are defensible from published sources — Brisbane City Council's own wording, the
-QBCC register, WorkSafe Queensland, AS 2870 — and none needs a number from Nathan. R16 and
-S9 are the two the 09-05 data most supports.
+Built with `tools/build_post.py` from `tools/posts_phase1.py` (the content is the source;
+edit there and rebuild). ⚠️ **S9 and S12 are at response length, not staple length** —
+extending them past 1,800 honestly needs Nathan's material, not padding. R1 stays at 912
+words for the same reason. **R16 names no rival builder** (same ACL line as R15).
+**Every one of the ten posts still lacks "one thing Nathan actually said."**
 
 ### Phase 2 — the ten that need one voice note from Nathan (30 minutes of his time)
 
@@ -377,7 +384,7 @@ scripts, `node --check` it and bump `?v=` on every page that uses the file.
 | 5 | The five claims in `positioning.md` | Nathan | Every CTA |
 | 6 | One 10-minute voice note per phase | Nathan | The "real detail" rule |
 | 7 | Keyword Planner access, to replace these bands with real ranges | Google Ads link, gate 3 | Nothing — but do it before the pillars |
-| 8 | `Article` schema, dates and bylines on the two live posts | Claude | Citability |
+| 8 | ~~`Article` schema, dates and bylines on the two live posts~~ ✅ DONE 09-17 — Article + FAQPage on all ten posts | Claude | — |
 
 ---
 
