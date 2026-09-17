@@ -92,6 +92,59 @@ HEROES = {
         "under a fig tree, parents sitting on the wall, all at true scale; warm afternoon light.",
 }
 
+# ---- Phase 5 (Spiral 1 finish, 2026-09-17): the moment each question gets asked ----
+HEROES.update({
+    "what-decides-the-cost-of-a-knockdown-rebuild-in-brisbane":
+        "an open builder's notebook and a tape measure on the bonnet of a plain white ute parked in front of an old 1960s highset "
+        "Queensland house, the block visibly sloping down behind it toward mangroves and the bay, a jacaranda; no people, no words on the page.",
+    "knockdown-rebuild-or-renovate-how-to-tell-which-one-your-house-is":
+        "two neighbouring bayside blocks side by side from an elevated three-quarter angle: on the left an old timber highset lifted on "
+        "steel props with scaffolding for a renovation, on the right a block cleared to a fresh concrete slab with a small excavator "
+        "parked at true scale; a jacaranda between them; no people.",
+    "does-a-knockdown-rebuild-need-a-development-application":
+        "a rolled set of house plans and a folded official-looking document with no legible text resting on the timber verandah rail "
+        "of an old Queenslander, warm afternoon light, the street and a jacaranda soft behind; no people.",
+    "what-happens-to-the-trees-on-the-block-in-a-knockdown-rebuild":
+        "a cleared suburban block with one enormous old gum tree in the middle, protected by orange temporary fencing at its drip line, "
+        "a new concrete slab poured in an L-shape around it, a small excavator parked at true scale to one side; no people.",
+    "fixed-price-or-cost-plus-what-do-builders-mean":
+        "a close top-down view of a Queensland kitchen table with two printed contracts side by side, both with only blank lines and no "
+        "legible words, one pen, a mug of tea, a pair of reading glasses; warm afternoon light through a window; hands at the edge only.",
+    "what-is-a-soil-test-and-why-does-it-change-the-price":
+        "a small tracked drilling rig taking a soil sample in the front yard of a cleared bayside block, a technician in hi-vis seen "
+        "from behind at true scale, a row of labelled soil core samples laid out on the grass in trays, an old house next door; no faces, no words.",
+    "buying-an-old-house-in-wynnum-or-manly-to-knock-down-what-to-check-before-you-sign":
+        "a couple seen from behind at true human scale standing on the footpath in front of a small tired 1950s bayside cottage with a "
+        "blank real-estate sign board on the fence, one holding a phone up, the bay glimpsed at the end of the street; no faces, no words.",
+    "can-you-knock-down-and-rebuild-on-a-small-or-narrow-block-in-brisbane":
+        "a narrow two-storey timber-framed house at frame stage squeezed between two old single-storey bayside cottages, the frame tight "
+        "to both boundaries, scaffolding, a jacaranda in the street; no people.",
+    "can-we-keep-the-pool-the-shed-or-the-front-fence-in-a-knockdown-rebuild":
+        "a cleared bayside block seen from above at three-quarter angle: the old in-ground swimming pool kept and fenced off with "
+        "temporary fencing, a new concrete slab poured beside it, the old timber front fence still standing along the footpath; no people.",
+    "what-does-highset-mean-on-a-bayside-block":
+        "a classic post-war Queensland highset house on tall timber stumps, open underneath with a car parked under it at true scale, "
+        "a timber staircase up to the front door, a hills hoist in the yard, bay glimpsed behind; late warm light; no people.",
+    "can-we-build-a-two-storey-house-on-our-block-in-manly":
+        "a new pale two-storey home on a steep hill street of older timber houses, its upper-floor deck looking out over rooftops to a "
+        "small-boat harbour full of yacht masts on Moreton Bay; the street falling steeply away in the foreground; no people.",
+    "how-much-of-the-old-house-can-be-reused":
+        "salvaged materials stacked neatly on a cleared block: wide old hardwood floorboards, timber casement windows, panelled doors "
+        "and a set of timber stairs, de-nailed and sorted on bearers, the old house half demolished behind; no people.",
+    "do-we-need-to-move-out-before-demolition-and-when-do-the-services-get-cut":
+        "an emptied old bayside cottage with its front door open onto bare rooms, the electricity meter box open on the outside wall "
+        "with the meter removed, a removals truck driving away down the street at true scale; no people, no words.",
+    "knockdown-rebuild-vs-buying-a-new-house-which-actually-costs-less":
+        "a close view of a kitchen table with two neat piles: on one side printed property listings with photos of houses and no legible "
+        "words, on the other a set of house plans and a calculator; a coffee; two pairs of hands at the edge only; warm light.",
+    "what-questions-should-we-ask-a-builder-before-we-sign":
+        "across a timber verandah table, seen from behind a couple's shoulders, a builder in a plain work shirt seen from the chest down "
+        "at true scale pointing at a printed document with no legible words; a hard hat on the table; no faces.",
+    "weve-outgrown-the-house-but-we-love-the-street-what-are-the-options":
+        "the front steps of a small post-war bayside cottage crowded with three kids' bikes, a scooter and a pram, a tricycle on the "
+        "lawn, a huge jacaranda in flower over the quiet street, the bay at the end of it; no people.",
+})
+
 
 def gen(slug, prompt, n=2):
     res = fal_client.subscribe("fal-ai/nano-banana-2/edit",
