@@ -11,6 +11,7 @@ POSTS = {}
 # ---------------------------------------------------------------- S7 · is Wynnum a good place to live
 POSTS["s7-wynnum"] = dict(
     slug="is-wynnum-a-good-place-to-live",
+    section="suburbs",
     title="Is Wynnum a good place to live? An honest look at the good and the annoying",
     h1="Is Wynnum a good place to live?<br>An honest look at the good and the annoying.",
     description="The water, the train, the schools and the village, and the tide going out a kilometre, the salt, the storm season and the seventy-year-old houses. From a builder who has worked in these streets since 1990.",
@@ -128,6 +129,7 @@ POSTS["s7-wynnum"] = dict(
 # ---------------------------------------------------------------- S8 · Wynnum vs Manly vs Lota
 POSTS["s8-compare"] = dict(
     slug="wynnum-vs-manly-vs-lota-which-bayside-suburb-suits-which-family",
+    section="suburbs",
     title="Wynnum vs Manly vs Lota: which Bayside suburb suits which family?",
     h1="Wynnum vs Manly vs Lota:<br>which Bayside suburb suits which family?",
     description="Three suburbs on one stretch of bay, three different feels. The census numbers side by side, the train, the harbour, the schools, and what the houses are like in each.",
@@ -247,6 +249,7 @@ POSTS["s8-compare"] = dict(
 # ---------------------------------------------------------------- S10 · schools and catchments
 POSTS["s10-schools"] = dict(
     slug="schools-on-the-bayside-catchments",
+    section="living",
     title="Schools on the Bayside: the catchments, and what &ldquo;in catchment&rdquo; is worth",
     h1="Schools on the Bayside: the catchments,<br>and what &ldquo;in catchment&rdquo; is worth.",
     description="What a state school catchment is in Queensland, how to check yours on EdMap, the state and independent schools across Wynnum, Manly, Lota and Manly West, and why catchment is the reason so many families rebuild instead of moving.",
@@ -372,6 +375,7 @@ POSTS["s10-schools"] = dict(
 # ---------------------------------------------------------------- R23 · how far from the CBD
 POSTS["r23-distance"] = dict(
     slug="how-far-is-wynnum-from-brisbane-cbd",
+    section="living",
     title="How far is Wynnum from Brisbane CBD, really? Train, car, peak hour",
     h1="How far is Wynnum from Brisbane CBD,<br>really? Train, car, peak hour.",
     description="About 20 km by road and 22 km by rail. A real timetable sample puts Central to Wynnum Central at 40 minutes. What decides the car time, and why it matters for where you build.",
@@ -474,6 +478,7 @@ POSTS["r23-distance"] = dict(
 # ---------------------------------------------------------------- R24 · does Wynnum flood
 POSTS["r24-flood"] = dict(
     slug="does-wynnum-flood",
+    section="living",
     title="Does Wynnum flood? What the council maps actually show",
     h1="Does Wynnum flood?<br>What the council maps actually show.",
     description="Wynnum isn't on the river. Its flood risk is storm tide, creeks and overland flow, mapped lot by lot by Brisbane City Council. How to read the Flood Awareness Map and the FloodWise report for your address, without the panic.",
@@ -590,6 +595,7 @@ POSTS["r24-flood"] = dict(
 # ---------------------------------------------------------------- R25 · things to do with kids
 POSTS["r25-kids"] = dict(
     slug="what-to-do-in-wynnum-and-manly-with-kids",
+    section="living",
     title="What is there to do in Wynnum and Manly with kids?",
     h1="What is there to do in<br>Wynnum and Manly with kids?",
     description="The tidal wading pool, the jetty, Pandanus Beach, the parklands, the harbour, the train. A local's list, and why the families who use it every weekend end up rebuilding rather than leaving.",

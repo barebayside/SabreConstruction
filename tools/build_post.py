@@ -143,19 +143,7 @@ def verify(p):
 
 
 def add_to_index_and_sitemap(p):
-    idx = REAL / "blog" / "index.html"
-    s = idx.read_text(encoding="utf-8")
-    if f'href="../blog/{p["slug"]}/"' not in s:
-        c = (f'        <a class="post" href="../blog/{p["slug"]}/">\n'
-             f'          <img src="../assets/img/{p["image"]}" alt="{p["image_alt"]}" loading="lazy">\n'
-             f'          <p class="small">{nice_date(p["date"])}</p>\n'
-             f'          <h2 class="h3">{p["card_title"]}</h2>\n'
-             f'          <p>{p["card_blurb"]}</p>\n        </a>\n')
-        s = s.replace('      <div class="posts">\n', '      <div class="posts">\n' + c, 1)
-    else:  # card exists: keep its image and alt current
-        s = re.sub(r'(<a class="post" href="\.\./blog/' + re.escape(p["slug"]) + r'/">\s*<img src=")[^"]*(" alt=")[^"]*(")',
-                   lambda m: m.group(1) + f'../assets/img/{p["image"]}' + m.group(2) + p["image_alt"] + m.group(3), s, count=1)
-    idx.write_text(s, encoding="utf-8")
+    """Sitemap row only - blog/index.html is rebuilt in sections by build_blog_index.py."""
     sm = REAL / "sitemap.xml"
     t = sm.read_text(encoding="utf-8")
     loc = f"  <url><loc>{BASE}/blog/{p['slug']}/</loc></url>\n"
@@ -189,3 +177,4 @@ if __name__ == "__main__":
     for k in keys:
         verify(posts[k])
     print("links, anchors and schema verified on", len(keys), "posts")
+    import build_blog_index; build_blog_index.build()

@@ -9,6 +9,7 @@ POSTS = {}
 # ---------------------------------------------------------------- R27 · Manly vs Manly West
 POSTS["r27-manly-west"] = dict(
     slug="whats-the-difference-between-manly-and-manly-west",
+    section="suburbs",
     title="What's the difference between Manly and Manly West?",
     h1="What's the difference between<br>Manly and Manly West?",
     description="Manly is the harbour suburb of 4,273 people; Manly West is the inland suburb of 12,436 that was split off it in 1975. Different age, different housing, different schools, and a different kind of block to build on.",
@@ -116,6 +117,7 @@ POSTS["r27-manly-west"] = dict(
 # ---------------------------------------------------------------- R28 · Lota
 POSTS["r28-lota"] = dict(
     slug="lota-the-quiet-one-between-wynnum-and-manly",
+    section="suburbs",
     title="Lota: the quiet one between Wynnum and Manly",
     h1="Lota: the quiet one<br>between Wynnum and Manly.",
     description="A suburb of 3,518 people where 95% of dwellings are separate houses and nearly half the families have kids at home. Its history, its one school, its station, and what its post-war houses are like to change.",
@@ -218,6 +220,7 @@ POSTS["r28-lota"] = dict(
 # ---------------------------------------------------------------- R29 · Wakerley and Gumdale
 POSTS["r29-wakerley"] = dict(
     slug="wakerley-and-gumdale-the-newer-bayside",
+    section="suburbs",
     title="Wakerley and Gumdale: the newer Bayside, and what you give up for it",
     h1="Wakerley and Gumdale: the newer Bayside,<br>and what you give up for it.",
     description="Wakerley is the estate suburb, Gumdale the acreage one. Newer houses, bigger blocks, no state school inside Wakerley, no train, and no water at the end of the street. An honest comparison with the old bayside suburbs.",
@@ -326,6 +329,7 @@ POSTS["r29-wakerley"] = dict(
 # ---------------------------------------------------------------- R31 · storm season
 POSTS["r31-storms"] = dict(
     slug="bayside-storm-season-roof-trees-insurance",
+    section="living",
     title="Bayside storm season: what it means for your roof, your trees and your insurance",
     h1="Bayside storm season: what it means for<br>your roof, your trees and your insurance.",
     description="Brisbane's storm season runs October to March. What Get Ready Queensland says to check on a house before it starts, what a builder looks at on an old Bayside house, and why the storm is often the first honest look at the roof.",
@@ -444,6 +448,7 @@ POSTS["r31-storms"] = dict(
 # ---------------------------------------------------------------- R35 · Ransome, Tingalpa and Gumdale
 POSTS["r35-ransome"] = dict(
     slug="ransome-tingalpa-and-gumdale-the-acreage-edge-of-the-bayside",
+    section="suburbs",
     title="Ransome, Tingalpa and Gumdale: the acreage edge of the Bayside",
     h1="Ransome, Tingalpa and Gumdale:<br>the acreage edge of the Bayside.",
     description="Where the Bayside stops being suburbs. Ransome, Sabre's home suburb of 429 people, Tingalpa's post-war streets, and Gumdale's acreages. What each is, and what gets built there.",

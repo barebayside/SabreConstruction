@@ -12,6 +12,7 @@ POSTS = {}
 # ---------------------------------------------------------------- R9 · asbestos
 POSTS["r9-asbestos"] = dict(
     slug="what-asbestos-removal-means-for-a-knockdown-rebuild",
+    section="rebuild",
     title="What is asbestos removal going to mean for our rebuild?",
     h1="What is asbestos removal<br>going to mean for our rebuild?",
     description="If your Bayside house went up between the 1940s and the late 1980s, assume asbestos is in it. What has to happen before demolition, who is allowed to do it, and why it moves the price.",
@@ -132,6 +133,7 @@ POSTS["r9-asbestos"] = dict(
 # ---------------------------------------------------------------- R19 · flood overlay
 POSTS["r19-flood"] = dict(
     slug="rebuilding-on-a-flood-overlay-block-on-the-bayside",
+    section="rules",
     title="Rebuilding on a flood overlay block on the Bayside: what changes?",
     h1="Rebuilding on a flood overlay block<br>on the Bayside: what changes?",
     description="Council's flood overlays don't stop most Bayside rebuilds. They change the design: how high the floor has to be, where the living areas go, and what the FloodWise report says about your lot.",
@@ -250,6 +252,7 @@ POSTS["r19-flood"] = dict(
 # ---------------------------------------------------------------- S9 · what the houses are made of
 POSTS["s9-houses"] = dict(
     slug="what-are-bayside-houses-made-of",
+    section="rebuild",
     title="What are the houses on the Bayside actually made of?",
     h1="What are the houses on the Bayside<br>actually made of?",
     description="Pre-war timber on stumps, post-war fibro and chamferboard, the 1960s highset with the built-in-under, 1970s brick. What each Bayside house type is like to live in, to change, and to knock down.",
@@ -380,6 +383,7 @@ POSTS["s9-houses"] = dict(
 # ---------------------------------------------------------------- R33 · why so many get knocked down
 POSTS["r33-why"] = dict(
     slug="why-are-so-many-bayside-houses-being-knocked-down",
+    section="rebuild",
     title="Why are so many Bayside houses being knocked down?",
     h1="Why are so many Bayside houses<br>being knocked down?",
     description="Post-war houses hitting the end of their working life, fibro from the asbestos era, small houses on the best blocks near the water, and families who want the street more than the house.",
@@ -501,6 +505,7 @@ POSTS["r33-why"] = dict(
 # ---------------------------------------------------------------- S12 · the QBCC
 POSTS["s12-qbcc"] = dict(
     slug="what-is-the-qbcc-and-what-to-check-on-a-builders-licence",
+    section="builder",
     title="What is the QBCC, and what should you check on a builder's licence?",
     h1="What is the QBCC, and what should you<br>check on a builder's licence?",
     description="The Queensland Building and Construction Commission licenses builders, runs the public register, and runs the Home Warranty Scheme. How to look a builder up in five minutes, and what the register does and doesn't tell you.",
@@ -638,6 +643,7 @@ POSTS["s12-qbcc"] = dict(
 # ---------------------------------------------------------------- R16 · small independent builders
 POSTS["r16-independent"] = dict(
     slug="who-are-the-small-independent-builders-on-brisbanes-bayside",
+    section="builder",
     title="Who are the small independent builders on Brisbane's Bayside?",
     h1="Who are the small independent builders<br>on Brisbane's Bayside?",
     description="What 'small' and 'independent' actually mean when you're choosing a builder, how to find the ones near Wynnum, Manly and the Redlands, what to check, and where Sabre fits.",
