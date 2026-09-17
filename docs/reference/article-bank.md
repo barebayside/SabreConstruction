@@ -356,9 +356,28 @@ S1's two gaps · the three pages' local detail · S2 · S3 · S5 · R5 · R8 · 
 **Ask him all of it in one conversation.** One voice note answers three posts. The list of
 what to ask is in §7.
 
-### Phase 3 — the place cluster, once the suburb pages are fat
+### ✅ Phase 3 — DONE 2026-09-17 (eleven posts built, committed `9bdddad`, push owed)
 
-S7 · S8 · S10 · R23 · R24 · R25 · R27 · R28 · R29 · R31 · R35
+| # | Slug | Words |
+|---|---|---|
+| S7 | `/blog/is-wynnum-a-good-place-to-live/` | 1,284 |
+| S8 | `/blog/wynnum-vs-manly-vs-lota-which-bayside-suburb-suits-which-family/` | 1,130 |
+| S10 | `/blog/schools-on-the-bayside-catchments/` | 1,103 |
+| R23 | `/blog/how-far-is-wynnum-from-brisbane-cbd/` | 922 |
+| R24 | `/blog/does-wynnum-flood/` | 1,038 |
+| R25 | `/blog/what-to-do-in-wynnum-and-manly-with-kids/` | 962 |
+| R27 | `/blog/whats-the-difference-between-manly-and-manly-west/` | 901 |
+| R28 | `/blog/lota-the-quiet-one-between-wynnum-and-manly/` | 964 |
+| R29 | `/blog/wakerley-and-gumdale-the-newer-bayside/` | 1,012 |
+| R31 | `/blog/bayside-storm-season-roof-trees-insurance/` | 1,250 |
+| R35 | `/blog/ransome-tingalpa-and-gumdale-the-acreage-edge-of-the-bayside/` | 1,027 |
+
+Source: `tools/posts_phase3a.py` + `posts_phase3b.py`. Census figures for Wynnum, Manly, Lota and
+Manly West were read on abs.gov.au (SAL33188 / 31748 / 31686 / 31749); the others via Wikipedia's
+ABS citations. **R26 (is Manly expensive) and R34 (what a cottage costs to keep going) were NOT
+written** — both are price posts and rule 1 has no honest way through them. R30 and R32 not yet.
+⚠️ S7/S8/S10 are response length, not staple length; the suburb pages (`/wynnum/`, `/manly/`) are
+still the thin 09-08 versions — the rewrites in `content/pages/` are Phase 2 (Nathan).
 
 ### Phase 4 — the trust cluster and the three centrepieces
 

@@ -68,6 +68,25 @@ Real project photos on the six new cards; the four older cards keep the story fr
 
 **Article bank updated:** Phase 1 marked done, ten rows flagged live, §7 item 8 closed.
 
+## Later still — Phase 3, the place cluster: eleven more posts (21 on the site)
+
+Built from `tools/posts_phase3a.py` (S7, S8, S10, R23, R24, R25) and `posts_phase3b.py` (R27, R28,
+R29, R31, R35). Committed `9bdddad` in the real repo, **NOT pushed** — the push is blocked by Git
+Credential Manager, which pops a window this session can't see; **Edward runs `git push origin main`
+in his own terminal.** That is also the real cause of every "push hangs" note in earlier handoffs:
+stale `git-credential-manager.exe` processes waiting on a prompt. `taskkill` them before retrying.
+
+Research that went in: ABS 2021 Census read directly for Wynnum, Manly, Lota, Manly West;
+qld.gov.au catchment wording; BCC FloodWise; BCC Severe Weather Alert ("October to March");
+Get Ready Queensland "Protect your home"; one Translink midday timetable sample (Central 12:17 →
+Wynnum Central 12:57); Wikipedia suburb histories, attributed as such. Prices, rents and mortgage
+figures deliberately excluded everywhere. One invented car-time range was caught and removed
+before build — the rule bites even in a commute post.
+
+Not written: R26 and R34 (price posts — no honest path), R30, R32. `builder` change: cards are
+read from every `posts_*.py` so modules can cross-link; cross-module links need the other module
+built first (build b, then re-run a).
+
 ## Decisions Made
 
 1. **R1 stays at 912 words, not the 1,000+ the bank asks for.** The only honest way past 1,000 is
@@ -87,8 +106,9 @@ Real project photos on the six new cards; the four older cards keep the story fr
        positioning claims he has never confirmed — carried from 09-08, not introduced today.
 3. [ ] **Every post still lacks "one thing Nathan actually said."** Voice note owed (bank §7 item 6).
 4. [ ] `LocalBusiness` schema on the home page, robots.txt, llms.txt, Google tag — plan §7.
-5. [x] ~~Phase 1 of the bank~~ DONE. Next: Phase 3 place-cluster posts that need nobody (S7, S8,
-       R23, R24, R27) — add a `posts_phase3.py` dict and run `tools/build_post.py posts_phase3`.
+5. [x] ~~Phase 1~~ and ~~Phase 3~~ DONE (21 posts). Next that needs nobody: Phase 4 trust posts
+       (R37 defects period, R45 what's in a quote, R36 insurance, R39 contracts, R40 builder goes under,
+       R41 owner-builder, R42 certifiers, R43 building and pest) — `posts_phase4.py`.
 6. [ ] Registry: log v22 on the SAB records (v9–v21 also still unlogged).
 7. [ ] Everything in the 09-10b handoff's Edward/Nathan lists still stands (GBP → Ransome, DNS,
        test enquiry, Google Ads link, the credit question).
