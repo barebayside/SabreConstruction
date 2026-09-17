@@ -115,6 +115,16 @@ def school(x, y, text, kind="state", side="right"):
 def shift(labs, name, dx=0, dy=0):
     x, y = labs[name]; labs[name] = (x + dx, y + dy); return labs
 
+def rail_symbol(d):
+    """The standard map railway: a dark line with a white dashed centreline. Was a plain dotted line until
+    2026-09-17, which read as 'some boundary' - Edward asked for it to be identifiable as the train."""
+    return [f'<path d="{d}" fill="none" stroke="{INK}" stroke-width="6" stroke-linecap="butt"/>',
+            f'<path d="{d}" fill="none" stroke="{WHITE}" stroke-width="2.5" stroke-dasharray="14 14"/>']
+
+def rail_key(x, y):
+    """Legend entry for the railway, drawn next to the scale bar."""
+    return rail_symbol(f"M{x},{y} L{x+70},{y}") + [label(x + 84, y + 7, "Cleveland line (train)", 18, 500, INK2, "start")]
+
 def basemap(P, featured, labels_for, rail=True, bay_label=True, redland=False):
     out = [f'<rect width="{W}" height="{H}" fill="{WATER}"/>']
     for n in ALL_LAND:
@@ -125,7 +135,7 @@ def basemap(P, featured, labels_for, rail=True, bay_label=True, redland=False):
             out.append(f'<path d="{path(ring, P)}" fill="{TINT}" stroke="{INK}" stroke-width="3" stroke-linejoin="round"/>')
     if rail:
         d = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in (P(*ll) for _, ll in STATIONS))
-        out.append(f'<path d="{d}" fill="none" stroke="{INK2}" stroke-width="3" stroke-dasharray="10 7" opacity=".8"/>')
+        out += rail_symbol(d)
     for n, (x, y) in labels_for.items():
         big = n in featured
         out.append(label(x, y, n, 34 if big else 19, 600 if big else 500, INK if big else MUTED, "middle", tracking=0 if big else 2, upper=not big))
@@ -133,10 +143,10 @@ def basemap(P, featured, labels_for, rail=True, bay_label=True, redland=False):
         out.append(label(W - 60, 80, "Moreton Bay", 26, 500, "#7D8B93", "end", italic=True))
     return out
 
-def frame(P, note):
-    # scale bar, north, attribution
+def frame(P, note, rail=True):
+    # scale bar, north, attribution, rail key
     k = P.km(); x0, y0 = 60, H - 60
-    s = [f'<line x1="{x0}" y1="{y0}" x2="{x0+2*k:.1f}" y2="{y0}" stroke="{INK}" stroke-width="3"/>',
+    s = (rail_key(x0, y0 - 52) if rail else []) + [f'<line x1="{x0}" y1="{y0}" x2="{x0+2*k:.1f}" y2="{y0}" stroke="{INK}" stroke-width="3"/>',
          f'<line x1="{x0}" y1="{y0-8}" x2="{x0}" y2="{y0+8}" stroke="{INK}" stroke-width="3"/>',
          f'<line x1="{x0+2*k:.1f}" y1="{y0-8}" x2="{x0+2*k:.1f}" y2="{y0+8}" stroke="{INK}" stroke-width="3"/>',
          label(x0 + k, y0 - 14, "2 km", 16, 500, INK2, "middle"),
