@@ -13,6 +13,7 @@ import html, importlib, json, pathlib, re, sys
 WORKSHOP = pathlib.Path(__file__).resolve().parent.parent
 REAL = WORKSHOP.parent / "sabre-constructions-website"
 BASE = "https://www.sabreconstructions.com.au"
+FIG_V = 2   # in-article maps/diagrams; 2 = rail symbol + key (2026-09-17)
 SHELL = REAL / "blog" / "what-is-a-knockdown-rebuild-package" / "index.html"
 
 
@@ -43,7 +44,8 @@ def figure_html(p, rel_img):
     f = p.get("figure")
     if not f:
         return ""
-    return (f'\n      <figure class="art-fig"><img src="{rel_img}{f["image"]}" alt="{f["alt"]}" loading="lazy">'
+    # ?v= on the figure: browsers and the Pages CDN hold images for 10 min; bump FIG_V when a map/diagram is re-rendered
+    return (f'\n      <figure class="art-fig"><img src="{rel_img}{f["image"]}?v={FIG_V}" alt="{f["alt"]}" loading="lazy">'
             f'<figcaption class="small">{f["caption"]}</figcaption></figure>')
 
 
