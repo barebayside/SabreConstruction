@@ -197,11 +197,18 @@ if __name__ == "__main__" and os.environ.get("DESIGN_SCENES"):
 
 
 # ---- Your design v2: Nathan on site during the build; the family happy in front of the new home ----
+# 2026-09-17: the 09-08 version of this prompt ("in the foreground on the driveway", no scale anchor)
+# produced a builder twice the height of the house frame. Every person added to a frame needs the
+# door-height anchor below — the same fix HAPPY2_PROMPT already carries. num_images=2 and pick: one
+# of the two came back ant-sized. The giant original is kept as design-3-site-v1-giant.jpg.
 SITE_PROMPT = (
-    "Keep the exact same camera angle, block, tree, fence, and the house frame under construction. Add "
-    "one builder seen from BEHIND in the foreground on the driveway: dark polo shirt, work shorts, "
-    "boots, a white hard hat, pointing up at the roof trusses with one hand, a set of rolled plans "
-    "under the other arm. No face visible, no text, no logos. Photorealistic."
+    "Keep the exact same camera angle, block, tree, fence, and the house frame under construction. "
+    "Add one builder at TRUE HUMAN SCALE, standing on the driveway about a third of the way between the "
+    "footpath and the house: his full height is clearly less than the height of the ground-floor wall "
+    "framing, roughly the height of the front door opening, so the house towers over him. Seen from BEHIND: "
+    "dark polo shirt, work shorts, boots, white hard hat, pointing up at the roof trusses with one hand, "
+    "rolled plans under the other arm. No face visible, no text, no logos. Photorealistic, natural "
+    "perspective, the person correctly small against a two-storey house."
 )
 HAPPY_PROMPT = (
     "Keep the exact same house, camera, garden and light. In the foreground on the front lawn, closer "
