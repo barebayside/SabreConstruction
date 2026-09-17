@@ -154,3 +154,25 @@ The kit is the pattern and **`tools/build_post.py` is the generator** — a new 
 posts_x`. It writes the page, the index card, the sitemap row and the schema, and verifies links.
 The four original posts (R1, R2, R15, Wynnum) are hand-built HTML — edit those in place. Bump
 `?v=` on all 19 pages after any CSS change. Preview: `python -m http.server 8765` in the real repo.
+
+## v25 — click heroes, labels, maps inside (later on 2026-09-17)
+
+Nathan-side feedback via Edward: the card image has one job — make someone click. Maps and diagrams
+explain, they don't pull. So every post now carries **two images**:
+
+- **Hero/card** — a photographic scene in Sabre's frame style (`tools/gen_blog_heroes.py`, 14 scenes,
+  two variants each, picked by eye from contact sheets; alternates in `assets/img/blog-alternates/*-hero-v*.jpg`).
+  Real places (Wynnum jetty, Manly harbour, Lota creek, the acreage, a station) are captioned
+  *"Illustration in the style of Sabre's story frames, not a photograph of the real street."*
+- **Label** — post field `label=(kicker, big)`, e.g. `("The Bayside suburbs", "Wynnum")`. Rendered as HTML
+  (`.label` inside `.thumb`) on the card and the hero — never baked into the pixels.
+- **Figure** — post field `figure=dict(image, alt, caption, after=<h2 id>)`; the old map/diagram PNG is
+  placed after the first paragraph under that H2 (`build_post.place_figure`). All 14 PNGs kept.
+
+Pipeline: `tools/retrofit_v25_posts.py` patched the 17 dicts (one-off, idempotent);
+`tools/retrofit_v25_hand.py` did the four hand-built posts in place; `build_post.py` / `build_blog_index.py`
+now emit `<span class="thumb"><img>{label}</span>`. CSS v25 appended; cache-buster on all 30 pages.
+Commit `a45817c` pushed (no GCM prompt this time). The seven earlier illustrations kept, labels added.
+
+Known: headless-Edge phone screenshots at 420px show the page wider than the window on EVERY page
+including the untouched home page — a screenshot artifact, not a v25 regression. Instagram still hidden.

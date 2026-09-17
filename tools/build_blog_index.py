@@ -10,7 +10,7 @@ import importlib, pathlib, re, sys
 WORKSHOP = pathlib.Path(__file__).resolve().parent.parent
 REAL = WORKSHOP.parent / "sabre-constructions-website"
 sys.path.insert(0, str(WORKSHOP / "tools"))
-from build_post import nice_date  # noqa: E402
+from build_post import nice_date, label_html  # noqa: E402
 
 SECTIONS = [
     ("rules", "Can we knock it down?", "The rules first. Brisbane's character overlay, the year your house was built, and what a flood overlay changes &mdash; the checks that decide whether a rebuild is even on the table."),
@@ -22,17 +22,17 @@ SECTIONS = [
 
 # the four hand-built posts (not in a posts_*.py module)
 HAND = [
-    dict(slug="can-we-knock-down-our-house", section="rules", date="2026-09-08", image="blog/can-we-knock-down-our-house.png",
-         image_alt="The three dates Brisbane's character rules turn on", card_title="Can we knock down our house? Brisbane's rules in plain words",
+    dict(slug="can-we-knock-down-our-house", section="rules", date="2026-09-08", image="blog/can-we-knock-down-our-house.jpg", label=("Brisbane's rules, in plain words", "Can we knock it down?"),
+         image_alt="A couple on the footpath looking at a pre-war Queenslander", card_title="Can we knock down our house? Brisbane's rules in plain words",
          card_blurb="Brisbane's character rules in plain words, straight from council's own page, and the three-step check of your own block."),
-    dict(slug="check-if-your-street-is-in-the-character-overlay", section="rules", date="2026-09-10", image="blog/check-if-your-street-is-in-the-character-overlay.png",
-         image_alt="The two checks: the street and the year", card_title="How to check if your house is in the character overlay",
+    dict(slug="check-if-your-street-is-in-the-character-overlay", section="rules", date="2026-09-10", image="blog/check-if-your-street-is-in-the-character-overlay.jpg", label=("Two free checks", "Character overlay"),
+         image_alt="Checking council's overlay map on a phone in front of a street of pre-war Queenslanders", card_title="How to check if your house is in the character overlay",
          card_blurb="Two free checks and about fifteen minutes. Council's mapping tells you about your street. Council's archives tell you the year your house went up."),
-    dict(slug="what-is-a-knockdown-rebuild-package", section="rebuild", date="2026-09-10", image="blog/what-is-a-knockdown-rebuild-package.jpg",
+    dict(slug="what-is-a-knockdown-rebuild-package", section="rebuild", date="2026-09-10", image="blog/what-is-a-knockdown-rebuild-package.jpg", label=("Knockdown rebuild", "The package"),
          image_alt="A plan from a range held up against a sloping Bayside block", card_title="What is a knockdown rebuild package, and is it the right way to build?",
          card_blurb="What's usually bundled into an advertised package, who they suit, where they stop suiting people, and the six questions worth asking any builder."),
-    dict(slug="rebuilding-in-wynnum-or-manly", section="rebuild", date="2026-09-08", image="blog/rebuilding-in-wynnum-or-manly.png",
-         image_alt="Map of Wynnum and Manly with the stations, schools and foreshore", card_title="Thinking of rebuilding in Wynnum or Manly? Five things to know first",
+    dict(slug="rebuilding-in-wynnum-or-manly", section="rebuild", date="2026-09-08", image="blog/rebuilding-in-wynnum-or-manly.jpg", label=("Five things to know first", "Wynnum & Manly"),
+         image_alt="A tired highset on a Bayside street that runs down to the water", card_title="Thinking of rebuilding in Wynnum or Manly? Five things to know first",
          card_blurb="The pre-1947 rule, what the block decides, where you live while it happens, and how to check your own house in five minutes."),
 ]
 
@@ -47,7 +47,7 @@ def all_posts():
 
 def card(p):
     return (f'          <a class="post" href="../blog/{p["slug"]}/">\n'
-            f'            <img src="../assets/img/{p["image"]}" alt="{p["image_alt"]}" loading="lazy">\n'
+            f'            <span class="thumb"><img src="../assets/img/{p["image"]}" alt="{p["image_alt"]}" loading="lazy">{label_html(p)}</span>\n'
             f'            <p class="small">{nice_date(p["date"])}</p>\n'
             f'            <h3 class="h3">{p["card_title"]}</h3>\n'
             f'            <p>{p["card_blurb"]}</p>\n          </a>\n')

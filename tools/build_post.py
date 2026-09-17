@@ -30,9 +30,38 @@ def nice_date(iso):
     return f"{int(d)} {['','January','February','March','April','May','June','July','August','September','October','November','December'][int(m)]} {y}"
 
 
+def label_html(p):
+    """v25: the topic/suburb label sits OVER the image as HTML (post `label` = (kicker, big)), never in the pixels."""
+    if not p.get("label"):
+        return ""
+    k, b = p["label"]
+    return f'<span class="label"><span>{k}</span><b>{b}</b></span>'
+
+
+def figure_html(p, rel_img):
+    """v25: the explanatory map/diagram (post `figure` = dict(image, alt, caption, after=<h2 id>)) kept inside the body."""
+    f = p.get("figure")
+    if not f:
+        return ""
+    return (f'\n      <figure class="art-fig"><img src="{rel_img}{f["image"]}" alt="{f["alt"]}" loading="lazy">'
+            f'<figcaption class="small">{f["caption"]}</figcaption></figure>')
+
+
+def place_figure(body, p, rel_img):
+    """Insert the figure after the first paragraph that follows the H2 named in figure.after."""
+    fig = figure_html(p, rel_img)
+    if not fig:
+        return body
+    m = re.search(r'<h2 class="h2" id="' + re.escape(p["figure"]["after"]) + r'".*?</h2>', body, flags=re.S)
+    assert m, f'{p["slug"]}: figure.after #{p["figure"]["after"]} not found'
+    end = body.find("</p>", m.end())
+    at = end + 4 if end != -1 else m.end()
+    return body[:at] + fig + body[at:]
+
+
 def card(p, rel_img):
     return (f'        <a class="post" href="{p["href"]}">\n'
-            f'          <img src="{rel_img}{p["image"]}" alt="{p["image_alt"]}" loading="lazy">\n'
+            f'          <span class="thumb"><img src="{rel_img}{p["image"]}" alt="{p["image_alt"]}" loading="lazy">{label_html(p)}</span>\n'
             f'          <h3 class="h3">{p["card_title"]}</h3>\n'
             f'          <p>{p["card_blurb"]}</p>\n        </a>\n')
 
@@ -44,6 +73,7 @@ def build(p, all_posts):
     related = "".join(card({**all_posts[k], "href": f"../{k}/"}, "../../assets/img/") for k in p["related"])
     nav = re.search(r'<nav class="onpage"[^>]*>.*?</nav>', p["body"], flags=re.S).group(0)
     body = p["body"].rstrip().replace(nav, nav.replace('<nav class="onpage"', '<nav class="onpage inline"', 1), 1)
+    body = place_figure(body, p, "../../assets/img/")
     side_nav = nav
     main = f'''<main>
 
@@ -57,7 +87,7 @@ def build(p, all_posts):
         <span>{nice_date(p["date"])}</span>
         <span>{mins} min read</span>
       </div>
-      <figure class="art-hero"><img src="../../assets/img/{p["image"]}" alt="{p["image_alt"]}"><figcaption class="small">{p.get("image_caption","")}</figcaption></figure>
+      <figure class="art-hero"><span class="thumb"><img src="../../assets/img/{p["image"]}" alt="{p["image_alt"]}">{label_html(p)}</span><figcaption class="small">{p.get("image_caption","")}</figcaption></figure>
     </div>
   </section>
 
@@ -159,10 +189,10 @@ if __name__ == "__main__":
     keys = sys.argv[2:] or list(posts)
     # live posts that new ones may link to in "Keep reading"
     live = {
-        "check-if-your-street-is-in-the-character-overlay": dict(image="blog/check-if-your-street-is-in-the-character-overlay.png", image_alt="The two checks: the street and the year", card_title="How to check if your house is in the character overlay", card_blurb="Two free checks and about fifteen minutes. One tells you about your street, the other the year your house went up."),
-        "can-we-knock-down-our-house": dict(image="blog/can-we-knock-down-our-house.png", image_alt="The three dates Brisbane's character rules turn on", card_title="Can we knock down our house? Brisbane's rules in plain words", card_blurb="The pre-1947 rule, straight from council's own page, and when a protected house can still come down."),
-        "what-is-a-knockdown-rebuild-package": dict(image="blog/what-is-a-knockdown-rebuild-package.jpg", image_alt="A plan from a range held up against a sloping Bayside block", card_title="What is a knockdown rebuild package, and is it the right way to build?", card_blurb="What an advertised package bundles, who it suits, and six questions worth asking any builder."),
-        "rebuilding-in-wynnum-or-manly": dict(image="blog/rebuilding-in-wynnum-or-manly.png", image_alt="Map of Wynnum and Manly with the stations, schools and foreshore", card_title="Thinking of rebuilding in Wynnum or Manly? Five things to know first", card_blurb="The pre-1947 rule, what the block decides, where you live while it happens, and who's on the phone in month four."),
+        "check-if-your-street-is-in-the-character-overlay": dict(image="blog/check-if-your-street-is-in-the-character-overlay.jpg", image_alt="Checking council's overlay map on a phone in front of a street of pre-war Queenslanders", label=("Two free checks", "Character overlay"), card_title="How to check if your house is in the character overlay", card_blurb="Two free checks and about fifteen minutes. One tells you about your street, the other the year your house went up."),
+        "can-we-knock-down-our-house": dict(image="blog/can-we-knock-down-our-house.jpg", image_alt="A couple on the footpath looking at a pre-war Queenslander", label=("Brisbane's rules, in plain words", "Can we knock it down?"), card_title="Can we knock down our house? Brisbane's rules in plain words", card_blurb="The pre-1947 rule, straight from council's own page, and when a protected house can still come down."),
+        "what-is-a-knockdown-rebuild-package": dict(image="blog/what-is-a-knockdown-rebuild-package.jpg", image_alt="A plan from a range held up against a sloping Bayside block", label=("Knockdown rebuild", "The package"), card_title="What is a knockdown rebuild package, and is it the right way to build?", card_blurb="What an advertised package bundles, who it suits, and six questions worth asking any builder."),
+        "rebuilding-in-wynnum-or-manly": dict(image="blog/rebuilding-in-wynnum-or-manly.jpg", image_alt="A tired highset on a Bayside street that runs down to the water", label=("Five things to know first", "Wynnum & Manly"), card_title="Thinking of rebuilding in Wynnum or Manly? Five things to know first", card_blurb="The pre-1947 rule, what the block decides, where you live while it happens, and who's on the phone in month four."),
     }
     # every post in every tools/posts_*.py can be a "Keep reading" card, whichever module is being built
     all_posts = dict(live)
