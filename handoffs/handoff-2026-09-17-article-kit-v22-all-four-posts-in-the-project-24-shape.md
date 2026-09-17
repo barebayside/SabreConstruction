@@ -1,4 +1,4 @@
-# Handoff — 2026-09-17 — The article kit (v22), ten posts live, Phase 1 of the bank done, the builder frame fixed
+# Handoff — 2026-09-17 — Article kit v22→v23: 21 posts, sticky rail, a made image per article, footer social
 
 ## Session Focus
 
@@ -87,6 +87,39 @@ Not written: R26 and R34 (price posts — no honest path), R30, R32. `builder` c
 read from every `posts_*.py` so modules can cross-link; cross-module links need the other module
 built first (build b, then re-run a).
 
+
+## v23 — Edward's correction and what it produced
+
+Edward, after seeing the 21 posts: **(1)** the right-hand "On this page" menu was missing — he wants
+the BBL / T&T sticky rail, not a list under the answer; **(2)** "stop recycling the images" — every
+article gets its own image; **(3)** images follow Sabre's existing visual language and colour construct;
+**(4)** each image is a *concept for the topic* (his example: a map with Ransome/Tingalpa/Gumdale
+outlined and acreage shown); **(5)** the image appears on the article page itself, not just the card.
+Plus **(6)** Facebook and Instagram icons in the footer. Repeated back, confirmed "that's correct".
+
+**Built (commit `cdd5826`, push waiting on the GitHub sign-in window):**
+- `css/site.css` v23: `.art-grid` (66ch prose + 232px sticky `.art-side`), `.art-hero` (2:1 header,
+  3:2 on phones), `.social`. `js/article.js` = scroll-spy for the rail. Rail hides ≤1040px; the inline
+  `.onpage.inline` list shows instead. Builder emits both from one nav; `tools/retrofit_v23.py` did the
+  four hand-built posts + footer + cache-buster on all 30 pages.
+- **14 maps and diagrams** — `tools/gen_blog_maps.py`. Real suburb polygons from OSM Nominatim (cached
+  in the session scratchpad `geo/` — refetch if needed, ~1 s per suburb, UA header required), Sabre
+  palette + one water tone, Figtree via an HTML wrapper rendered by headless Edge (fonts don't load in
+  an `<img>` SVG). ODbL attribution drawn into every map. **No flood extents or catchment lines drawn —
+  pins and boundaries only.** Diagrams (commute, flood sources, floor level, three dates, two checks)
+  are schematic and say so.
+- **7 illustrations** — `tools/gen_blog_images.py`, nano-banana-2/edit on SABRE's key with
+  `cutaway/build-same-block.jpg` as the style reference, scale anchors, no faces/text/logos, 2 variants
+  each and picked by eye (~$1.20). Alternates in the workshop `assets/img/blog-alternates/`. All show
+  people only from behind or in PPE — same line as the accepted story frames; rule 3 still means no
+  AI person presented as a client.
+- Footer: Facebook icon live. **Instagram icon is in the markup but `hidden`** — the only public
+  handle Google finds, `@sabreconstruction`, is a civil/earthworks company, not Nathan. Ask him.
+- Blog index cards and the four hand-built posts' related cards repointed; schema `image` updated.
+
+**Lesson:** `class="wrap art-grid"` — a guard that greps for `class="art-grid"` misses it. Grep for
+the token, not the attribute.
+
 ## Decisions Made
 
 1. **R1 stays at 912 words, not the 1,000+ the bank asks for.** The only honest way past 1,000 is
@@ -105,6 +138,7 @@ built first (build b, then re-run a).
 2. [ ] **"Nathan takes on a handful of homes at a time"** (Wynnum post §4) is one of the five
        positioning claims he has never confirmed — carried from 09-08, not introduced today.
 3. [ ] **Every post still lacks "one thing Nathan actually said."** Voice note owed (bank §7 item 6).
+3b. [ ] **Nathan: the Instagram handle** — the icon is built and hidden; unhide by removing `hidden` + `href` in every footer (30 pages, sed).
 4. [ ] `LocalBusiness` schema on the home page, robots.txt, llms.txt, Google tag — plan §7.
 5. [x] ~~Phase 1~~ and ~~Phase 3~~ DONE (21 posts). Next that needs nobody: Phase 4 trust posts
        (R37 defects period, R45 what's in a quote, R36 insurance, R39 contracts, R40 builder goes under,
