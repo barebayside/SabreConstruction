@@ -176,3 +176,20 @@ Commit `a45817c` pushed (no GCM prompt this time). The seven earlier illustratio
 
 Known: headless-Edge phone screenshots at 420px show the page wider than the window on EVERY page
 including the untouched home page — a screenshot artifact, not a v25 regression. Instagram still hidden.
+
+## Maps: railway symbol + key (later on 2026-09-17)
+
+Edward: the dotted line on the maps wasn't identifiable as the train. `gen_blog_maps.py` now draws it with the standard
+cartographic rail symbol (`rail_symbol`) and a key beside the scale bar (`rail_key`, "Cleveland line (train)"). Nine maps
+re-rendered; figures cache-busted with `?v=2` (`build_post.FIG_V`) because the Pages CDN and his browser held the old PNG.
+
+## Phase 5: the spirals finished (later on 2026-09-17)
+
+Edward: "finish the spirals. what other articles can you do now versus requires nathans input". Split given (31 now / 5 Nathan /
+3 hubs after), then all 31 written and built: `tools/posts_phase5a.py` … `posts_phase5f.py`, heroes in `gen_blog_heroes.py`
+(two variants each, picked from contact sheets), 52 posts live on the preview, index at 52 cards. Research sources are in each
+module header — the QBCC Consumer Building Guide v3 PDF was the backbone for Spiral 3 (deposits 5%/10%/20%, cooling-off 5 business
+days, variations in writing before work, implied warranties 6y/1y, practical completion, EOTs). `mbqld.com.au` blocks automated
+reads (Cloudflare) — S13 cites the Code of Conduct wording from search excerpts only. Commits `85d97ba`, `54617f3`, `cf3d0d1`
+(+ `596b124` cache-bust) — **push owed**: GCM sign-in prompt again; Edward approves it, then `git push`.
+Next writing job that needs nobody: the three hub/pillar pages. Then Nathan's voice note unblocks the last five.

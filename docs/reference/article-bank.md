@@ -379,6 +379,24 @@ written** — both are price posts and rule 1 has no honest way through them. R3
 ⚠️ S7/S8/S10 are response length, not staple length; the suburb pages (`/wynnum/`, `/manly/`) are
 still the thin 09-08 versions — the rewrites in `content/pages/` are Phase 2 (Nathan).
 
+### ✅ Phase 5 — DONE 2026-09-17: the spirals finished without Nathan (31 posts, `tools/posts_phase5a-f.py`)
+
+Everything writable from public sources is written. 52 posts on the preview. Sources are listed in each module's header;
+every regulatory claim is quoted from council, the QBCC, the Building Regulation or the ABS and dated. Rule 1 held: no
+prices, no bands, no timelines beyond the statutory ones.
+
+| Spiral | Written | Slugs |
+|---|---|---|
+| 1 (16) | S1, S2, S4, S6 (+R3 folded in), R4, R6, R7, R11/R38, R12, R13, R14, R17, R18, R20, R21, R22 | `what-decides-the-cost…`, `knockdown-rebuild-or-renovate…`, `buying-an-old-house…`, `…small-or-narrow-block…`, `does-a-knockdown-rebuild-need-a-development-application`, `what-happens-to-the-trees…`, `can-we-keep-the-pool…`, `fixed-price-or-cost-plus…`, `what-does-highset-mean…`, `can-we-build-a-two-storey-house…manly`, `how-much-of-the-old-house-can-be-reused`, `do-we-need-to-move-out…`, `what-is-a-soil-test…`, `knockdown-rebuild-vs-buying…`, `what-questions-should-we-ask…`, `weve-outgrown-the-house…` |
+| 2 (3) | S11, R30, R32 | `moving-to-brisbanes-bayside-from-interstate…`, `what-is-the-wynnum-manly-foreshore…`, `is-the-bayside-a-good-place-to-retire` |
+| 3 (12) | S13, S14, S15, R36, R37, R39, R40, R41, R42, R43, R44, R45 | `what-does-master-builders-membership…`, `progress-payments…`, `variations…`, `what-insurance-should-a-builder-have…`, `what-is-a-defects-liability-period`, `whats-in-a-queensland-building-contract…`, `what-happens-if-a-builder-goes-under…`, `should-we-be-an-owner-builder`, `how-do-progress-inspections-and-certifiers-work…`, `…building-and-pest-inspection…knock-down`, `can-you-get-a-construction-loan…`, `what-should-be-in-a-builders-quote…` |
+
+**Still owed to Nathan (one 30-minute voice note):** S3 (where the family lives), S5 (how long it takes), R5 (who draws it),
+R8 (demolition timing and who organises), R10 (the walk-through page), the "one thing Nathan said" line on every post, the
+`/wynnum/` and `/manly/` rewrites, and which contract Sabre uses (R11 is written without it). R26 and R34 stay unwritten (price posts).
+
+**The three hubs** (Spiral 1, 2, 3) are the next writing job and need nobody; §6 said write them after the spokes, and the spokes now exist.
+
 ### Phase 4 — the trust cluster and the three centrepieces
 
 S13–S15 · R36–R45 · then the pillars, in the order Spiral 1, Spiral 2, Spiral 3.
