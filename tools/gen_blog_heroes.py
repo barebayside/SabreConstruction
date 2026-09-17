@@ -185,6 +185,21 @@ HEROES.update({
         "NO legible words, a finger running down one page, a coffee and a white hard hat at the edge; warm light; no face.",
 })
 
+# ---- Phase 5 Spiral 2 stragglers (2026-09-17) ----
+HEROES.update({
+    "moving-to-brisbanes-bayside-from-interstate-what-nobody-tells-you":
+        "a removals truck with its rear door open unloading outside an old timber highset on a flat bayside street, cardboard boxes on "
+        "the footpath, a family of three seen from behind at true scale carrying a box up the front stairs, Moreton Bay at low tide at "
+        "the end of the street; no faces, no words or logos on the truck.",
+    "what-is-the-wynnum-manly-foreshore-actually-like-to-live-near":
+        "an esplanade street at dusk on Moreton Bay: the stone seawall and the bay beyond at high tide, a haze of salt spray in the air, "
+        "a row of old timber houses facing the water with weathered rusting iron roofs and salt-stained paint, Norfolk pines bending in a "
+        "stiff onshore wind; moody warm light; no people.",
+    "is-the-bayside-a-good-place-to-retire":
+        "an older couple seen from behind at true human scale walking on a flat paved foreshore path at dawn, a timber jetty and the wide "
+        "calm low-tide bay ahead, a bicycle leaning on the rail, Norfolk pines, soft pink light; no faces.",
+})
+
 
 def gen(slug, prompt, n=2):
     res = fal_client.subscribe("fal-ai/nano-banana-2/edit",
