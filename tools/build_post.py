@@ -61,6 +61,32 @@ def place_figure(body, p, rel_img):
     return body[:at] + fig + body[at:]
 
 
+# Phase 6 (2026-09-23): every spoke links UP to its spiral's hub, right under the short answer
+HUBS = {
+    "rebuild": ("knockdown-rebuild-on-brisbanes-bayside-the-whole-path", "the whole knockdown rebuild path, step by step"),
+    "living": ("living-on-brisbanes-bayside-an-honest-guide", "the honest guide to living on Brisbane's Bayside"),
+    "builder": ("how-to-choose-a-builder-in-queensland-the-whole-checklist", "the whole checklist for choosing a builder in Queensland"),
+}
+SECTION_HUB = {"rules": "rebuild", "rebuild": "rebuild", "suburbs": "living", "living": "living", "builder": "builder"}
+
+
+def hub_line(p):
+    slug, text = HUBS[SECTION_HUB[p["section"]]]
+    if p["slug"] == slug:
+        return ""
+    return f'\n      <p class="small hub-link">Part of a bigger picture: <a href="../{slug}/">{text}</a>.</p>'
+
+
+def place_hub_line(body, p):
+    """After the short-answer aside (the first </aside> in every post body)."""
+    line = hub_line(p)
+    at = body.find("</aside>")
+    if not line or at == -1:
+        return body
+    at += len("</aside>")
+    return body[:at] + line + body[at:]
+
+
 def card(p, rel_img):
     return (f'        <a class="post" href="{p["href"]}">\n'
             f'          <span class="thumb"><img src="{rel_img}{p["image"]}" alt="{p["image_alt"]}" loading="lazy">{label_html(p)}</span>\n'
@@ -76,6 +102,7 @@ def build(p, all_posts):
     nav = re.search(r'<nav class="onpage"[^>]*>.*?</nav>', p["body"], flags=re.S).group(0)
     body = p["body"].rstrip().replace(nav, nav.replace('<nav class="onpage"', '<nav class="onpage inline"', 1), 1)
     body = place_figure(body, p, "../../assets/img/")
+    body = place_hub_line(body, p)
     side_nav = nav
     main = f'''<main>
 

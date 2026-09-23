@@ -200,6 +200,24 @@ HEROES.update({
         "calm low-tide bay ahead, a bicycle leaning on the rail, Norfolk pines, soft pink light; no faces.",
 })
 
+# ---- Phase 6: the three hubs (2026-09-23) ----
+HEROES.update({
+    "knockdown-rebuild-on-brisbanes-bayside-the-whole-path":
+        "a flat bayside residential street running straight down to Moreton Bay at low tide: on the left an old tired timber lowset "
+        "cottage with a rusting iron roof and a faded front fence; on the block beside it a new two-storey family house at frame and "
+        "roof stage behind temporary site fencing, a small excavator parked on the kerb; a single worker in hi-vis on the frame at true "
+        "scale, standing beside a door opening, back to camera; jacaranda in flower; warm late light; no words or logos.",
+    "living-on-brisbanes-bayside-an-honest-guide":
+        BAY + "seen from the grassy foreshore park: a long low timber jetty, tall Norfolk pines along the esplanade, a row of old "
+        "timber highset houses with iron roofs facing the water, a family of three walking on the foreshore path far off at true scale, "
+        "backs to camera, a bicycle on the grass; soft golden morning light; no words.",
+    "how-to-choose-a-builder-in-queensland-the-whole-checklist":
+        "close on a timber kitchen table: a thick bound building contract open to a page of only blank ruled lines and empty boxes with "
+        "NO legible words, a rolled house plan and a white hard hat beside it, two pairs of hands from opposite sides of the table, one "
+        "in a work shirt cuff, one in a plain sleeve, a pen between them; a window behind with a bayside street softly out of focus; "
+        "warm light; no faces, no words.",
+})
+
 
 def gen(slug, prompt, n=2):
     res = fal_client.subscribe("fal-ai/nano-banana-2/edit",

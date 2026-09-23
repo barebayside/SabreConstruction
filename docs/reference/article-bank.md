@@ -395,7 +395,15 @@ prices, no bands, no timelines beyond the statutory ones.
 R8 (demolition timing and who organises), R10 (the walk-through page), the "one thing Nathan said" line on every post, the
 `/wynnum/` and `/manly/` rewrites, and which contract Sabre uses (R11 is written without it). R26 and R34 stay unwritten (price posts).
 
-**The three hubs** (Spiral 1, 2, 3) are the next writing job and need nobody; §6 said write them after the spokes, and the spokes now exist.
+### ✅ Phase 6 — DONE 2026-09-23: the three hubs (`tools/posts_phase6_hubs.py`)
+
+| Spiral | Slug | Words |
+|---|---|---|
+| 1 | `/blog/knockdown-rebuild-on-brisbanes-bayside-the-whole-path/` | 3,013 |
+| 2 | `/blog/living-on-brisbanes-bayside-an-honest-guide/` | 3,010 |
+| 3 | `/blog/how-to-choose-a-builder-in-queensland-the-whole-checklist/` | 3,004 |
+
+Each hub links every spoke in its spiral and the other two hubs, in the body under H2 questions. It claims nothing a spoke doesn't, and its proof quotes are copied word for word from the spokes. **Every spoke now links UP to its hub** with a "Part of a bigger picture" line under the short answer: `build_post.py` `HUBS`/`SECTION_HUB` does this for the generated posts, and the four hand-built posts carry the line in their HTML. 55 posts.
 
 ### Phase 4 — the trust cluster and the three centrepieces
 
