@@ -7,6 +7,16 @@
 >
 > Last updated: **2026-09-10**.
 
+## ⭐ 2026-09-23 — hubs live, report sent, questions with Nathan
+
+- **Three hub pages live** (55 posts); every post links up to its hub. See `reference/article-bank.md` § Phase 6.
+- **Competitor report SENT to Nathan** (same link as always). The 5 Sep data are unchanged by design; this is his baseline.
+  It publishes the 09-22 rebuild with expired Meta/IG media re-pointed to the stored copies, the Instagram wording
+  corrected (@sabreconstructions exists; not measured this run), and the video posts honestly labelled.
+- **Voice-note questions SENT** — `nathan-voice-note-questions.md`. His answers unblock S3, S5, R5, R8, R10, the
+  `/wynnum/` `/manly/` rewrites, the contract type and the four operating claims. **Next website work waits on them.**
+- Still to ask him: Google Business Profile login, who holds the domain (iSonic / Melbourne IT).
+
 ## ⭐ 2026-09-10 (later) — the three values confirmed, the site pushed, the article bank written
 
 - **Nathan confirmed the licence numbers and the address.** QBCC **15486557** (not the old
