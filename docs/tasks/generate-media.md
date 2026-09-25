@@ -60,3 +60,4 @@ A wrong frame generates a wrong video and the money's gone.
 | Poster | `assets/img/{name}-poster.jpg` |
 | New script | `tools/{verb}_{noun}.py` or `.sh` |
 | Pipeline note | append to `../reference/media-pipeline.md` |
+| **Masters, originals, ad cuts** | **WorkDrive** — `X:\General\BBL Customers\Sabre Constructions — noid\VIDEO\…` per `../reference/asset-storage.md` |

@@ -54,6 +54,7 @@ in `docs/`.
 | Change a landing page or the lead form | `docs/tasks/edit-landing-pages.md` |
 | Change the ad concepts page | `docs/tasks/edit-ad-concepts.md` |
 | Make a video, image or reel | `docs/tasks/generate-media.md` |
+| **Store or find a video, photo or ad file (WorkDrive) — and how that links to the ad registry** | **`docs/reference/asset-storage.md`** — canonical from 2026-09-25 |
 | Push changes live / check the deploy | `docs/tasks/deploy.md` |
 | **Point the domain at GitHub / change DNS** | `docs/tasks/dns-cutover.md` |
 | **Know what replaces what / which URLs must exist** | `docs/tasks/site-migration-map.md` |

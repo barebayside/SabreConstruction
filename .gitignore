@@ -25,3 +25,6 @@ docs/agreement/
 
 # on-site session run sheets — contain account and access steps.
 docs/sessions/
+
+# ad video masters are too big for git; source of truth is this folder + Meta
+assets/ads/**/*.mp4
