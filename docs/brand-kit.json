@@ -1,0 +1,178 @@
+{
+  "_about": "Sabre Constructions' brand kit for the BBL video engine. Look = the real site (Desktop/sabre-constructions-website): css/site.css + docs/design-system.md v7 (2026-09-08). Voice + facts = that repo's CLAUDE.md six rules and docs/client-facts.md. Those win over this file.",
+  "name": "Sabre Constructions",
+  "code": "SAB",
+  "colours": {
+    "primary": "#22232A",
+    "secondary": "#8A8B93",
+    "ink": "#22232A",
+    "ink_soft": "#4A4B52",
+    "paper": "#F8F7F4",
+    "soft": "#E6E4DF",
+    "deep": "#22232A",
+    "button": "#EB2227",
+    "on_button": "#FFFFFF",
+    "button_edge": "#22232A",
+    "glow": [
+      34,
+      35,
+      42
+    ],
+    "hairline": [
+      230,
+      228,
+      223,
+      255
+    ],
+    "secondary_hairline": [
+      230,
+      228,
+      223,
+      255
+    ],
+    "frame_dark": "#22232A",
+    "_note": "⛔ Sabre red #EB2227 is 'the button and the review stars. Nothing else' (design-system.md): so primary is charcoal and red lives only in 'button'. Warm paper, never blue-white. No black slabs, red bands or red rules"
+  },
+  "font": {
+    "file": "Figtree.ttf",
+    "heading": "Medium",
+    "body": "Regular",
+    "weight_map": {
+      "Black": "SemiBold",
+      "ExtraBold": "SemiBold",
+      "Bold": "Medium"
+    },
+    "_note": "Figtree 400/500/600 only; headings medium, sentence case; 'nothing is bold-shouting' (design-system.md). The weight_map caps every heavy part at SemiBold"
+  },
+  "mark": "dot",
+  "logo": "../../sabre-constructions-website/assets/img/sabre-logo.png",
+  "footage": {
+    "clips": "../../sabre-constructions-website/assets/video",
+    "stills": "../../sabre-constructions-website/assets/img",
+    "music": "../assets/ads/music"
+  },
+  "output": "../assets/ads",
+  "grade": "",
+  "looks": {},
+  "protect": [
+    "person"
+  ],
+  "review": {
+    "rating": "4.5",
+    "count": 12,
+    "_source": "client-facts.md, 2026-09-05: never round to 5; recheck the count before any new ad"
+  },
+  "area": "Brisbane Bayside · Redlands",
+  "rules": [
+    "docs/reference/positioning.md",
+    "docs/reference/copy-rules.md",
+    "sabre-constructions-website/CLAUDE.md (six rules)",
+    "sabre-constructions-website/docs/client-facts.md",
+    "sabre-constructions-website/docs/design-system.md"
+  ],
+  "voice": {
+    "_about": "Summary of the real site's docs; they win on conflict. ⚠ protect=person keeps text off faces, but houses aren't a detector class: check by eye that no text sits on the house that is the subject.",
+    "sources": [
+      "reference/positioning.md (wins: the one difference, set 2026-09-08)",
+      "reference/copy-rules.md",
+      "../../sabre-constructions-website/CLAUDE.md",
+      "../../sabre-constructions-website/docs/client-facts.md",
+      "../../sabre-constructions-website/docs/design-system.md"
+    ],
+    "personality": "A builder since 1990 who does not need to shout: calm, established, looked after. (design-system.md)",
+    "audience": "A couple in Wynnum or Manly with kids, a mortgage and a 1950s-80s house on a good block, reading on a phone at night. Fears, in order: homeless for two years, the number moving, the builder disappearing, whether they're allowed. (design-system.md)",
+    "pillars": [
+      "Nathan is your builder, on call, with you every step of the way (he takes on a handful of homes at a time)",
+      "The path: Nathan walks your house with you, we help you with the designers, then we build it",
+      "Same street. Same school. A whole new house. A family building a family's home",
+      "On the Bayside since 1990: they stay with you"
+    ],
+    "we_are": [
+      {
+        "attribute": "With you every step",
+        "we_are": "Nathan, the same builder from the first walk-through to the keys",
+        "we_are_not": "a company with a sales team and a hand-off",
+        "sounds_like": "Same street. Same school. A whole new house.",
+        "not_like": "Our expert team delivers your project end to end"
+      },
+      {
+        "attribute": "Calm and established",
+        "we_are": "reassurance before ambition",
+        "we_are_not": "a tradie or volume-builder brand",
+        "sounds_like": "Build your new family home. On the street you already love.",
+        "not_like": "HUGE SAVINGS on your dream home!!"
+      },
+      {
+        "attribute": "Truthful to the letter",
+        "we_are": "only facts in client-facts.md, reviews quoted word for word",
+        "we_are_not": "the strong version of what a good builder might do",
+        "sounds_like": "4.5 from 12 Google reviews",
+        "not_like": "5-star builder"
+      }
+    ],
+    "ads": "Hook = the family that loves the street but has outgrown the house; proof = Nathan, real builds, real reviews (4.5); the ask = 'Book your walk-through with Nathan' (the block check lives on the contact page only). Tone reference: the LJ Hooker front-lawn ad (copy-rules.md).",
+    "headline_test": "Sentence case, calm, about their home and their street. No shouting, no unconfirmed promise.",
+    "words_use": [
+      "walk-through",
+      "Nathan",
+      "every step of the way",
+      "your street",
+      "family home",
+      "knock down rebuild",
+      "Bayside",
+      "since 1990"
+    ],
+    "words_avoid": [
+      "cheap",
+      "deal",
+      "hurry",
+      "dream home"
+    ],
+    "blocked": [
+      {
+        "pattern": "\\b5(\\.0)?[- ]stars?\\b|\\bfive[- ]stars?\\b|\\b5\\.0\\b",
+        "why": "The Google rating is 4.5. Never round it to 5",
+        "source": "CLAUDE.md rule 2; client-facts.md",
+        "example": "Brisbane's 5-star builder"
+      },
+      {
+        "pattern": "fixed price|one point of contact|not your year|free site visit",
+        "why": "Written as the strong version of a good builder; Sabre has never confirmed them",
+        "source": "client-facts.md",
+        "example": "Fixed price before you commit"
+      },
+      {
+        "pattern": "\\$\\s?\\d",
+        "why": "No prices anywhere",
+        "source": "client-facts.md",
+        "example": "From $450,000"
+      },
+      {
+        "pattern": "\\b\\d[\\d,]*\\+? (homes|houses|builds)\\b",
+        "why": "Number of homes built is never stated: do not estimate it",
+        "source": "client-facts.md",
+        "example": "Over 500 homes built"
+      }
+    ],
+    "warn": [
+      {
+        "pattern": "!",
+        "why": "Calm brand: nothing shouts",
+        "source": "design-system.md"
+      },
+      {
+        "pattern": "\\bdream home\\b|\\bhurry\\b|\\bcheap\\b",
+        "why": "Volume-builder register",
+        "source": "design-system.md"
+      }
+    ]
+  },
+  "avoid_styles": [
+    "hook-streaks",
+    "words-band",
+    "framed-lines",
+    "hook-sticker",
+    "close-face"
+  ],
+  "_avoid_styles_why": "Every current thumbnail style uses chunky bubble words or stickers: 'a builder since 1990 who does not need to shout' (design-system.md). Sabre needs its own calm style added to the menu"
+}
