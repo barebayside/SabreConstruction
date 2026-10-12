@@ -13,23 +13,9 @@
     "button": "#EB2227",
     "on_button": "#FFFFFF",
     "button_edge": "#22232A",
-    "glow": [
-      34,
-      35,
-      42
-    ],
-    "hairline": [
-      230,
-      228,
-      223,
-      255
-    ],
-    "secondary_hairline": [
-      230,
-      228,
-      223,
-      255
-    ],
+    "glow": [34, 35, 42],
+    "hairline": [230, 228, 223, 255],
+    "secondary_hairline": [230, 228, 223, 255],
     "frame_dark": "#22232A",
     "_note": "⛔ Sabre red #EB2227 is 'the button and the review stars. Nothing else' (design-system.md): so primary is charcoal and red lives only in 'button'. Warm paper, never blue-white. No black slabs, red bands or red rules"
   },
@@ -54,39 +40,20 @@
   "output": "../assets/ads",
   "grade": "",
   "looks": {},
-  "protect": [
-    "person"
-  ],
+  "protect": ["person"],
   "review": {
     "rating": "4.5",
     "count": 12,
     "_source": "client-facts.md, 2026-09-05: never round to 5; recheck the count before any new ad"
   },
   "area": "Brisbane Bayside · Redlands",
-  "rules": [
-    "docs/reference/positioning.md",
-    "docs/reference/copy-rules.md",
-    "sabre-constructions-website/CLAUDE.md (six rules)",
-    "sabre-constructions-website/docs/client-facts.md",
-    "sabre-constructions-website/docs/design-system.md"
-  ],
+  "rules": ["docs/reference/positioning.md", "docs/reference/copy-rules.md", "sabre-constructions-website/CLAUDE.md (six rules)", "sabre-constructions-website/docs/client-facts.md", "sabre-constructions-website/docs/design-system.md"],
   "voice": {
     "_about": "Summary of the real site's docs; they win on conflict. ⚠ protect=person keeps text off faces, but houses aren't a detector class: check by eye that no text sits on the house that is the subject.",
-    "sources": [
-      "reference/positioning.md (wins: the one difference, set 2026-09-08)",
-      "reference/copy-rules.md",
-      "../../sabre-constructions-website/CLAUDE.md",
-      "../../sabre-constructions-website/docs/client-facts.md",
-      "../../sabre-constructions-website/docs/design-system.md"
-    ],
+    "sources": ["reference/positioning.md (wins: the one difference, set 2026-09-08)", "reference/copy-rules.md", "../../sabre-constructions-website/CLAUDE.md", "../../sabre-constructions-website/docs/client-facts.md", "../../sabre-constructions-website/docs/design-system.md"],
     "personality": "A builder since 1990 who does not need to shout: calm, established, looked after. (design-system.md)",
     "audience": "A couple in Wynnum or Manly with kids, a mortgage and a 1950s-80s house on a good block, reading on a phone at night. Fears, in order: homeless for two years, the number moving, the builder disappearing, whether they're allowed. (design-system.md)",
-    "pillars": [
-      "Nathan is your builder, on call, with you every step of the way (he takes on a handful of homes at a time)",
-      "The path: Nathan walks your house with you, we help you with the designers, then we build it",
-      "Same street. Same school. A whole new house. A family building a family's home",
-      "On the Bayside since 1990: they stay with you"
-    ],
+    "pillars": ["Nathan is your builder, on call, with you every step of the way (he takes on a handful of homes at a time)", "The path: Nathan walks your house with you, we help you with the designers, then we build it", "Same street. Same school. A whole new house. A family building a family's home", "On the Bayside since 1990: they stay with you"],
     "we_are": [
       {
         "attribute": "With you every step",
@@ -112,22 +79,8 @@
     ],
     "ads": "Hook = the family that loves the street but has outgrown the house; proof = Nathan, real builds, real reviews (4.5); the ask = 'Book your walk-through with Nathan' (the block check lives on the contact page only). Tone reference: the LJ Hooker front-lawn ad (copy-rules.md).",
     "headline_test": "Sentence case, calm, about their home and their street. No shouting, no unconfirmed promise.",
-    "words_use": [
-      "walk-through",
-      "Nathan",
-      "every step of the way",
-      "your street",
-      "family home",
-      "knock down rebuild",
-      "Bayside",
-      "since 1990"
-    ],
-    "words_avoid": [
-      "cheap",
-      "deal",
-      "hurry",
-      "dream home"
-    ],
+    "words_use": ["walk-through", "Nathan", "every step of the way", "your street", "family home", "knock down rebuild", "Bayside", "since 1990"],
+    "words_avoid": ["cheap", "deal", "hurry", "dream home"],
     "blocked": [
       {
         "pattern": "\\b5(\\.0)?[- ]stars?\\b|\\bfive[- ]stars?\\b|\\b5\\.0\\b",
@@ -167,12 +120,28 @@
       }
     ]
   },
-  "avoid_styles": [
-    "hook-streaks",
-    "words-band",
-    "framed-lines",
-    "hook-sticker",
-    "close-face"
-  ],
-  "_avoid_styles_why": "Every current thumbnail style uses chunky bubble words or stickers: 'a builder since 1990 who does not need to shout' (design-system.md). Sabre needs its own calm style added to the menu"
+  "avoid_styles": ["hook-streaks", "words-band", "framed-lines", "hook-sticker", "close-face"],
+  "_avoid_styles_why": "Every current thumbnail style uses chunky bubble words or stickers: 'a builder since 1990 who does not need to shout' (design-system.md). Sabre needs its own calm style added to the menu",
+  "thumb": {
+    "_about": "Sabre thumbnail look (BBL products/video-engine/thumbnail-playbook.md; /thumbnails), 2026-10-12. From sabre-constructions-website/docs/design-system.md: warm paper, charcoal, Figtree no heavier than SemiBold, sentence case, 8px corners, nothing bold-shouting. Red is the button and the stars only, so never on a thumbnail.",
+    "deep": "#F8F7F4",
+    "accent": "#8A8B93",
+    "highlight": "#22232A",
+    "text": "#22232A",
+    "display_font": "Figtree.ttf",
+    "display_weight": "SemiBold",
+    "label_font": "Figtree.ttf",
+    "label_weight": "SemiBold",
+    "italic_font": "Figtree.ttf",
+    "logo": null,
+    "backdrop": null,
+    "uppercase": false,
+    "leading": 1.1,
+    "stroke": false,
+    "radius": 8,
+    "shadow": "soft",
+    "styles": ["face-claim", "framed-list"],
+    "rules": ["Calm: sentence case, nothing heavier than SemiBold, no stickers, streaks or bubble words (every ad-cover style is in avoid_styles)", "Sabre red #EB2227 never on a thumbnail (button + review stars only); no black slabs or red bands", "Google rating is 4.5, never rounded to 5; no prices; never state how many homes", "The wordmark only ever as the logo file, never typed"],
+    "learned": []
+  }
 }
