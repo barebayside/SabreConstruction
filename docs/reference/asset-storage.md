@@ -54,8 +54,31 @@ VIDEO\2026-09-25 — Leanne Chandler testimonial\
 5. **`COMP\` belongs to Catalyst.** Don't add, move or rename inside it; the
    pipeline finds folders by exact name.
 
+## Where Sabre drops footage: Nathan's Google Drive (the inbox)
+
+Logged 2026-10-12. This is the **inbox**, not the archive. Nathan and his
+videographer upload here; WorkDrive above stays the home for everything we keep.
+
+| | |
+|---|---|
+| Folder | **"Ed "** (trailing space in the name). https://drive.google.com/drive/folders/1hhgEEuCKyRcbi8ALkPnulnl3DxN_GmIo |
+| Owner | `nathanbrain27@gmail.com`: Nathan's personal Google account, free 15 GB tier. Raw 4K fills this fast; he may need Google One |
+| Access | `edasturner@gmail.com` = **Editor**. Nobody else. Checked 2026-10-12 |
+| Inside (10-12) | `03. Client Testimony - Chandler (1).MOV` (391 MB) · `Video ads/04. Knock down.mov` (94 MB). Both already used |
+| Storage | Nathan's uploads count against HIS quota; anything Edward uploads counts against EDWARD's |
+
+**How Claude reaches it:** the claude.ai Google Drive connector (signed in as
+`edasturner@gmail.com`) can **list and search** the folder (`parentId =
+'1hhgEEuCKyRcbi8ALkPnulnl3DxN_GmIo'`) and read permissions. It **cannot pull
+video**: downloads come back as base64 text, which is useless at 100+ MB.
+So Edward downloads the file in Brave → Claude works from that copy. If Google
+Drive for desktop is ever installed (with a shortcut to this folder in My Drive),
+Claude can read it straight from disk and the manual download goes away.
+
 ## When Sabre sends new footage
 
+0. Claude lists the Google Drive inbox above and names what's new; Edward
+   downloads it in Brave.
 1. Copy the original into `VIDEO\<date> — <what>\01 original…\`.
 2. Check it (`ffprobe`, loudness, captions legible at phone size): see
    `docs/tasks/generate-media.md`.
