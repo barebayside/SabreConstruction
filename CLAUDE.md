@@ -23,6 +23,7 @@ commercial site.
 
 ```
 CLAUDE.md              you are here — the router
+NEXT.md                what to do next, in order (no sprints/boards since 2026-10-16)
 CONTEXT.md             Layer 2 dispatcher (task → workspace)
 index.html             the main site page
 ads.html               ad concepts showcase
@@ -48,6 +49,7 @@ in `docs/`.
 
 | You want to... | Open first |
 |---|---|
+| **Start a session / what to do next** | **`NEXT.md`** — what to do next (no sprints/boards since 2026-10-16); detail in `docs/engagement.md` |
 | **Know what we agreed, what we're waiting on, what's next** | `docs/engagement.md` |
 | **Write ANY Sabre copy, ad or page — the one difference we sell** | **`docs/reference/positioning.md`** — Nathan on call every step; the three-step path; what Nathan must confirm |
 | Change the main site page | `docs/tasks/edit-main-site.md` |
@@ -121,3 +123,8 @@ These have all been broken at least once. Read them before editing anything.
 
 - **`status`** — read `docs/open-items.md` and report what's blocked.
 - **`handoff`** — write a dated snapshot into `handoffs/`.
+
+## Session end
+
+1. Update `NEXT.md` first: delete what's done, add what's new, reorder.
+2. Then the handoff just says "NEXT.md updated" instead of keeping its own to-do list.
