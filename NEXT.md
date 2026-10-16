@@ -3,7 +3,7 @@
 Updated 2026-10-16 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.md` (full state and history live there)
 
 ## Goal
-- **Serves:** Branch 2, the engine. A BBL client and test bench; its results become an anonymised case study. Family goal tree: `dev-studio/GOALS.md`.
+- **Serves:** Branch 2, the engine. A BBL client and test bench; its results become an anonymised case study. The Family Plan: `dev-studio/FAMILY-PLAN.md`.
 - **Purpose:** A BBL client paid in kind: win building leads for Sabre through the website, Meta ads and Google ads.
 - **Success looks like:** Real enquiries from the ads and site, tracked to the source. It also becomes a BBL case study (without naming Sabre in BBL content).
 - **Target:** ❓ Edward to set (a number and a date)
