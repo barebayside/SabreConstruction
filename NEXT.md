@@ -2,6 +2,11 @@
 
 Updated 2026-10-16 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.md` (full state and history live there)
 
+## Goal
+- **Purpose:** A BBL client paid in kind: win building leads for Sabre through the website, Meta ads and Google ads.
+- **Success looks like:** Real enquiries from the ads and site, tracked to the source. It also becomes a BBL case study (without naming Sabre in BBL content).
+- **Target:** ❓ Edward to set (a number and a date)
+
 ## Next
 
 1. **Google Ads: get the business check through.** Nathan's ASIC certificate was asked for by
