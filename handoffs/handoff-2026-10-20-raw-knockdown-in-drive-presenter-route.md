@@ -18,7 +18,8 @@ Checked Nathan's shared Drive and worked out how Nathan could front more ads wit
 
 ## Decisions Made
 1. Nathan's presenter route = lip sync on his real raw footage, on Sabre's fal key (video-profile.md).
-2. Nothing is made of Nathan until his consent recording, likeness release and raw take exist, and he approves each script.
+2. Lip sync is on request only and runs via the `/lipsync` skill (BBL stage contract `docs/pipelines/video-production/lipsync/CONTEXT.md`). Nathan's script ledger (consent, voice ID, every script) will live in THIS repo.
+3. Nothing is made of Nathan until his consent recording, likeness release and raw take exist, and he approves each script.
 
 ## What's NOT Done
 NEXT.md updated (items 2 and 6).
