@@ -1,6 +1,6 @@
 # Sabre Constructions — next
 
-Updated 2026-10-16 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.md` (full state and history live there)
+Updated 2026-10-20 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.md` (full state and history live there)
 
 ## Goal
 - **Serves:** Goal 1, through the **business engine**. A BBL client paid in kind; its results become an anonymised case study. The Family Plan: `dev-studio/FAMILY-PLAN.md`.
@@ -19,6 +19,9 @@ Updated 2026-10-16 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.m
    the silent stand-in, re-time the captions and push. Nathan's "I'm the owner" line must be
    confirmed (`client-facts.md` says the owners are Stewart and Cathy) or cut before this video goes
    on the real domain. Footage inbox: `docs/reference/asset-storage.md`.
+   **10-20: the no-music version is in Nathan's Drive** ("Video ads" → `04. Knock down - Raw.mov`,
+   15 Oct, plus a duplicate "Copy of…"). The Drive connector lists it but can't download video:
+   Edward downloads it in Brave.
 3. **Build the ad variant tool** for 3–4 versions of the knockdown ad: one Sabre end card per variant,
    facts from `client-facts.md` (not the old phone and QBCC numbers in the testimonial script).
    Register each code with `/bbl-asset-code` first.
@@ -27,7 +30,12 @@ Updated 2026-10-16 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.m
    operating claims (`docs/reference/article-bank.md`, `docs/open-items.md`).
 5. **Cut over to the real domain.** Point DNS at the new site, take off `noindex` and the preview
    chrome, then run the Search Console and Bing routine. Needs the domain login (`docs/tasks/dns-cutover.md`).
-6. **Fix the Google Business Profile address** (still Capalaba, should be Ransome). Needs Nathan's login.
+6. **Nathan as a lip-synced presenter (Edward's idea 10-20).** Route proven on Edward: real raw
+   footage + new script in a cloned voice, ~$2 per 15 s (BBL `docs/pipelines/video-production/presenter-lipsync.md`).
+   Photo avatars were rejected. Before anything: Nathan's consent recording + written likeness
+   release + a raw take (3–4 looks × 20–30 s, calm, on real sites). He approves every script.
+   Runs on **Sabre's** fal key. Ask in the same message as the voice note chase.
+7. **Fix the Google Business Profile address** (still Capalaba, should be Ransome). Needs Nathan's login.
 
 ## Waiting on Edward
 
