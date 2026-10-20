@@ -41,7 +41,7 @@ Nathan (owner). Avatar: **not made. No consent on file (2026-09-28).** He needs 
 
 **Route changed 2026-10-20 (ready tool, used on request only):** not a HeyGen/photo avatar. Lip sync on Nathan's REAL raw footage +
 his cloned voice (fal sync-3 + MiniMax, ~$2 per 15 s), proven on Edward; still-photo avatars looked
-"absolutely horrible". Method + guardrails: BBL `docs/pipelines/video-production/presenter-lipsync.md`.
+"absolutely horrible". Run via `/lipsync` (BBL stage contract `docs/pipelines/video-production/lipsync/CONTEXT.md`). Nathan's ledger (consent, voice ID, every script) goes in THIS repo when he starts.
 Voice and footage stay in **Sabre's** accounts (Sabre's fal key). Nathan signs off every script before it
 is rendered, and no variant may contradict another. Until then: blog-post shorts use voice-over or text only, with no face.
 
