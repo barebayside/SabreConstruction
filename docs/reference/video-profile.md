@@ -39,7 +39,7 @@ Nathan (owner). Avatar: **not made. No consent on file (2026-09-28).** He needs 
 - a phone consent recording
 - a written likeness release
 
-**Route changed 2026-10-20 (trial tool only, not approved for live production):** not a HeyGen/photo avatar. Lip sync on Nathan's REAL raw footage +
+**Route changed 2026-10-20 (ready tool, used on request only):** not a HeyGen/photo avatar. Lip sync on Nathan's REAL raw footage +
 his cloned voice (fal sync-3 + MiniMax, ~$2 per 15 s), proven on Edward; still-photo avatars looked
 "absolutely horrible". Method + guardrails: BBL `docs/pipelines/video-production/presenter-lipsync.md`.
 Voice and footage stay in **Sabre's** accounts (Sabre's fal key). Nathan signs off every script before it

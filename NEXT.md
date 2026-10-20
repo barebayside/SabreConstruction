@@ -30,7 +30,7 @@ Updated 2026-10-20 · Source: handoffs 09-30, 09-30b, 10-12 + `docs/engagement.m
    operating claims (`docs/reference/article-bank.md`, `docs/open-items.md`).
 5. **Cut over to the real domain.** Point DNS at the new site, take off `noindex` and the preview
    chrome, then run the Search Console and Bing routine. Needs the domain login (`docs/tasks/dns-cutover.md`).
-6. **Nathan as a lip-synced presenter (Edward's idea 10-20). Trial tool only, not approved for live production.** Route proven on Edward: real raw
+6. **Nathan as a lip-synced presenter (Edward's idea 10-20). Ready tool, on request only.** Route proven on Edward: real raw
    footage + new script in a cloned voice, ~$2 per 15 s (BBL `docs/pipelines/video-production/presenter-lipsync.md`).
    Photo avatars were rejected. Before anything: Nathan's consent recording + written likeness
    release + a raw take (3–4 looks × 20–30 s, calm, on real sites). He approves every script.
