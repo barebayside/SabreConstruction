@@ -28,3 +28,7 @@ docs/sessions/
 
 # ad video masters are too big for git; source of truth is this folder + Meta
 assets/ads/**/*.mp4
+
+# company documents (ASIC certificate, ABN, ID for Google verification).
+# This repo is PUBLIC. Company documents stay local.
+docs/company-docs/
