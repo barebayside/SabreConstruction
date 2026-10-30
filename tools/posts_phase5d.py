@@ -335,6 +335,11 @@ POSTS["s15-variations"] = dict(
         <li><strong>Read the specification.</strong> Know what's in the price so you know what isn't.</li>
       </ul>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;For tapware and that, we usually allow a PS item, a set amount for those fixtures. Most of the time that changes by the time you get close to putting them in. So we give you enough notice: we&rsquo;re getting close, are these definitely the tiles you want, the fixtures you picked before? That gives you the chance to change, and whether that costs more or less, we sort it.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026. The variation you can see coming is the one you can plan for.</cite>
+      </blockquote>
+
       <aside class="takeaways" id="takeaways">
         <p class="eyebrow">Key takeaways</p>
         <ul>

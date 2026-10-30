@@ -190,6 +190,11 @@ POSTS["s6-small-block"] = dict(
       </ul>
       <p>A package plan drawn for an estate lot usually doesn't fit a small Bayside block, for the same reason it doesn't fit a sloping one: it wasn't drawn for the envelope. <a href="../what-is-a-knockdown-rebuild-package/">That post is here.</a></p>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;The block size and the shape of the block will change dramatically what you can fit on there, and what kind of layout. And if the street&rsquo;s heritage listed, you may need to tie in with the buildings around you.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026.</cite>
+      </blockquote>
+
       <h2 class="h2" id="approval">Does a small lot need a DA?</h2>
       <p>Not because it's small. Council's guidance is that a house that complies with the small lot code (and any other applicable code) is accepted development, so it goes straight to a building certifier. It needs a development application for the same reasons any house does: a code-assessable overlay on the lot, such as flood, character or a mapped tree. <a href="../does-a-knockdown-rebuild-need-a-development-application/">The two approvals are explained here.</a></p>
       <p>If the design can't meet the code &mdash; a wall higher than the envelope, a setback shorter than the outcome &mdash; it becomes assessable, and that's usually where a good designer changes the design rather than lodging the application.</p>
@@ -583,6 +588,11 @@ POSTS["r14-reuse"] = dict(
       <blockquote class="proof">
         <p><b>Schedule 1B of the QBCC Act &ldquo;sets out statutory warranties which are deemed to be part of all regulated domestic building contracts, even if not stated in the contract.&rdquo;</b> Structural defects: six years. Other breaches: one year.</p>
         <cite>Queensland Building and Construction Commission, <em>Consumer Building Guide</em>, version 3, effective July 2023. The builder warrants the new work. That's the reason the new work is new.</cite>
+      </blockquote>
+
+      <blockquote class="proof">
+        <p><b>&ldquo;With a renovation you&rsquo;re trying to tie the old into the new, and nothing&rsquo;s ever perfect. People want it all brand new, and technically it&rsquo;s not. You make it as seamless as you can.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026.</cite>
       </blockquote>
 
       <h2 class="h2" id="worth-saving">What's worth saving?</h2>

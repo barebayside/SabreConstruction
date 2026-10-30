@@ -94,6 +94,11 @@ POSTS["s7-wynnum"] = dict(
       <p>The choice is a bigger house in a suburb they don't want, or a different house on the block they already love. On a good flat Wynnum block, the second option is often the honest one, and it's why there are so many demolition signs on so many fences. <a href="../why-are-so-many-bayside-houses-being-knocked-down/">The reasons are here.</a></p>
       <p>Not every house should come down. Some should be raised and opened up. Some just need a kitchen. The point is that in Wynnum, the suburb almost never turns out to be the problem.</p>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;I&rsquo;ve grown up in this area my whole life. I went to school in Wynnum, all my friends were there. I know the area off by heart, the streets, the back streets, the local people. So I like to stay here and help build the community up, with the housing families want.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026.</cite>
+      </blockquote>
+
       <aside class="takeaways" id="takeaways">
         <p class="eyebrow">Key takeaways</p>
         <ul>

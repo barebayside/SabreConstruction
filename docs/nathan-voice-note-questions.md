@@ -1,5 +1,7 @@
 # Questions for Nathan's voice note (sent 2026-09-23, awaiting)
 
+> **2026-10-30: part-answered on camera.** Nathan answered C10, B6–7 (total only), A3 (partly), E14 (partly), F17 (partly) plus two new topics (picking fixtures; custom vs architectural). His words + what each unblocks: `nathan-answers-2026-10-30.md`. Still to ask: A1, A2, A4, A5, B8, B9, C11, D12, D13, E15, E16, F18–F20, G21–G23.
+
 Each answer unblocks something on the site. Map: A → R10 walk-through page + positioning claims ·
 B → S5, S3, R8, R17 · C → R5 + /knockdown-rebuild/ · D → S1's two GAPs · E → /wynnum/ /manly/ ·
 F → R11 + open item 5 · G → the "one thing Nathan said" line on every post.

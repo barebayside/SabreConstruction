@@ -740,6 +740,11 @@ POSTS["r16-independent"] = dict(
       <p>We're one of the small independent builders on the Bayside. Family owned and family run since 1990, based at Ransome, building across Wynnum, Manly, Lota, Wakerley, Capalaba, Birkdale, Wellington Point and the Redlands. Stewart founded it, Nathan came through his apprenticeship here and is on site through the build, Frank has supervised jobs here for seventeen years.</p>
       <p>We design to the block, we don't sell packages, and we'd rather you ran every check above on us before you rang. QBCC 15486557. Master Builders Queensland 00352. The reviews are on Google.</p>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;We&rsquo;ve got two people who&rsquo;ve been in the building game a while, myself and Stewart. Sometimes on a job you need that old way of thinking, or the new way of thinking. It helps us solve problems a lot easier than one person trying to figure out all the answers.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026. Stewart started Sabre and still helps out. Nathan runs the jobs. They build within about half an hour of the office, through Wynnum, Manly and Lota.</cite>
+      </blockquote>
+
       <aside class="takeaways" id="takeaways">
         <p class="eyebrow">Key takeaways</p>
         <ul>

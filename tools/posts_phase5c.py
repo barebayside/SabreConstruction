@@ -416,6 +416,11 @@ POSTS["r22-outgrown"] = dict(
         <cite>Brisbane City Council, <em>Building a new house: approvals and requirements</em>. The secondary dwelling is in the definition of a house, not an exception to it.</cite>
       </blockquote>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;The starting point is working out whether you want to knock your house down and start again, or raise the house up and build in underneath. It just depends on what you want.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026. Sabre does both. He prefers the rebuild, for the reasons in the knockdown-or-renovate post.</cite>
+      </blockquote>
+
       <aside class="takeaways" id="takeaways">
         <p class="eyebrow">Key takeaways</p>
         <ul>

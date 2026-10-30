@@ -183,6 +183,11 @@ POSTS["s2-rebuild-or-renovate"] = dict(
       <p>Write down what the house has to do in ten years. Bedrooms, a second living area, a bathroom the kids can use without going through your room, somewhere for a parent to stay. Then hold that against the plan you've got.</p>
       <p>If the old house can get there by opening a wall and adding a room, renovate. If getting there means moving the kitchen, lifting the house, building in underneath, replacing the roof and rewiring the lot, you've described a new house with an old one in the way.</p>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;We generally like to do knockdown rebuilds. It gives you a fresh slate, a brand new home, and it&rsquo;s easier to get the outcome you&rsquo;re really after. We do renovations too, house raising and extensions, but you&rsquo;re trying to tie the old into the new, and nothing&rsquo;s ever perfect. That&rsquo;s the biggest concern for a lot of people: they want it all brand new, and technically it&rsquo;s not.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026. That&rsquo;s the brief question in one line: if what you need is a new house, a renovation will always be part old.</cite>
+      </blockquote>
+
       <h2 class="h2" id="the-block">Check four: what does the block want?</h2>
       <p>Old houses were put where they were put. The block might want something else.</p>
       <p>A house sitting at the front of a deep block, facing the wrong way for the sun and the breeze off the bay, with the backyard nobody uses, is a common Bayside shape. A renovation keeps that arrangement. A rebuild can turn the house around. On a sloping block, a rebuild can also put the living areas where the view is instead of where the 1960s put them.</p>

@@ -669,6 +669,11 @@ POSTS["r45-quote"] = dict(
         <cite>Queensland Building and Construction Commission, <em>Consumer Building Guide</em>, version 3, effective July 2023. Count them. Ask why each one is there.</cite>
       </blockquote>
 
+      <blockquote class="proof">
+        <p><b>&ldquo;Everyone&rsquo;s got a different opinion on what looks good. So for tapware and that, we usually allow a PS item, a set amount for those fixtures. Most people have changed their mind by the time we get there.&rdquo;</b></p>
+        <cite>Nathan Brain, builder at Sabre, on camera, October 2026. Ask what each allowance assumes, and when you&rsquo;ll be asked to confirm the pick.</cite>
+      </blockquote>
+
       <h2 class="h2" id="thin">Where a quote is usually thin</h2>
       <ul class="pts">
         <li><strong>The site.</strong> Earthworks and retaining priced as if the block were flat, or as an allowance.</li>
