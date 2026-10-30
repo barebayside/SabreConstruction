@@ -13,7 +13,7 @@ yes from Nathan before they go public.
 As a `proof` quote in: knockdown-or-renovate (S2), variations (S15), builder's quote (R45), outgrown the
 house (R22), small or narrow block (S6), how much can be reused (R14), is Wynnum a good place to live (S7),
 small independent builders (R16). Source: the dicts in `tools/posts_phase*.py` (search "on camera, October 2026").
-Held back until Nathan says yes: years (20 vs 30 vs 1990), 6 to 12 months, the engineer of 20 years, "90%".
+Edward 10-30 cleared: 6 to 12 months, the engineer of 20 years. Years: use 1990 / 36 years (client-facts), not Nathan's "over 20". Still out: "90%".
 Not written yet: S5 (how long) and R5 (who draws it) have no post; his answers here are their core.
 
 ## What it answers
@@ -105,10 +105,10 @@ Still to ask: A1, A2, A4, A5, B8, B9, C11, D12, D13, E15, E16, F18–F20, G21–
 
 ## ⚠️ Check with Nathan before any of these go public
 
-- **Years:** "20 years" (engineer, and "building in this area for over 20 years"), "30 odd years" later,
+- **Years:** ✅ Edward 10-30: Sabre started in the 1990s; client-facts has 1990 = 36 years, so use that and don't use clip 06's "over 20". Was: "20 years" (engineer, and "building in this area for over 20 years"), "30 odd years" later,
   and the site says since 1990. Which does he want said?
 - ~~Office: Gumdale vs Ransome~~ ✅ Edward 10-30: same place, Ransome is the bigger Gumdale area. Fine to use.
-- **6 to 12 months:** happy to have that in writing?
+- ~~6 to 12 months~~ ✅ Edward 10-30: fine to use.
 - ~~Stewart stepping back~~ ✅ Edward 10-30: don't say he's stepping back; say Stewart started it and still helps out.
 - **"Woolloongabba"** (heard as "woolen Gabba") in the list of suburbs: right? Left out above until he says.
 - The intro tries said "I'm the owner": not used (owners on record are Stewart and Cathy).
