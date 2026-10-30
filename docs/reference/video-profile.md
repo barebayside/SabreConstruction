@@ -20,6 +20,7 @@
 | Colours + fonts | `design-brief.md` §1 (read off Sabre's signage). `site/docs/design-system.md` until the brief is decided |
 | Logos, signage | `brand/README.md` |
 | What we say (the one difference we sell) | `positioning.md` |
+| OBS setup for Nathan talking to camera (collection `Sabre Constructions`, built 2026-10-30) | `docs/brand-kit.json` → `obs`; how to build/rebuild: BBL `docs/pipelines/video-production/obs/CONTEXT.md` |
 
 ## Assets
 

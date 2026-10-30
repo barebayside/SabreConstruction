@@ -12,6 +12,7 @@ three ad landing pages, and the scripts that generated the media.
 
 | Work type | Contract | Touches |
 |---|---|---|
+| **Where Sabre stood before anything went live (the case-study beginning point)** | BBL `docs/case-studies/SAB/baseline.md` — report `795000000099330`, health 32, data 2026-09-05; frozen searches in `SAB/searches.md` | read-only; snapshot the day DNS/noindex flips |
 | Main site page | `docs/tasks/edit-main-site.md` | `index.html`, `css/sabre.css`, `js/sabre.js` |
 | Ad landing pages + lead form | `docs/tasks/edit-landing-pages.md` | `lp-*.html`, `css/lp.css`, `js/qualify.js` |
 | Ad concepts showcase | `docs/tasks/edit-ad-concepts.md` | `ads.html`, `css/ads.css` |

@@ -13,9 +13,23 @@
     "button": "#EB2227",
     "on_button": "#FFFFFF",
     "button_edge": "#22232A",
-    "glow": [34, 35, 42],
-    "hairline": [230, 228, 223, 255],
-    "secondary_hairline": [230, 228, 223, 255],
+    "glow": [
+      34,
+      35,
+      42
+    ],
+    "hairline": [
+      230,
+      228,
+      223,
+      255
+    ],
+    "secondary_hairline": [
+      230,
+      228,
+      223,
+      255
+    ],
     "frame_dark": "#22232A",
     "_note": "⛔ Sabre red #EB2227 is 'the button and the review stars. Nothing else' (design-system.md): so primary is charcoal and red lives only in 'button'. Warm paper, never blue-white. No black slabs, red bands or red rules"
   },
@@ -40,20 +54,39 @@
   "output": "../assets/ads",
   "grade": "",
   "looks": {},
-  "protect": ["person"],
+  "protect": [
+    "person"
+  ],
   "review": {
     "rating": "4.5",
     "count": 12,
     "_source": "client-facts.md, 2026-09-05: never round to 5; recheck the count before any new ad"
   },
   "area": "Brisbane Bayside · Redlands",
-  "rules": ["docs/reference/positioning.md", "docs/reference/copy-rules.md", "sabre-constructions-website/CLAUDE.md (six rules)", "sabre-constructions-website/docs/client-facts.md", "sabre-constructions-website/docs/design-system.md"],
+  "rules": [
+    "docs/reference/positioning.md",
+    "docs/reference/copy-rules.md",
+    "sabre-constructions-website/CLAUDE.md (six rules)",
+    "sabre-constructions-website/docs/client-facts.md",
+    "sabre-constructions-website/docs/design-system.md"
+  ],
   "voice": {
     "_about": "Summary of the real site's docs; they win on conflict. ⚠ protect=person keeps text off faces, but houses aren't a detector class: check by eye that no text sits on the house that is the subject.",
-    "sources": ["reference/positioning.md (wins: the one difference, set 2026-09-08)", "reference/copy-rules.md", "../../sabre-constructions-website/CLAUDE.md", "../../sabre-constructions-website/docs/client-facts.md", "../../sabre-constructions-website/docs/design-system.md"],
+    "sources": [
+      "reference/positioning.md (wins: the one difference, set 2026-09-08)",
+      "reference/copy-rules.md",
+      "../../sabre-constructions-website/CLAUDE.md",
+      "../../sabre-constructions-website/docs/client-facts.md",
+      "../../sabre-constructions-website/docs/design-system.md"
+    ],
     "personality": "A builder since 1990 who does not need to shout: calm, established, looked after. (design-system.md)",
     "audience": "A couple in Wynnum or Manly with kids, a mortgage and a 1950s-80s house on a good block, reading on a phone at night. Fears, in order: homeless for two years, the number moving, the builder disappearing, whether they're allowed. (design-system.md)",
-    "pillars": ["Nathan is your builder, on call, with you every step of the way (he takes on a handful of homes at a time)", "The path: Nathan walks your house with you, we help you with the designers, then we build it", "Same street. Same school. A whole new house. A family building a family's home", "On the Bayside since 1990: they stay with you"],
+    "pillars": [
+      "Nathan is your builder, on call, with you every step of the way (he takes on a handful of homes at a time)",
+      "The path: Nathan walks your house with you, we help you with the designers, then we build it",
+      "Same street. Same school. A whole new house. A family building a family's home",
+      "On the Bayside since 1990: they stay with you"
+    ],
     "we_are": [
       {
         "attribute": "With you every step",
@@ -79,8 +112,22 @@
     ],
     "ads": "Hook = the family that loves the street but has outgrown the house; proof = Nathan, real builds, real reviews (4.5); the ask = 'Book your walk-through with Nathan' (the block check lives on the contact page only). Tone reference: the LJ Hooker front-lawn ad (copy-rules.md).",
     "headline_test": "Sentence case, calm, about their home and their street. No shouting, no unconfirmed promise.",
-    "words_use": ["walk-through", "Nathan", "every step of the way", "your street", "family home", "knock down rebuild", "Bayside", "since 1990"],
-    "words_avoid": ["cheap", "deal", "hurry", "dream home"],
+    "words_use": [
+      "walk-through",
+      "Nathan",
+      "every step of the way",
+      "your street",
+      "family home",
+      "knock down rebuild",
+      "Bayside",
+      "since 1990"
+    ],
+    "words_avoid": [
+      "cheap",
+      "deal",
+      "hurry",
+      "dream home"
+    ],
     "blocked": [
       {
         "pattern": "\\b5(\\.0)?[- ]stars?\\b|\\bfive[- ]stars?\\b|\\b5\\.0\\b",
@@ -120,7 +167,45 @@
       }
     ]
   },
-  "avoid_styles": ["hook-streaks", "words-band", "framed-lines", "hook-sticker", "close-face"],
+  "obs": {
+    "_about": "Sabre's OBS Scene Collection for Nathan talking to camera (BBL recipe docs/pipelines/video-production/obs/scenes.json, built by BBL products/video-engine/obs_setup.py, 2026-10-30). Calm: charcoal frame, warm-paper edge, soft glow, no red (red is the button and the stars only), no typed wordmark.",
+    "collection": "Sabre Constructions",
+    "background": "frame_dark",
+    "background_video": "../../Marketing AI content for Bare Bayside Labs/docs/pipelines/video-production/obs/media/sab/bg-clarence-soft.mp4",
+    "video_speed": 1,
+    "video_dim": 0.55,
+    "_video_note": "REAL photos only, no AI motion: Clarence (home-slide011607.jpg) behind the screen scenes; a finished Sabre kitchen (home-slide021607.jpg) behind Nathan in Me, blurred like a shallow-focus shot. Still images rendered to 10 s loops with ffmpeg (scale 1080 high, centre crop, gblur 14 / 9).",
+    "me_video": {
+      "kitchen": "../../Marketing AI content for Bare Bayside Labs/docs/pipelines/video-production/obs/media/sab/me-kitchen-soft.mp4",
+      "living": "../../Marketing AI content for Bare Bayside Labs/docs/pipelines/video-production/obs/media/sab/me-living-soft.mp4",
+      "front": "../../Marketing AI content for Bare Bayside Labs/docs/pipelines/video-production/obs/media/sab/me-front-soft.mp4",
+      "brighton": "../../Marketing AI content for Bare Bayside Labs/docs/pipelines/video-production/obs/media/sab/me-brighton-soft.mp4"
+    },
+    "_me_video_pick": "Backdrops behind Nathan in Me, all REAL Sabre photos blurred (kitchen + living = home-slide021607/041607, front = Clarence home-slide011607, brighton = proj2x-brighton). Kitchen shows after a build; switch with obs_setup.py backdrop --pick <name>. No pretend background at all: the Me real scene (Ctrl+Alt+7), his real room a little out of focus.",
+    "edge": "soft",
+    "text": "#FFFFFF",
+    "frame": {
+      "_note": "Same bezel style as BBL, quieter: thin charcoal bezel, 8px-ish corners like the site, a faint warm glow, no label (the wordmark only ever as the logo file).",
+      "bezel": "deep",
+      "bezel_px": 12,
+      "radius": 14,
+      "rim": "soft",
+      "glow_px": 40,
+      "glow_alpha": 0.22,
+      "halo_alpha": 0.15,
+      "rim_alpha": 0,
+      "shadow_alpha": 0.45
+    },
+    "transition": "Fade",
+    "transition_ms": 300
+  },
+  "avoid_styles": [
+    "hook-streaks",
+    "words-band",
+    "framed-lines",
+    "hook-sticker",
+    "close-face"
+  ],
   "_avoid_styles_why": "Every current thumbnail style uses chunky bubble words or stickers: 'a builder since 1990 who does not need to shout' (design-system.md). Sabre needs its own calm style added to the menu",
   "thumb": {
     "_about": "Sabre thumbnail look (BBL products/video-engine/thumbnail-playbook.md; /thumbnails), 2026-10-12. From sabre-constructions-website/docs/design-system.md: warm paper, charcoal, Figtree no heavier than SemiBold, sentence case, 8px corners, nothing bold-shouting. Red is the button and the stars only, so never on a thumbnail.",
@@ -140,8 +225,67 @@
     "stroke": false,
     "radius": 8,
     "shadow": "soft",
-    "styles": ["face-claim", "framed-list"],
-    "rules": ["Calm: sentence case, nothing heavier than SemiBold, no stickers, streaks or bubble words (every ad-cover style is in avoid_styles)", "Sabre red #EB2227 never on a thumbnail (button + review stars only); no black slabs or red bands", "Google rating is 4.5, never rounded to 5; no prices; never state how many homes", "The wordmark only ever as the logo file, never typed"],
+    "styles": [
+      "face-claim",
+      "framed-list"
+    ],
+    "rules": [
+      "Calm: sentence case, nothing heavier than SemiBold, no stickers, streaks or bubble words (every ad-cover style is in avoid_styles)",
+      "Sabre red #EB2227 never on a thumbnail (button + review stars only); no black slabs or red bands",
+      "Google rating is 4.5, never rounded to 5; no prices; never state how many homes",
+      "The wordmark only ever as the logo file, never typed"
+    ],
     "learned": []
+  },
+  "talk": {
+    "_about": "Talk style for Nathan to camera (BBL products/video-engine/vengine/talkstyle.py), first draft 2026-10-30. `studio`: word captions in a white pill, keyword cards, name card, end card. Calm like the site: Figtree (weight_map caps it at SemiBold), charcoal, no red, wordmark only as the logo file (so no typed brand_line).",
+    "style": "studio",
+    "grade": "eq=contrast=1.03:saturation=1.04",
+    "mark": null,
+    "mark_on_dark": "../assets/img/sabre-logo-white.png",
+    "brand_line": "",
+    "display_font": "Figtree.ttf",
+    "caption": {
+      "fill": "white",
+      "text": "ink_soft",
+      "active": "ink",
+      "max_words": 5
+    },
+    "zoom": 1.08,
+    "progress": [
+      "9x16",
+      "4x5"
+    ],
+    "end_seconds": 3.5,
+    "vocab": [
+      "Sabre Constructions",
+      "Sabre",
+      "Nathan",
+      "Stewart",
+      "Cathy",
+      "Wynnum",
+      "Manly",
+      "Lota",
+      "Gumdale",
+      "Ransome",
+      "Woolloongabba",
+      "Hamptons",
+      "knockdown rebuild",
+      "QBCC"
+    ],
+    "fixes": {
+      "Saved Restructions": "Sabre Constructions",
+      "Saved Constructions": "Sabre Constructions",
+      "Save Constructions": "Sabre Constructions",
+      "winem": "Wynnum",
+      "Winem": "Wynnum",
+      "Hampton style": "Hamptons style"
+    },
+    "uppercase": false,
+    "end_small": 0.42,
+    "end_small_colour": "secondary",
+    "end_button": "button",
+    "end_button_text": "on_button",
+    "_end_note": "End card: sentence case; lines after the first are small grey (the licence line); the button is Sabre red, the one place red is allowed (design-system.md)."
   }
 }

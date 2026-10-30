@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabre Ads Run-through</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F8F7F4;--card:#fff;--ink:#1B1C1F;--soft:#5d5f66;--line:#e3e0d8;--red:#EB2227;--green:#1f8a4c;--amber:#b7791f;--blue:#2b5fa8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Figtree,Arial,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+header{background:var(--ink);color:#fff;padding:38px 0 30px}
+.eyebrow{color:#ff8b8e;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+h1{font-size:32px;line-height:1.15;margin:8px 0 10px;font-weight:600}
+header p{color:#c9cad0;margin:0;max-width:720px}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:8px;padding:10px 16px;overflow-x:auto}
+.bar a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:#fff}
+.bar .sp{flex:1}
+button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+button.primary{background:var(--red);border-color:var(--red);color:#fff}
+section{padding:34px 0 6px;scroll-margin-top:60px}
+h2{font-size:25px;margin:0 0 4px;font-weight:600}
+h3{font-size:18px;margin:0 0 8px;font-weight:600}
+.lede{color:var(--soft);margin:0 0 18px}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.stage{background:#fff;padding:18px;border-right:1px solid var(--line);position:relative}
+.stage:last-child{border-right:0}
+.stage .when{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.stage:nth-child(1) .when{color:var(--blue)} .stage:nth-child(2) .when{color:var(--red)} .stage:nth-child(3) .when{color:var(--green)}
+.stage:nth-child(1){border-top:5px solid var(--blue)} .stage:nth-child(2){border-top:5px solid var(--red)} .stage:nth-child(3){border-top:5px solid var(--green)}
+.stage h3{margin:6px 0 6px;font-size:19px}
+.stage p{margin:0 0 8px;font-size:15px}
+.stage ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--soft)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.box{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fcfbf9}
+.box h4{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--soft)}
+.box ul{margin:0;padding-left:18px}.box li{margin:3px 0}
+.suburbs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.suburbs span{background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 11px;font-size:14px}
+.suburbs span.core{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ad{border:1px solid #dadce0;border-radius:10px;background:#fff;padding:14px 16px;max-width:560px;font-family:Arial,sans-serif}
+.ad .sp{font-size:12px;color:#202124;font-weight:700}.ad .url{font-size:12.5px;color:#4d5156;margin-bottom:4px}
+.ad .hl{color:#1a0dab;font-size:19px;line-height:1.3}
+.ad .ds{color:#4d5156;font-size:14px;margin-top:4px}
+.fb{border:1px solid #dadde1;border-radius:10px;background:#fff;max-width:380px;font-family:Arial,sans-serif;overflow:hidden}
+.fb .top{padding:10px 12px;font-size:13.5px}.fb .top b{display:block;font-size:14px}.fb .top small{color:#65676b}
+.fb .img{aspect-ratio:4/5;background:linear-gradient(160deg,#3a3c42,#1B1C1F);color:#fff;display:flex;align-items:flex-end;padding:16px;font-size:21px;font-weight:700;line-height:1.2}
+.fb .cta{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#f0f2f5;font-size:13px}
+.fb .cta span{background:#e4e6eb;padding:6px 10px;border-radius:6px;font-weight:700}
+.examples{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);font-weight:600}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:99px}
+.pill.g{background:#e4f4ea;color:var(--green)} .pill.a{background:#fbf0dc;color:var(--amber)} .pill.r{background:#fde8e8;color:var(--red)}
+.bars{display:flex;height:28px;border-radius:8px;overflow:hidden;font-size:12.5px;color:#fff;font-weight:600;margin:6px 0 4px}
+.bars div{display:flex;align-items:center;padding:0 8px;white-space:nowrap;overflow:hidden}
+.ask{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.q{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:8px 0}
+.q .t{flex:1 1 320px;font-weight:600;font-size:15px}
+.q .opts button{padding:5px 12px;font-size:13.5px}
+.q .opts button.on.ok{background:var(--green);border-color:var(--green);color:#fff}
+.q .opts button.on.ch{background:var(--amber);border-color:var(--amber);color:#fff}
+.q input{flex:1 1 100%;font:inherit;font-size:14.5px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fcfbf9}
+.flag{background:#fff6e5;border:1px solid #f1d9a8;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:15px}
+.big{font-size:20px;font-weight:600;border-left:4px solid var(--red);padding:12px 16px;background:#fff;border-radius:0 10px 10px 0;margin:6px 0 14px}
+.blank{background:#fde8e8;color:var(--red);padding:0 6px;border-radius:4px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+footer{color:var(--soft);font-size:13px;padding:24px 0 40px}
+@media (max-width:760px){.timeline{grid-template-columns:1fr}.stage{border-right:0;border-bottom:1px solid var(--line)}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="eyebrow">Sabre Constructions · ads run-through with Nathan · 30 Oct 2026</div>
+  <h1>Fast track: the 2027 offer out before Christmas</h1>
+  <p>Where the ads show, who sees them, what they say and where people land, for Google and for Facebook/Instagram. Nathan says OK or change on each one, and his answers are saved on this page.</p>
+</div></header>
+
+<div class="bar"><div class="wrap">
+  <a href="#fast">Fast track</a><a href="#plan">The plan</a><a href="#google">General: Google</a><a href="#meta">General: Facebook/Insta</a><a href="#eoy">End-of-year push</a><a href="#after">After that</a><a href="#money">Budget</a>
+  <span class="sp"></span><button class="primary" id="copy">Copy answers</button>
+</div></div>
+
+<main class="wrap">
+
+<section id="fast">
+  <h2>Fast track: walk-throughs booked before the Christmas shutdown</h2>
+  <p class="lede">It's November, so there's no time for a test month. The general campaign shrinks to a one-week systems check, and the 2027 offer goes out as soon as that week passes. Warm contacts start next week, because they don't need ads or the new domain.</p>
+  <div class="tablewrap"><table>
+    <tr><th>When</th><th>What happens</th><th>Needs</th></tr>
+    <tr><td><b>Today, 30 Oct</b></td><td>All access set up. Google business check <b>submitted today</b> (up to 5 working days). Offer numbers answered. Domain login found</td><td>Nathan, today's checklist</td></tr>
+    <tr><td><b>Week of 2 Nov</b></td><td><b>Warm push starts:</b> Nathan messages past clients, architects and brokers with the 2027 offer. Offer posts on Sabre's Facebook + Instagram. Domain moved, new site goes live on sabreconstructions.com.au. One real test enquiry</td><td>Offer numbers · contact list · domain login</td></tr>
+    <tr><td><b>Week of 9 Nov</b></td><td><b>Systems check, one week, small budget.</b> Google + Meta general ads live. We only check that clicks arrive, the form lands in Nathan's inbox and the CRM, and calls come through</td><td>Google check passed · Meta ad account</td></tr>
+    <tr><td><b>From ~16 Nov</b></td><td><b>End-of-year push live:</b> "Get in now for 2027" on Google + Meta, offer banner on the site, budget up</td><td>The check week passed</td></tr>
+    <tr><td><b>Up to the shutdown</b></td><td>Walk-throughs booked and done. Reply to every enquiry within 24 hours</td><td>Nathan's shutdown date</td></tr>
+    <tr><td><b>January</b></td><td>The push keeps running to the sign-by date (families decide over the holidays), then back to general ads</td><td>Sign-by date</td></tr>
+  </table></div>
+  <div class="flag">⚡ <b>Backup if the domain is slow:</b> Meta can run <b>instant form</b> ads, where people enquire inside Facebook without going to the website. That way Meta can start before the domain moves. Google needs the real site.</div>
+  <div class="card ask">
+    <div class="q" data-q="f-plan"><span class="t">Fast track: warm push next week, a one-week check, offer live from ~16 Nov</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Notes"></div>
+    <div class="q" data-q="f-shutdown"><span class="t">When does Sabre shut down for Christmas, and reopen?</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Closes · reopens"></div>
+    <div class="q" data-q="f-walk"><span class="t">Will Nathan do walk-throughs right up to the shutdown? Any in January?</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Answer"></div>
+    <div class="q" data-q="f-warm"><span class="t">Will Nathan send the warm message next week? Roughly how many past clients?</span><span class="opts"><button class="ok">Yes</button><button class="ch">No</button></span><input placeholder="How many / who"></div>
+    <div class="q" data-q="f-instant"><span class="t">OK to use Facebook instant forms if the domain is slow?</span><span class="opts"><button class="ok">OK</button><button class="ch">No</button></span><input placeholder="Notes"></div>
+  </div>
+</section>
+
+<section id="plan">
+  <h2>The plan in three stages</h2>
+  <p class="lede">Prove the system works with an everyday campaign, then push the 2027 offer over the holidays, then go back to everyday ads aimed at whoever actually turned into a customer.</p>
+  <div class="timeline">
+    <div class="stage">
+      <div class="when">Stage 1 · one week · from ~9 Nov</div>
+      <h3>General campaign</h3>
+      <p>Simple everyday ads on Google and Facebook/Instagram. "A family builder on the Bayside since 1990."</p>
+      <ul><li>Leads land in Nathan's inbox and the CRM</li><li>We see which suburbs and searches bring enquiries</li><li>We learn the real cost per enquiry</li></ul>
+    </div>
+    <div class="stage">
+      <div class="when">Stage 2 · from ~16 Nov → sign-by date</div>
+      <h3>End-of-year push</h3>
+      <p>"Get in now for a 2027 build." A dated offer with limited places, while families talk about the house over the holidays.</p>
+      <ul><li>Same ads system, new offer ads on top</li><li>Past clients and referrers hear about it first</li><li>Ends on Nathan's sign-by date</li></ul>
+    </div>
+    <div class="stage">
+      <div class="when">Stage 3 · once it's all working</div>
+      <h3>General again, sharper</h3>
+      <p>Back to everyday ads, aimed at the people stages 1 and 2 showed us are real buyers.</p>
+      <ul><li>Money moves to the suburbs and searches that worked</li><li>Kill the worst ad, back the best, one new test a month</li></ul>
+    </div>
+  </div>
+  <div class="flag">⚠️ <b>"Go-live" needs the real domain.</b> Ads can't send people to the github.io preview, so stage 1 starts the day the new site is on sabreconstructions.com.au. Google Ads also needs the business check to pass, which can take up to 5 working days.</div>
+  <div class="card ask" data-sec="Plan">
+    <div class="q" data-q="plan-stages"><span class="t">Three stages: general month → end-of-year push → general again</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Nathan's notes"></div>
+  </div>
+</section>
+
+<section id="google">
+  <h2>General campaign · Google</h2>
+  <p class="lede">Google's job: catch the family that's <b>already searching</b> for a builder or a knockdown rebuild. Text ads, nothing to film.</p>
+
+  <div class="card">
+    <h3>Where the ads show</h3>
+    <p style="margin:0 0 6px">These 19 suburbs, named one by one, not a radius around Brisbane. Dark ones are the core rebuild areas, and the first two have their own pages on the site.</p>
+    <div class="suburbs">
+      <span class="core">Wynnum</span><span class="core">Manly</span><span class="core">Wynnum West</span><span class="core">Manly West</span><span class="core">Lota</span>
+      <span>Hemmant</span><span>Tingalpa</span><span>Wakerley</span><span>Gumdale</span><span>Ransome</span><span>Belmont</span><span>Chandler</span><span>Capalaba</span><span>Birkdale</span><span>Thorneside</span><span>Wellington Point</span><span>Ormiston</span><span>Cleveland</span><span>Thornlands</span>
+    </div>
+    <p style="margin:6px 0 0;font-size:14.5px;color:var(--soft)">Setting: only people <b>in</b> these suburbs or regularly there, so the budget doesn't leak to someone in Sydney "interested in" Brisbane.</p>
+    <div class="ask">
+      <div class="q" data-q="g-suburbs"><span class="t">Are these the right suburbs? Any to add or drop?</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Add / drop…"></div>
+      <div class="q" data-q="g-core"><span class="t">Which suburbs does Sabre most want work in?</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Top suburbs…"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>What searches we pay for</h3>
+    <div class="bars">
+      <div style="width:45%;background:#1B1C1F">Knockdown rebuild 45%</div>
+      <div style="width:30%;background:#4a4c52">Builder + suburb 30%</div>
+      <div style="width:15%;background:#EB2227">Can I knock it down? 15%</div>
+      <div style="width:10%;background:#9a9ca3">Sabre</div>
+    </div>
+    <div class="tablewrap" style="margin-top:10px"><table>
+      <tr><th>Group</th><th>Example searches</th><th>Lands on</th></tr>
+      <tr><td><b>Knockdown rebuild</b></td><td>knockdown rebuild brisbane · knockdown rebuild wynnum · knockdown rebuild manly · demolish and rebuild same block</td><td>Home page, or the Wynnum / Manly page</td></tr>
+      <tr><td><b>Builder + suburb</b></td><td>builders wynnum · home builders manly qld · builders capalaba · new home builders redlands · custom home builder bayside</td><td>The suburb page, or home</td></tr>
+      <tr><td><b>Can I knock it down?</b></td><td>character overlay brisbane · pre 1947 house demolish · can i demolish my house brisbane</td><td>The "can we knock it down" article, which ends on the enquiry form</td></tr>
+      <tr><td><b>Sabre's own name</b></td><td>sabre constructions · sabre builders</td><td>Home. Cheap, and it stops a rival sitting above Sabre on its own name</td></tr>
+    </table></div>
+    <p style="margin:10px 0 0;font-size:14.5px;color:var(--soft)"><b>Blocked from day one:</b> jobs, apprentice, DIY, cheap, kit home, granny flat, shed, deck, pergola, extension, demolition contractor, asbestos removal, commercial, townhouse, developer, other cities. Ask Nathan if granny flats and extensions should stay blocked: Leanne's job was an extension.</p>
+    <div class="ask">
+      <div class="q" data-q="g-groups"><span class="t">Knockdown rebuilds + new homes as the focus</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Notes"></div>
+      <div class="q" data-q="g-extensions"><span class="t">Extensions / granny flats: block them, or does Sabre want that work too?</span><span class="opts"><button class="ok">Block</button><button class="ch">Want them</button></span><input placeholder="Notes"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>The angle: what the ads say</h3>
+    <div class="big">Same street. Same school. A whole new house, with the builder who stays with you from the first walk-through to the keys.</div>
+    <p style="margin:0 0 12px;color:var(--soft)">Rivals sell prices and display homes. Sabre sells a family builder who answers his own phone. We never put a price, a timeline or a job count in an ad.</p>
+    <div class="examples">
+      <div class="ad">
+        <div class="sp">Sponsored</div>
+        <div class="url">sabreconstructions.com.au › wynnum</div>
+        <div class="hl">Knockdown Rebuild in Wynnum | Family Builder Since 1990 | Book a Walk-Through</div>
+        <div class="ds">Stay on the street you love. Nathan walks your old house with you and stays on the phone until he hands you the keys. Master Builders member.</div>
+      </div>
+      <div class="ad">
+        <div class="sp">Sponsored</div>
+        <div class="url">sabreconstructions.com.au › can-we-knock-it-down</div>
+        <div class="hl">Can You Knock Your House Down? | Check Before You Plan | Sabre Constructions</div>
+        <div class="ds">Some Brisbane houses can't legally come down. Find out what decides it for yours, then talk to a Bayside builder since 1990.</div>
+      </div>
+    </div>
+    <p style="margin:10px 0 0;font-size:13.5px;color:var(--soft)">Draft wording. The search ads also show Nathan's mobile as a call button, plus links to Your design, Meet the team and Testimonials.</p>
+    <div class="ask">
+      <div class="q" data-q="g-angle"><span class="t">Is that angle true for Sabre? Is it you on the phone, start to finish?</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="His words…"></div>
+      <div class="q" data-q="g-call"><span class="t">Calls from the ads go to Nathan's mobile</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Or which number…"></div>
+    </div>
+  </div>
+</section>
+
+<section id="meta">
+  <h2>General campaign · Facebook and Instagram</h2>
+  <p class="lede">Meta's job: put "knock down and rebuild" in front of families who <b>haven't searched yet</b> but own an older house and are outgrowing it.</p>
+  <div class="card">
+    <div class="grid">
+      <div class="box"><h4>Who sees it</h4><ul><li>People living in the same suburbs as Google</li><li>Ages 30–60 (young families plus the parents who help them)</li><li>Later: people who watched a Sabre video or visited the site</li></ul></div>
+      <div class="box"><h4>Split</h4><ul><li><b>60%</b> new people in the suburbs</li><li><b>25%</b> people who've watched or liked Sabre</li><li><b>15%</b> site visitors who didn't enquire</li></ul><p style="margin:6px 0 0;font-size:13.5px;color:var(--soft)">The last two switch on once there's traffic to follow up.</p></div>
+      <div class="box"><h4>Where they land</h4><ul><li>The home page, or the suburb page</li><li>The goal is the same as Google: book a walk-through with Nathan</li></ul></div>
+    </div>
+    <h3 style="margin-top:18px">What we can run in stage 1</h3>
+    <div class="tablewrap"><table>
+      <tr><th>Ad</th><th>Says</th><th>Ready?</th></tr>
+      <tr><td>Nathan's knockdown video</td><td>"Hi, I'm Nathan… we're a family-owned building company"</td><td><span class="pill a">Needs the no-music version + the "owner" line checked</span></td></tr>
+      <tr><td>Leanne's testimonial</td><td>A 4-year repeat client, in her own words</td><td><span class="pill a">Needs Leanne's OK for ads</span></td></tr>
+      <tr><td>Since 1990 + a review</td><td>"Building on this bay since 1990." + a real review line</td><td><span class="pill g">Can make now</span></td></tr>
+      <tr><td>Can we even knock it down?</td><td>"Some houses in Wynnum can't legally be knocked down. Do you know if yours is one?"</td><td><span class="pill g">Can make now</span></td></tr>
+      <tr><td>Nathan, 20 seconds, on his phone</td><td>"What happens when a family rings me?" Unscripted</td><td><span class="pill a">One ask, could film today</span></td></tr>
+    </table></div>
+    <div class="examples" style="margin-top:14px">
+      <div class="fb">
+        <div class="top"><b>Sabre Constructions</b><small>Sponsored</small><br>You picked this street for a reason. Don't let the house decide you have to leave it.</div>
+        <div class="img">Same street.<br>Same school.<br>A whole new house.</div>
+        <div class="cta"><div>sabreconstructions.com.au<br><b>Book a walk-through with Nathan</b></div><span>Learn more</span></div>
+      </div>
+    </div>
+    <p style="margin:8px 0 0;font-size:13.5px;color:var(--soft)">Mock-up only. The real ad uses Sabre's own photos or footage, never a computer-made house.</p>
+    <div class="ask">
+      <div class="q" data-q="m-who"><span class="t">Same suburbs, ages 30–60</span><span class="opts"><button class="ok">OK</button><button class="ch">Change</button></span><input placeholder="Notes"></div>
+      <div class="q" data-q="m-video"><span class="t">Film the 20-second phone clip today?</span><span class="opts"><button class="ok">Yes</button><button class="ch">Not today</button></span><input placeholder="Notes"></div>
+      <div class="q" data-q="m-owner"><span class="t">Knockdown video: keep "I'm the owner", or cut it?</span><span class="opts"><button class="ok">Keep</button><button class="ch">Cut</button></span><input placeholder="Notes"></div>
+      <div class="q" data-q="m-leanne"><span class="t">Will Nathan ask Leanne about using her video in ads?</span><span class="opts"><button class="ok">Yes</button><button class="ch">No</button></span><input placeholder="Notes"></div>
+    </div>
+  </div>
+</section>
+
+<section id="eoy">
+  <h2>End-of-year push · "Get in now for 2027"</h2>
+  <p class="lede">The same Google and Meta setup keeps running. On top of it go offer ads with a real deadline and a set number of places, and past clients and referrers hear about it first.</p>
+  <div class="card">
+    <div class="big">"Your 2027 family rebuild: demolition included, plus the <span class="blank">[name]</span> upgrade pack worth <span class="blank">$[X]</span>. Only <span class="blank">[N]</span> families, sign by <span class="blank">[date]</span>."</div>
+    <div class="grid">
+      <div class="box"><h4>Why the end of the year</h4>Families talk about the house over the summer holidays. A 2027 start needs design and council approval first, so they have to begin talking now.</div>
+      <div class="box"><h4>What changes in the ads</h4><ul><li>Google: an offer line added to the ads</li><li>Meta: new offer ads, with a countdown to the sign-by date</li><li>The home page gets an offer banner</li></ul></div>
+      <div class="box"><h4>Warm first</h4><ul><li>Past clients</li><li>Neighbours of current sites</li><li>Architects and brokers who send work</li></ul></div>
+    </div>
+    <div class="ask">
+      <div class="q" data-q="e-slots"><span class="t">How many 2027 build places?</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Number"></div>
+      <div class="q" data-q="e-demo"><span class="t">Demolition included: for every 2027 family, or the first few?</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Answer + rough cost"></div>
+      <div class="q" data-q="e-pack"><span class="t">The upgrade pack: what's in it, retail value, cost to Sabre</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Contents · $ retail · $ cost"></div>
+      <div class="q" data-q="e-early"><span class="t">Cover the early costs (soil test, survey, council checks)?</span><span class="opts"><button class="ok">Yes</button><button class="ch">No</button></span><input placeholder="For signers only? Rough amount"></div>
+      <div class="q" data-q="e-date"><span class="t">Latest date to sign and still build in 2027</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Sign by"></div>
+      <div class="q" data-q="e-start"><span class="t">Push start: ~16 Nov OK?</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Start date"></div>
+    </div>
+  </div>
+</section>
+
+<section id="after">
+  <h2>After that · general again, aimed at real buyers</h2>
+  <div class="card">
+    <p style="margin:0 0 10px">By then we'll know from real enquiries, not guesses:</p>
+    <div class="grid">
+      <div class="box"><h4>Where</h4>Which suburbs brought enquiries. The money follows them.</div>
+      <div class="box"><h4>What</h4>Which searches and which ads turned into walk-throughs.</div>
+      <div class="box"><h4>Who</h4>What the real buyers look like: young family, parents helping, or downsizers.</div>
+      <div class="box"><h4>Cost</h4>What one enquiry costs, compared with what one build is worth.</div>
+    </div>
+    <p style="margin:12px 0 0;color:var(--soft)">Rules for reading it: wait at least 7 days or $1,000 before judging anything. Weekly, write the numbers down. Monthly, kill the worst, back the best, and start one new test.</p>
+  </div>
+</section>
+
+<section id="money">
+  <h2>Budget</h2>
+  <div class="card">
+    <p style="margin:0 0 10px">Sabre pays Google and Meta directly on its own card. Our proposal is <b>roughly $30–50 a day across both</b>, until Nathan picks a number.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Stage</th><th>Google</th><th>Facebook / Instagram</th></tr>
+      <tr><td>1 · One-week check</td><td>Knockdown rebuild, builder + suburb, Sabre's name</td><td>New people in the suburbs, with the ads that are ready</td></tr>
+      <tr><td>2 · End-of-year push</td><td>+ "Can I knock it down" + the offer line</td><td>+ offer ads, people who've watched Sabre, site visitors</td></tr>
+      <tr><td>3 · General again</td><td>Money moves to what worked</td><td>Same</td></tr>
+    </table></div>
+    <div class="ask">
+      <div class="q" data-q="b-month"><span class="t">Monthly ad budget</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="$ per month"></div>
+      <div class="q" data-q="b-value"><span class="t">Roughly what profit one build makes (so we know what an enquiry is worth)</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="$ rough"></div>
+      <div class="q" data-q="b-reply"><span class="t">Who replies to new enquiries, and how fast? (target: within 24 hours)</span><span class="opts"><button class="ok">Answered</button><button class="ch">Later</button></span><input placeholder="Nathan / Celene…"></div>
+    </div>
+  </div>
+</section>
+
+<footer>Built from <code>docs/reference/campaign-strategy.md</code>, <code>marketing/plan.md</code> and the push folder <code>marketing/pushes/2026-10-29-2027-build-slots/</code>. Ad wording is draft until Nathan confirms the claims.</footer>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = 'sabre-runsheet-2026-10-30';
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+
+document.querySelectorAll('.q').forEach(q => {
+  const id = q.dataset.q, s = state[id] || {};
+  const [ok, ch] = q.querySelectorAll('.opts button');
+  const input = q.querySelector('input');
+  input.value = s.note || '';
+  const paint = () => { ok.classList.toggle('on', s.pick === 'ok'); ch.classList.toggle('on', s.pick === 'ch'); };
+  paint();
+  ok.addEventListener('click', () => { s.pick = s.pick === 'ok' ? null : 'ok'; state[id] = s; save(); paint(); });
+  ch.addEventListener('click', () => { s.pick = s.pick === 'ch' ? null : 'ch'; state[id] = s; save(); paint(); });
+  input.addEventListener('input', () => { s.note = input.value; state[id] = s; save(); });
+});
+
+function toast(m) { const t = document.getElementById('toast'); t.textContent = m; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1800); }
+
+document.getElementById('copy').addEventListener('click', async () => {
+  let out = '# Nathan run-through answers — 2026-10-30\n';
+  document.querySelectorAll('section').forEach(sec => {
+    const qs = sec.querySelectorAll('.q');
+    if (!qs.length) return;
+    out += `\n## ${sec.querySelector('h2').textContent}\n`;
+    qs.forEach(q => {
+      const s = state[q.dataset.q] || {};
+      const btns = q.querySelectorAll('.opts button');
+      const pick = s.pick === 'ok' ? btns[0].textContent : s.pick === 'ch' ? btns[1].textContent : '—';
+      out += `- ${q.querySelector('.t').textContent}: **${pick}**${s.note ? ` — ${s.note}` : ''}\n`;
+    });
+  });
+  try { await navigator.clipboard.writeText(out); toast('Copied. Paste it back to Claude'); }
+  catch (e) { toast('Copy failed'); console.log(out); }
+});
+</script>
+</body>
+</html>

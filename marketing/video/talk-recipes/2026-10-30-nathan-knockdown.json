@@ -1,0 +1,11 @@
+{
+  "_about": "Draft B (2026-10-30): Nathan on why he likes knockdown rebuilds, from the 10-30 take (clip 14, raw 10:09-10:19), keyed over a soft real Sabre home, cutting to the real demolition (videographer's 04. Knock down.mov, 14.6-18.6 s, muted, past the site sign) and a finished Sabre home.",
+  "kit": "../../../docs/brand-kit.json",
+  "style": "studio",
+  "name_card": {"name": "Nathan", "role": "Sabre Constructions", "t0": 0.4, "t1": 3.4},
+  "cutaways": [
+    {"src": "C:/Recordings/sabre-2026-10-30/ad/demolition.mp4", "at_word": "^knockdown", "until_word": "^slate", "push": 1.0},
+    {"src": "../../../assets/img/proj2x-clarence.jpg", "at_word": "^outcome", "dur": 2.4}
+  ],
+  "end": {"line": ["Book a walk-through", "QBCC 15486557"], "button": "sabreconstructions.com.au", "seconds": 3.5}
+}

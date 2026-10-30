@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabre Scripts for Nathan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F8F7F4;--card:#fff;--ink:#1B1C1F;--soft:#5d5f66;--line:#e3e0d8;--red:#EB2227;--green:#1f8a4c;--amber:#b7791f;--blue:#2b5fa8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Figtree,Arial,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+header{background:var(--ink);color:#fff;padding:38px 0 30px}
+.eyebrow{color:#ff8b8e;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+h1{font-size:32px;line-height:1.15;margin:8px 0 10px;font-weight:600}
+header p{color:#c9cad0;margin:0;max-width:720px}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:8px;padding:10px 16px;overflow-x:auto}
+.bar a{white-space:nowrap;text-decoration:none;color:var(--ink);font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:#fff}
+.bar .sp{flex:1}
+button{font:inherit;font-size:14px;font-weight:600;border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 12px;cursor:pointer;white-space:nowrap;color:var(--ink)}
+button.primary{background:var(--red);border-color:var(--red);color:#fff}
+button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+section{padding:34px 0 6px;scroll-margin-top:60px}
+h2{font-size:25px;margin:0 0 4px;font-weight:600}
+h3{font-size:15px;margin:18px 0 8px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--soft)}
+.lede{color:var(--soft);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:99px}
+.pill.g{background:#e4f4ea;color:var(--green)} .pill.a{background:#fbf0dc;color:var(--amber)} .pill.r{background:#fde8e8;color:var(--red)} .pill.b{background:#e6eef9;color:var(--blue)}
+.idea{border-left:4px solid var(--red);padding:10px 14px;background:#fcfbf9;border-radius:0 10px 10px 0;margin:10px 0 4px;font-size:17px}
+.line{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line)}
+.line:last-child{border-bottom:0}
+.line .say{flex:1;font-size:19px;line-height:1.45}
+.line .say.hook{font-weight:600}
+.line .n{flex:0 0 28px;height:28px;border-radius:99px;background:#f0eee8;color:var(--soft);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.take{flex:0 0 auto;display:flex;gap:6px}
+.take button{padding:4px 10px;font-size:13px}
+.take button.done{background:var(--green);border-color:var(--green);color:#fff}
+.flag{background:#fff6e5;border:1px solid #f1d9a8;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:15px}
+.u{background:#fff1c2;border-radius:4px;padding:0 3px}
+.q{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:0}
+.q .t{flex:1 1 320px;font-weight:600;font-size:15px}
+.q .t small{display:block;font-weight:400;color:var(--soft)}
+.q .opts button{padding:5px 12px;font-size:13.5px}
+.q .opts button.on.ok{background:var(--green);border-color:var(--green);color:#fff}
+.q .opts button.on.ch{background:var(--amber);border-color:var(--amber);color:#fff}
+.q .opts button.on.no{background:var(--red);border-color:var(--red);color:#fff}
+.q input{flex:1 1 100%;font:inherit;font-size:14.5px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:#fcfbf9}
+ul.tips{margin:0;padding-left:20px}ul.tips li{margin:4px 0}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.key{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:#fcfbf9;font-size:14.5px}
+.key b{display:block;font-size:16px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+footer{color:var(--soft);font-size:13px;padding:24px 0 40px}
+
+/* Read mode: big words for reading off the screen while recording */
+body.read header,body.read .noread,body.read .lede,body.read h3.noread{display:none}
+body.read{background:#111214;color:#f4f3ef}
+body.read .bar{background:#111214;border-color:#2a2b30}
+body.read .bar a{background:#1d1e22;border-color:#2a2b30;color:#f4f3ef}
+body.read .card{background:#111214;border-color:#2a2b30}
+body.read h2{font-size:30px;color:#fff}
+body.read h3{color:#9a9ba2}
+body.read .line{border-color:#2a2b30}
+body.read .line .say{font-size:34px;line-height:1.35}
+body.read .line .n{background:#26272c;color:#9a9ba2}
+body.read .idea{display:none}
+body.read .take button{background:#1d1e22;border-color:#2a2b30;color:#f4f3ef}
+body.read .take button.done{background:var(--green);border-color:var(--green)}
+@media (max-width:760px){h1{font-size:26px}.line .say{font-size:17px}body.read .line .say{font-size:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="eyebrow">Sabre Constructions · scripts for Nathan · 30 Oct 2026</div>
+  <h1>Nathan to camera: an intro and three angles</h1>
+  <p>Short lines, one thought each, so any line can be cut out later for ads, reels and the website. Nathan checks the claims first, then records each block. Press <b>Read mode</b> for big words to read off the screen.</p>
+</div></header>
+
+<div class="bar"><div class="wrap">
+  <a href="#check">Check first</a><a href="#how">How to record</a><a href="#intro">Intro</a><a href="#a">A: Stay on the street</a><a href="#b">B: Built around you</a><a href="#c">C: One builder</a><a href="#screen">On screen</a>
+  <span class="sp"></span><button id="read">Read mode</button><button class="primary" id="copy">Copy answers</button>
+</div></div>
+
+<main class="wrap">
+
+<section id="check" class="noread">
+  <h2>Check first: is every line true?</h2>
+  <p class="lede">Nathan says these as fact, on camera. If he says "that's not quite how we do it", write his words in the box and change the line before filming. Never film a line he isn't sure of.</p>
+  <div class="card" id="claims">
+    <div class="q" data-k="walk"><div class="t">"I come out and walk through your house with you"<small>Is it Nathan who does the walk-through (not Stewart)?</small></div><div class="opts"><button data-v="ok" class="ok">OK</button><button data-v="ch" class="ch">Change</button></div><input placeholder="His words, if different"></div>
+    <div class="q" data-k="every"><div class="t">"We're with you every step of the way" / "the same person answering the phone"<small>Is that really how a build runs?</small></div><div class="opts"><button data-v="ok" class="ok">OK</button><button data-v="ch" class="ch">Change</button></div><input placeholder="His words, if different"></div>
+    <div class="q" data-k="handful"><div class="t">"We only take on a handful of homes at a time"<small>True? No number unless he gives one.</small></div><div class="opts"><button data-v="ok" class="ok">OK</button><button data-v="ch" class="ch">Change</button></div><input placeholder="His words, or the number"></div>
+    <div class="q" data-k="designers"><div class="t">"We help you with the designers"<small>Who are they? Fine to keep it vague on camera.</small></div><div class="opts"><button data-v="ok" class="ok">OK</button><button data-v="ch" class="ch">Change</button></div><input placeholder="Who the designers / architects are"></div>
+    <div class="q" data-k="cost"><div class="t">Extra line, only if true: "Custom doesn't have to mean it costs more"<small>A price claim: it has to be true (consumer law). If yes, what's his reason?</small></div><div class="opts"><button data-v="ok" class="ok">Yes, add it</button><button data-v="no" class="no">Leave it out</button></div><input placeholder="Why it doesn't cost more, in his words"></div>
+    <div class="q" data-k="licence"><div class="t">The exact name the QBCC licence is held in<small>Goes on screen on every ad, with QBCC 15486557.</small></div><div class="opts"></div><input placeholder="Licence name"></div>
+  </div>
+  <div class="flag">⛔ <b>Not in the scripts:</b> "I'm the owner." The owners on record are Stewart and Cathy, so the scripts say "Mum and Dad started Sabre back in 1990", which is true.</div>
+</section>
+
+<section id="how" class="noread">
+  <h2>How to record</h2>
+  <div class="card">
+    <ul class="tips">
+      <li><b>Stand, or sit on a stool.</b> A chair with a back stays sharp behind him and looks odd.</li>
+      <li>Look at the camera lens, not the screen.</li>
+      <li>One block at a time. Pause a breath between lines, so they cut cleanly.</li>
+      <li><b>Each hook on its own, three times.</b> Hooks are what we test in ads, so we want plenty of them.</li>
+      <li>Two takes of each body. If he wants to say it his own way, let him. His words beat these.</li>
+      <li>Tick each line as it's done (the tick buttons save on this page).</li>
+    </ul>
+    <div class="keys">
+      <div class="key"><b>Ctrl+Alt+7</b>His real room, softly blurred</div>
+      <div class="key"><b>Ctrl+Alt+1</b>Cut out over a real Sabre home</div>
+      <div class="key"><b>Ctrl+Alt+R</b>Start / stop recording (files in C:/Recordings)</div>
+    </div>
+  </div>
+</section>
+
+<section id="intro">
+  <h2>1. Introduction</h2>
+  <div class="meta noread"><span class="pill b">about 45 seconds</span><span class="pill g">site video · start of longer videos · cold-audience ad</span></div>
+  <div class="card script">
+    <div class="line"><span class="say">Hi, I'm Nathan from Sabre Constructions.</span></div>
+    <div class="line"><span class="say">We're a family building company. Mum and Dad started Sabre back in 1990, and we've been building on the Bayside ever since.</span></div>
+    <div class="line"><span class="say">A lot of the families we talk to are in the same spot.</span></div>
+    <div class="line"><span class="say">They love where they live. The street, the school, the neighbours.</span></div>
+    <div class="line"><span class="say">But the house just doesn't fit them anymore.</span></div>
+    <div class="line"><span class="say">So instead of selling up and moving away, we knock the old house down and build a new one, right there on the same block.</span></div>
+    <div class="line"><span class="say">The way it works is pretty simple.</span></div>
+    <div class="line"><span class="say"><span class="u" data-c="walk">First, I come out and walk through your house with you.</span> What's working, what's not, and what your family needs.</span></div>
+    <div class="line"><span class="say"><span class="u" data-c="designers">Then we help you with the designers</span>, so the new house is drawn around your family and your block.</span></div>
+    <div class="line"><span class="say">Then we build it. <span class="u" data-c="every">And we're with you every step of the way.</span></span></div>
+    <div class="line"><span class="say">If that sounds like you, book a walk-through. I'll give you a call and we'll find a time that suits.</span></div>
+  </div>
+</section>
+
+<section id="a">
+  <h2>2. Angle A: Stay on the street you love</h2>
+  <div class="meta noread"><span class="pill b">about 30 seconds</span></div>
+  <div class="idea noread">Don't move out of the area to get more room. Upgrade the house, keep the life.</div>
+  <h3>Hooks: record each one on its own</h3>
+  <div class="card script">
+    <div class="line"><span class="say hook">Love your street, but the house is too small?</span></div>
+    <div class="line"><span class="say hook">You don't have to leave the area to get a bigger house.</span></div>
+    <div class="line"><span class="say hook">Same street. Same school. A whole new house.</span></div>
+  </div>
+  <h3>Body</h3>
+  <div class="card script">
+    <div class="line"><span class="say">Most families we meet aren't looking to move.</span></div>
+    <div class="line"><span class="say">The kids are at the local school. Their mates are just down the road.</span></div>
+    <div class="line"><span class="say">The problem's the house. Not enough bedrooms, one bathroom for everyone, a kitchen nobody fits in.</span></div>
+    <div class="line"><span class="say">A knockdown rebuild means you keep all the good stuff. The street, the school, the neighbours.</span></div>
+    <div class="line"><span class="say">You just end up with a house that actually fits your family.</span></div>
+    <div class="line"><span class="say">Book a walk-through and I'll come and have a look.</span></div>
+  </div>
+</section>
+
+<section id="b">
+  <h2>3. Angle B: Custom means built around you</h2>
+  <div class="meta noread"><span class="pill b">about 30 seconds</span></div>
+  <div class="idea noread">"Custom" doesn't mean fancy. It means the house is worked out around the family.</div>
+  <h3>Hooks: record each one on its own</h3>
+  <div class="card script">
+    <div class="line"><span class="say hook">Custom home doesn't mean a fancy home.</span></div>
+    <div class="line"><span class="say hook">When we say custom, we mean built around your family.</span></div>
+    <div class="line"><span class="say hook">Why squeeze your family into a plan made for someone else?</span></div>
+  </div>
+  <h3>Body</h3>
+  <div class="card script">
+    <div class="line"><span class="say">When people hear "custom builder", they think big and fancy.</span></div>
+    <div class="line"><span class="say">That's not what it means to us.</span></div>
+    <div class="line"><span class="say">It means the house is worked out around your family. How many kids. Where they sleep. Where dinner happens. Where all the stuff goes.</span></div>
+    <div class="line"><span class="say">Not a plan off a shelf you have to fit your family into.</span></div>
+    <div class="line"><span class="say"><span class="u" data-c="walk">It starts with me walking through your house with you</span>, room by room, and you telling me what's stopped working.</span></div>
+    <div class="line"><span class="say"><span class="u" data-c="designers">Then the designers draw it around your family and your block.</span></span></div>
+    <div class="line" data-only="cost"><span class="say"><span class="u" data-c="cost">And custom doesn't have to mean it costs more.</span></span></div>
+    <div class="line"><span class="say">Book a walk-through and we'll start there.</span></div>
+  </div>
+  <div class="flag noread">The "costs more" line only goes in if Nathan ticks it above. Real proof for the edit, on screen: Lesley W's review, <i>"The first thing Stewart pointed out was the plans could be changed to build it cheaper."</i></div>
+</section>
+
+<section id="c">
+  <h2>4. Angle C: One builder, the whole way</h2>
+  <div class="meta noread"><span class="pill b">about 30 seconds</span></div>
+  <div class="idea noread">A family builder who stays with you, not a company with a sales team and a hand-off.</div>
+  <h3>Hooks: record each one on its own</h3>
+  <div class="card script">
+    <div class="line"><span class="say hook">The builder who walks your house should be the one who hands you the keys.</span></div>
+    <div class="line"><span class="say hook"><span class="u" data-c="handful">We only take on a handful of homes at a time.</span> Here's why.</span></div>
+    <div class="line"><span class="say hook">We're a family, building family homes.</span></div>
+  </div>
+  <h3>Body</h3>
+  <div class="card script">
+    <div class="line"><span class="say">We're a family business. Mum and Dad started Sabre in 1990.</span></div>
+    <div class="line"><span class="say"><span class="u" data-c="handful">We only take on a handful of homes at a time</span>, and that's on purpose.</span></div>
+    <div class="line"><span class="say"><span class="u" data-c="every">It means the person who walks through your old house with you is the same person answering the phone the whole way through.</span> Right up until we hand you the keys.</span></div>
+    <div class="line"><span class="say">No sales team. No hand-off.</span></div>
+    <div class="line"><span class="say">Thirty-six years on the Bayside, and that's what people say about us. We stay with you.</span></div>
+    <div class="line"><span class="say">Book a walk-through and you'll see what I mean.</span></div>
+  </div>
+</section>
+
+<section id="screen" class="noread">
+  <h2>On screen in the edit (not spoken)</h2>
+  <div class="card">
+    <ul class="tips">
+      <li><b>Every ad:</b> the licence name + QBCC 15486557 (the law for builders' ads).</li>
+      <li>Proof: "4.5 from 12 Google reviews". Recheck the count before each ad, and never round it to 5.</li>
+      <li>For angle C, a real review: Jason Turner, Jun 2025: <i>"Nathan and the gang were excellent during the build. Always around to help or offer suggestions."</i></li>
+      <li>The 2027 offer isn't in these scripts. It goes in as its own short take once Nathan's numbers are in.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="noread">Words source: <code>marketing/scripts/2026-10-30-nathan-to-camera.md</code> · Highlighted words = claims Nathan checks first. Ticks and answers save in this browser only; use Copy answers to keep them.</footer>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY = 'sabre-scripts-2026-10-30';
+let st = {};
+try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+st.claims = st.claims || {}; st.notes = st.notes || {}; st.takes = st.takes || {};
+
+// Claims: OK / Change buttons + notes
+document.querySelectorAll('#claims .q').forEach(q => {
+  const k = q.dataset.k, inp = q.querySelector('input');
+  q.querySelectorAll('.opts button').forEach(b => {
+    b.onclick = () => { st.claims[k] = st.claims[k] === b.dataset.v ? '' : b.dataset.v; save(); paint(); };
+  });
+  inp.value = st.notes[k] || '';
+  inp.oninput = () => { st.notes[k] = inp.value; save(); paint(); };
+});
+
+// One tick button per spoken line
+document.querySelectorAll('.script .line').forEach((ln, i) => {
+  const id = 'l' + i, box = document.createElement('div');
+  box.className = 'take';
+  const b = document.createElement('button');
+  b.textContent = '✓';
+  b.title = 'Recorded';
+  b.onclick = () => { st.takes[id] = !st.takes[id]; save(); paint(); };
+  box.appendChild(b); ln.appendChild(box);
+  ln.dataset.id = id;
+});
+
+function paint() {
+  document.querySelectorAll('#claims .q').forEach(q => {
+    const v = st.claims[q.dataset.k];
+    q.querySelectorAll('.opts button').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  });
+  // A claim marked Change shows Nathan's words under the highlighted line
+  document.querySelectorAll('.u[data-c]').forEach(u => {
+    const k = u.dataset.c, ch = st.claims[k] === 'ch' && st.notes[k];
+    u.title = ch ? 'Nathan: ' + st.notes[k] : 'Check with Nathan first';
+    u.style.textDecoration = ch ? 'line-through' : '';
+    let n = u.nextElementSibling;
+    if (n && n.classList.contains('his')) n.remove();
+    if (ch) { const s = document.createElement('b'); s.className = 'his'; s.textContent = ' → ' + st.notes[k]; u.after(s); }
+  });
+  document.querySelectorAll('[data-only]').forEach(el => el.style.display = st.claims[el.dataset.only] === 'ok' ? '' : 'none');
+  document.querySelectorAll('.script .line').forEach(ln => ln.querySelector('.take button').classList.toggle('done', !!st.takes[ln.dataset.id]));
+  document.getElementById('read').classList.toggle('on', document.body.classList.contains('read'));
+}
+
+document.getElementById('read').onclick = () => {
+  document.body.classList.toggle('read');
+  st.read = document.body.classList.contains('read'); save(); paint();
+};
+if (st.read) document.body.classList.add('read');
+
+document.getElementById('copy').onclick = () => {
+  const lines = ['Sabre scripts: Nathan\'s answers (' + new Date().toLocaleDateString('en-AU') + ')'];
+  document.querySelectorAll('#claims .q').forEach(q => {
+    const k = q.dataset.k, v = st.claims[k], t = q.querySelector('.t').firstChild.textContent.trim();
+    const label = { ok: 'OK', ch: 'CHANGE', no: 'LEAVE OUT' }[v] || (q.querySelector('.opts button') ? 'not answered' : '');
+    lines.push('- ' + t + (label ? ': ' + label : '') + (st.notes[k] ? ' — ' + st.notes[k] : ''));
+  });
+  const all = document.querySelectorAll('.script .line').length, done = Object.values(st.takes).filter(Boolean).length;
+  lines.push('- Lines recorded: ' + done + ' of ' + all);
+  const txt = lines.join('\n'), t = document.getElementById('toast');
+  const ok = () => { t.textContent = 'Copied. Paste it to Claude'; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1800); };
+  (navigator.clipboard ? navigator.clipboard.writeText(txt).then(ok) : Promise.reject()).catch(() => { prompt('Copy this:', txt); });
+};
+
+paint();
+</script>
+</body>
+</html>

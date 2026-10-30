@@ -391,6 +391,8 @@ prices, no bands, no timelines beyond the statutory ones.
 | 2 (3) | S11, R30, R32 | `moving-to-brisbanes-bayside-from-interstate…`, `what-is-the-wynnum-manly-foreshore…`, `is-the-bayside-a-good-place-to-retire` |
 | 3 (12) | S13, S14, S15, R36, R37, R39, R40, R41, R42, R43, R44, R45 | `what-does-master-builders-membership…`, `progress-payments…`, `variations…`, `what-insurance-should-a-builder-have…`, `what-is-a-defects-liability-period`, `whats-in-a-queensland-building-contract…`, `what-happens-if-a-builder-goes-under…`, `should-we-be-an-owner-builder`, `how-do-progress-inspections-and-certifiers-work…`, `…building-and-pest-inspection…knock-down`, `can-you-get-a-construction-loan…`, `what-should-be-in-a-builders-quote…` |
 
+**2026-10-30: S5, R5 and S2 now have Nathan's own words (`docs/nathan-answers-2026-10-30.md`); the rest below still owed.**
+
 **Still owed to Nathan (one 30-minute voice note):** S3 (where the family lives), S5 (how long it takes), R5 (who draws it),
 R8 (demolition timing and who organises), R10 (the walk-through page), the "one thing Nathan said" line on every post, the
 `/wynnum/` and `/manly/` rewrites, and which contract Sabre uses (R11 is written without it). R26 and R34 stay unwritten (price posts).

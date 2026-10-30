@@ -83,6 +83,10 @@ ticked. No generated "after" house, ever (rule 5 / open item 6).
 
 ## 4 · Google Ads — the structure, with the codes
 
+> ⭐ **Superseded 2026-10-30 for the general campaign by `marketing/google-ads/general-campaign.md`**
+> (built by `tools/build_google_ads.py` from fresh keyword research): 13-suburb pocket, 8 ad groups,
+> real codes issued in the BBL registry. The table below is the 09-10 proposal, kept for history.
+
 Four campaigns, own budgets so none can eat the others. **The ad group name is the asset code**
 (registry rule); the campaign name in Google is `sab-knockdown-rebuild-2026`. Phrase + exact
 match only. Location = **Presence** (people in or regularly in), the nineteen suburbs listed in the

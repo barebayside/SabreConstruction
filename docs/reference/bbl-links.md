@@ -64,6 +64,7 @@ that's the operator-site skill, not a fresh solve.
 |---|---|
 | `FAL_KEY` | ⛔ **NOT BBL's.** Sabre's own key: `~/.keys/sabre-fal.key`, set per terminal only (`$env:FAL_KEY = (Get-Content "$HOME\.keys\sabre-fal.key" -Raw).Trim()`). BBL's `.env` key never touches Sabre work (2026-09-05) |
 | Image/video pipeline, model choice rationale, cost budgeting | `BBL/docs/pipelines/image-video-creation.md` |
+| Shorts pipeline (one source → many shorts); Sabre's inputs are in `video-profile.md` | `BBL/docs/pipelines/video-production/shorts/CONTEXT.md` |
 
 The Sabre-specific pipeline is in `media-pipeline.md` here. The keys, the model
 rationale and the cost expectations are BBL's.

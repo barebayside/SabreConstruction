@@ -1,0 +1,16 @@
+{
+  "_about": "Draft A (2026-10-30): Nathan's answer 'custom doesn't mean fancy' from the 10-30 take (clip 07, raw 3:23-4:02), keyed over a soft real Sabre living room, cutting to real Sabre homes as he talks. Source: WorkDrive VIDEO/2026-10-30 — Nathan to camera.",
+  "kit": "../../../docs/brand-kit.json",
+  "style": "studio",
+  "name_card": {"name": "Nathan", "role": "Sabre Constructions", "t0": 0.8, "t1": 5.0},
+  "callouts": [
+    {"at_word": "^suits", "eyebrow": "Custom means", "text": "Built around you", "dur": 3.0}
+  ],
+  "cutaways": [
+    {"src": "../../../assets/img/proj2x-brighton.jpg", "at_word": "^custom", "dur": 2.6},
+    {"src": "../../../assets/img/home-slide021607.jpg", "at_word": "^layout", "dur": 3.0},
+    {"src": "../../../assets/img/proj2x-clarence.jpg", "at_word": "^hampton", "dur": 3.0},
+    {"src": "../../../assets/img/home-slide041607.jpg", "at_word": "^rooms", "dur": 3.4}
+  ],
+  "end": {"line": ["Book a walk-through", "QBCC 15486557"], "button": "sabreconstructions.com.au", "seconds": 3.5}
+}

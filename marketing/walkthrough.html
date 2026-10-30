@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sabre Campaign Walkthrough</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F8F7F4;--card:#fff;--ink:#1B1C1F;--soft:#5d5f66;--line:#e3e0d8;--red:#EB2227;--green:#1f8a4c;--amber:#b7791f;--grey:#9a9ca3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Figtree,Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{background:var(--ink);color:#fff;padding:40px 0 32px}
+header .eyebrow{color:#ff8b8e;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+header h1{font-size:34px;line-height:1.15;margin:8px 0 10px;font-weight:600}
+header p{color:#c9cad0;margin:0;max-width:720px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{display:inline-block;font-size:13px;padding:4px 10px;border-radius:99px;background:#2c2d31;color:#e5e6ea}
+.chip.code{font-family:ui-monospace,Consolas,monospace}
+nav.rail{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+nav.rail ol{list-style:none;margin:0;padding:10px 0;display:flex;gap:6px;overflow-x:auto}
+nav.rail a{display:flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none;color:var(--ink);font-size:14px;padding:6px 12px;border-radius:99px;border:1px solid var(--line);background:#fff}
+nav.rail a .dot{width:9px;height:9px;border-radius:50%}
+.done .dot,.dot.done{background:var(--green)} .now .dot,.dot.now{background:var(--amber)} .todo .dot,.dot.todo{background:var(--grey)}
+h2{font-size:24px;margin:0 0 4px;font-weight:600}
+section{padding:36px 0 8px}
+.lede{color:var(--soft);margin:0 0 18px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;scroll-margin-top:70px}
+.step-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:10px}
+.num{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:17px;color:#fff;background:var(--grey)}
+.step.done .num{background:var(--green)} .step.now .num{background:var(--amber)}
+.step-head h3{margin:0;font-size:20px;font-weight:600}
+.status{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.step.done .status{color:var(--green)} .step.now .status{color:var(--amber)} .step.todo .status{color:var(--grey)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.box{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fcfbf9}
+.box h4{margin:0 0 6px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.box ul{margin:0;padding-left:18px}
+.box li{margin:3px 0}
+.owed{color:var(--red);font-weight:600}
+.offer{border-left:4px solid var(--red);background:#fff;padding:16px 18px;border-radius:0 10px 10px 0;font-size:19px;font-weight:600;margin:8px 0 14px}
+.offer .blank{background:#fde8e8;color:var(--red);padding:0 6px;border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);font-weight:600}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0}
+.flow span{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:14px}
+.flow i{font-style:normal;color:var(--red);font-weight:700}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:99px}
+.pill.g{background:#e4f4ea;color:var(--green)} .pill.a{background:#fbf0dc;color:var(--amber)} .pill.r{background:#fde8e8;color:var(--red)}
+.bars{display:flex;height:26px;border-radius:8px;overflow:hidden;font-size:12.5px;color:#fff;font-weight:600;margin:6px 0 2px}
+.bars div{display:flex;align-items:center;padding:0 8px;white-space:nowrap}
+.rules{background:var(--ink);color:#e5e6ea;border-radius:14px;padding:20px 22px;margin:10px 0 40px}
+.rules h3{margin:0 0 8px;color:#fff;font-weight:600}
+.rules li{margin:4px 0}
+footer{color:var(--soft);font-size:13px;padding:0 0 40px}
+@media (max-width:600px){header h1{font-size:27px}.step{padding:16px}.num{width:36px;height:36px;font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Sabre Constructions · first marketing push</div>
+    <h1>Fill the 2027 build calendar with family rebuilds</h1>
+    <p>The seven steps from where Sabre is today to a campaign that's live and measured. Green is done, amber is where we are, grey is still to come.</p>
+    <div class="meta">
+      <span class="chip code">SAB-2026-11-SLOTS-2027</span>
+      <span class="chip">Push A: 2027 build slots + Push C: warm</span>
+      <span class="chip">Updated 30 Oct 2026</span>
+    </div>
+  </div>
+</header>
+
+<nav class="rail"><div class="wrap"><ol>
+  <li><a class="done" href="#s1"><span class="dot"></span>1 Where are we</a></li>
+  <li><a class="done" href="#s2"><span class="dot"></span>2 Pick the push</a></li>
+  <li><a class="now" href="#s3"><span class="dot"></span>3 The offer</a></li>
+  <li><a class="todo" href="#s4"><span class="dot"></span>4 The leads</a></li>
+  <li><a class="todo" href="#s5"><span class="dot"></span>5 The assets</a></li>
+  <li><a class="todo" href="#s6"><span class="dot"></span>6 Go live</a></li>
+  <li><a class="todo" href="#s7"><span class="dot"></span>7 Did it work</a></li>
+</ol></div></nav>
+
+<main class="wrap">
+
+<section>
+  <h2>Who it's for</h2>
+  <p class="lede">The customer card. These are still guesses until three real buyers have told us.</p>
+  <div class="grid">
+    <div class="box"><h4>Who</h4>Young families who <b>already own</b> an older, cheaper Bayside house and have run out of room. They have some equity.</div>
+    <div class="box"><h4>What sets it off</h4>Another child, parents moving in, or a repair quote that frightened them.</div>
+    <div class="box"><h4>What they want</h4>"A Family Home", not just a house. Same street, same school.</div>
+    <div class="box"><h4>What nearly stops them</h4>Hidden costs, the number moving, a builder who disappears, and whether the house is even allowed to come down.</div>
+  </div>
+</section>
+
+<section>
+<div class="step done" id="s1">
+  <div class="step-head"><div class="num">1</div><div><div class="status">Done · 29 Oct</div><h3>Where are we</h3></div></div>
+  <div class="grid">
+    <div class="box"><h4>Stage</h4><b>Stage I.</b> Marketing isn't bringing customers in reliably. No ads running, the new site isn't on the real domain, and Sabre showed up in none of the 13 searches we checked.</div>
+    <div class="box"><h4>Leads today</h4><ul><li>Warm: word of mouth over 36 years (probably the main source)</li><li>Content: Facebook + Instagram exist</li><li>Cold: none</li><li>Paid: none (blocked)</li></ul></div>
+    <div class="box"><h4>The market</h4><ul><li>Only Tide and Fiteni advertise rebuilds on Meta</li><li>Nobody is buying the Wynnum/Manly rebuild searches on Google</li><li>We compete on "Nathan stays with you every step", not price</li></ul></div>
+    <div class="box"><h4>Proof on hand</h4><ul><li>4.5 stars from 12 Google reviews, 9 cleared quotes</li><li>Since 1990 · QBCC 15486557 · Master Builders 00352</li><li>Leanne's real video testimonial</li><li>The videographer's knockdown video</li></ul></div>
+  </div>
+</div>
+
+<div class="step done" id="s2">
+  <div class="step-head"><div class="num">2</div><div><div class="status">Done · 29 Oct</div><h3>Pick the push</h3></div></div>
+  <div class="tablewrap"><table>
+    <tr><th>#</th><th>Push</th><th>Goal</th><th>State</th></tr>
+    <tr><td><b>A</b></td><td>2027 build slots, capped and dated. A free walk-through with Nathan, booked by a date</td><td>Fill the 2027 slots</td><td><span class="pill g">Picked</span></td></tr>
+    <tr><td><b>C</b></td><td>Warm push: past clients, site neighbours, architects and brokers. Capture handover proof as we go</td><td>Referrals + the first real testimonials</td><td><span class="pill g">Picked, runs alongside A</span></td></tr>
+    <tr><td>B</td><td>"Can we rebuild on our block?" free check, then nurture</td><td>A list to work through 2027</td><td><span class="pill a">Parked for later</span></td></tr>
+  </table></div>
+  <p class="lede" style="margin-top:12px">Why now: families talk about the house over the summer holidays, and a 2027 start needs design and council approval first.</p>
+</div>
+
+<div class="step now" id="s3">
+  <div class="step-head"><div class="num">3</div><div><div class="status">We are here · waiting on Nathan's numbers</div><h3>Build the offer</h3></div></div>
+  <div class="offer">"Your 2027 family rebuild: demolition included, plus the <span class="blank">[name]</span> upgrade pack worth <span class="blank">$[X]</span>. Only <span class="blank">[N]</span> families, sign by <span class="blank">[date]</span>."</div>
+  <div class="grid">
+    <div class="box"><h4>In the offer</h4><ul><li>✅ Demolition included</li><li>✅ Upgrade pack (a bonus with a stated value, never a discount)</li><li>❓ Early costs covered: soil test, survey, council checks</li><li>✅ The walk-through stays free</li></ul></div>
+    <div class="box"><h4>Left out (your call)</h4><ul><li>❌ Guarantees</li><li>❌ Weekly videos</li><li>❌ Family moments</li></ul><p style="margin:6px 0 0;font-size:14px;color:var(--soft)">"That's literally what builders do."</p></div>
+    <div class="box"><h4>Owed by Nathan today</h4><ul class="owed"><li>How many homes in 2027</li><li>Demolition cost + who gets it</li><li>Pack contents, retail value, cost to Sabre</li><li>Early costs: amount + who's covered</li><li>Latest sign-by date</li><li>Rough profit per build</li><li>Monthly ad budget</li></ul></div>
+  </div>
+  <p class="lede" style="margin-top:12px"><b>Then:</b> the 30-day check. Does one build's profit still pay for the demolition and pack, plus the ad spend?</p>
+</div>
+
+<div class="step todo" id="s4">
+  <div class="step-head"><div class="num">4</div><div><div class="status">Next</div><h3>Plan the leads</h3></div></div>
+  <p class="lede">Warm first (Hormozi's order), then the same offer on Google and Meta once the gates clear.</p>
+  <div class="grid">
+    <div class="box"><h4>Warm (Push C)</h4><ul><li>Past clients Nathan can contact</li><li>Neighbours of current sites</li><li>Architects and brokers who send work</li><li>A referral hook (to design)</li></ul></div>
+    <div class="box"><h4>Google Search · month 1</h4><ul><li>Catches families who've already typed the question</li><li>Text ads, nothing to film</li><li>Phrase + exact match, 19 suburbs</li></ul></div>
+    <div class="box"><h4>Meta · month 2</h4><ul><li>Puts the rebuild in front of families who haven't thought of it</li><li>Cold, warm, then retargeting</li><li>Starts once real creative exists</li></ul></div>
+  </div>
+  <h4 style="margin:18px 0 4px;font-size:14px;color:var(--soft);text-transform:uppercase;letter-spacing:.06em">Proposed Google split</h4>
+  <div class="bars">
+    <div style="width:45%;background:#1B1C1F">Knockdown rebuild 45%</div>
+    <div style="width:30%;background:#4a4c52">Local builder 30%</div>
+    <div style="width:15%;background:#EB2227">Can I knock it down 15%</div>
+    <div style="width:10%;background:#9a9ca3">Brand</div>
+  </div>
+  <h4 style="margin:14px 0 4px;font-size:14px;color:var(--soft);text-transform:uppercase;letter-spacing:.06em">Proposed Meta split</h4>
+  <div class="bars">
+    <div style="width:60%;background:#1B1C1F">Cold, six suburbs, 30–60 · 60%</div>
+    <div style="width:25%;background:#4a4c52">Warm 25%</div>
+    <div style="width:15%;background:#EB2227">Retarget</div>
+  </div>
+  <p class="lede" style="margin-top:10px">Budget is a proposal of roughly $30–50 a day until Nathan agrees. Sabre pays Google and Meta direct.</p>
+</div>
+
+<div class="step todo" id="s5">
+  <div class="step-head"><div class="num">5</div><div><div class="status">Later</div><h3>Make the assets</h3></div></div>
+  <p class="lede">One spine, six doors. Every ad gets its registry code before it's made.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Door</th><th>Hook (draft)</th><th>Ready?</th></tr>
+    <tr><td>1 · They stay with you</td><td>"The builder who walks your old house is the one who answers the phone the day you get the keys."</td><td><span class="pill a">Needs Nathan, 20 s on his phone</span></td></tr>
+    <tr><td>2 · Same street, same school</td><td>"You picked this street. Don't let the house decide you have to leave it."</td><td><span class="pill a">Needs street footage</span></td></tr>
+    <tr><td>3 · Can we even knock it down?</td><td>"Some houses in Wynnum can't legally be knocked down. Do you know if yours is one?"</td><td><span class="pill g">Can make now</span></td></tr>
+    <tr><td>4 · Since 1990 on this bay</td><td>"Building on this bay since 1990." + a cleared review line</td><td><span class="pill g">Can make now</span></td></tr>
+    <tr><td>5 · Where do we live for the build?</td><td>"Nobody tells you where you'll live while they build it. We do."</td><td><span class="pill r">Needs Sabre's own timeline</span></td></tr>
+    <tr><td>6 · The last day of the old house</td><td>Filmed build story</td><td><span class="pill r">Needs the first filmed build</span></td></tr>
+  </table></div>
+  <p class="lede" style="margin-top:12px">Also on hand: Leanne's testimonial (paid-ads consent still owed) and the knockdown video (no-music version is in Nathan's Drive).</p>
+</div>
+
+<div class="step todo" id="s6">
+  <div class="step-head"><div class="num">6</div><div><div class="status">Blocked by the gates below</div><h3>Go live</h3></div></div>
+  <p class="lede">Nothing runs until every gate is green. Today's visit can turn most of them.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Gate</th><th>State</th><th>Cleared today?</th></tr>
+    <tr><td>Nathan's numbers: build value + monthly budget</td><td><span class="pill r">Owed</span></td><td>Yes, offer section</td></tr>
+    <tr><td>Nathan confirms the claims in every ad</td><td><span class="pill r">Owed</span></td><td>Yes, claims section</td></tr>
+    <tr><td>Google Ads linked to BBL's manager + advertiser check</td><td><span class="pill r">Never completed</span></td><td>Yes, link + upload</td></tr>
+    <tr><td>Meta ad account assigned to Edward + dataset</td><td><span class="pill r">Not assigned</span></td><td>Yes</td></tr>
+    <tr><td>Site on sabreconstructions.com.au, noindex off</td><td><span class="pill r">Domain login unknown</span></td><td>Find the login / move DNS</td></tr>
+    <tr><td>One real test enquiry lands in admin@</td><td><span class="pill r">Owed</span></td><td>Can do with Nathan</td></tr>
+    <tr><td>Lead tracking proven (CRM row + email both arrive)</td><td><span class="pill r">Not built</span></td><td>Decide Bigin today</td></tr>
+    <tr><td>Every ad coded before it's made</td><td><span class="pill g">System exists</span></td><td>n/a</td></tr>
+    <tr><td>AI testimonial placeholders off the home page</td><td><span class="pill a">Leanne's real one is in</span></td><td>Check what's left</td></tr>
+    <tr><td>Meta add-ons off, negatives loaded, conversions checked</td><td><span class="pill r">Not started</span></td><td>No, build day</td></tr>
+  </table></div>
+</div>
+
+<div class="step todo" id="s7">
+  <div class="step-head"><div class="num">7</div><div><div class="status">Every Monday once live</div><h3>Did it work</h3></div></div>
+  <div class="flow">
+    <span>Ad (name = code)</span><i>→</i><span>Link (utm = code)</span><i>→</i><span>Website page</span><i>→</i><span>Form</span><i>→</i><span>Nathan's inbox + CRM</span><i>→</i><span>Weekly results row</span>
+  </div>
+  <div class="tablewrap" style="margin-top:12px"><table>
+    <tr><th>Number</th><th>Target</th><th>If it's low, fix the…</th></tr>
+    <tr><td>People who click the ad</td><td>1–2%</td><td>Message: change the door, not the audience</td></tr>
+    <tr><td>Visitors who finish the form</td><td>5–10%</td><td>Page: headline, form position, friction</td></tr>
+    <tr><td>Cost per real enquiry</td><td>Set in month 1 against a build's value</td><td>Hook: filter out the wrong people in the copy</td></tr>
+    <tr><td>Enquiry → walk-through booked</td><td>Count it</td><td>Reply speed, then the reply itself</td></tr>
+    <tr><td>Hours to Nathan's first reply</td><td>Under 24</td><td>Nathan. The one number fully in his control</td></tr>
+  </table></div>
+  <p class="lede" style="margin-top:12px">Wait at least 7 days or $1,000 before judging anything. Weekly: write the numbers down, add negatives, change nothing else. Monthly: kill the worst, back the best, start one new test.</p>
+</div>
+</section>
+
+<div class="rules">
+  <h3>Rules that always apply</h3>
+  <ul>
+    <li>No invented numbers: no prices, timelines or job counts unless Nathan gives them</li>
+    <li>The rating is 4.5 from 12. Never 5</li>
+    <li>AI-generated people are never shown as customers</li>
+    <li>No generated "after" house, ever</li>
+    <li>Ads never land on the github.io preview, only the real domain</li>
+  </ul>
+</div>
+
+<footer>Source files: <span class="mono">marketing/plan.md</span> · <span class="mono">marketing/pushes/2026-10-29-2027-build-slots/</span> · <span class="mono">docs/reference/campaign-strategy.md</span></footer>
+</main>
+</body>
+</html>
